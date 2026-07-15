@@ -133,7 +133,7 @@ const HorizonEurope = () => {
             <Globe2 className="w-4 h-4" />
             Resources · Horizon Europe Pillar II
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-mint-500 to-lavender-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
             Pillar II — Global Challenges & European Industrial Competitiveness
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -152,7 +152,7 @@ const HorizonEurope = () => {
               key={f.label}
               className="p-6 rounded-xl bg-card border border-border text-center"
             >
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-mint-500 to-lavender-500 bg-clip-text text-transparent">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
                 {f.value}
               </div>
               <div className="text-xs text-muted-foreground mt-1">{f.sub}</div>
@@ -183,11 +183,11 @@ const HorizonEurope = () => {
               className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors flex flex-col"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-mint-500/20 to-lavender-500/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500/20 to-slate-500/20 flex items-center justify-center flex-shrink-0">
                   <c.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-mint-500 to-lavender-500 bg-clip-text text-transparent">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
                     {c.krw}
                   </div>
                   <div className="text-xs text-muted-foreground">{c.eur}</div>
@@ -255,7 +255,7 @@ const HorizonEurope = () => {
 
       {/* CTA */}
       <section className="px-4 pb-20">
-        <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl bg-gradient-to-br from-mint-500/10 to-lavender-500/10 border border-border text-center">
+        <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl bg-gradient-to-br from-sky-500/10 to-slate-500/10 border border-border text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Ready to tap into Pillar II funding?
           </h2>
@@ -265,7 +265,7 @@ const HorizonEurope = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="/request-demo"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold bg-gradient-to-r from-mint-500 to-lavender-500 text-white shadow-lg hover:shadow-glow hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold bg-gradient-to-r from-sky-500 to-slate-500 text-white shadow-lg hover:shadow-glow hover:scale-105 transition-all"
             >
               Request a Demo <ArrowRight className="w-4 h-4" />
             </a>

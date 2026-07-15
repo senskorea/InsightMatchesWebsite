@@ -104,7 +104,7 @@ export default function RnDFlyerCarousel() {
                 key={i}
                 onClick={() => setIndex(i)}
                 className={`h-2 rounded-full transition-all ${
-                  i === index ? 'w-8 bg-mint-500' : 'w-2 bg-charcoal-400/40'
+                  i === index ? 'w-8 bg-sky-500' : 'w-2 bg-slate-400/40'
                 }`}
               />
             ))}
@@ -112,7 +112,7 @@ export default function RnDFlyerCarousel() {
         </div>
 
         {/* Caption */}
-        <p className="text-center text-sm text-charcoal-400 font-spacemono">
+        <p className="text-center text-sm text-slate-400 font-spacemono">
           {String(index + 1).padStart(2, '0')} / {String(flyers.length).padStart(2, '0')} — {flyers[index].title}
         </p>
       </div>

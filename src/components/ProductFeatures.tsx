@@ -7,10 +7,10 @@ const FeatureListItem = ({ item, colorClass }: { item: string; colorClass: strin
     <div className={`w-5 h-5 rounded-full ${colorClass} flex items-center justify-center`}>
       <div
         className={`w-1.5 h-1.5 rounded-full ${
-          colorClass.includes('mint')
-            ? 'bg-mint-500'
-            : colorClass.includes('lavender')
-              ? 'bg-lavender-500'
+          colorClass.includes('sky')
+            ? 'bg-sky-500'
+            : colorClass.includes('slate')
+              ? 'bg-slate-500'
               : 'bg-gold-500'
         }`}
       />
@@ -33,7 +33,7 @@ export const ProductFeatures = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
           {/* Visual */}
           <div className="relative order-2 lg:order-1">
-            <div className="bg-gradient-to-br from-mint-50 to-lavender-50 dark:from-charcoal-800 dark:to-charcoal-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
+            <div className="bg-gradient-to-br from-sky-50 to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
               <video
                 src="/videos/find-funds.mp4"
                 autoPlay
@@ -49,7 +49,7 @@ export const ProductFeatures = () => {
           
           {/* Text */}
           <div className="order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mint-100 dark:bg-mint-900/30 text-mint-700 dark:text-mint-300 text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 text-xs font-medium mb-4">
               <Radar className="w-3.5 h-3.5" />
               {t('smartDiscovery')}
             </div>
@@ -61,10 +61,10 @@ export const ProductFeatures = () => {
             </p>
             <ul className="space-y-3 mb-8">
               {discoveryFeatures.map((item) => (
-                <FeatureListItem key={item} item={item} colorClass="bg-mint-100 dark:bg-mint-900/30" />
+                <FeatureListItem key={item} item={item} colorClass="bg-sky-100 dark:bg-sky-900/30" />
               ))}
             </ul>
-            <a href="#features" className="inline-flex items-center gap-2 text-mint-600 dark:text-mint-400 font-medium hover:gap-3 transition-all">
+            <a href="#features" className="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-medium hover:gap-3 transition-all">
               {t('exploreDiscovery')}
               <ArrowRight className="w-4 h-4" />
             </a>
@@ -75,7 +75,7 @@ export const ProductFeatures = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
           {/* Text */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lavender-100 dark:bg-lavender-900/30 text-lavender-700 dark:text-lavender-300 text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 text-xs font-medium mb-4">
               <Lightbulb className="w-3.5 h-3.5" />
               Idea Conceptualization
             </div>
@@ -86,15 +86,15 @@ export const ProductFeatures = () => {
               Turn a rough research direction into a clear, call-aligned project narrative. Our AI helps you frame objectives, impact, and methodology that resonate with EU evaluators.
             </p>
             <ul className="space-y-3 mb-8">
-              <FeatureListItem item="Map your idea to the right Horizon Europe call" colorClass="bg-lavender-100 dark:bg-lavender-900/30" />
-              <FeatureListItem item="Refine objectives, impact, and methodology" colorClass="bg-lavender-100 dark:bg-lavender-900/30" />
-              <FeatureListItem item="Get evaluator-ready concept notes in minutes" colorClass="bg-lavender-100 dark:bg-lavender-900/30" />
+              <FeatureListItem item="Map your idea to the right Horizon Europe call" colorClass="bg-slate-100 dark:bg-slate-900/30" />
+              <FeatureListItem item="Refine objectives, impact, and methodology" colorClass="bg-slate-100 dark:bg-slate-900/30" />
+              <FeatureListItem item="Get evaluator-ready concept notes in minutes" colorClass="bg-slate-100 dark:bg-slate-900/30" />
             </ul>
           </div>
 
           {/* Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-lavender-50 to-mint-50 dark:from-charcoal-800 dark:to-charcoal-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
+            <div className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
               <video
                 src="/videos/get-idea.mp4"
                 autoPlay
@@ -114,7 +114,7 @@ export const ProductFeatures = () => {
 
           {/* Text */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lavender-100 dark:bg-lavender-900/30 text-lavender-700 dark:text-lavender-300 text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 text-xs font-medium mb-4">
               <Users className="w-3.5 h-3.5" />
               {t('consortiumBuilder')}
             </div>
@@ -126,10 +126,10 @@ export const ProductFeatures = () => {
             </p>
             <ul className="space-y-3 mb-8">
               {consortiumFeatures.map((item) => (
-                <FeatureListItem key={item} item={item} colorClass="bg-lavender-100 dark:bg-lavender-900/30" />
+                <FeatureListItem key={item} item={item} colorClass="bg-slate-100 dark:bg-slate-900/30" />
               ))}
             </ul>
-            <a href="#features" className="inline-flex items-center gap-2 text-lavender-600 dark:text-lavender-400 font-medium hover:gap-3 transition-all">
+            <a href="#features" className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 font-medium hover:gap-3 transition-all">
               {t('explorePartners')}
               <ArrowRight className="w-4 h-4" />
             </a>
@@ -137,7 +137,7 @@ export const ProductFeatures = () => {
           
           {/* Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-lavender-50 to-mint-50 dark:from-charcoal-800 dark:to-charcoal-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
+            <div className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
               <video
                 src="/videos/make-the-team.mp4"
                 autoPlay
@@ -156,7 +156,7 @@ export const ProductFeatures = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gold-50 to-mint-50 dark:from-charcoal-800 dark:to-charcoal-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
+            <div className="bg-gradient-to-br from-gold-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
               <video
                 src="/videos/write-proposal.mp4"
                 autoPlay

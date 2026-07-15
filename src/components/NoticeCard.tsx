@@ -24,8 +24,8 @@ interface NoticeCardProps {
 export function NoticeCard({ notice, onClick }: NoticeCardProps) {
   return (
     <Card 
-      className={`cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-[1.01] border border-gray-200 dark:border-charcoal-700 bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-sm ${
-        notice.is_pinned ? 'ring-2 ring-mint-400/50 bg-mint-50/30 dark:bg-mint-900/20' : ''
+      className={`cursor-pointer transition-all duration-200 hover:shadow-lg hover:scale-[1.01] border border-gray-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm ${
+        notice.is_pinned ? 'ring-2 ring-sky-400/50 bg-sky-50/30 dark:bg-sky-900/20' : ''
       }`}
       onClick={onClick}
     >
@@ -34,9 +34,9 @@ export function NoticeCard({ notice, onClick }: NoticeCardProps) {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-2">
               {notice.is_pinned && (
-                <Pin className="w-4 h-4 text-mint-600 dark:text-mint-400 fill-current" />
+                <Pin className="w-4 h-4 text-sky-600 dark:text-sky-400 fill-current" />
               )}
-              <Badge variant="secondary" className="text-xs bg-lavender-100 dark:bg-lavender-900/50 text-lavender-800 dark:text-lavender-200 border-lavender-300 dark:border-lavender-700">
+              <Badge variant="secondary" className="text-xs bg-slate-100 dark:bg-slate-900/50 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-slate-700">
                 {notice.category}
               </Badge>
             </div>

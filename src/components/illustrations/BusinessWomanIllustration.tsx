@@ -19,7 +19,7 @@ export const BusinessWomanIllustration: React.FC<BusinessWomanIllustrationProps>
         {/* Analytics Dashboard Mockup */}
         <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:scale-105 transition-transform duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-mint-500 to-lavender-500 p-4">
+          <div className="bg-gradient-to-r from-sky-500 to-slate-500 p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-white" />
@@ -32,13 +32,13 @@ export const BusinessWomanIllustration: React.FC<BusinessWomanIllustrationProps>
           {/* Key Metrics */}
           <div className="p-4">
             <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="bg-mint-50 dark:bg-mint-900/20 p-3 rounded-lg text-center">
-                <Euro className="w-5 h-5 text-mint-600 mx-auto mb-1" />
+              <div className="bg-sky-50 dark:bg-sky-900/20 p-3 rounded-lg text-center">
+                <Euro className="w-5 h-5 text-sky-600 mx-auto mb-1" />
                 <div className="text-lg font-bold text-gray-900 dark:text-white">{currencyDisplay}</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">Secured Funding</div>
               </div>
-              <div className="bg-lavender-50 dark:bg-lavender-900/20 p-3 rounded-lg text-center">
-                <Award className="w-5 h-5 text-lavender-600 mx-auto mb-1" />
+              <div className="bg-slate-50 dark:bg-slate-900/20 p-3 rounded-lg text-center">
+                <Award className="w-5 h-5 text-slate-600 mx-auto mb-1" />
                 <div className="text-lg font-bold text-gray-900 dark:text-white">87%</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">Success Rate</div>
               </div>
@@ -82,7 +82,7 @@ export const BusinessWomanIllustration: React.FC<BusinessWomanIllustrationProps>
                   <div className="flex items-center gap-2">
                     <div className={`w-2 h-2 rounded-full ${
                       activity.status === 'success' ? 'bg-green-500' :
-                      activity.status === 'info' ? 'bg-mint-500' : 'bg-yellow-500'
+                      activity.status === 'info' ? 'bg-sky-500' : 'bg-yellow-500'
                     }`}></div>
                     <span className="text-xs text-gray-900 dark:text-white">{activity.action}</span>
                   </div>

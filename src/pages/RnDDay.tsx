@@ -69,16 +69,16 @@ const stickyNavItems = [
 
 /* ─── White theme style tokens ─── */
 const S = {
-  page: 'min-h-screen text-charcoal-900 font-outfit',
-  nav: 'fixed top-0 w-full z-50 backdrop-blur-xl border-b border-charcoal-200/40',
+  page: 'min-h-screen text-slate-900 font-outfit',
+  nav: 'fixed top-0 w-full z-50 backdrop-blur-xl border-b border-slate-200/40',
   navInner: 'max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between',
-  sectionLabel: 'font-spacemono text-xs uppercase tracking-[3px] text-mint-600 mb-6 flex items-center gap-3 before:content-[""] before:block before:w-10 before:h-px before:bg-mint-500',
-  card: 'bg-white border border-charcoal-200/60 rounded-3xl p-8 transition-all duration-400 hover:-translate-y-1 hover:border-mint-400/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_0_40px_rgba(82,171,133,0.08)]',
-  cardSm: 'bg-white border border-charcoal-200/60 rounded-2xl p-6 transition-all duration-400 hover:-translate-y-1 hover:border-mint-400/50 hover:shadow-lg',
-  accent: 'text-mint-600',
-  muted: 'text-charcoal-400',
-  btnPrimary: 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-spacemono text-xs uppercase tracking-wider border border-mint-600 text-mint-600 hover:bg-mint-600 hover:text-white hover:shadow-[0_0_20px_rgba(82,171,133,0.3)] transition-all duration-300',
-  btnSolid: 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-spacemono text-xs uppercase tracking-wider bg-charcoal-900 text-white font-bold hover:bg-charcoal-800 hover:shadow-lg transition-all duration-300',
+  sectionLabel: 'font-spacemono text-xs uppercase tracking-[3px] text-sky-600 mb-6 flex items-center gap-3 before:content-[""] before:block before:w-10 before:h-px before:bg-sky-500',
+  card: 'bg-white border border-slate-200/60 rounded-3xl p-8 transition-all duration-400 hover:-translate-y-1 hover:border-sky-400/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_0_40px_rgba(82,171,133,0.08)]',
+  cardSm: 'bg-white border border-slate-200/60 rounded-2xl p-6 transition-all duration-400 hover:-translate-y-1 hover:border-sky-400/50 hover:shadow-lg',
+  accent: 'text-sky-600',
+  muted: 'text-slate-400',
+  btnPrimary: 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-spacemono text-xs uppercase tracking-wider border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white hover:shadow-[0_0_20px_rgba(82,171,133,0.3)] transition-all duration-300',
+  btnSolid: 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-spacemono text-xs uppercase tracking-wider bg-slate-900 text-white font-bold hover:bg-slate-800 hover:shadow-lg transition-all duration-300',
 } as const;
 
 /* ─── Countdown Hook ─── */
@@ -135,7 +135,7 @@ const StickyNav = () => {
   };
 
   return (
-    <div className="sticky top-16 z-40 backdrop-blur-xl border-b border-charcoal-200/40" style={{ backgroundColor: 'rgba(250,251,252,0.85)' }}>
+    <div className="sticky top-16 z-40 backdrop-blur-xl border-b border-slate-200/40" style={{ backgroundColor: 'rgba(250,251,252,0.85)' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex gap-1 overflow-x-auto py-2.5 scrollbar-hide">
           {stickyNavItems.map(({ id, label }) => (
@@ -144,8 +144,8 @@ const StickyNav = () => {
               onClick={() => scrollTo(id)}
               className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-spacemono font-medium transition-all duration-300 ${
                 activeSection === id
-                  ? 'bg-mint-600 text-white shadow-sm'
-                  : 'text-charcoal-400 hover:text-charcoal-700 hover:bg-charcoal-100/60'
+                  ? 'bg-sky-600 text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-700 hover:bg-slate-100/60'
               }`}
             >
               {label}
@@ -192,17 +192,17 @@ const RnDDay = () => {
         href="https://forms.gle/fNoLJc9wAqtYjCrJA"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed top-0 left-0 right-0 z-[60] bg-charcoal-900 text-white text-center py-2.5 px-4 text-sm font-medium hover:bg-charcoal-800 transition-colors cursor-pointer flex items-center justify-center gap-2"
+        className="fixed top-0 left-0 right-0 z-[60] bg-slate-900 text-white text-center py-2.5 px-4 text-sm font-medium hover:bg-slate-800 transition-colors cursor-pointer flex items-center justify-center gap-2"
       >
-        <Rocket className="w-4 h-4 text-mint-400" />
+        <Rocket className="w-4 h-4 text-sky-400" />
         <span>🎟️ Registration is open — <span className="underline underline-offset-2">Secure your spot for R&D Day '26</span></span>
-        <ArrowRight className="w-4 h-4 text-mint-400" />
+        <ArrowRight className="w-4 h-4 text-sky-400" />
       </a>
 
       {/* ─── NAV ─── */}
       <nav className={S.nav} style={{ backgroundColor: 'rgba(250,251,252,0.85)', top: '40px' }}>
         <div className={S.navInner}>
-          <Link to="/" className="font-spacemono font-bold text-charcoal-900 border-l-[3px] border-mint-500 pl-3 relative">
+          <Link to="/" className="font-spacemono font-bold text-slate-900 border-l-[3px] border-sky-500 pl-3 relative">
             R&D DAY '26
           </Link>
           <a
@@ -218,14 +218,14 @@ const RnDDay = () => {
 
       {/* ─── STICKY SECTION NAV ─── */}
       <div className="pt-[104px]">
-        <div className="sticky top-[104px] z-40 backdrop-blur-xl border-b border-charcoal-200/40" style={{ backgroundColor: 'rgba(250,251,252,0.85)' }}>
+        <div className="sticky top-[104px] z-40 backdrop-blur-xl border-b border-slate-200/40" style={{ backgroundColor: 'rgba(250,251,252,0.85)' }}>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="flex gap-1 overflow-x-auto py-2.5 scrollbar-hide">
               {stickyNavItems.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
-                  className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-spacemono font-medium transition-all duration-300 text-charcoal-400 hover:text-charcoal-700 hover:bg-charcoal-100/60`}
+                  className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-spacemono font-medium transition-all duration-300 text-slate-400 hover:text-slate-700 hover:bg-slate-100/60`}
                 >
                   {label}
                 </button>
@@ -243,20 +243,20 @@ const RnDDay = () => {
         transition={{ duration: 0.7 }}
       >
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-8 border border-mint-300 text-mint-700 bg-mint-50">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-8 border border-sky-300 text-sky-700 bg-sky-50">
             <Calendar className="w-4 h-4" />
             March 31, 2026
           </div>
 
           <div className="flex justify-center mb-8">
-            <h1 className="font-spacemono font-bold text-left border-l-[10px] border-mint-500 pl-8 text-charcoal-900" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: 1.1 }}>
+            <h1 className="font-spacemono font-bold text-left border-l-[10px] border-sky-500 pl-8 text-slate-900" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: 1.1 }}>
               R&D<br />DAY '26
             </h1>
           </div>
 
           <div className="h-8 mb-6">
             <span
-              className={`font-outfit text-lg sm:text-xl font-light transition-all duration-400 inline-block text-mint-600 ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
+              className={`font-outfit text-lg sm:text-xl font-light transition-all duration-400 inline-block text-sky-600 ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
             >
               {subtitles[subtitleIndex]}
             </span>
@@ -271,12 +271,12 @@ const RnDDay = () => {
               { value: countdown.seconds, label: 'Sec' },
             ].map((unit) => (
               <div key={unit.label} className="flex flex-col items-center">
-                <div className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-3xl border border-charcoal-200/60 bg-white flex items-center justify-center shadow-md">
-                  <span className="font-spacemono text-3xl sm:text-5xl lg:text-6xl font-bold text-charcoal-900">
+                <div className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-3xl border border-slate-200/60 bg-white flex items-center justify-center shadow-md">
+                  <span className="font-spacemono text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900">
                     {String(unit.value).padStart(2, '0')}
                   </span>
                 </div>
-                <span className="text-[0.7rem] sm:text-xs font-spacemono text-charcoal-400 mt-2.5 uppercase tracking-wider">{unit.label}</span>
+                <span className="text-[0.7rem] sm:text-xs font-spacemono text-slate-400 mt-2.5 uppercase tracking-wider">{unit.label}</span>
               </div>
             ))}
           </div>
@@ -287,7 +287,7 @@ const RnDDay = () => {
       <AnimatedSection className="pb-20 lg:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className={`${S.card} text-center relative overflow-hidden`}>
-            <div className="absolute inset-0 bg-gradient-to-br from-mint-50/80 via-transparent to-charcoal-50/40 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-50/80 via-transparent to-slate-50/40 pointer-events-none" />
             <div className="relative z-10">
               <p className={`text-lg sm:text-xl max-w-2xl mx-auto mb-2 leading-relaxed font-light ${S.muted}`}>
                 Connecting cutting-edge researchers and early-stage founders with smart capital, industry leaders, and EU institutions.
@@ -300,11 +300,11 @@ const RnDDay = () => {
 
               <div className="flex flex-col items-center gap-6">
                 <a href="https://forms.gle/fNoLJc9wAqtYjCrJA" target="_blank" rel="noopener noreferrer" className="block">
-                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-charcoal-200/60 inline-block hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-slate-200/60 inline-block hover:shadow-xl hover:scale-105 transition-all duration-300">
                     <img src={registerQR} alt="Scan to register for R&D Day 2026" className="w-48 h-48 sm:w-56 sm:h-56" />
                   </div>
                 </a>
-                <div className="flex items-center gap-2 text-mint-700 font-spacemono text-sm font-bold uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-sky-700 font-spacemono text-sm font-bold uppercase tracking-wider">
                   <QrCode className="w-5 h-5" />
                   Scan to Register
                 </div>
@@ -330,10 +330,10 @@ const RnDDay = () => {
 
 
       {/* ─── WARESA RESEARCH COMPETITION ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-mint-300 text-mint-700 bg-mint-50">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-sky-300 text-sky-700 bg-sky-50">
               <Award className="w-4 h-4" /> WARESA Korea
             </div>
             <h2 className="font-spacemono text-3xl sm:text-4xl font-bold mb-4">Five-Minute Research Competition</h2>
@@ -346,8 +346,8 @@ const RnDDay = () => {
               <h3 className="font-spacemono text-lg font-bold mb-6 flex items-center gap-2">⚖️ Judging Criteria</h3>
               <div className="space-y-4">
                 {judgingCriteria.map((c) => (
-                  <div key={c.num} className="flex items-center gap-4 p-3 rounded-xl border border-charcoal-200/60 bg-charcoal-50/30">
-                    <span className="w-8 h-8 rounded-full bg-mint-50 border border-mint-300 text-mint-700 flex items-center justify-center text-xs font-spacemono font-bold shrink-0">{c.num}</span>
+                  <div key={c.num} className="flex items-center gap-4 p-3 rounded-xl border border-slate-200/60 bg-slate-50/30">
+                    <span className="w-8 h-8 rounded-full bg-sky-50 border border-sky-300 text-sky-700 flex items-center justify-center text-xs font-spacemono font-bold shrink-0">{c.num}</span>
                     <span className="flex-1 font-medium text-sm">{c.label}</span>
                     <span className={`text-sm font-spacemono font-bold ${S.accent}`}>{c.pts} pts</span>
                   </div>
@@ -360,7 +360,7 @@ const RnDDay = () => {
               <h3 className="font-spacemono text-lg font-bold mb-6 flex items-center gap-2">🏆 Prizes & Incentives</h3>
               <div className="space-y-4">
                 {prizes.map((p) => (
-                  <div key={p.place} className="flex items-center gap-4 p-4 rounded-xl border border-charcoal-200/60 bg-charcoal-50/30">
+                  <div key={p.place} className="flex items-center gap-4 p-4 rounded-xl border border-slate-200/60 bg-slate-50/30">
                     <span className="text-3xl">{p.emoji}</span>
                     <div className="flex-1">
                       <p className="font-bold text-sm">{p.place}</p>
@@ -372,14 +372,14 @@ const RnDDay = () => {
                     </div>
                   </div>
                 ))}
-                <div className="flex items-center gap-4 p-4 rounded-xl border border-charcoal-200/60 bg-charcoal-50/30">
+                <div className="flex items-center gap-4 p-4 rounded-xl border border-slate-200/60 bg-slate-50/30">
                   <span className="text-3xl">📱</span>
                   <div className="flex-1">
                     <p className="font-bold text-sm">#RNDDAY Marketing Challenge</p>
                     <p className={`text-xs ${S.muted}`}>Use our official hashtag on social media to win Starbucks vouchers throughout the day</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 p-4 rounded-xl border border-charcoal-200/60 bg-charcoal-50/30">
+                <div className="flex items-center gap-4 p-4 rounded-xl border border-slate-200/60 bg-slate-50/30">
                   <span className="text-3xl">📜</span>
                   <div className="flex-1">
                     <p className="font-bold text-sm">Official Recognition</p>
@@ -412,12 +412,12 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── AGENDA (Vertical Timeline) ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40" id="agenda">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40" id="agenda">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-spacemono text-3xl sm:text-4xl font-bold text-center mb-16">Agenda</h2>
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[2.35rem] sm:left-[2.85rem] top-0 bottom-0 w-px bg-charcoal-200/60" />
+            <div className="absolute left-[2.35rem] sm:left-[2.85rem] top-0 bottom-0 w-px bg-slate-200/60" />
 
             <div className="space-y-0">
               {agenda.map((item, i) => (
@@ -429,7 +429,7 @@ const RnDDay = () => {
                     </span>
                   </div>
                   {/* Dot on the line */}
-                  <div className="absolute left-[2.05rem] sm:left-[2.55rem] top-[1.85rem] w-[0.625rem] h-[0.625rem] rounded-full border-2 border-mint-500 bg-white z-10 group-hover:bg-mint-500 transition-colors duration-300" />
+                  <div className="absolute left-[2.05rem] sm:left-[2.55rem] top-[1.85rem] w-[0.625rem] h-[0.625rem] rounded-full border-2 border-sky-500 bg-white z-10 group-hover:bg-sky-500 transition-colors duration-300" />
                   {/* Content */}
                   <div className="flex-1 pb-2">
                     <h3 className="font-semibold text-base sm:text-lg">{item.session}</h3>
@@ -443,7 +443,7 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── SPEAKERS & JURY ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40" id="speakers">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40" id="speakers">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="font-spacemono text-3xl sm:text-4xl font-bold text-center mb-16">Speakers & Jury</h2>
           <div className="space-y-6">
@@ -457,11 +457,11 @@ const RnDDay = () => {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <div className="shrink-0">
-                  <h3 className="font-spacemono font-bold text-xl sm:text-2xl text-charcoal-900">{s.name}</h3>
+                  <h3 className="font-spacemono font-bold text-xl sm:text-2xl text-slate-900">{s.name}</h3>
                   <p className={`text-sm font-semibold ${S.accent}`}>{s.role}</p>
-                  {(s as any).topic && <p className="text-xs font-spacemono text-charcoal-500 mt-0.5">{(s as any).topic}</p>}
+                  {(s as any).topic && <p className="text-xs font-spacemono text-slate-500 mt-0.5">{(s as any).topic}</p>}
                 </div>
-                <div className="hidden sm:block w-px h-10 bg-charcoal-200/60 mx-2" />
+                <div className="hidden sm:block w-px h-10 bg-slate-200/60 mx-2" />
                 <p className={`text-sm leading-relaxed ${S.muted}`}>{s.bio}</p>
               </motion.div>
             ))}
@@ -470,16 +470,16 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── EVENING NETWORKING ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className={`${S.card} relative overflow-hidden`} style={{ background: 'linear-gradient(135deg, rgba(82,171,133,0.04) 0%, rgba(255,255,255,1) 100%)' }}>
             <div className="relative">
               <GlassWater className={`w-10 h-10 ${S.accent} mb-6`} />
               <h2 className="font-spacemono text-3xl sm:text-4xl font-bold mb-4">Networking Evening at Shilla Stay</h2>
-              <p className="text-charcoal-400 text-lg max-w-2xl mb-8 leading-relaxed font-light">
+              <p className="text-slate-400 text-lg max-w-2xl mb-8 leading-relaxed font-light">
                 Wrap up the day with drinks, food, and good conversation. This is an open event — members of the Network Busan community and the wider Busan business scene will also join. Meet researchers, local business owners, startups and professionals in a relaxed setting.
               </p>
-              <p className="text-mint-600 text-sm font-medium mb-8">
+              <p className="text-sky-600 text-sm font-medium mb-8">
                 🎟️ Attendee Perk: Pre-registered guests who checked in during the day will receive discounted drink coupons for use during the evening.
               </p>
 
@@ -489,14 +489,14 @@ const RnDDay = () => {
                   { label: 'Local Business', desc: 'Entrepreneurs and companies based in the Busan area' },
                   { label: 'International Community', desc: 'EU partners, expats, and global collaborators' },
                 ].map((p) => (
-                  <div key={p.label} className="p-4 rounded-xl border border-charcoal-200/60 bg-mint-50/50">
+                  <div key={p.label} className="p-4 rounded-xl border border-slate-200/60 bg-sky-50/50">
                     <h4 className={`font-semibold mb-1 ${S.accent}`}>{p.label}</h4>
-                    <p className="text-sm text-charcoal-400">{p.desc}</p>
+                    <p className="text-sm text-slate-400">{p.desc}</p>
                   </div>
                 ))}
               </div>
 
-              <p className="text-sm text-charcoal-400/60 italic mb-6 font-light">
+              <p className="text-sm text-slate-400/60 italic mb-6 font-light">
                 Can't make the daytime sessions? You're still welcome to join for the evening.
               </p>
 
@@ -509,7 +509,7 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── LOGISTICS ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40" id="venue">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40" id="venue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-spacemono text-3xl sm:text-4xl font-bold text-center mb-12">Venue</h2>
           <div className="text-center mb-8">
@@ -519,7 +519,7 @@ const RnDDay = () => {
             </div>
             <p className={`text-sm ${S.muted}`}>78 Centumjungang-ro, Haeundae-gu, Busan, South Korea</p>
           </div>
-          <div className="rounded-2xl overflow-hidden border border-charcoal-200/40 shadow-lg" ref={(el) => {
+          <div className="rounded-2xl overflow-hidden border border-slate-200/40 shadow-lg" ref={(el) => {
             if (el && !el.dataset.mapLoaded) {
               el.dataset.mapLoaded = 'true';
               const container = document.createElement('div');
@@ -564,7 +564,7 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── PARTNERS ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-spacemono text-3xl sm:text-4xl font-bold mb-16">Partners</h2>
           <div className="grid sm:grid-cols-3 gap-10">
@@ -589,7 +589,7 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── FINAL CTA ─── */}
-      <AnimatedSection className="py-20 lg:py-28 border-t border-charcoal-200/40">
+      <AnimatedSection className="py-20 lg:py-28 border-t border-slate-200/40">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-spacemono text-3xl sm:text-4xl font-bold mb-6">Ready to Shape the Future?</h2>
           <p className={`text-lg mb-10 font-light ${S.muted}`}>
@@ -607,10 +607,10 @@ const RnDDay = () => {
       </AnimatedSection>
 
       {/* ─── FOOTER ─── */}
-      <footer className="py-10 border-t border-charcoal-200/40">
+      <footer className="py-10 border-t border-slate-200/40">
         <div className={`max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm ${S.muted}`}>
           <p>© 2026 R&D Day · Hosted by BCCEI & Busan Metropolitan City</p>
-          <Link to="/" className="inline-flex items-center gap-1 hover:text-charcoal-900 transition-colors">
+          <Link to="/" className="inline-flex items-center gap-1 hover:text-slate-900 transition-colors">
             Powered by InsightMatches <ExternalLink className="w-3 h-3" />
           </Link>
         </div>

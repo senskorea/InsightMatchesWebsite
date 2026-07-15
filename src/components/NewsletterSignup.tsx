@@ -37,7 +37,7 @@ export const NewsletterSignup = () => {
   }, []);
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-r from-mint-50/50 to-lavender-50/50 dark:from-charcoal-800 dark:to-charcoal-700">
+    <section className="py-16 lg:py-24 bg-gradient-to-r from-sky-50/50 to-slate-50/50 dark:from-slate-800 dark:to-slate-700">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-6">

@@ -62,7 +62,7 @@ export const Navbar = () => {
       className={`
       fixed left-0 right-0 z-50 transition-all duration-300
       ${scrolled 
-        ? 'bg-white/80 dark:bg-charcoal-900/80 backdrop-blur-md shadow-lg border-b border-white/10' 
+        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-white/10' 
         : 'bg-transparent'
       }
     `}>
@@ -80,20 +80,20 @@ export const Navbar = () => {
             {navButtons.map((section) => (
               <DropdownMenu key={section.name}>
                 <DropdownMenuTrigger className="
-                  text-gray-700 dark:text-gray-300 hover:text-mint-600 dark:hover:text-mint-400
+                  text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400
                   font-medium transition-colors duration-200 flex items-center gap-1
                   relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
-                  after:bg-mint-500 after:transition-all after:duration-300
+                  after:bg-sky-500 after:transition-all after:duration-300
                   hover:after:w-full outline-none
                 ">
                   {section.name} <ChevronDown className="w-4 h-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700">
+                <DropdownMenuContent className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700">
                   {section.items.map((item) => (
                     <DropdownMenuItem key={item.name} asChild>
                       <Link
                         to={item.href}
-                        className="w-full px-2 py-1.5 text-gray-700 dark:text-gray-300 hover:text-mint-600 dark:hover:text-mint-400 hover:bg-gray-50 dark:hover:bg-charcoal-700 transition-colors"
+                        className="w-full px-2 py-1.5 text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -112,7 +112,7 @@ export const Navbar = () => {
               to="/app"
               className="
                 px-4 lg:px-6 py-2 rounded-lg font-semibold text-sm
-                bg-gradient-to-r from-mint-500 to-lavender-500
+                bg-gradient-to-r from-sky-500 to-slate-500
                 text-white shadow-lg hover:shadow-glow
                 transition-all duration-200 hover:scale-105
                 whitespace-nowrap
@@ -125,7 +125,7 @@ export const Navbar = () => {
             <a href="/request-demo"
               className="
                 px-4 lg:px-6 py-2 rounded-lg font-semibold text-sm
-                bg-gradient-to-r from-mint-500 to-lavender-500
+                bg-gradient-to-r from-sky-500 to-slate-500
                 text-white shadow-lg hover:shadow-glow
                 transition-all duration-200 hover:scale-105
                 whitespace-nowrap
@@ -138,8 +138,8 @@ export const Navbar = () => {
               to="/referral"
               className="
                 px-4 lg:px-6 py-2 rounded-lg font-semibold text-sm
-                border border-mint-500 text-mint-600 dark:text-mint-400
-                hover:bg-mint-500/10 transition-all duration-200
+                border border-sky-500 text-sky-600 dark:text-sky-400
+                hover:bg-sky-500/10 transition-all duration-200
                 whitespace-nowrap
               "
             >
@@ -152,7 +152,7 @@ export const Navbar = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-mint-600 dark:hover:text-mint-400 touch-manipulation"
+              className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 touch-manipulation"
             >
               {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
@@ -161,17 +161,17 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className={`md:hidden fixed inset-0 bg-white dark:bg-charcoal-900 z-40 overflow-y-auto top-14`}>
+          <div className={`md:hidden fixed inset-0 bg-white dark:bg-slate-900 z-40 overflow-y-auto top-14`}>
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Navigation Sections */}
               {navButtons.map((section) => (
-                <div key={section.name} className="border-t border-gray-200 dark:border-charcoal-700 pt-4">
+                <div key={section.name} className="border-t border-gray-200 dark:border-slate-700 pt-4">
                   <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">{section.name}</h4>
                   {section.items.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="block text-gray-700 dark:text-gray-300 hover:text-mint-600 dark:hover:text-mint-400 font-medium py-1"
+                      className="block text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 font-medium py-1"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -185,7 +185,7 @@ export const Navbar = () => {
                   to="/app"
                   className="
                     w-full px-6 py-2 rounded-lg font-semibold text-sm
-                    bg-gradient-to-r from-mint-500 to-lavender-500
+                    bg-gradient-to-r from-sky-500 to-slate-500
                     text-white shadow-lg text-center block
                   "
                   onClick={() => setIsOpen(false)}
@@ -197,7 +197,7 @@ export const Navbar = () => {
                 <a href="/request-demo"
                   className="
                     w-full px-6 py-2 rounded-lg font-semibold text-sm
-                    bg-gradient-to-r from-mint-500 to-lavender-500
+                    bg-gradient-to-r from-sky-500 to-slate-500
                     text-white shadow-lg text-center block
                   "
                 >
@@ -208,7 +208,7 @@ export const Navbar = () => {
                   to="/referral"
                   className="
                     w-full px-6 py-2 rounded-lg font-semibold text-sm
-                    border border-mint-500 text-mint-600 dark:text-mint-400
+                    border border-sky-500 text-sky-600 dark:text-sky-400
                     text-center block
                   "
                   onClick={() => setIsOpen(false)}

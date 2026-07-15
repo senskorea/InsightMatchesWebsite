@@ -372,7 +372,7 @@ const iconFor = (name: string, className = 'w-5 h-5') => {
 
 const toneClasses = {
   amber: 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-400/40',
-  sky: 'bg-mint-500/10 text-mint-700 dark:text-mint-300 border-mint-500/40',
+  sky: 'bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/40',
   emerald: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-400/40',
 } as const;
 
@@ -403,17 +403,17 @@ const LifeSciences: React.FC = () => {
 
       {/* Hero */}
       <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-mint-50/40 via-background to-background dark:from-charcoal-900/40 dark:via-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-50/40 via-background to-background dark:from-slate-900/40 dark:via-background" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-mint-500/30 bg-mint-500/10 text-mint-700 dark:text-mint-300 text-xs sm:text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-700 dark:text-sky-300 text-xs sm:text-sm font-medium">
               <Dna className="w-3.5 h-3.5" />
               {c.audience}
             </div>
 
             <h1 className="font-inter text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
               <span className="text-foreground">{c.h1a}</span>
-              <span className="bg-gradient-to-r from-mint-500 via-mint-400 to-lavender-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-500 via-sky-400 to-slate-500 bg-clip-text text-transparent">
                 {c.h1b}
               </span>
               <span className="text-foreground">{c.h1c}</span>
@@ -428,7 +428,7 @@ const LifeSciences: React.FC = () => {
                 href={CALENDAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-charcoal-900 hover:opacity-90 shadow-lg transition-all duration-300 button-hover"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-lg transition-all duration-300 button-hover"
               >
                 {c.ctaPrimary}
                 <ArrowRight className="w-5 h-5" />
@@ -465,14 +465,14 @@ const LifeSciences: React.FC = () => {
           <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
             {c.painP}
           </p>
-          <div className="inline-block rounded-2xl border border-mint-500/30 bg-card p-8 md:p-10 shadow-lg text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint-500/10 border border-mint-500/30 text-mint-700 dark:text-mint-300 text-xs font-semibold mb-4">
+          <div className="inline-block rounded-2xl border border-sky-500/30 bg-card p-8 md:p-10 shadow-lg text-left max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-sky-300 text-xs font-semibold mb-4">
               <ShieldCheck className="w-3.5 h-3.5" />
               {c.guaranteeTag}
             </div>
             <p className="text-lg md:text-xl text-foreground leading-snug">
               {c.guaranteeP1}
-              <span className="text-mint-600 dark:text-mint-400 font-semibold">
+              <span className="text-sky-600 dark:text-sky-400 font-semibold">
                 {c.guaranteeP2}
               </span>
             </p>
@@ -484,7 +484,7 @@ const LifeSciences: React.FC = () => {
       <section className="py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
-            <div className="text-xs uppercase tracking-[0.2em] text-mint-600 dark:text-mint-400 font-semibold mb-3">
+            <div className="text-xs uppercase tracking-[0.2em] text-sky-600 dark:text-sky-400 font-semibold mb-3">
               <Globe className="w-3.5 h-3.5 inline -mt-0.5 mr-1.5" />
               Horizon Europe
             </div>
@@ -497,7 +497,7 @@ const LifeSciences: React.FC = () => {
             {c.marketStats.map((s, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-border bg-card p-6 hover:border-mint-500/40 transition-colors"
+                className="rounded-xl border border-border bg-card p-6 hover:border-sky-500/40 transition-colors"
               >
                 <div className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                   {s.v(lang)}
@@ -513,7 +513,7 @@ const LifeSciences: React.FC = () => {
       <section className="py-20 lg:py-28 bg-muted/30 border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
-            <div className="text-xs uppercase tracking-[0.2em] text-mint-600 dark:text-mint-400 font-semibold mb-3">
+            <div className="text-xs uppercase tracking-[0.2em] text-sky-600 dark:text-sky-400 font-semibold mb-3">
               {c.whyNowTag}
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
@@ -524,9 +524,9 @@ const LifeSciences: React.FC = () => {
             {c.cardsWhy.map((card, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-border bg-card p-8 hover:border-mint-500/40 hover:shadow-lg transition-all"
+                className="rounded-2xl border border-border bg-card p-8 hover:border-sky-500/40 hover:shadow-lg transition-all"
               >
-                <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-mint-500/10 text-mint-600 dark:text-mint-400 mb-5">
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 mb-5">
                   {iconFor(card.icon, 'w-5 h-5')}
                 </div>
                 <div className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
@@ -558,7 +558,7 @@ const LifeSciences: React.FC = () => {
               href={CALENDAR_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-mint-600 dark:text-mint-400 hover:text-mint-700 dark:hover:text-mint-300 font-medium text-sm whitespace-nowrap"
+              className="text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 font-medium text-sm whitespace-nowrap"
             >
               {c.matchLink}
             </a>
@@ -568,7 +568,7 @@ const LifeSciences: React.FC = () => {
             {c.calls.map((call, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-border bg-card p-6 flex flex-col hover:border-mint-500/40 hover:shadow-lg transition-all"
+                className="rounded-2xl border border-border bg-card p-6 flex flex-col hover:border-sky-500/40 hover:shadow-lg transition-all"
               >
                 <div className="flex items-center justify-between mb-5">
                   <span
@@ -577,7 +577,7 @@ const LifeSciences: React.FC = () => {
                     <span className="w-1.5 h-1.5 rounded-full bg-current" />
                     {call.status}
                   </span>
-                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-mint-500/10 text-mint-600 dark:text-mint-400">
+                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400">
                     {iconFor(call.icon)}
                   </div>
                 </div>
@@ -610,7 +610,7 @@ const LifeSciences: React.FC = () => {
                   href={CALENDAR_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-mint-600 dark:text-mint-400 hover:text-mint-700 dark:hover:text-mint-300 text-sm font-medium mt-auto"
+                  className="inline-flex items-center gap-1.5 text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 text-sm font-medium mt-auto"
                 >
                   {c.matchProfile}
                 </a>
@@ -621,7 +621,7 @@ const LifeSciences: React.FC = () => {
       </section>
 
       {/* Climax CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-mint-500 via-mint-400 to-lavender-500">
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-sky-500 via-sky-400 to-slate-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6">
             {c.climaxH(lang)}
@@ -633,7 +633,7 @@ const LifeSciences: React.FC = () => {
             href={CALENDAR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-lg bg-white text-charcoal-900 font-semibold text-lg hover:bg-white/95 shadow-xl transition-all button-hover"
+            className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-lg bg-white text-slate-900 font-semibold text-lg hover:bg-white/95 shadow-xl transition-all button-hover"
           >
             {c.ctaPrimary}
             <ArrowRight className="w-5 h-5" />

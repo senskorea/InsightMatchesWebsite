@@ -13,7 +13,7 @@ const successStories = [
       'Status: SaaS Subscriber & Consortium Partner',
       'Result: Successfully matched for Horizon Europe "Extended Reality" calls'
     ],
-    color: 'mint' as const,
+    color: 'sky' as const,
     type: 'successStory' as const
   },
   {
@@ -25,7 +25,7 @@ const successStories = [
       'Status: Network Partner (MOU)',
       'Impact: Providing access to 2,000+ researchers for pilot testing and consortium formation'
     ],
-    color: 'lavender' as const,
+    color: 'slate' as const,
     type: 'partnership' as const
   },
   {
@@ -37,7 +37,7 @@ const successStories = [
       'Status: Pilot Partner',
       'Result: Collaborating on Erasmus+ "Digital Youth" framework proposals'
     ],
-    color: 'mint' as const,
+    color: 'sky' as const,
     type: 'successStory' as const
   },
   {
@@ -49,7 +49,7 @@ const successStories = [
       'Status: Pilot Partner',
       'Result: Leveraging InsightMatches to identify "Health Cluster" opportunities in mental health tech'
     ],
-    color: 'lavender' as const,
+    color: 'slate' as const,
     type: 'successStory' as const
   },
   {
@@ -176,7 +176,7 @@ export const MovingCarousel: React.FC = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-mint-500 w-8' 
+                      ? 'bg-sky-500 w-8' 
                       : 'bg-gray-400/50 w-2 hover:bg-gray-400/70'
                   }`}
                 />
@@ -202,8 +202,8 @@ export const MovingCarousel: React.FC = () => {
                     <div className={`
                       glassmorphic p-4 sm:p-6 rounded-2xl h-full flex flex-col
                       border-l-4 ${
-                        story.color === 'mint' ? 'border-l-mint-500' :
-                        story.color === 'lavender' ? 'border-l-lavender-500' :
+                        story.color === 'sky' ? 'border-l-sky-500' :
+                        story.color === 'slate' ? 'border-l-slate-500' :
                         'border-l-gold-500'
                       }
                       hover:shadow-xl transition-all duration-300
@@ -214,8 +214,8 @@ export const MovingCarousel: React.FC = () => {
                           {getCardTypeText(story.type)}
                         </span>
                         <Icon className={`w-5 h-5 ${
-                          story.color === 'mint' ? 'text-mint-500' :
-                          story.color === 'lavender' ? 'text-lavender-500' :
+                          story.color === 'sky' ? 'text-sky-500' :
+                          story.color === 'slate' ? 'text-slate-500' :
                           'text-gold-500'
                         }`} />
                       </div>
@@ -238,8 +238,8 @@ export const MovingCarousel: React.FC = () => {
                           <span 
                             key={tagIndex}
                             className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium ${
-                              story.color === 'mint' ? 'bg-mint-100 text-mint-700 dark:bg-mint-900/30 dark:text-mint-300' :
-                              story.color === 'lavender' ? 'bg-lavender-100 text-lavender-700 dark:bg-lavender-900/30 dark:text-lavender-300' :
+                              story.color === 'sky' ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300' :
+                              story.color === 'slate' ? 'bg-slate-100 text-slate-700 dark:bg-slate-900/30 dark:text-slate-300' :
                               'bg-gold-100 text-gold-700 dark:bg-gold-900/30 dark:text-gold-300'
                             }`}
                           >
@@ -251,8 +251,8 @@ export const MovingCarousel: React.FC = () => {
                       <div className="flex items-center justify-between mt-auto">
                         <div className="flex items-center gap-2">
                           <div className={`w-2 h-2 rounded-full ${
-                            story.color === 'mint' ? 'bg-mint-500' :
-                            story.color === 'lavender' ? 'bg-lavender-500' :
+                            story.color === 'sky' ? 'bg-sky-500' :
+                            story.color === 'slate' ? 'bg-slate-500' :
                             'bg-gold-500'
                           }`} />
                           <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
@@ -274,7 +274,7 @@ export const MovingCarousel: React.FC = () => {
           <div className="mt-6">
             <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1">
               <div 
-                className="bg-gradient-to-r from-mint-500 to-lavender-500 h-1 rounded-full transition-all duration-700"
+                className="bg-gradient-to-r from-sky-500 to-slate-500 h-1 rounded-full transition-all duration-700"
                 style={{ width: `${((currentIndex + 1) / (maxIndex + 1)) * 100}%` }}
               />
             </div>

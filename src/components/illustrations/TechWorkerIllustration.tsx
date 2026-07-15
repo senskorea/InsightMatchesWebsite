@@ -13,7 +13,7 @@ export const TechWorkerIllustration: React.FC<TechWorkerIllustrationProps> = ({ 
         {/* Proposal Writing Interface Mockup */}
         <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:scale-105 transition-transform duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-mint-500 to-lavender-500 p-4">
+          <div className="bg-gradient-to-r from-sky-500 to-slate-500 p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4 text-white" />
@@ -30,7 +30,7 @@ export const TechWorkerIllustration: React.FC<TechWorkerIllustrationProps> = ({ 
               <span className="text-xs font-medium text-gray-700 dark:text-gray-300">73%</span>
             </div>
             <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-              <div className="h-2 rounded-full bg-gradient-to-r from-mint-500 to-lavender-500" style={{ width: '73%' }}></div>
+              <div className="h-2 rounded-full bg-gradient-to-r from-sky-500 to-slate-500" style={{ width: '73%' }}></div>
             </div>
           </div>
           
@@ -49,7 +49,7 @@ export const TechWorkerIllustration: React.FC<TechWorkerIllustrationProps> = ({ 
                 status: 'writing',
                 words: '1,240/2,000',
                 icon: Edit3,
-                color: 'text-mint-500'
+                color: 'text-sky-500'
               },
               { 
                 section: 'Budget Planning',
@@ -71,7 +71,7 @@ export const TechWorkerIllustration: React.FC<TechWorkerIllustrationProps> = ({ 
                   section.status === 'complete' 
                     ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
                     : section.status === 'writing'
-                    ? 'bg-mint-100 text-mint-700 dark:bg-mint-900/30 dark:text-mint-400'
+                    ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400'
                     : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
                 }`}>
                   {section.status}
@@ -83,7 +83,7 @@ export const TechWorkerIllustration: React.FC<TechWorkerIllustrationProps> = ({ 
           {/* AI Suggestions */}
           <div className="p-4 border-t border-gray-100 dark:border-gray-700">
             <div className="flex items-center gap-2 mb-2">
-              <BarChart3 className="w-3 h-3 text-lavender-500" />
+              <BarChart3 className="w-3 h-3 text-slate-500" />
               <span className="text-xs font-medium text-gray-700 dark:text-gray-300">AI Quality Score</span>
             </div>
             <div className="text-2xl font-bold gradient-text">8.7/10</div>

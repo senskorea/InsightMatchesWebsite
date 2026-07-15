@@ -104,7 +104,7 @@ export const StatisticsCounter: React.FC = () => {
   }, [t, currentLanguage]);
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-mint-50/30 to-lavender-50/20 dark:from-charcoal-900/20 dark:to-charcoal-800/20">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-sky-50/30 to-slate-50/20 dark:from-slate-900/20 dark:to-slate-800/20">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-3 sm:mb-4 px-2">
@@ -119,9 +119,9 @@ export const StatisticsCounter: React.FC = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl glassmorphic hover:shadow-xl hover:shadow-mint-500/10 transition-all duration-300 hover:scale-105 group"
+              className="text-center p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl glassmorphic hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 hover:scale-105 group"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mx-auto mb-4 sm:mb-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-mint-500 to-lavender-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mx-auto mb-4 sm:mb-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-sky-500 to-slate-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
               </div>
               <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold gradient-text mb-2">

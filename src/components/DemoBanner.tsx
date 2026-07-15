@@ -63,7 +63,7 @@ const DemoBanner = () => {
         <div
           role="region"
           aria-label="Platform demo"
-          className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-mint-600 to-emerald-600 text-white shadow-sm"
+          className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-sky-600 to-emerald-600 text-white shadow-sm"
           style={{ height: BANNER_HEIGHT }}
         >
           <div className="max-w-7xl mx-auto px-3 sm:px-6 h-full flex items-center justify-between gap-3">

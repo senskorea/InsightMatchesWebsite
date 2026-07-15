@@ -74,15 +74,15 @@ export default function Referral() {
       />
       <Navbar />
 
-      <main className="pt-20 md:pt-24 bg-white dark:bg-charcoal-900">
+      <main className="pt-20 md:pt-24 bg-white dark:bg-slate-900">
         {/* Hero */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-mint-600 dark:text-mint-400 mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-sky-600 dark:text-sky-400 mb-4">
             Partner & Referral Program
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
             Refer InsightMatches.<br />
-            <span className="bg-gradient-to-r from-mint-500 to-lavender-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
               Earn 10% every time.
             </span>
           </h1>
@@ -92,14 +92,14 @@ export default function Referral() {
           </p>
           <a
             href="#join"
-            className="inline-block mt-8 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-mint-500 to-lavender-500 text-white shadow-lg hover:shadow-glow transition-all hover:scale-105"
+            className="inline-block mt-8 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-sky-500 to-slate-500 text-white shadow-lg hover:shadow-glow transition-all hover:scale-105"
           >
             Become a Partner
           </a>
         </section>
 
         {/* How it works */}
-        <section className="border-y border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800/40 py-16 md:py-20">
+        <section className="border-y border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800/40 py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
               How it works
@@ -108,13 +108,13 @@ export default function Referral() {
               {steps.map((s, i) => (
                 <div
                   key={s.title}
-                  className="bg-white dark:bg-charcoal-900 rounded-2xl p-8 border border-gray-200 dark:border-charcoal-700 shadow-sm"
+                  className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-sm"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-mint-500 to-lavender-500 text-white flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-slate-500 text-white flex items-center justify-center font-bold">
                       {i + 1}
                     </div>
-                    <s.icon className="w-5 h-5 text-mint-600 dark:text-mint-400" />
+                    <s.icon className="w-5 h-5 text-sky-600 dark:text-sky-400" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     {s.title}
@@ -135,8 +135,8 @@ export default function Referral() {
             No tiers. No points. Just a straightforward 10% commission on the annual
             subscription fee for every successful referral.
           </p>
-          <div className="mt-10 inline-flex flex-col items-center px-12 py-10 rounded-3xl bg-gradient-to-br from-mint-500/10 to-lavender-500/10 border border-mint-500/20">
-            <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-mint-500 to-lavender-500 bg-clip-text text-transparent">
+          <div className="mt-10 inline-flex flex-col items-center px-12 py-10 rounded-3xl bg-gradient-to-br from-sky-500/10 to-slate-500/10 border border-sky-500/20">
+            <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
               10%
             </span>
             <span className="mt-2 text-sm font-medium tracking-wide uppercase text-gray-700 dark:text-gray-300">
@@ -147,10 +147,10 @@ export default function Referral() {
 
         {/* Form */}
         <section id="join" className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="rounded-2xl border border-gray-200 dark:border-charcoal-700 bg-white dark:bg-charcoal-900 shadow-xl p-8 md:p-10">
+          <div className="rounded-2xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-xl p-8 md:p-10">
             {submitted ? (
               <div className="text-center py-8">
-                <CheckCircle2 className="w-14 h-14 mx-auto text-mint-500 mb-4" />
+                <CheckCircle2 className="w-14 h-14 mx-auto text-sky-500 mb-4" />
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   You're in.
                 </h3>
@@ -199,7 +199,7 @@ export default function Referral() {
                   <Button
                     type="submit"
                     disabled={submitting}
-                    className="w-full bg-gradient-to-r from-mint-500 to-lavender-500 text-white font-semibold py-6 rounded-lg hover:shadow-glow"
+                    className="w-full bg-gradient-to-r from-sky-500 to-slate-500 text-white font-semibold py-6 rounded-lg hover:shadow-glow"
                   >
                     {submitting ? "Submitting…" : "Generate my referral link"}
                   </Button>

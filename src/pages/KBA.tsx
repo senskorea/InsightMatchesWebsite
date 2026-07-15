@@ -9,7 +9,7 @@ const KBA = () => {
           <div className="flex justify-center mb-4">
             <Logo />
           </div>
-          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
+          <h1 className="font-inter text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
             KBA Trend Platform Proposal Comparison
           </h1>
           <p className="font-inter text-lg text-muted-foreground font-medium">
@@ -28,7 +28,7 @@ const KBA = () => {
 
         {/* Comparison Table Section */}
         <section className="bg-card rounded-3xl border border-border shadow-lg overflow-hidden">
-          <h2 className="font-playfair text-3xl font-bold text-foreground px-10 pt-10 pb-4 border-b-4 border-primary">
+          <h2 className="font-inter text-3xl font-bold text-foreground px-10 pt-10 pb-4 border-b-4 border-primary">
             Key Differences Explained
           </h2>
 

@@ -27,7 +27,7 @@ export const FunnelSteps: React.FC = () => {
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold tracking-widest uppercase text-mint-600 dark:text-mint-400 mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-sky-600 dark:text-sky-400 mb-3">
             {t('funnelEyebrow')}
           </p>
           <h2 className="font-inter text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
@@ -44,7 +44,7 @@ export const FunnelSteps: React.FC = () => {
                 className="relative rounded-2xl border border-border bg-card p-6 lg:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-mint-500 to-lavender-500 text-white font-bold text-lg shadow-md">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-slate-500 text-white font-bold text-lg shadow-md">
                     {idx + 1}
                   </div>
                   <Icon className="w-5 h-5 text-muted-foreground" />
@@ -66,7 +66,7 @@ export const FunnelSteps: React.FC = () => {
         <div className="mt-12 text-center">
           <a
             href="#features"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-charcoal-900 hover:opacity-90 shadow-lg transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-lg transition-all duration-300"
           >
             {t('ctaSeeHowItWorks')}
             <ArrowRight className="w-5 h-5" />

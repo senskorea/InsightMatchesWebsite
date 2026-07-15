@@ -52,8 +52,8 @@ export const LanguageSelector: React.FC = () => {
           />
           <div className="
             absolute top-full right-0 mt-2 py-2 w-40 sm:w-48
-            bg-white dark:bg-charcoal-800 rounded-lg shadow-xl
-            border border-gray-200 dark:border-charcoal-600
+            bg-white dark:bg-slate-800 rounded-lg shadow-xl
+            border border-gray-200 dark:border-slate-600
             z-20
           ">
             {languages.map((lang) => (
@@ -62,9 +62,9 @@ export const LanguageSelector: React.FC = () => {
                 onClick={() => handleLanguageSelect(lang.code)}
                 className={`
                   w-full flex items-center gap-3 px-4 py-2 text-left
-                  hover:bg-gray-100 dark:hover:bg-charcoal-700
+                  hover:bg-gray-100 dark:hover:bg-slate-700
                   transition-colors duration-150
-                  ${currentLanguage === lang.code ? 'bg-mint-50 dark:bg-mint-900/20 text-mint-600 dark:text-mint-400' : ''}
+                  ${currentLanguage === lang.code ? 'bg-sky-50 dark:bg-sky-900/20 text-sky-600 dark:text-sky-400' : ''}
                 `}
               >
                 <span className="text-lg">{lang.flag}</span>

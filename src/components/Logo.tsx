@@ -40,7 +40,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'standard', className = ''
     <div className={`inline-flex items-center ${config.gap} transition-all duration-300 hover:-translate-y-0.5 ${className}`}>
       <div className={`
         ${config.iconSize} ${config.iconRadius}
-        bg-charcoal-900 dark:bg-charcoal-800
+        bg-slate-900 dark:bg-slate-800
         flex items-center justify-center
         shadow-lg hover:shadow-xl
         transition-all duration-300 relative overflow-hidden
@@ -63,7 +63,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'standard', className = ''
         <div className={`
           font-bold ${config.textSize}
           tracking-tight whitespace-nowrap
-          text-charcoal-900 dark:text-white
+          text-slate-900 dark:text-white
         `}>
           Insight<span className="text-sky-500">Matches</span>
         </div>

@@ -12,7 +12,7 @@ const SignalBars = () => (
     {[8, 12, 16, 20, 24].map((h, i) => (
       <div
         key={i}
-        className="w-[4px] rounded-full bg-gradient-to-t from-mint-500 to-lavender-500 animate-pulse"
+        className="w-[4px] rounded-full bg-gradient-to-t from-sky-500 to-slate-500 animate-pulse"
         style={{ height: `${h}px`, animationDelay: `${i * 0.15}s` }}
       />
     ))}
@@ -37,11 +37,11 @@ export const SensPopupModal = () => {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { if (!open) handleClose(); }}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0 gap-0">
-        <DialogHeader className="p-6 pb-4 bg-gradient-to-r from-mint-500/10 to-lavender-500/10 border-b border-border">
+        <DialogHeader className="p-6 pb-4 bg-gradient-to-r from-sky-500/10 to-slate-500/10 border-b border-border">
           <SignalBars />
-          <p className="text-xs font-bold uppercase tracking-widest text-mint-500 text-center">Now Live</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-sky-500 text-center">Now Live</p>
           <DialogTitle className="font-inter text-2xl sm:text-3xl font-bold text-center">
-            <span className="bg-gradient-to-r from-mint-500 via-lavender-500 to-gold-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-500 via-slate-500 to-gold-500 bg-clip-text text-transparent">
               Introducing SENS
             </span>
             <br />
@@ -61,7 +61,7 @@ export const SensPopupModal = () => {
               { icon: Radio, label: 'Real-time' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted text-xs font-medium text-foreground border border-border">
-                <Icon className="w-3.5 h-3.5 text-mint-500" /> {label}
+                <Icon className="w-3.5 h-3.5 text-sky-500" /> {label}
               </span>
             ))}
           </div>
@@ -69,12 +69,12 @@ export const SensPopupModal = () => {
           {/* Highlight cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <div className="bg-card border border-border rounded-lg p-4 text-center">
-              <Users className="w-6 h-6 text-lavender-500 mx-auto mb-2" />
+              <Users className="w-6 h-6 text-slate-500 mx-auto mb-2" />
               <h4 className="font-semibold text-sm text-foreground mb-1">Instant Connections</h4>
               <p className="text-xs text-muted-foreground">Tap to exchange contacts — no apps, no friction</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-4 text-center">
-              <Award className="w-6 h-6 text-mint-500 mx-auto mb-2" />
+              <Award className="w-6 h-6 text-sky-500 mx-auto mb-2" />
               <h4 className="font-semibold text-sm text-foreground mb-1">Rewards & Badges</h4>
               <p className="text-xs text-muted-foreground">Gamified engagement that drives participation</p>
             </div>

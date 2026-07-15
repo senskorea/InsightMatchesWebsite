@@ -13,7 +13,7 @@ export const ScientistIllustration: React.FC<ScientistIllustrationProps> = ({ cl
         {/* Partner Network Visualization Mockup */}
         <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:scale-105 transition-transform duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-mint-500 to-lavender-500 p-4">
+          <div className="bg-gradient-to-r from-sky-500 to-slate-500 p-4">
             <div className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-white" />
               <h3 className="text-white font-semibold text-sm">Partner Network</h3>
@@ -24,7 +24,7 @@ export const ScientistIllustration: React.FC<ScientistIllustrationProps> = ({ cl
           <div className="p-6 relative">
             {/* Central Node (Your Organization) */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-12 h-12 bg-gradient-to-br from-mint-500 to-lavender-500 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-slate-500 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xs">YOU</span>
               </div>
             </div>
@@ -32,7 +32,7 @@ export const ScientistIllustration: React.FC<ScientistIllustrationProps> = ({ cl
             {/* Partner Nodes */}
             <svg className="w-full h-32" viewBox="0 0 200 120">
               {/* Connection Lines */}
-              <g stroke="currentColor" strokeWidth="1" className="text-mint-300 dark:text-mint-600" opacity="0.5">
+              <g stroke="currentColor" strokeWidth="1" className="text-sky-300 dark:text-sky-600" opacity="0.5">
                 <line x1="100" y1="60" x2="60" y2="30" />
                 <line x1="100" y1="60" x2="140" y2="30" />
                 <line x1="100" y1="60" x2="60" y2="90" />
@@ -55,14 +55,14 @@ export const ScientistIllustration: React.FC<ScientistIllustrationProps> = ({ cl
                     cx={partner.x} 
                     cy={partner.y} 
                     r="12" 
-                    className="fill-lavender-200 dark:fill-lavender-800 stroke-lavender-400 dark:stroke-lavender-600" 
+                    className="fill-slate-200 dark:fill-slate-800 stroke-slate-400 dark:stroke-slate-600" 
                     strokeWidth="2"
                   />
                   <text 
                     x={partner.x} 
                     y={partner.y + 2} 
                     textAnchor="middle" 
-                    className="text-xs font-medium fill-lavender-700 dark:fill-lavender-300"
+                    className="text-xs font-medium fill-slate-700 dark:fill-slate-300"
                   >
                     {partner.label}
                   </text>
@@ -83,7 +83,7 @@ export const ScientistIllustration: React.FC<ScientistIllustrationProps> = ({ cl
                   <div className="text-xs font-medium text-gray-900 dark:text-white">{partner.name}</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">{partner.expertise}</div>
                 </div>
-                <div className="text-xs font-bold text-mint-600 dark:text-mint-400">{partner.match}</div>
+                <div className="text-xs font-bold text-sky-600 dark:text-sky-400">{partner.match}</div>
               </div>
             ))}
           </div>

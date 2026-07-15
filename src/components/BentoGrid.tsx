@@ -3,15 +3,15 @@ import { Key, Shield, Download, Filter, Users, Zap } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const colorClasses = {
-  mint: {
-    bg: 'bg-mint-100 dark:bg-mint-900/30',
-    icon: 'text-mint-600 dark:text-mint-400',
-    border: 'hover:border-mint-300 dark:hover:border-mint-700',
+  sky: {
+    bg: 'bg-sky-100 dark:bg-sky-900/30',
+    icon: 'text-sky-600 dark:text-sky-400',
+    border: 'hover:border-sky-300 dark:hover:border-sky-700',
   },
-  lavender: {
-    bg: 'bg-lavender-100 dark:bg-lavender-900/30',
-    icon: 'text-lavender-600 dark:text-lavender-400',
-    border: 'hover:border-lavender-300 dark:hover:border-lavender-700',
+  slate: {
+    bg: 'bg-slate-100 dark:bg-slate-900/30',
+    icon: 'text-slate-600 dark:text-slate-400',
+    border: 'hover:border-slate-300 dark:hover:border-slate-700',
   },
   gold: {
     bg: 'bg-gold-100 dark:bg-gold-900/30',
@@ -28,13 +28,13 @@ export const BentoGrid = () => {
       icon: Zap,
       title: t('velocityTitle'),
       description: t('velocityDesc'),
-      color: 'mint' as const,
+      color: 'sky' as const,
     },
     {
       icon: Shield,
       title: t('complianceTitle'),
       description: t('complianceDesc'),
-      color: 'lavender' as const,
+      color: 'slate' as const,
     },
     {
       icon: Key,
@@ -46,13 +46,13 @@ export const BentoGrid = () => {
       icon: Download,
       title: t('exportTitle'),
       description: t('exportDesc'),
-      color: 'mint' as const,
+      color: 'sky' as const,
     },
     {
       icon: Filter,
       title: t('filterTitle'),
       description: t('filterDesc'),
-      color: 'lavender' as const,
+      color: 'slate' as const,
     },
     {
       icon: Users,

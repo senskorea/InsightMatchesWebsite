@@ -7,7 +7,7 @@ const NetworkBusan = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-mint-50/30 to-lavender-50/20 dark:from-charcoal-900 dark:via-charcoal-800 dark:to-charcoal-700">
+    <div className="min-h-screen bg-gradient-to-br from-white via-sky-50/30 to-slate-50/20 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
       <Navbar />
       
       <div className="pt-20 pb-16 lg:pt-32 lg:pb-24">
@@ -47,13 +47,13 @@ const NetworkBusan = () => {
               <div className="space-y-3">
                 <a 
                   href="#" 
-                  className="block px-4 py-2 bg-mint-500 text-white rounded-lg hover:bg-mint-600 transition-colors text-center"
+                  className="block px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors text-center"
                 >
                   {t('cafeKakaoMaps')}
                 </a>
                 <a 
                   href="#" 
-                  className="block px-4 py-2 bg-lavender-500 text-white rounded-lg hover:bg-lavender-600 transition-colors text-center"
+                  className="block px-4 py-2 bg-slate-500 text-white rounded-lg hover:bg-slate-600 transition-colors text-center"
                 >
                   {t('cafeGoogleMaps')}
                 </a>

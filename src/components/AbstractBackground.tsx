@@ -5,8 +5,8 @@ export const AbstractBackground: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Gradient Orbs */}
-      <div className="absolute top-20 -left-20 w-72 h-72 bg-gradient-radial from-mint-400/20 to-transparent rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 -right-20 w-96 h-96 bg-gradient-radial from-lavender-400/15 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 -left-20 w-72 h-72 bg-gradient-radial from-sky-400/20 to-transparent rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 -right-20 w-96 h-96 bg-gradient-radial from-slate-400/15 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-radial from-gold-400/10 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       
       {/* Grid Pattern */}

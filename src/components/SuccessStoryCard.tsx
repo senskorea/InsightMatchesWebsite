@@ -8,7 +8,7 @@ interface SuccessStoryCardProps {
   tags: string[];
   about: string;
   whatWeDid: string[];
-  color: 'mint' | 'lavender' | 'gold';
+  color: 'sky' | 'slate' | 'gold';
 }
 
 export const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
@@ -22,17 +22,17 @@ export const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   const colorClasses = {
-    mint: {
-      border: 'border-mint-200 dark:border-mint-800',
-      accent: 'text-mint-600 dark:text-mint-400',
-      bg: 'bg-mint-50 dark:bg-mint-900/20',
-      tag: 'bg-mint-100 dark:bg-mint-900/40 text-mint-700 dark:text-mint-300'
+    sky: {
+      border: 'border-sky-200 dark:border-sky-800',
+      accent: 'text-sky-600 dark:text-sky-400',
+      bg: 'bg-sky-50 dark:bg-sky-900/20',
+      tag: 'bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300'
     },
-    lavender: {
-      border: 'border-lavender-200 dark:border-lavender-800',
-      accent: 'text-lavender-600 dark:text-lavender-400',
-      bg: 'bg-lavender-50 dark:bg-lavender-900/20',
-      tag: 'bg-lavender-100 dark:bg-lavender-900/40 text-lavender-700 dark:text-lavender-300'
+    slate: {
+      border: 'border-slate-200 dark:border-slate-800',
+      accent: 'text-slate-600 dark:text-slate-400',
+      bg: 'bg-slate-50 dark:bg-slate-900/20',
+      tag: 'bg-slate-100 dark:bg-slate-900/40 text-slate-700 dark:text-slate-300'
     },
     gold: {
       border: 'border-gold-200 dark:border-gold-800',
@@ -98,8 +98,8 @@ export const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
             {whatWeDid.map((item, index) => (
               <li key={index} className="flex items-start gap-2">
                 <div className={`mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${
-                  color === 'mint' ? 'from-mint-500 to-mint-600' :
-                  color === 'lavender' ? 'from-lavender-500 to-lavender-600' :
+                  color === 'sky' ? 'from-sky-500 to-sky-600' :
+                  color === 'slate' ? 'from-slate-500 to-slate-600' :
                   'from-gold-500 to-gold-600'
                 } flex-shrink-0`}></div>
                 <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>

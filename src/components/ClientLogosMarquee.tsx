@@ -1,29 +1,19 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-import kcell from '../assets/clients/kcell.png.asset.json';
-import latvia from '../assets/clients/latvia.png.asset.json';
-import latvijas from '../assets/clients/latvia_university.png.asset.json';
-import riga from '../assets/clients/riga.png.asset.json';
-import haii from '../assets/clients/haii.png.asset.json';
-import cogito from '../assets/clients/cogito.png.asset.json';
-import changwon from '../assets/clients/changwon.png.asset.json';
-import stmicro from '../assets/clients/stmicro.png.asset.json';
-import speakduo from '../assets/clients/speakduo.png.asset.json';
-import pasteur from '../assets/clients/pasteur.png.asset.json';
 
 type ClientLogo = { name: string; src: string };
 
 const logos: ClientLogo[] = [
-  { name: 'Kcell', src: kcell.url },
-  { name: 'University of Latvia', src: latvia.url },
-  { name: 'Latvijas Universitāte', src: latvijas.url },
-  { name: 'Riga Technical University', src: riga.url },
-  { name: 'HAII Corp', src: haii.url },
-  { name: 'Cogito', src: cogito.url },
-  { name: 'Changwon National University', src: changwon.url },
-  { name: 'STMicroelectronics', src: stmicro.url },
-  { name: 'SpeakDuo', src: speakduo.url },
-  { name: 'Institut Pasteur', src: pasteur.url },
+  { name: 'Kcell', src: '/clients/kcell.png' },
+  { name: 'University of Latvia', src: '/clients/latvia.png' },
+  { name: 'Latvijas Universitāte', src: '/clients/latvia_university.png' },
+  { name: 'Riga Technical University', src: '/clients/riga.png' },
+  { name: 'HAII Corp', src: '/clients/haii.png' },
+  { name: 'Cogito', src: '/clients/cogito.png' },
+  { name: 'Changwon National University', src: '/clients/changwon.png' },
+  { name: 'STMicroelectronics', src: '/clients/stmicro.png' },
+  { name: 'SpeakDuo', src: '/clients/speakduo.png' },
+  { name: 'Institut Pasteur', src: '/clients/pasteur.png' },
 ];
 
 export const ClientLogosMarquee: React.FC = () => {
@@ -64,7 +54,7 @@ export const ClientLogosMarquee: React.FC = () => {
                   className="max-h-12 md:max-h-14 max-w-[80%] object-contain pointer-events-none"
                   loading="lazy"
                 />
-                <span className="mt-2 text-[11px] md:text-xs font-medium text-charcoal-700 text-center leading-tight line-clamp-2 pointer-events-none">
+                <span className="mt-2 text-[11px] md:text-xs font-medium text-slate-700 text-center leading-tight line-clamp-2 pointer-events-none">
                   {logo.name}
                 </span>
               </div>

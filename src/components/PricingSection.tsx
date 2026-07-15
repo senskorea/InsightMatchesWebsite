@@ -7,20 +7,20 @@ import { formatTierPrice } from '@/lib/pricing';
 
 const tierStyles = {
   starter: {
-    topBorder: 'border-t-mint-400 dark:border-t-mint-500',
-    iconBg: 'bg-mint-50 dark:bg-mint-900/20',
-    iconBorder: 'border-mint-200 dark:border-mint-800',
-    iconText: 'text-mint-600 dark:text-mint-400',
-    check: 'text-mint-500 dark:text-mint-400',
+    topBorder: 'border-t-sky-400 dark:border-t-sky-500',
+    iconBg: 'bg-sky-50 dark:bg-sky-900/20',
+    iconBorder: 'border-sky-200 dark:border-sky-800',
+    iconText: 'text-sky-600 dark:text-sky-400',
+    check: 'text-sky-500 dark:text-sky-400',
     cta:
-      'bg-secondary border border-mint-400 text-mint-700 dark:text-mint-300 hover:bg-mint-50 dark:hover:bg-mint-900/20',
+      'bg-secondary border border-sky-400 text-sky-700 dark:text-sky-300 hover:bg-sky-50 dark:hover:bg-sky-900/20',
   },
   pro: {
-    topBorder: 'border-t-lavender-500 dark:border-t-lavender-400',
-    iconBg: 'bg-lavender-100/60 dark:bg-lavender-900/30',
-    iconBorder: 'border-lavender-300 dark:border-lavender-700',
-    iconText: 'text-lavender-600 dark:text-lavender-400',
-    check: 'text-lavender-500 dark:text-lavender-400',
+    topBorder: 'border-t-slate-500 dark:border-t-slate-400',
+    iconBg: 'bg-slate-100/60 dark:bg-slate-900/30',
+    iconBorder: 'border-slate-300 dark:border-slate-700',
+    iconText: 'text-slate-600 dark:text-slate-400',
+    check: 'text-slate-500 dark:text-slate-400',
     cta: 'bg-primary hover:opacity-90 text-primary-foreground shadow-lg',
   },
   enterprise: {
@@ -118,12 +118,12 @@ export const PricingSection = () => {
                 'bg-card rounded-xl shadow-sm p-6 lg:p-8 flex flex-col h-full transition-all duration-300 border-t-4',
                 tier.theme.topBorder,
                 tier.highlighted
-                  ? 'border-2 border-lavender-200 dark:border-lavender-800 relative md:scale-[1.02] lg:scale-105 hover:shadow-xl bg-gradient-to-b from-lavender-50/60 via-card to-card dark:from-lavender-950/25 dark:via-card dark:to-card'
+                  ? 'border-2 border-slate-200 dark:border-slate-800 relative md:scale-[1.02] lg:scale-105 hover:shadow-xl bg-gradient-to-b from-slate-50/60 via-card to-card dark:from-slate-950/25 dark:via-card dark:to-card'
                   : 'border border-border hover:shadow-lg'
               )}
             >
               {tier.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-lavender-500 text-lavender-50 font-semibold text-xs rounded-full shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-slate-500 text-slate-50 font-semibold text-xs rounded-full shadow-lg">
                   {t('pricingRecommended')}
                 </div>
               )}

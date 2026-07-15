@@ -10,7 +10,7 @@ export const LoadingSpinner: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size =
 
   return (
     <div className={`${sizeClasses[size]} animate-spin`}>
-      <div className="w-full h-full border-4 border-gray-200 dark:border-gray-700 border-t-mint-500 rounded-full"></div>
+      <div className="w-full h-full border-4 border-gray-200 dark:border-gray-700 border-t-sky-500 rounded-full"></div>
     </div>
   );
 };
@@ -25,7 +25,7 @@ export const SkeletonLoader: React.FC<{ className?: string }> = ({ className = '
 
 export const PageLoader: React.FC = () => {
   return (
-    <div className="fixed inset-0 bg-white/80 dark:bg-charcoal-900/80 backdrop-blur-sm z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center">
       <div className="text-center space-y-4">
         <LoadingSpinner size="lg" />
         <p className="text-gray-600 dark:text-gray-400 font-medium">Loading amazing content...</p>

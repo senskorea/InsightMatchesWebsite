@@ -27,8 +27,8 @@ export const FeatureBlock: React.FC<FeatureBlockProps> = ({
       {/* Content Side */}
       <div className="flex-1 space-y-6">
         <div className="flex items-center gap-4">
-          <div className="p-3 rounded-xl bg-gradient-to-br from-mint-100 to-lavender-100 dark:from-mint-900/30 dark:to-lavender-900/30">
-            <Icon className="w-8 h-8 text-mint-600 dark:text-mint-400" />
+          <div className="p-3 rounded-xl bg-gradient-to-br from-sky-100 to-slate-100 dark:from-sky-900/30 dark:to-slate-900/30">
+            <Icon className="w-8 h-8 text-sky-600 dark:text-sky-400" />
           </div>
           <h3 className="text-2xl lg:text-3xl font-bold gradient-text">{title}</h3>
         </div>
@@ -40,7 +40,7 @@ export const FeatureBlock: React.FC<FeatureBlockProps> = ({
         <ul className="space-y-3">
           {benefits.map((benefit, index) => (
             <li key={index} className="flex items-start gap-3">
-              <div className="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-mint-500 to-lavender-500 flex-shrink-0"></div>
+              <div className="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-sky-500 to-slate-500 flex-shrink-0"></div>
               <span className="text-gray-700 dark:text-gray-300">{benefit}</span>
             </li>
           ))}
@@ -51,7 +51,7 @@ export const FeatureBlock: React.FC<FeatureBlockProps> = ({
       <div className="flex-1 flex justify-center">
         {illustrationComponent || (
           <div className="w-full max-w-md h-64 rounded-2xl glassmorphic flex items-center justify-center">
-            <Icon className="w-24 h-24 text-mint-400 opacity-50" />
+            <Icon className="w-24 h-24 text-sky-400 opacity-50" />
           </div>
         )}
       </div>
