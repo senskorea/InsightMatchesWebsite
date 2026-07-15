@@ -1,0 +1,47 @@
+[
+  {
+    "id": "linkedin-2026-01",
+    "date": "2026-05-20",
+    "title": {
+      "en": "InsightMatches featured at EU-Korea R&D Day 2026",
+      "fr": "InsightMatches mis en avant à l'EU-Korea R&D Day 2026",
+      "ko": "InsightMatches, 2026 EU-Korea R&D Day에서 소개"
+    },
+    "excerpt": {
+      "en": "We presented our AI matchmaking platform to 200+ EU institutions and Korean SMEs in Busan.",
+      "fr": "Nous avons présenté notre plateforme de matchmaking IA à plus de 200 institutions européennes et PME coréennes à Busan.",
+      "ko": "부산에서 200개 이상의 EU 기관과 한국 중소기업에 AI 매칭 플랫폼을 소개했습니다."
+    },
+    "url": "https://www.linkedin.com/company/insightmatches/"
+  },
+  {
+    "id": "linkedin-2026-02",
+    "date": "2026-04-12",
+    "title": {
+      "en": "SENS pilot program now open to Korean researchers",
+      "fr": "Le programme pilote SENS désormais ouvert aux chercheurs coréens",
+      "ko": "SENS 파일럿 프로그램, 한국 연구자 대상 오픈"
+    },
+    "excerpt": {
+      "en": "Apply to join our SENS pilot and access Horizon Europe consortium-building tools.",
+      "fr": "Candidatez au pilote SENS et accédez aux outils de construction de consortiums Horizon Europe.",
+      "ko": "SENS 파일럿에 지원하여 Horizon Europe 컨소시엄 구축 도구를 이용하세요."
+    },
+    "url": "https://www.linkedin.com/company/insightmatches/"
+  },
+  {
+    "id": "linkedin-2026-03",
+    "date": "2026-03-03",
+    "title": {
+      "en": "New EU-Korea Digital Partnership briefing published",
+      "fr": "Nouvelle note d'information sur le partenariat numérique UE-Corée",
+      "ko": "EU-한국 디지털 파트너십 브리핑 신규 발간"
+    },
+    "excerpt": {
+      "en": "Read our deep-dive on joint MSIT/MOTIE–EC calls in semis, 6G, AI and quantum.",
+      "fr": "Lisez notre analyse approfondie des appels conjoints MSIT/MOTIE–CE dans les semi-conducteurs, la 6G, l'IA et le quantique.",
+      "ko": "반도체, 6G, AI, 양자 분야의 MSIT/MOTIE–EC 공동 공모에 대한 심층 분석을 확인하세요."
+    },
+    "url": "https://www.linkedin.com/company/insightmatches/"
+  }
+]

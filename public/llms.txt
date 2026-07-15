@@ -1,0 +1,34 @@
+# InsightMatches
+
+> AI platform connecting Korean researchers, universities and SMEs with Horizon Europe consortium partners and EU R&D funding opportunities.
+
+InsightMatches is a multilingual (English, Korean, French) SaaS that uses AI to match research teams with relevant Horizon Europe calls, identify consortium partners across EU institutions, and accelerate proposal preparation. It also powers SENS, an event matchmaking tool for EU-Korea R&D events.
+
+## Pages
+
+- [Home](/): AI matchmaking for Horizon Europe consortia and EU-Korea R&D funding.
+- [Platform](/platform): Product features — funding discovery, consortium building, AI proposal drafting.
+- [About](/about): Company mission, story, and partner network bridging Europe and Asia.
+- [Resources](/resources): Hub of guides, insights and news for EU R&D funding.
+- [Horizon Europe Guide](/resources/horizon-europe): In-depth overview of Horizon Europe for non-EU researchers.
+- [Horizon Europe × Korea Guide](/resources/guide-horizon-europe-korea): Practical guide for Korean participants in Horizon Europe.
+- [AI Tools for EU-Korea Consortia](/resources/ai-tools-eu-korea-consortium): How AI accelerates EU-Korea consortium building.
+- [EU-Korea Digital Partnership](/resources/eu-korea-digital-partnership): Background on the EU-Korea Digital Partnership and funding implications.
+- [Insights](/resources/insights): Analysis and editorial on EU R&D funding trends.
+- [News](/resources/news): Announcements from the EU research funding ecosystem.
+- [Notice Board](/notice-board): Announcements, calls, and updates from the InsightMatches team.
+- [Education](/education): Training and educational resources on EU funding.
+- [Network Busan](/network-busan): EU-Korea innovation network activity in Busan.
+- [Dissemination](/dissemination): Communication, dissemination and exploitation services.
+- [EU PIC Information](/eu-pic): Legal information (PIC, OID) for EU proposals.
+- [R&D Day 2026](/rndday): Archive page for the R&D Day event.
+- [Gender Equality Plan](/about/gep): Public Gender Equality Plan.
+
+## Korean
+
+- [Home (한국어)](/ko/): InsightMatches in Korean.
+- [Horizon Europe (한국어)](/ko/horizon-europe): Horizon Europe overview in Korean.
+
+## Optional
+
+- [KBA](/kba): KBA partnership page.
