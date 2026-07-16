@@ -210,7 +210,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/InsightMatchesWebsite/">
         <DemoBanner />
         <AppContent />
       </BrowserRouter>
