@@ -1,8 +1,8 @@
 # InsightMatches
 
-> AI platform connecting Korean researchers, universities and SMEs with Horizon Europe consortium partners and EU R&D funding opportunities.
+> AI platform connecting Korean researchers, universities and SMEs with EU R&D funding partners across Horizon Europe, EIC, Erasmus+, and Interreg programmes.
 
-InsightMatches is a multilingual (English, Korean, French) SaaS that uses AI to match research teams with relevant Horizon Europe calls, identify consortium partners across EU institutions, and accelerate proposal preparation. It also powers SENS, an event matchmaking tool for EU-Korea R&D events.
+InsightMatches is a multilingual (English, Korean, French) SaaS that uses AI to match research teams with relevant EU R&D calls across four major programmes: Horizon Europe, European Innovation Council (EIC), Erasmus+ (CBHE), and Interreg. It identifies consortium partners across EU institutions and accelerates proposal preparation. It also powers SENS, an event matchmaking tool for EU-Korea R&D events.
 
 ## Pages
 

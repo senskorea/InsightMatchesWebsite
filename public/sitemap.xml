@@ -7,12 +7,16 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightmatches.com/" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/platform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/platform" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/platform" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/kba</loc>
@@ -23,21 +27,33 @@
     <loc>https://www.insightmatches.com/dissemination</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/dissemination" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/dissemination" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/dissemination" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/resources" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/resources" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources/insights</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/insights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/resources/insights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/resources/insights" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources/news</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/news" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/resources/news" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/resources/news" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources/horizon-europe</loc>
@@ -45,32 +61,48 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/horizon-europe" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/horizon-europe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/horizon-europe" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightmatches.com/resources/horizon-europe" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources/guide-horizon-europe-korea</loc>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/guide-horizon-europe-korea" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/guide-horizon-europe" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/guide-horizon-europe" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources/ai-tools-eu-korea-consortium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/ai-tools-eu-korea-consortium" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/ai-tools-consortium" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/ai-tools-consortium" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/resources/eu-korea-digital-partnership</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/eu-korea-digital-partnership" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/eu-korea-digital-partnership" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/eu-korea-digital-partnership" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/about" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/about" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/about/gep</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/about/gep" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/about/gep" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/about/gep" />
   </url>
   <url>
     <loc>https://www.insightmatches.com/eu-pic</loc>
@@ -88,11 +120,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.insightmatches.com/notice-board</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.insightmatches.com/rndday</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -103,20 +130,9 @@
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightmatches.com/" />
   </url>
-  <url>
-    <loc>https://www.insightmatches.com/ko/horizon-europe</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/horizon-europe" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/horizon-europe" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/horizon-europe" />
-  </url>
-  <url><loc>https://www.insightmatches.com/ko/guide-horizon-europe</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/ai-tools-consortium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/eu-korea-digital-partnership</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/platform</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url>
     <loc>https://www.insightmatches.com/fr/</loc>
     <changefreq>weekly</changefreq>
@@ -124,21 +140,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.insightmatches.com/ko/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightmatches.com/" />
   </url>
-  <url><loc>https://www.insightmatches.com/fr/horizon-europe</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/guide-horizon-europe</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/ai-tools-consortium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/eu-korea-digital-partnership</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/platform</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/dissemination</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/dissemination</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/resources</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/resources</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/resources/insights</loc><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/resources/insights</loc><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/resources/news</loc><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/resources/news</loc><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.insightmatches.com/ko/about/gep</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://www.insightmatches.com/fr/about/gep</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>
