@@ -54,6 +54,9 @@ const Index = () => {
       {/* 2b. Programmes we cover */}
       <ProgrammesStrip />
 
+      {/* 2c. Hard Stats — proof points */}
+      <HardStats />
+
       {/* 3. How it works — 3-step funnel */}
       <div id="how-it-works">
         <FunnelSteps />
@@ -72,10 +75,7 @@ const Index = () => {
       {/* 6. Pricing */}
       <PricingSection />
 
-      {/* 7. Hard Stats Closer - hidden until data is updated */}
-      {/* <HardStats /> */}
-      
-      {/* 8. Final CTA */}
+      {/* 7. Final CTA */}
       <EnhancedCTA />
 
       {/* 9. Footer */}

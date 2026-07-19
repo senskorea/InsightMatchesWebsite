@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const schema = z.object({
   full_name: z.string().trim().min(1, "Required").max(120),
@@ -22,6 +23,7 @@ const schema = z.object({
 });
 
 export default function Referral() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ full_name: "", work_email: "", linkedin_url: "" });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -50,26 +52,26 @@ export default function Referral() {
   const steps = [
     {
       icon: Link2,
-      title: "Sign Up",
-      body: "Join our referral program in seconds. We'll send your unique tracking link.",
+      title: t('step1Title'),
+      body: t('step1Body'),
     },
     {
       icon: Share2,
-      title: "Share",
-      body: "Share your link with researchers, SMEs, or your network who need R&D funding.",
+      title: t('step2Title'),
+      body: t('step2Body'),
     },
     {
       icon: Wallet,
-      title: "Earn 10%",
-      body: "Get 10% of the annual subscription fee for every new customer that signs up.",
+      title: t('step3Title'),
+      body: t('step3Body'),
     },
   ];
 
   return (
     <>
       <SEO
-        title="Referral Program – Earn 10% | InsightMatches"
-        description="Refer deep-tech researchers and SMEs to InsightMatches and earn a 10% commission on their annual subscription."
+        title={t('referralTitle')}
+        description={t('referralDescription')}
         canonical="/referral"
       />
       <Navbar />
@@ -78,23 +80,22 @@ export default function Referral() {
         {/* Hero */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-sky-600 dark:text-sky-400 mb-4">
-            Partner & Referral Program
+            {t('partnerProgram')}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-            Refer InsightMatches.<br />
+            {t('referHeroTitle1')}<br />
             <span className="bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
-              Earn 10% every time.
+              {t('referHeroTitle2')}
             </span>
           </h1>
           <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Help deep-tech researchers and SMEs fast-track their Horizon Europe funding.
-            When they subscribe through your link, you receive a 10% commission on their annual fee.
+            {t('referHeroSubtitle')}
           </p>
           <a
             href="#join"
             className="inline-block mt-8 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-sky-500 to-slate-500 text-white shadow-lg hover:shadow-glow transition-all hover:scale-105"
           >
-            Become a Partner
+            {t('becomePartner')}
           </a>
         </section>
 
@@ -102,7 +103,7 @@ export default function Referral() {
         <section className="border-y border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800/40 py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-              How it works
+              {t('howItWorks')}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {steps.map((s, i) => (
@@ -129,18 +130,17 @@ export default function Referral() {
         {/* Rewards */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-            Simple, transparent rewards
+            {t('transparentRewardsTitle')}
           </h2>
           <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            No tiers. No points. Just a straightforward 10% commission on the annual
-            subscription fee for every successful referral.
+            {t('transparentRewardsDesc')}
           </p>
           <div className="mt-10 inline-flex flex-col items-center px-12 py-10 rounded-3xl bg-gradient-to-br from-sky-500/10 to-slate-500/10 border border-sky-500/20">
-            <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent">
-              10%
+            <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent whitespace-nowrap">
+              10% / 10%
             </span>
             <span className="mt-2 text-sm font-medium tracking-wide uppercase text-gray-700 dark:text-gray-300">
-              Annual fee commission
+              {t('commissionLabel')}
             </span>
           </div>
         </section>
@@ -152,23 +152,23 @@ export default function Referral() {
               <div className="text-center py-8">
                 <CheckCircle2 className="w-14 h-14 mx-auto text-sky-500 mb-4" />
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                  You're in.
+                  {t('formSuccessTitle')}
                 </h3>
                 <p className="mt-3 text-gray-600 dark:text-gray-300">
-                  Thanks for joining. We'll email your unique referral link within 24 hours.
+                  {t('formSuccessDesc')}
                 </p>
               </div>
             ) : (
               <>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  Join the program
+                  {t('joinProgramTitle')}
                 </h2>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Start earning by referring top innovators.
+                  {t('joinProgramDesc')}
                 </p>
                 <form onSubmit={onSubmit} className="mt-6 space-y-4">
                   <div>
-                    <Label htmlFor="full_name">Full name</Label>
+                    <Label htmlFor="full_name">{t('formFullName')}</Label>
                     <Input
                       id="full_name"
                       required
@@ -177,7 +177,7 @@ export default function Referral() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="work_email">Work email</Label>
+                    <Label htmlFor="work_email">{t('formWorkEmail')}</Label>
                     <Input
                       id="work_email"
                       type="email"
@@ -188,7 +188,7 @@ export default function Referral() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="linkedin_url">LinkedIn profile (optional)</Label>
+                    <Label htmlFor="linkedin_url">{t('formLinkedin')}</Label>
                     <Input
                       id="linkedin_url"
                       placeholder="https://linkedin.com/in/…"
@@ -201,7 +201,7 @@ export default function Referral() {
                     disabled={submitting}
                     className="w-full bg-gradient-to-r from-sky-500 to-slate-500 text-white font-semibold py-6 rounded-lg hover:shadow-glow"
                   >
-                    {submitting ? "Submitting…" : "Generate my referral link"}
+                    {submitting ? t('formSubmitting') : t('formSubmit')}
                   </Button>
                 </form>
               </>
