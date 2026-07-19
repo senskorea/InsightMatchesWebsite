@@ -64,6 +64,11 @@ export const Footer: React.FC = () => {
                   {t('educationTitle')}
                 </Link>
               </li>
+              <li>
+                <Link to="/referral" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                  💚 Refer & Earn
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

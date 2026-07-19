@@ -11,6 +11,8 @@ import { ProgrammesStrip } from '../components/ProgrammesStrip';
 import { BentoGrid } from '../components/BentoGrid';
 import { HardStats } from '../components/HardStats';
 import { PricingSection } from '../components/PricingSection';
+import { DataTrustBanner } from '../components/DataTrustBanner';
+import { ConsortiumCollaborationSection } from '../components/ConsortiumCollaborationSection';
 
 import { EnhancedCTA } from '../components/EnhancedCTA';
 import { Footer } from '../components/Footer';
@@ -65,6 +67,8 @@ const Index = () => {
       {/* 4. Product in Action (Top Features) */}
       <ProductFeatures />
 
+      {/* 4b. Consortium Collaboration - Differentiator */}
+      <ConsortiumCollaborationSection />
 
       {/* 5. Bento Box Grid (Everything Else) */}
       <div id="features">
@@ -74,6 +78,9 @@ const Index = () => {
 
       {/* 6. Pricing */}
       <PricingSection />
+
+      {/* 6b. Data Trust & Security */}
+      <DataTrustBanner />
 
       {/* 7. Final CTA */}
       <EnhancedCTA />
