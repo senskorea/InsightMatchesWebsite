@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { supabase } from "@/integrations/supabase/client";
+import { submitRegistration } from "@/lib/submitRegistration";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const schema = z.object({
@@ -24,7 +24,14 @@ const schema = z.object({
 
 export default function Referral() {
   const { t } = useTranslation();
-  const [form, setForm] = useState({ full_name: "", work_email: "", linkedin_url: "" });
+  // company_website_url is a honeypot — hidden from users, discarded server-side
+  // if a bot fills it in. It is deliberately outside the zod schema.
+  const [form, setForm] = useState({
+    full_name: "",
+    work_email: "",
+    linkedin_url: "",
+    company_website_url: "",
+  });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -36,14 +43,16 @@ export default function Referral() {
       return;
     }
     setSubmitting(true);
-    const { error } = await supabase.from("referral_signups").insert({
-      full_name: parsed.data.full_name,
-      work_email: parsed.data.work_email,
+    const result = await submitRegistration({
+      source: "referral",
+      name: parsed.data.full_name,
+      email: parsed.data.work_email,
       linkedin_url: parsed.data.linkedin_url || null,
+      company_website_url: form.company_website_url,
     });
     setSubmitting(false);
-    if (error) {
-      toast.error("Something went wrong. Please try again.");
+    if (!result.ok) {
+      toast.error(result.error);
       return;
     }
     setSubmitted(true);
@@ -167,6 +176,17 @@ export default function Referral() {
                   {t('joinProgramDesc')}
                 </p>
                 <form onSubmit={onSubmit} className="mt-6 space-y-4">
+                  {/* Honeypot — hidden from users and screen readers alike. */}
+                  <input
+                    type="text"
+                    name="company_website_url"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={form.company_website_url}
+                    onChange={(e) => setForm({ ...form, company_website_url: e.target.value })}
+                    className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                  />
                   <div>
                     <Label htmlFor="full_name">{t('formFullName')}</Label>
                     <Input

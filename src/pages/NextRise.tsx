@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { submitRegistration } from "@/lib/submitRegistration";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,7 +11,7 @@ import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/utils";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 
 const RESEARCH_AREAS = [
@@ -69,6 +69,10 @@ const NextRise = () => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  // Honeypot: hidden from humans, irresistible to bots. Submissions that fill
+  // it in are discarded server-side.
+  const [honeypot, setHoneypot] = useState("");
+  const { pathname } = useLocation();
 
   useEffect(() => {
     document.body.style.background = "hsl(var(--background))";
@@ -171,27 +175,33 @@ const NextRise = () => {
     if (otherChecked && otherText.trim()) finalAreas.push(`Other: ${otherText.trim()}`);
 
     setSubmitting(true);
-    const { error } = await supabase.from("nextrise_signups").insert({
-      full_name: fullName.trim(),
+    const result = await submitRegistration({
+      // This component is mounted on BOTH /request-demo and /nextrise (see
+      // App.tsx), so the funnel has to come from the route — hardcoding it
+      // would file every demo request as a NextRise lead.
+      source: pathname.startsWith("/request-demo") ? "demo" : "nextrise",
+      name: fullName.trim(),
       email: email.trim(),
-      company_name: companyName.trim(),
+      organisation: companyName.trim(),
       website: website.trim(),
       role: role.trim(),
       country: country.trim(),
       linkedin_url: linkedin.trim() || null,
       phone: phone.trim() || null,
-      research_areas: finalAreas,
-      other_area: otherChecked ? otherText.trim() || null : null,
+      // "Other: …" is already appended to finalAreas above, so the separate
+      // other_area field the old schema carried is redundant here.
+      programme_interest: finalAreas,
       grant_status: grantStatus.trim(),
-      has_project_idea: hasProjectIdea.trim() || null,
       project_idea: hasProjectIdea === "Yes, I have a project idea" ? projectIdea.trim() || null : null,
+      notes: hasProjectIdea.trim() || null,
+      company_website_url: honeypot,
     });
     setSubmitting(false);
 
-    if (error) {
+    if (!result.ok) {
       toast({
         title: "Something went wrong",
-        description: "Please try again in a moment.",
+        description: result.error,
         variant: "destructive",
       });
       return;
@@ -259,6 +269,17 @@ const NextRise = () => {
 
 
               <form onSubmit={handleSubmit} className="space-y-10" noValidate>
+                {/* Honeypot — hidden from users and screen readers alike. */}
+                <input
+                  type="text"
+                  name="company_website_url"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                />
                 {/* About you */}
                 <section className="space-y-6">
                   <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">

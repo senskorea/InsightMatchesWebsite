@@ -7,6 +7,9 @@ export const translations = {
     successStories: "Success Stories",
     requestDemo: "Request Demo",
     signIn: "Sign In",
+    platformNav: "Platform",
+    pricingNav: "Pricing",
+    resourcesNav: "Resources",
     
     // Pilot Program Banner
     pilotTitle: "Launching the Future:",
@@ -408,6 +411,9 @@ export const translations = {
     successStories: "성공 사례",
     requestDemo: "데모 요청",
     signIn: "로그인",
+    platformNav: "플랫폼",
+    pricingNav: "요금제",
+    resourcesNav: "자료",
     
     // Pilot Program Banner
     pilotTitle: "미래를 향한 도약:",
@@ -783,6 +789,9 @@ export const translations = {
     successStories: "Témoignages",
     requestDemo: "Demander une démo",
     signIn: "Se connecter",
+    platformNav: "Plateforme",
+    pricingNav: "Tarifs",
+    resourcesNav: "Ressources",
 
     // Pilot Program Banner
     pilotTitle: "Préparons l'avenir :",

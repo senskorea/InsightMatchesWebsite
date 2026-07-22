@@ -12,6 +12,7 @@ import Platform from "./pages/Platform";
 import PaulCard from "./pages/PaulCard";
 import LifeSciences from "./pages/LifeSciences";
 import Referral from "./pages/Referral";
+import TrialRequest from "./pages/TrialRequest";
 import Dissemination from "./pages/Dissemination";
 import Resources from "./pages/Resources";
 import ResourcesInsights from "./pages/ResourcesInsights";
@@ -123,6 +124,20 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const location = useLocation();
+
+  // React Router's <Link to="/#pricing"> only pushes history state — it does
+  // NOT scroll to the fragment the way a real page load does, so nav items
+  // like "Pricing" silently did nothing when already on "/". Run scrollIntoView
+  // ourselves after each route render, once the target section actually exists
+  // in the DOM (hence the rAF — routes/lazy content mount after this effect fires).
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }, [location.pathname, location.hash]);
+
   return (
     <>
       <div>
@@ -132,6 +147,7 @@ const AppContent = () => {
             <Route path="/card" element={<PaulCard />} />
             <Route path="/lifesciences" element={<LifeSciences />} />
             <Route path="/referral" element={<Referral />} />
+            <Route path="/request-trial" element={<TrialRequest />} />
             <Route path="/platform" element={<Platform />} />
             <Route path="/dissemination" element={<Dissemination />} />
             <Route path="/resources" element={<Resources />} />
@@ -210,10 +226,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
+      <BrowserRouter>
         <DemoBanner />
         <AppContent />
-      </HashRouter>
+      </BrowserRouter>
 
     </TooltipProvider>
   </QueryClientProvider>
