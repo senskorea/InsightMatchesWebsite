@@ -781,6 +781,21 @@ export const translations = {
     formSubmitting: "제출 중…",
     formSuccessTitle: "환영합니다.",
     formSuccessDesc: "가입해 주셔서 감사합니다. 24시간 이내에 고유 추천 링크를 이메일로 보내드립니다.",
+    // Additions
+    heroBadge: "유럽 진출을 준비하는 한국 딥테크 기업을 위한 맞춤형 플랫폼",
+    applyEarlyAccess: "얼리 액세스 신청하기",
+    seeHowItWorks: "작동 방식 알아보기",
+    funnelEyebrow: "이용 방법",
+    funnelTitle: "아이디어부터 제안서 제출까지 3단계",
+    funnelStep1Title: "기술 설명",
+    funnelStep1Desc: "기술, 팀 및 목표를 1분 양식으로 알려주세요. 슬라이드나 전화 상담이 필요 없습니다.",
+    funnelStep2Title: "맞춤형 파트너 매칭",
+    funnelStep2Desc: "AI가 적합한 유럽 연합 공고(호라이즌 유럽, EIC, Erasmus+ 또는 Interreg)를 찾고 함께 지원할 준비가 된 유럽 파트너를 추천합니다.",
+    funnelStep3Title: "제안서 초안 작성",
+    funnelStep3Desc: "수주가 아닌 몇 시간 안에 컨소시엄과 함께 다듬을 수 있는 규격에 맞는 초기 제안서를 생성합니다.",
+    ctaParagraphNew: "2분 안에 신청하세요. 모든 신청서를 개별적으로 검토하고 24시간에서 48시간 내에 평가판 접속 권한을 발송해 드립니다.",
+    ctaSecondaryNote: "먼저 통화를 원하시나요? 연락처:"
+
   },
   fr: {
     // Navigation
@@ -1158,7 +1173,22 @@ export const translations = {
     formSubmit: "Générer mon lien de parrainage",
     formSubmitting: "Envoi en cours…",
     formSuccessTitle: "Vous y êtes.",
-    formSuccessDesc: "Merci de nous rejoindre. Nous vous enverrons votre lien de parrainage unique par e-mail dans les 24 heures."
+    formSuccessDesc: "Merci de nous rejoindre. Nous vous enverrons votre lien de parrainage unique par e-mail dans les 24 heures.",
+    // Additions
+    heroBadge: "Conçu pour la deep tech coréenne s'exportant en Europe",
+    applyEarlyAccess: "Demander un accès anticipé",
+    seeHowItWorks: "Découvrir le fonctionnement",
+    funnelEyebrow: "Comment ça marche",
+    funnelTitle: "De l'idée à la proposition soumise en 3 étapes",
+    funnelStep1Title: "Décrivez votre technologie",
+    funnelStep1Desc: "Parlez nous de votre technologie, de votre équipe et de vos ambitions dans un formulaire d'une minute. Pas de présentations, pas d'appels.",
+    funnelStep2Title: "Obtenez des correspondances",
+    funnelStep2Desc: "Notre IA repère les bons appels européens (Horizon Europe, EIC, Erasmus+ ou Interreg) et classe les partenaires européens prêts à postuler avec vous.",
+    funnelStep3Title: "Rédigez votre proposition",
+    funnelStep3Desc: "Générez un premier brouillon conforme que vous pourrez affiner avec votre consortium, en quelques heures plutôt qu'en quelques semaines.",
+    ctaParagraphNew: "Postulez en 2 minutes. Nous examinons chaque candidature personnellement et envoyons votre accès d'essai dans les 24 à 48 heures.",
+    ctaSecondaryNote: "Vous préférez un appel au préalable ? Contactez nous au"
+
   }
 };
 
