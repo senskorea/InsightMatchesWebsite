@@ -27,7 +27,7 @@ export const translations = {
     smartFundDiscoveryDesc: "Vector-search engine that finds funds matching your specific tech stack.",
     instantConsortium: "Instant Consortium:",
     instantConsortiumDesc: "Auto-match with the required 12+ European partners.",
-    grantCoPilot: "Grant Co-Pilot:",
+    grantCoPilot: "Grant Copilot:",
     grantCoPilotDesc: "Draft compliant, technical proposals in hours, not weeks.",
     ourPilotGoals: "Our Pilot Goals",
     elevateUserExperience: "Elevate User Experience:",
@@ -63,19 +63,19 @@ export const translations = {
     
     // AI Orchestrator Section
     aiOrchestratorTitle: "The AI Orchestrator",
-    aiOrchestratorSubtitle: "We don't just \"write.\" We automate the entire grant lifecycle.",
+    aiOrchestratorSubtitle: "We don't just write. We automate the entire grant lifecycle.",
     smartFundDiscoveryTitle: "Smart Fund Discovery",
     smartFundDiscoveryFull: "Stop keyword guessing. Our semantic search engine ingests 50,000+ EU records to find opportunities that match your technology's DNA.",
-    grantRagCoPilot: "Grant-RAG Co-Pilot",
-    grantRagCoPilotDesc: "Our \"Grant-RAG\" engine anchors generation in successful past data. No hallucinations—just compliant, technical proposal drafts.",
+    grantRagCoPilot: "Grant RAG Copilot",
+    grantRagCoPilotDesc: "Our Grant RAG engine anchors generation in successful past data. No hallucinations, just compliant, technical proposal drafts.",
     consortiumBuilder: "Consortium Builder",
     consortiumBuilderDesc: "You cannot apply alone. We instantly identify and suggest the mandatory 12+ partners (Universities, SMEs) needed for a valid consortium.",
     tenXVelocity: "10x Velocity",
-    tenXVelocityDesc: "Collapse the application timeline from 16 weeks to days. Apply to 5x more grants per year with the same resources.",
+    tenXVelocityDesc: "Collapse the application timeline from 16 weeks to days. Apply to 5x more grants per year with the same team.",
     complianceGuard: "Compliance Guard",
     complianceGuardDesc: "Automatic checks for EU-specific requirements (Gender Equality Plans, DNSH principles, Dissemination strategies).",
     networkMoat: "Network Moat",
-    networkMoatDesc: "Direct access to our exclusive database of ~6,000 verified European researchers and organizations.",
+    networkMoatDesc: "Direct access to our exclusive network representing over 2,000 verified European researchers and organizations.",
     
     // Early Partners Section
     earlyPartnersTitle: "Early Partners & Success Stories",
@@ -102,28 +102,28 @@ export const translations = {
     pricingFreeTier: "Starter",
     pricingFreeTierDesc: "Discover opportunities and find consortium partners.",
     pricingFreeTierPrice: "Free",
-    pricingFreeTierSubtitle: "Get to the 'Aha!' moment — the right EU R&I call (Horizon Europe, EIC, Erasmus+, Interreg) and the right partners.",
+    pricingFreeTierSubtitle: "Get to the 'Aha!' moment: the right EU R&I call (Horizon Europe, EIC, Erasmus+, Interreg) and the right partners.",
     pricingFreeTierFeature1: "Funding Opportunity Radar",
     pricingFreeTierFeature2: "Basic intelligent partner matching",
     pricingFreeTierFeature3: "Build a public partner profile",
     pricingFreeTierFeature4: "Gated: no full proposal generation or export",
     pricingFreeTierCta: "See how it works",
-    pricingProTier: "Pro Co-Pilot",
+    pricingProTier: "Pro Copilot",
     pricingProTierDesc: "Write and submit winning Horizon Europe, EIC, Erasmus+ and Interreg proposals in days, not months.",
     pricingProTierPrice: "3,500,000 KRW",
-    pricingProTierSubtitle: "per project — your unfair AI advantage.",
+    pricingProTierSubtitle: "per project. Your unfair AI advantage.",
     pricingProTierFeature1: "Everything in Starter, plus:",
-    pricingProTierFeature2: "Full AI co-piloted proposal writing",
+    pricingProTierFeature2: "Full AI copiloted proposal writing",
     pricingProTierFeature3: "Unlimited AI assistant for EU compliance checks",
     pricingProTierFeature4: "Consortium management tools & export-ready drafts",
-    pricingProTierCta: "Get Pro Co-Pilot",
+    pricingProTierCta: "Get Pro Copilot",
     pricingEnterpriseTier: "Full-Service Concierge",
     pricingEnterpriseTierDesc: "End-to-end proposal support. We act as your dedicated EU R&I consultant across Horizon Europe, EIC, Erasmus+ and Interreg.",
     pricingEnterpriseTierPrice: "5,000,000 KRW",
-    pricingEnterpriseTierSubtitle: "per project — done with you, end to end.",
-    pricingEnterpriseTierFeature1: "Everything in Pro Co-Pilot, plus:",
-    pricingEnterpriseTierFeature2: "Done-for-you drafting, structuring and review",
-    pricingEnterpriseTierFeature3: "1-on-1 strategic consulting sessions",
+    pricingEnterpriseTierSubtitle: "per project. Done with you, end to end.",
+    pricingEnterpriseTierFeature1: "Everything in Pro Copilot, plus:",
+    pricingEnterpriseTierFeature2: "Done for you drafting, structuring and review",
+    pricingEnterpriseTierFeature3: "1 on 1 strategic consulting sessions",
     pricingEnterpriseTierFeature4: "Final administrative review before EU submission",
     pricingEnterpriseTierCta: "Talk to an expert",
     pricingCtaNote: "All plans route through early access review. No credit card required.",
@@ -236,12 +236,12 @@ export const translations = {
     community: "Community",
 
     // Hero Section
-    heroTitle: "AI-Powered European Research Funding Platform",
+    heroTitle: "Automating Proposals. Assembling Teams. Unlocking Grants.",
     heroSubtitle: "Unlock millions in EU research funding with our intelligent matching system. Connect with the right opportunities, streamline applications, and accelerate your research impact.",
-    heroHeadline1: "The AI-Powered ",
+    heroHeadline1: "The AI Powered ",
     heroHeadline2: "Grant Engine",
     heroHeadline3: " for Research Teams",
-    heroDescription: "The AI co-pilot that turns Korean and European deep-tech into funded EU research proposals — from idea to submission in days, not months. Horizon Europe, EIC, Erasmus+ and Interreg.",
+    heroDescription: "The AI copilot that turns Korean and European deep tech into funded EU research proposals. Go from idea to submission in days instead of months for Horizon Europe, EIC, Erasmus+ and Interreg.",
     startMatching: "Start Matching",
     watchDemo: "Watch Demo",
     
@@ -254,14 +254,14 @@ export const translations = {
     discoveryFeature3: "Personalized match recommendations",
     exploreDiscovery: "Explore Discovery Features",
     buildTeamTitle: "Build Your Dream Team Instantly",
-    buildTeamDesc: "You can't apply alone. We identify and suggest the perfect 12+ partners (Universities, SMEs, RTOs) from our verified database of 6,000+ European organizations.",
+    buildTeamDesc: "You cannot apply alone. We identify and suggest the perfect 12+ partners from a network representing over 2,000 verified European organizations.",
     consortiumFeature1: "Auto-match with required partners",
     consortiumFeature2: "Verified researcher profiles",
     consortiumFeature3: "One-click consortium invites",
     explorePartners: "Explore Partner Network",
     aiDrafting: "AI Drafting",
     draftProposalsTitle: "Draft Winning Proposals in Hours",
-    draftProposalsDesc: "Our Grant-RAG engine generates compliant, technical proposals anchored in successful past data. No hallucinations—just publication-ready drafts.",
+    draftProposalsDesc: "Our Grant RAG engine generates compliant, technical proposals anchored in successful past data. No hallucinations, just publication ready drafts.",
     draftingFeature1: "40+ page proposals in hours, not weeks",
     draftingFeature2: "EU format compliance built-in",
     draftingFeature3: "Section-by-section AI assistance",
@@ -269,7 +269,7 @@ export const translations = {
     
     // Bento Grid
     bentoTitle: "Everything You Need to Win Grants",
-    bentoSubtitle: "Beyond discovery, matching, and drafting—powerful tools for the entire grant lifecycle.",
+    bentoSubtitle: "Beyond discovery, matching, and drafting: powerful tools for the entire grant lifecycle.",
     velocityTitle: "10x Velocity",
     velocityDesc: "Collapse the application timeline from 16 weeks to days. Apply to 5x more grants per year.",
     complianceTitle: "Compliance Guard",
@@ -306,8 +306,8 @@ export const translations = {
     activeFundingCallsDesc: "Tracked and indexed annually",
     verifiedPartnersLabel: "Verified Partners",
     verifiedPartnersDesc: "European researchers & organizations",
-    successRateLabel: "Success Rate",
-    successRateDesc: "For matched proposals",
+    successRateLabel: "10x Faster",
+    successRateDesc: "Proposal prep time reduced by 90%",
     
     // Enhanced CTA
     ctaHeadline: "Ready to Transform Your Research Funding Strategy?",
@@ -321,18 +321,18 @@ export const translations = {
     reachOut: "Or reach out directly at",
 
     // Conversion funnel (added)
-    heroBadge: "Built for Korean deep-tech going to Europe",
+    heroBadge: "Built for Korean deep tech going to Europe",
     applyEarlyAccess: "Apply for Early Access",
     seeHowItWorks: "See how it works",
     funnelEyebrow: "How it works",
     funnelTitle: "From idea to submitted proposal in 3 steps",
     funnelStep1Title: "Describe your tech",
-    funnelStep1Desc: "Tell us about your technology, team, and ambitions in a 1-minute form — no slides, no calls.",
+    funnelStep1Desc: "Tell us about your technology, team, and ambitions in a 1 minute form. No slides, no calls.",
     funnelStep2Title: "Get matched",
-    funnelStep2Desc: "Our AI surfaces the right EU calls — Horizon Europe, EIC, Erasmus+ or Interreg — and ranks European partners ready to co-apply with you.",
+    funnelStep2Desc: "Our AI surfaces the right EU calls (Horizon Europe, EIC, Erasmus+ or Interreg) and ranks European partners ready to coapply with you.",
     funnelStep3Title: "Draft your proposal",
     funnelStep3Desc: "Generate a compliant first draft you can refine with your consortium, in hours instead of weeks.",
-    ctaParagraphNew: "Apply in 2 minutes. We review every application personally and send your trial access within 24–48 hours.",
+    ctaParagraphNew: "Apply in 2 minutes. We review every application personally and send your trial access within 24 to 48 hours.",
     ctaSecondaryNote: "Prefer a call first? Reach us at",
 
     
@@ -371,10 +371,10 @@ export const translations = {
     ctaLearnMore: "Learn more",
 
     // Free tier microcopy
-    pricingFreeTierNote: "Free — we personally review every request and reply within 24–48h.",
+    pricingFreeTierNote: "Free. We personally review every request and reply within 24 to 48 hours.",
 
     // /request-demo reassurance
-    formReassurance: "No credit card. No sales call unless you ask for one. We reply personally within 24–48h.",
+    formReassurance: "No credit card. No sales call unless you ask for one. We reply personally within 24 to 48 hours.",
 
     // Referral Program
     referralTitle: "Referral Program – Give 10%, Get 10% | InsightMatches",
@@ -710,8 +710,8 @@ export const translations = {
     activeFundingCallsDesc: "연간 추적 및 색인",
     verifiedPartnersLabel: "검증된 파트너",
     verifiedPartnersDesc: "유럽 연구자 및 조직",
-    successRateLabel: "성공률",
-    successRateDesc: "매칭된 제안서 기준",
+    successRateLabel: "10배 더 빠른 속도",
+    successRateDesc: "제안서 준비 시간 90% 단축",
     
     // Enhanced CTA
     ctaHeadline: "연구 자금 전략을 혁신할 준비가 되셨나요?",
@@ -1088,8 +1088,8 @@ export const translations = {
     activeFundingCallsDesc: "Suivis et indexés chaque année",
     verifiedPartnersLabel: "Partenaires vérifiés",
     verifiedPartnersDesc: "Chercheurs et organisations en Europe",
-    successRateLabel: "Taux de réussite",
-    successRateDesc: "Sur les candidatures issues de nos mises en relation",
+    successRateLabel: "10x plus rapide",
+    successRateDesc: "Temps de préparation réduit de 90 %",
 
     // Enhanced CTA
     ctaHeadline: "Prêt à repenser votre stratégie de financement de la recherche ?",
