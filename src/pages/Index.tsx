@@ -25,6 +25,47 @@ import {
   sensServiceSchema,
 } from '../lib/seo-schemas';
 
+export const HomeContent = () => (
+  <>
+    {/* 1. Hero: The Main Promise */}
+    <HeroSection />
+
+    {/* 2. Social proof — named client logos */}
+    <ClientLogosMarquee />
+
+    {/* 2b. Programmes we cover */}
+    <ProgrammesStrip />
+
+    {/* 2c. Hard Stats — proof points */}
+    <HardStats />
+
+    {/* 3. How it works — 3-step funnel */}
+    <div id="how-it-works">
+      <FunnelSteps />
+    </div>
+
+    {/* 4. Product in Action (Top Features) */}
+    <ProductFeatures />
+
+    {/* 4b. Consortium Collaboration - Differentiator */}
+    <ConsortiumCollaborationSection />
+
+    {/* 5. Bento Box Grid (Everything Else) */}
+    <div id="features">
+      <BentoGrid />
+    </div>
+
+    {/* 6. Pricing */}
+    <PricingSection />
+
+    {/* 6b. Data Trust & Security */}
+    <DataTrustBanner />
+
+    {/* 7. Final CTA */}
+    <EnhancedCTA />
+  </>
+);
+
 const Index = () => {
   const { t } = useTranslation();
 
@@ -41,49 +82,14 @@ const Index = () => {
         alternates={[
           { hreflang: 'en', href: 'https://www.insightmatches.com/' },
           { hreflang: 'ko', href: 'https://www.insightmatches.com/ko/' },
+          { hreflang: 'fr', href: 'https://www.insightmatches.com/fr/' },
           { hreflang: 'x-default', href: 'https://www.insightmatches.com/' },
         ]}
         jsonLd={[organizationSchema, softwareApplicationSchema, websiteSchema, sensServiceSchema]}
       />
       <Navbar />
       
-      {/* 1. Hero: The Main Promise */}
-      <HeroSection />
-
-      {/* 2. Social proof — named client logos */}
-      <ClientLogosMarquee />
-
-      {/* 2b. Programmes we cover */}
-      <ProgrammesStrip />
-
-      {/* 2c. Hard Stats — proof points */}
-      <HardStats />
-
-      {/* 3. How it works — 3-step funnel */}
-      <div id="how-it-works">
-        <FunnelSteps />
-      </div>
-
-      {/* 4. Product in Action (Top Features) */}
-      <ProductFeatures />
-
-      {/* 4b. Consortium Collaboration - Differentiator */}
-      <ConsortiumCollaborationSection />
-
-      {/* 5. Bento Box Grid (Everything Else) */}
-      <div id="features">
-        <BentoGrid />
-      </div>
-
-
-      {/* 6. Pricing */}
-      <PricingSection />
-
-      {/* 6b. Data Trust & Security */}
-      <DataTrustBanner />
-
-      {/* 7. Final CTA */}
-      <EnhancedCTA />
+      <HomeContent />
 
       {/* 9. Footer */}
       <Footer />

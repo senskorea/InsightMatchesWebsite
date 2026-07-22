@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown, Globe } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -18,12 +19,32 @@ const languages: Language[] = [
 export const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { currentLanguage, changeLanguage } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
 
   const handleLanguageSelect = (langCode: string) => {
     console.log('Language selector clicked:', langCode);
     changeLanguage(langCode as 'en' | 'ko' | 'fr');
     setIsOpen(false);
+    
+    let path = location.pathname;
+    
+    // Strip existing language prefix if present
+    if (path.startsWith('/ko/')) path = path.substring(3);
+    else if (path === '/ko') path = '/';
+    else if (path.startsWith('/fr/')) path = path.substring(3);
+    else if (path === '/fr') path = '/';
+    
+    if (path === '') path = '/';
+    
+    // Navigate to new localized path
+    if (langCode === 'en') {
+      navigate(path);
+    } else {
+      navigate(`/${langCode}${path === '/' ? '' : path}`);
+    }
   };
 
   return (

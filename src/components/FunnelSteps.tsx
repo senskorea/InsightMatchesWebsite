@@ -65,11 +65,11 @@ export const FunnelSteps: React.FC = () => {
 
         <div className="mt-12 text-center">
           <a
-            href="#features"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-lg transition-all duration-300"
+            href="#product-demo"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-lg transition-all duration-300 group"
           >
             {t('ctaSeeHowItWorks')}
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
       </div>

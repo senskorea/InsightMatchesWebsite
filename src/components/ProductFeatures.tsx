@@ -1,6 +1,7 @@
-import React from 'react';
-import { Radar, Users, FileText, Sparkles, ArrowRight, Lightbulb } from 'lucide-react';
+import React, { useState } from 'react';
+import { Radar, Users, FileText, Sparkles, ArrowRight, Lightbulb, Play } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
+import VideoModal from './VideoModal';
 
 const FeatureListItem = ({ item, colorClass }: { item: string; colorClass: string }) => (
   <li className="flex items-center gap-3 text-foreground">
@@ -21,6 +22,7 @@ const FeatureListItem = ({ item, colorClass }: { item: string; colorClass: strin
 
 export const ProductFeatures = () => {
   const { t } = useTranslation();
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const discoveryFeatures = [t('discoveryFeature1'), t('discoveryFeature2'), t('discoveryFeature3')];
   const consortiumFeatures = [t('consortiumFeature1'), t('consortiumFeature2'), t('consortiumFeature3')];
@@ -33,17 +35,27 @@ export const ProductFeatures = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
           {/* Visual */}
           <div className="relative order-2 lg:order-1">
-            <div className="bg-gradient-to-br from-sky-50 to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
-              <video
-                src="/videos/find-funds.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Find funds demo"
-                className="w-full h-auto rounded-xl shadow-lg"
-              />
+            <div 
+              className="bg-gradient-to-br from-sky-50 to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
+              onClick={() => setActiveVideo('/videos/find-funds.mp4')}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
+                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
+                    <Play className="w-8 h-8 text-sky-600 ml-1" />
+                  </div>
+                </div>
+                <video
+                  src="/videos/find-funds.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Find funds demo"
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
           
@@ -64,10 +76,10 @@ export const ProductFeatures = () => {
                 <FeatureListItem key={item} item={item} colorClass="bg-sky-100 dark:bg-sky-900/30" />
               ))}
             </ul>
-            <a href="#features" className="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-medium hover:gap-3 transition-all">
-              {t('exploreDiscovery')}
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            <button onClick={() => setActiveVideo('/videos/find-funds.mp4')} className="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-medium group transition-all">
+              Watch Demo
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
           </div>
         </div>
 
@@ -94,17 +106,27 @@ export const ProductFeatures = () => {
 
           {/* Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
-              <video
-                src="/videos/get-idea.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Conceptualize your idea demo"
-                className="w-full h-auto rounded-xl shadow-lg"
-              />
+            <div 
+              className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
+              onClick={() => setActiveVideo('/videos/get-idea.mp4')}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
+                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
+                    <Play className="w-8 h-8 text-slate-600 ml-1" />
+                  </div>
+                </div>
+                <video
+                  src="/videos/get-idea.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Conceptualize your idea demo"
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -129,25 +151,35 @@ export const ProductFeatures = () => {
                 <FeatureListItem key={item} item={item} colorClass="bg-slate-100 dark:bg-slate-900/30" />
               ))}
             </ul>
-            <a href="#features" className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 font-medium hover:gap-3 transition-all">
-              {t('explorePartners')}
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            <button onClick={() => setActiveVideo('/videos/make-the-team.mp4')} className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 font-medium group transition-all">
+              Watch Demo
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
           </div>
           
           {/* Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
-              <video
-                src="/videos/make-the-team.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Build your dream team demo"
-                className="w-full h-auto rounded-xl shadow-lg"
-              />
+            <div 
+              className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
+              onClick={() => setActiveVideo('/videos/make-the-team.mp4')}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
+                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
+                    <Play className="w-8 h-8 text-slate-600 ml-1" />
+                  </div>
+                </div>
+                <video
+                  src="/videos/make-the-team.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Build your dream team demo"
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -156,17 +188,27 @@ export const ProductFeatures = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gold-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden">
-              <video
-                src="/videos/write-proposal.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Draft winning proposals demo"
-                className="w-full h-auto rounded-xl shadow-lg brightness-[0.85] dark:brightness-75"
-              />
+            <div 
+              className="bg-gradient-to-br from-gold-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
+              onClick={() => setActiveVideo('/videos/write-proposal.mp4')}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
+                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
+                    <Play className="w-8 h-8 text-gold-600 ml-1" />
+                  </div>
+                </div>
+                <video
+                  src="/videos/write-proposal.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Draft winning proposals demo"
+                  className="w-full h-auto rounded-xl shadow-lg brightness-[0.85] dark:brightness-75"
+                />
+              </div>
             </div>
           </div>
           
@@ -187,13 +229,20 @@ export const ProductFeatures = () => {
                 <FeatureListItem key={item} item={item} colorClass="bg-gold-100 dark:bg-gold-900/30" />
               ))}
             </ul>
-            <a href="#features" className="inline-flex items-center gap-2 text-gold-600 dark:text-gold-400 font-medium hover:gap-3 transition-all">
-              {t('exploreAIDrafting')}
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            <button onClick={() => setActiveVideo('/videos/write-proposal.mp4')} className="inline-flex items-center gap-2 text-gold-600 dark:text-gold-400 font-medium group transition-all">
+              Watch Demo
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
           </div>
         </div>
       </div>
+
+      <VideoModal
+        open={!!activeVideo}
+        onOpenChange={(open) => !open && setActiveVideo(null)}
+        videoSrc={activeVideo || undefined}
+        title="Feature Demo"
+      />
     </section>
   );
 };
