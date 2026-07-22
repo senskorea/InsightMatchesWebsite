@@ -165,7 +165,7 @@ export const ProductFeatures = () => {
                 playsInline
                 preload="metadata"
                 aria-label="Draft winning proposals demo"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full h-auto rounded-xl shadow-lg brightness-[0.85] dark:brightness-75"
               />
             </div>
           </div>
