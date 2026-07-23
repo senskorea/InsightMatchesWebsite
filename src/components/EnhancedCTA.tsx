@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -21,13 +22,13 @@ export const EnhancedCTA = () => {
           </div>
 
           <div className="flex justify-center">
-            <a
-              href="/request-demo"
+            <Link
+              to="/request-demo"
               className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-sky-500 to-slate-500 shadow-lg hover:shadow-glow hover:scale-105 transition-all duration-300"
             >
               {t('applyEarlyAccess')}
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
 
           <p className="text-sm text-gray-600 dark:text-gray-400">

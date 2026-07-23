@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Check, Rocket, Building2, Users } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { cn } from '@/lib/utils';
@@ -171,15 +172,15 @@ export const PricingSection = () => {
               </ul>
 
               <div className="mt-auto">
-                <a
-                  href="/request-demo"
+                <Link
+                  to="/request-demo"
                   className={cn(
                     'w-full py-4 rounded-lg font-semibold text-sm transition-all duration-200 text-center block',
                     tier.theme.cta
                   )}
                 >
                   {tier.cta}
-                </a>
+                </Link>
                 {tier.note && (
                   <p className="mt-3 text-xs text-muted-foreground text-center">
                     {tier.note}

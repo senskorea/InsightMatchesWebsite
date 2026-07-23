@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Calendar, Lightbulb, Target } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -145,12 +146,12 @@ export const PilotProgramBanner = () => {
 
         {/* CTA Footer Button */}
         <div className="text-center animate-fade-in">
-          <a href="/request-demo"
+          <Link to="/request-demo"
             className="inline-flex items-center justify-center px-10 py-5 rounded-lg font-bold font-inter text-lg bg-gradient-to-r from-sky-500 to-slate-500 text-white shadow-2xl hover:shadow-glow transition-all duration-300 button-hover focus-sky"
           >
             <span className="mr-2">✨</span>
             {t('joinPilotWaitlist')}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -78,12 +78,12 @@ export const Footer: React.FC = () => {
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} InsightMatches. {t('allRightsReserved')}
           </p>
-          <a
-            href="/request-demo"
+          <Link
+            to="/request-demo"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 transition-opacity"
           >
             {t('applyEarlyAccess')}
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -264,11 +264,11 @@ const HorizonEurope = () => {
             consortium partners, and position themselves for Horizon Europe success. Book a personalised demo with our team.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold bg-gradient-to-r from-sky-500 to-slate-500 text-white shadow-lg hover:shadow-glow hover:scale-105 transition-all"
             >
               Request a Demo <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
             <Link
               to="/resources"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold border border-border bg-card hover:bg-muted transition-colors"

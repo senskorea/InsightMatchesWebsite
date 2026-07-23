@@ -140,11 +140,11 @@ const KoAiToolsConsortium = () => {
 
           <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl p-8 my-12 text-center">
             <h3 className="text-2xl font-bold mb-3">다음 호라이즌 유럽 제안에 AI 매칭을 시도해 보세요</h3>
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
             >
               데모 신청하기 <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </article>

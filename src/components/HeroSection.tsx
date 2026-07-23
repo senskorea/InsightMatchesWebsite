@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { MockupInterface } from './MockupInterface';
@@ -42,12 +43,12 @@ export const HeroSection = () => {
 
           {/* Single primary CTA + low-emphasis secondary scroll link */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 shadow-lg transition-all duration-300 button-hover"
             >
               {t('applyEarlyAccess')}
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
             <a href="#how-it-works"
               className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
             >

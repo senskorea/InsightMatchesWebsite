@@ -140,11 +140,11 @@ const KoDigitalPartnership = () => {
 
           <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl p-8 my-12 text-center">
             <h3 className="text-2xl font-bold mb-3">InsightMatches로 클러스터 4 파트너 찾기</h3>
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
             >
               데모 신청하기 <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <p className="text-sm text-muted-foreground">

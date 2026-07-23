@@ -201,11 +201,11 @@ const KoHorizonEurope = () => {
             <p className="text-muted-foreground mb-6">
               InsightMatches는 한국-EU R&amp;D 협력을 위한 전용 AI 매칭 플랫폼입니다.
             </p>
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
             >
               데모 신청하기 <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <p className="text-sm text-muted-foreground">

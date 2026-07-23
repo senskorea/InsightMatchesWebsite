@@ -179,11 +179,11 @@ const FrHorizonEurope = () => {
             <p className="text-muted-foreground mb-6">
               InsightMatches est la plateforme d'IA dédiée à la R&D collaborative EU–Asie.
             </p>
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
             >
               Demander une démo <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <p className="text-sm text-muted-foreground">

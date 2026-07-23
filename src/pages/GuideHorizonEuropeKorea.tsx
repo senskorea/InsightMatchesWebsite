@@ -242,11 +242,11 @@ const GuideHorizonEuropeKorea = () => {
             <p className="text-muted-foreground mb-6">
               InsightMatches is the AI matchmaking platform built specifically for EU-Korea R&amp;D collaboration.
             </p>
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
             >
               Request a Demo <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <h2 className="text-3xl font-bold mt-12 mb-4">Related reading</h2>

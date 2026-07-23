@@ -119,7 +119,7 @@ export const Navbar = () => {
               {t('signIn')}
             </Link>
 
-            <a href="/request-demo"
+            <Link to="/request-demo"
               className="
                 px-4 lg:px-6 py-2 rounded-lg font-semibold text-sm
                 bg-gradient-to-r from-sky-500 to-slate-500
@@ -129,7 +129,7 @@ export const Navbar = () => {
               "
             >
               {t('requestDemo')}
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -182,7 +182,7 @@ export const Navbar = () => {
                   {t('signIn')}
                 </Link>
 
-                <a href="/request-demo"
+                <Link to="/request-demo"
                   className="
                     w-full px-6 py-2 rounded-lg font-semibold text-sm
                     bg-gradient-to-r from-sky-500 to-slate-500
@@ -190,7 +190,7 @@ export const Navbar = () => {
                   "
                 >
                   {t('requestDemo')}
-                </a>
+                </Link>
 
                 <Link
                   to="/referral"
