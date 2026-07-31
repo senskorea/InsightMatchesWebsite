@@ -32,6 +32,7 @@ import EUKoreaDigitalPartnership from "./pages/EUKoreaDigitalPartnership";
 import NextRise from "./pages/NextRise";
 import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
+import Careers from "./pages/Careers";
 import KoIndex from "./pages/ko/KoIndex";
 import KoHorizonEurope from "./pages/ko/KoHorizonEurope";
 import KoGuideHorizonEurope from "./pages/ko/KoGuideHorizonEurope";
@@ -195,6 +196,7 @@ const AppContent = () => {
             <Route path="/request-demo" element={<NextRise />} />
             <Route path="/nextrise" element={<NextRise />} />
             <Route path="/NEXTRISE" element={<Navigate to="/nextrise" replace />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/rnday" element={<Navigate to="/rndday" replace />} />
