@@ -214,6 +214,7 @@ const AppContent = () => {
             <Route path="/ko/launch" element={<AppRedirect />} />
             <Route path="/fr/launch" element={<AppRedirect />} />
             <Route path="/dev" element={<DevRedirect />} />
+            <Route path="/dev/*" element={<DevRedirect />} />
             <Route path="/sens/*" element={<SensRedirect />} />
             <Route path="/senspitch" element={<SensPitchRedirect />} />
 
