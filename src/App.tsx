@@ -65,6 +65,13 @@ const AppRedirect = () => {
   return null;
 };
 
+const DevRedirect = () => {
+  useEffect(() => {
+    window.location.replace("https://insight-matches-saas.vercel.app/");
+  }, []);
+  return null;
+};
+
 const SensRedirect = () => {
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -206,6 +213,7 @@ const AppContent = () => {
             <Route path="/launch" element={<AppRedirect />} />
             <Route path="/ko/launch" element={<AppRedirect />} />
             <Route path="/fr/launch" element={<AppRedirect />} />
+            <Route path="/dev" element={<DevRedirect />} />
             <Route path="/sens/*" element={<SensRedirect />} />
             <Route path="/senspitch" element={<SensPitchRedirect />} />
 
