@@ -33,6 +33,7 @@ import NextRise from "./pages/NextRise";
 import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
 import Careers from "./pages/Careers";
+import Jobs from "./pages/Jobs";
 import KoIndex from "./pages/ko/KoIndex";
 import KoHorizonEurope from "./pages/ko/KoHorizonEurope";
 import KoGuideHorizonEurope from "./pages/ko/KoGuideHorizonEurope";
@@ -204,6 +205,7 @@ const AppContent = () => {
             <Route path="/nextrise" element={<NextRise />} />
             <Route path="/NEXTRISE" element={<Navigate to="/nextrise" replace />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/jobs" element={<Jobs />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/rnday" element={<Navigate to="/rndday" replace />} />
