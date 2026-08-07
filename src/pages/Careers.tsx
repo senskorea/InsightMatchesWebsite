@@ -31,8 +31,8 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Job Spec */}
-      <section className="py-8 px-4">
+      {/* Job Spec - CTO */}
+      <section className="py-8 px-4 scroll-mt-24" id="cto">
         <div className="max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
@@ -202,6 +202,256 @@ const Careers = () => {
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Job Spec - Project Coordinator */}
+      <section className="py-8 px-4 scroll-mt-24" id="project-coordinator">
+        <div className="max-w-4xl mx-auto">
+          <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-2">Founding Project Coordinator, EU Grants & Operations</h2>
+                <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Briefcase className="w-4 h-4" /> Operations
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Rocket className="w-4 h-4" /> Early Stage / Founding Team
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Award className="w-4 h-4" /> Equity Based
+                  </span>
+                </div>
+              </div>
+              <a href="mailto:info@insightmatches.com?subject=Application%3A%20Founding%20Project%20Coordinator" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
+                Apply Now <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="space-y-10">
+              {/* The Opportunity */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Rocket className="w-5 h-5" />
+                  </span>
+                  The Opportunity
+                </h3>
+                <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
+                  <p>
+                    InsightMatches is an AI-powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
+                  </p>
+                  <p>
+                    We need a meticulous, hands-on Project Coordinator to act as the operational engine behind our client success. You will take the lead on managing complex EU funding proposals from concept to submission, ensuring our project pipelines run flawlessly.
+                  </p>
+                </div>
+              </div>
+
+              {/* Responsibilities */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5" />
+                  </span>
+                  Responsibilities
+                </h3>
+                <div className="pl-10">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Manage complex EU funding proposals (Horizon Europe, EIC, etc.) from concept to final submission.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Coordinate and communicate effectively with cross-border research consortia and key stakeholders.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Ensure all project deliverables strictly adhere to EU compliance and administrative requirements.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Optimize and maintain our internal proposal pipelines and operational workflows.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* What We're Looking For */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Target className="w-5 h-5" />
+                  </span>
+                  What We're Looking For
+                </h3>
+                <div className="pl-10">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Deep understanding of EU funding mechanisms and proposal structures.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Exceptional organizational skills and a track record of managing complex, multi-stakeholder projects.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Strong written and verbal communication skills; ability to align diverse international teams.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>A builder's mindset: comfortable operating in an early-stage, fast-paced environment and building processes from scratch.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Compensation */}
+              <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5" />
+                  </span>
+                  Compensation and Pathway
+                </h3>
+                <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
+                  <p>
+                    The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.
+                  </p>
+                  <p>
+                    There is a defined pathway to a full-time salaried role when agreed funding or revenue milestones are reached.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Job Spec - Head of Growth */}
+      <section className="py-8 px-4 pb-24 scroll-mt-24" id="head-of-growth">
+        <div className="max-w-4xl mx-auto">
+          <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-2">Founding Head of Growth (Marketing & Sales)</h2>
+                <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Target className="w-4 h-4" /> Growth & Sales
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Rocket className="w-4 h-4" /> Early Stage / Founding Team
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Award className="w-4 h-4" /> Equity Based
+                  </span>
+                </div>
+              </div>
+              <a href="mailto:info@insightmatches.com?subject=Application%3A%20Founding%20Head%20of%20Growth" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
+                Apply Now <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="space-y-10">
+              {/* The Opportunity */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Rocket className="w-5 h-5" />
+                  </span>
+                  The Opportunity
+                </h3>
+                <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
+                  <p>
+                    InsightMatches is an AI-powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
+                  </p>
+                  <p>
+                    We are looking for a relentless, strategic growth leader to own our Go-To-Market strategy. Your mission is to secure our first cohort of paid users and close high-ticket enterprise deals, laying the foundation for our commercial success.
+                  </p>
+                </div>
+              </div>
+
+              {/* Responsibilities */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5" />
+                  </span>
+                  Responsibilities
+                </h3>
+                <div className="pl-10">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Own the Go-To-Market strategy and execute targeted campaigns to drive early revenue.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Identify, engage, and close high-ticket enterprise deals with research institutions, universities, and innovative SMEs across Europe.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Build and manage a robust B2B lead generation and sales pipeline.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Craft high-converting marketing materials and sales narratives tailored to the EU research ecosystem.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* What We're Looking For */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Target className="w-5 h-5" />
+                  </span>
+                  What We're Looking For
+                </h3>
+                <div className="pl-10">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Proven track record in B2B enterprise sales, preferably within SaaS, EdTech, or research-adjacent sectors.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Strategic thinker with the ability to seamlessly execute hands-on outbound sales and marketing campaigns.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Excellent negotiation, pitching, and relationship-building skills.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>A builder's mindset: comfortable operating in an early-stage, ambiguous environment and scaling revenue from zero.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Compensation */}
+              <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5" />
+                  </span>
+                  Compensation and Pathway
+                </h3>
+                <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
+                  <p>
+                    The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.
+                  </p>
+                  <p>
+                    There is a defined pathway to a full-time salaried role when agreed funding or revenue milestones are reached.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

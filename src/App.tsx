@@ -142,9 +142,12 @@ const AppContent = () => {
   useEffect(() => {
     if (!location.hash) return;
     const id = location.hash.slice(1);
-    requestAnimationFrame(() => {
+    
+    // requestAnimationFrame alone can sometimes fire too early during React router transitions.
+    // Use a short timeout to ensure the new page components are fully mounted and laid out.
+    setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    });
+    }, 100);
   }, [location.pathname, location.hash]);
 
   return (
