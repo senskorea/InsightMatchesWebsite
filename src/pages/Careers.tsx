@@ -276,6 +276,10 @@ const Careers = () => {
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <span>Optimize and maintain our internal proposal pipelines and operational workflows.</span>
                     </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Act as a domain expert to guide our engineering team in developing and refining our AI-powered proposal software.</span>
+                    </li>
                   </ul>
                 </div>
               </div>
