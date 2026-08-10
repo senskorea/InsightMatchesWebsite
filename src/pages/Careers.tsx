@@ -28,6 +28,42 @@ const Careers = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We are looking for passionate builders who thrive in ambiguity and deeply understand modern LLM integration.
           </p>
+
+          {/* Quick Nav Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto text-left">
+            <button 
+              onClick={() => document.getElementById('cto')?.scrollIntoView({behavior: 'smooth'})} 
+              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Code className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-1">Founding CTO</h3>
+              <p className="text-sm text-muted-foreground">Engineering</p>
+            </button>
+
+            <button 
+              onClick={() => document.getElementById('project-coordinator')?.scrollIntoView({behavior: 'smooth'})} 
+              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Briefcase className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-1">Project Coordinator</h3>
+              <p className="text-sm text-muted-foreground">Operations</p>
+            </button>
+
+            <button 
+              onClick={() => document.getElementById('head-of-growth')?.scrollIntoView({behavior: 'smooth'})} 
+              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Target className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-1">Head of Growth</h3>
+              <p className="text-sm text-muted-foreground">Sales & Marketing</p>
+            </button>
+          </div>
         </div>
       </section>
 
