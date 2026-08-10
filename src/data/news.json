@@ -1,5 +1,21 @@
 [
   {
+    "id": "linkedin-2026-08-10",
+    "date": "2026-08-10",
+    "image": "/news/launch.jpg",
+    "title": {
+      "en": "Launching InsightMatches: AI for Global R&D Funding",
+      "fr": "Lancement d'InsightMatches : L'IA au service du financement R&D",
+      "ko": "InsightMatches 론칭: 글로벌 R&D 펀딩을 위한 AI 플랫폼"
+    },
+    "excerpt": {
+      "en": "For the last decade, I've seen brilliant teams fail to secure R&D capital due to administrative hurdles. By leveraging Agentic AI, we help deep-tech startups and universities navigate Horizon Europe funding instantly.",
+      "fr": "Depuis dix ans, j'ai vu des équipes brillantes échouer à sécuriser des fonds R&D en raison de la lourdeur administrative. Grâce à l'IA Agentique, nous aidons les startups deep-tech à naviguer dans les financements Horizon Europe.",
+      "ko": "지난 10년 동안 많은 뛰어난 팀들이 행정적 부담 때문에 R&D 자금 확보에 실패하는 것을 보았습니다. 에이전틱 AI를 활용하여 딥테크 스타트업들이 Horizon Europe 자금을 확보할 수 있도록 돕습니다."
+    },
+    "url": "https://www.linkedin.com/in/paulconversy/"
+  },
+  {
     "id": "linkedin-2026-01",
     "date": "2026-05-20",
     "title": {
