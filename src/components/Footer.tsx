@@ -49,6 +49,11 @@ export const Footer: React.FC = () => {
             <h4 className="font-semibold text-foreground mb-4">{t('resources')}</h4>
             <ul className="space-y-2">
               <li>
+                <Link to="/resources/videos" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Videos
+                </Link>
+              </li>
+              <li>
                 <Link to="/dissemination" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   {t('dissemination')}
                 </Link>

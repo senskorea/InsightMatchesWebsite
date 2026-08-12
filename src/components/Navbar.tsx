@@ -38,6 +38,7 @@ export const Navbar = () => {
   // "Resources" bucket instead of being split across mismatched labels.
   const resourcesItems = React.useMemo(() => [
     { name: t('newsAnnouncements'), href: '/resources/news' },
+    { name: 'Videos', href: '/resources/videos' },
     { name: 'What is Horizon Europe?', href: '/resources/horizon-europe' },
     { name: t('dissemination'), href: '/dissemination' },
     { name: t('educationTitle'), href: '/education' },

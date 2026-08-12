@@ -56,6 +56,12 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.insightmatches.com/fr/resources/news" />
   </url>
   <url>
+    <loc>https://www.insightmatches.com/resources/videos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightmatches.com/resources/videos" />
+  </url>
+  <url>
     <loc>https://www.insightmatches.com/resources/horizon-europe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

@@ -17,6 +17,7 @@ import Dissemination from "./pages/Dissemination";
 import Resources from "./pages/Resources";
 import ResourcesInsights from "./pages/ResourcesInsights";
 import ResourcesNews from "./pages/ResourcesNews";
+import ResourcesVideos from "./pages/ResourcesVideos";
 import About from "./pages/About";
 import GenderEqualityPlan from "./pages/GenderEqualityPlan";
 import NetworkBusan from "./pages/NetworkBusan";
@@ -165,6 +166,7 @@ const AppContent = () => {
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/insights" element={<ResourcesInsights />} />
             <Route path="/resources/news" element={<ResourcesNews />} />
+            <Route path="/resources/videos" element={<ResourcesVideos />} />
             <Route path="/resources/horizon-europe" element={<HorizonEurope />} />
             <Route path="/resources/guide-horizon-europe-korea" element={<GuideHorizonEuropeKorea />} />
             <Route path="/resources/ai-tools-eu-korea-consortium" element={<AIToolsEUKoreaConsortium />} />
