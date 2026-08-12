@@ -767,10 +767,10 @@ export const translations = {
     ctaSeeHowItWorks: "어떻게 작동하는지 보기",
     ctaLearnMore: "자세히 보기",
     pricingFreeTierNote: "무료: 모든 요청을 직접 검토하고 24에서 48시간 내에 답변드립니다.",
-    formReassurance: "신용카드 불필요. 원하지 않으면 영업 통화 없음. 24–48시간 내에 직접 답변드립니다.",
+    formReassurance: "신용카드 불필요. 원하지 않으면 영업 통화 없음. 24에서 48시간 내에 직접 답변드립니다.",
 
     // Referral Program
-    referralTitle: "추천 프로그램 – 10% 제공, 10% 적립 | InsightMatches",
+    referralTitle: "추천 프로그램 : 10% 제공, 10% 적립 | InsightMatches",
     referralDescription: "딥테크 연구자 및 중소기업을 InsightMatches에 추천하세요. 추천받은 사람은 10% 할인을 받고, 귀하는 연간 구독료의 10%를 커미션으로 받습니다.",
     partnerProgram: "파트너 및 추천 프로그램",
     referHeroTitle1: "InsightMatches 추천하기.",
@@ -896,11 +896,11 @@ export const translations = {
     pricingTitle: "Choisissez la voie qui correspond à votre équipe de recherche.",
     pricingSubtitle: "Que vous vouliez un copilote IA pour accélérer votre rédaction ou un expert pour tout prendre en charge, InsightMatches vous fait financer plus vite.",
     pricingRecommended: "LE PLUS POPULAIRE",
-    pricingFreeTier: "Starter",
+    pricingFreeTier: "Démarrage",
     pricingFreeTierDesc: "Découvrez les opportunités et trouvez vos partenaires de consortium.",
     pricingFreeTierPrice: "Gratuit",
     pricingFreeTierSubtitle: "Atteignez le moment 'Aha !' : le bon appel R&I européen (Horizon Europe, EIC, Erasmus+, Interreg) et les bons partenaires.",
-    pricingFreeTierFeature1: "Funding Opportunity Radar",
+    pricingFreeTierFeature1: "Radar d'opportunités de financement",
     pricingFreeTierFeature2: "Matching de partenaires intelligent (basique)",
     pricingFreeTierFeature3: "Créer un profil partenaire public",
     pricingFreeTierFeature4: "Limite : génération et export de proposition complète indisponibles",
@@ -1137,7 +1137,7 @@ export const translations = {
     insightsInterviews: "Analyses & entretiens",
     newsAnnouncements: "Actualités & annonces",
     genderEqualityPlan: "Plan pour l'égalité de genre",
-    networkBusan: "Network Busan",
+    networkBusan: "Réseau Busan",
     signOut: "Se déconnecter",
     signedInAs: "Connecté en tant que :",
 
@@ -1160,7 +1160,7 @@ export const translations = {
     ctaSeeHowItWorks: "Voir comment ça marche",
     ctaLearnMore: "En savoir plus",
     pricingFreeTierNote: "Gratuit : nous examinons chaque demande personnellement et répondons sous 24 à 48h.",
-    formReassurance: "Pas de carte bancaire. Pas d'appel commercial sauf si vous le demandez. Nous répondons personnellement sous 24–48h.",
+    formReassurance: "Pas de carte bancaire. Pas d'appel commercial sauf si vous le demandez. Nous répondons personnellement sous 24 à 48h.",
 
     // Referral Program
     referralTitle: "Programme de Parrainage : Offrez 10%, Recevez 10% | InsightMatches",
