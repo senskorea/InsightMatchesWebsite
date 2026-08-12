@@ -19,7 +19,72 @@ const shortVideo = {
   youtubeUrl: 'https://youtube.com/shorts/ftbdr2dDQ5M',
 };
 
-const ResourcesVideos = () => {
+type VideoLocale = 'en' | 'ko' | 'fr';
+
+const copy = {
+  en: {
+    seoTitle: 'See Insight Matches in Action | Platform Videos',
+    seoDescription: 'See how Insight Matches helps research teams find Horizon Europe funding, assemble international consortia and develop competitive proposals with AI.',
+    badge: 'Platform videos',
+    headline: 'See how research ideas become',
+    headlineAccent: 'fundable EU projects',
+    intro: 'Discover how Insight Matches helps teams find the right calls, connect with international partners and build stronger proposals with AI.',
+    browserLabel: 'Insight Matches platform walkthrough',
+    featured: 'Featured walkthrough',
+    longTitle: 'Full Platform Walkthrough',
+    longDescription: longVideo.description,
+    openYoutube: 'Open on YouTube',
+    shortLabel: 'Short on time?',
+    shortTitle: 'The opportunity in under a minute',
+    shortDescription: shortVideo.description,
+    steps: ['Find matching calls', 'Connect with partners', 'Draft with AI'],
+    watchShort: 'Watch the Short',
+  },
+  ko: {
+    seoTitle: 'Insight Matches 활용 영상 | 플랫폼 데모',
+    seoDescription: 'Insight Matches가 연구팀의 호라이즌 유럽 공고 탐색, 국제 컨소시엄 구성, AI 기반 제안서 작성을 어떻게 지원하는지 확인하세요.',
+    badge: '플랫폼 영상',
+    headline: '연구 아이디어가 EU 지원 프로젝트로',
+    headlineAccent: '발전하는 과정을 확인하세요',
+    intro: 'Insight Matches를 활용해 적합한 공고를 찾고, 해외 파트너와 연결하고, AI로 더 경쟁력 있는 제안서를 작성하는 과정을 확인하세요.',
+    browserLabel: 'Insight Matches 플랫폼 전체 데모',
+    featured: '추천 영상',
+    longTitle: '플랫폼 전체 데모',
+    longDescription: '적합한 연구 공고 매칭부터 컨소시엄 구성, 제출 가능한 제안서 개발까지 전체 과정을 확인하세요.',
+    openYoutube: 'YouTube에서 보기',
+    shortLabel: '시간이 부족하신가요?',
+    shortTitle: '1분 안에 핵심만 확인하세요',
+    shortDescription: '한국 연구팀을 위한 호라이즌 유럽의 기회와 Insight Matches가 EU 연구비 신청을 더 쉽게 만드는 방법을 간단히 소개합니다.',
+    steps: ['적합한 공고 찾기', '파트너 연결', 'AI로 제안서 작성'],
+    watchShort: 'Shorts 보기',
+  },
+  fr: {
+    seoTitle: 'Insight Matches en action | Vidéos de la plateforme',
+    seoDescription: 'Découvrez comment Insight Matches aide les équipes à identifier les appels Horizon Europe, constituer des consortiums internationaux et préparer des propositions avec l’IA.',
+    badge: 'Vidéos de la plateforme',
+    headline: 'Découvrez comment une idée de recherche devient',
+    headlineAccent: 'un projet européen finançable',
+    intro: 'Découvrez comment Insight Matches aide les équipes à trouver les bons appels, contacter des partenaires internationaux et préparer de meilleures propositions avec l’IA.',
+    browserLabel: 'Présentation de la plateforme Insight Matches',
+    featured: 'Présentation complète',
+    longTitle: 'Visite complète de la plateforme',
+    longDescription: 'Suivez le parcours complet, de l’identification d’un appel pertinent et la constitution du consortium jusqu’à la préparation de la proposition.',
+    openYoutube: 'Voir sur YouTube',
+    shortLabel: 'Vous manquez de temps ?',
+    shortTitle: 'L’essentiel en moins d’une minute',
+    shortDescription: 'Une brève introduction aux opportunités Horizon Europe pour les équipes coréennes et à la manière dont Insight Matches simplifie leur accès.',
+    steps: ['Trouver les bons appels', 'Contacter des partenaires', 'Rédiger avec l’IA'],
+    watchShort: 'Voir le Short',
+  },
+} as const;
+
+interface ResourcesVideosProps {
+  locale?: VideoLocale;
+}
+
+const ResourcesVideos = ({ locale = 'en' }: ResourcesVideosProps) => {
+  const c = copy[locale];
+  const canonical = locale === 'en' ? '/resources/videos' : `/${locale}/resources/videos`;
   const videoObjectSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -52,9 +117,16 @@ const ResourcesVideos = () => {
   return (
     <div className="min-h-screen overflow-hidden bg-background text-foreground">
       <SEO
-        title="See Insight Matches in Action | Platform Videos"
-        description="See how Insight Matches helps research teams find Horizon Europe funding, assemble international consortia and develop competitive proposals with AI."
-        canonical="/resources/videos"
+        title={c.seoTitle}
+        description={c.seoDescription}
+        canonical={canonical}
+        lang={locale}
+        alternates={[
+          { hreflang: 'en', href: 'https://www.insightmatches.com/resources/videos' },
+          { hreflang: 'ko', href: 'https://www.insightmatches.com/ko/resources/videos' },
+          { hreflang: 'fr', href: 'https://www.insightmatches.com/fr/resources/videos' },
+          { hreflang: 'x-default', href: 'https://www.insightmatches.com/resources/videos' },
+        ]}
         jsonLd={videoObjectSchema}
       />
       <Navbar />
@@ -71,16 +143,16 @@ const ResourcesVideos = () => {
             <div className="mx-auto mb-12 max-w-4xl text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-100/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 dark:border-sky-400/20 dark:bg-sky-400/10 dark:text-sky-300">
                 <Sparkles className="h-3.5 w-3.5" />
-                Platform videos
+                {c.badge}
               </div>
               <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
-                See how research ideas become
+                {c.headline}
                 <span className="block bg-gradient-to-r from-sky-600 via-cyan-600 to-emerald-600 bg-clip-text text-transparent dark:from-sky-300 dark:via-cyan-300 dark:to-emerald-300">
-                  fundable EU projects
+                  {c.headlineAccent}
                 </span>
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-                Discover how Insight Matches helps teams find the right calls, connect with international partners and build stronger proposals with AI.
+                {c.intro}
               </p>
             </div>
 
@@ -90,7 +162,7 @@ const ResourcesVideos = () => {
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-300/70" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                  <span className="ml-3 text-xs font-medium text-slate-500 dark:text-slate-400">Insight Matches platform walkthrough</span>
+                  <span className="ml-3 text-xs font-medium text-slate-500 dark:text-slate-400">{c.browserLabel}</span>
                 </div>
                 <div className="relative aspect-video bg-black">
                   <iframe
@@ -108,10 +180,10 @@ const ResourcesVideos = () => {
               <div className="mt-7 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                 <div className="max-w-3xl">
                   <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-sky-700 dark:text-sky-300">
-                    <Play className="h-4 w-4 fill-current" /> Featured walkthrough
+                    <Play className="h-4 w-4 fill-current" /> {c.featured}
                   </div>
-                  <h2 className="text-2xl font-semibold sm:text-3xl">{longVideo.title}</h2>
-                  <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">{longVideo.description}</p>
+                  <h2 className="text-2xl font-semibold sm:text-3xl">{c.longTitle}</h2>
+                  <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">{c.longDescription}</p>
                 </div>
                 <a
                   href={longVideo.youtubeUrl}
@@ -119,7 +191,7 @@ const ResourcesVideos = () => {
                   rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-sky-400 hover:bg-sky-50 dark:border-white/15 dark:bg-white/5 dark:text-white dark:shadow-none dark:hover:border-sky-300/50 dark:hover:bg-sky-400/10"
                 >
-                  Open on YouTube <ArrowUpRight className="h-4 w-4" />
+                  {c.openYoutube} <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </article>
@@ -130,13 +202,13 @@ const ResourcesVideos = () => {
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-20 lg:px-8">
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] text-sky-600 dark:text-sky-400">
-                <Clock3 className="h-4 w-4" /> Short on time?
+                <Clock3 className="h-4 w-4" /> {c.shortLabel}
               </div>
-              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">The opportunity in under a minute</h2>
-              <p className="mt-5 text-lg leading-8 text-muted-foreground">{shortVideo.description}</p>
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">{c.shortTitle}</h2>
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">{c.shortDescription}</p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {['Find matching calls', 'Connect with partners', 'Draft with AI'].map((label, index) => (
+                {c.steps.map((label, index) => (
                   <div key={label} className="border-l-2 border-sky-500 pl-4">
                     <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">0{index + 1}</div>
                     <div className="mt-1 text-sm font-semibold">{label}</div>
@@ -150,7 +222,7 @@ const ResourcesVideos = () => {
                 rel="noopener noreferrer"
                 className="mt-9 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:opacity-85"
               >
-                Watch the Short <ArrowUpRight className="h-4 w-4" />
+                {c.watchShort} <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
 

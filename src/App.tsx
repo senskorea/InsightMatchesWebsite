@@ -53,11 +53,13 @@ import FrDissemination from "./pages/fr/FrDissemination";
 import FrResources from "./pages/fr/FrResources";
 import FrResourcesInsights from "./pages/fr/FrResourcesInsights";
 import FrResourcesNews from "./pages/fr/FrResourcesNews";
+import FrResourcesVideos from "./pages/fr/FrResourcesVideos";
 import FrGenderEqualityPlan from "./pages/fr/FrGenderEqualityPlan";
 import KoDissemination from "./pages/ko/KoDissemination";
 import KoResources from "./pages/ko/KoResources";
 import KoResourcesInsights from "./pages/ko/KoResourcesInsights";
 import KoResourcesNews from "./pages/ko/KoResourcesNews";
+import KoResourcesVideos from "./pages/ko/KoResourcesVideos";
 import KoGenderEqualityPlan from "./pages/ko/KoGenderEqualityPlan";
 
 const AppRedirect = () => {
@@ -183,6 +185,7 @@ const AppContent = () => {
             <Route path="/ko/resources" element={<KoResources />} />
             <Route path="/ko/resources/insights" element={<KoResourcesInsights />} />
             <Route path="/ko/resources/news" element={<KoResourcesNews />} />
+            <Route path="/ko/resources/videos" element={<KoResourcesVideos />} />
             <Route path="/ko/about/gep" element={<KoGenderEqualityPlan />} />
             <Route path="/fr" element={<Navigate to="/fr/" replace />} />
             <Route path="/fr/" element={<FrIndex />} />
@@ -196,6 +199,7 @@ const AppContent = () => {
             <Route path="/fr/resources" element={<FrResources />} />
             <Route path="/fr/resources/insights" element={<FrResourcesInsights />} />
             <Route path="/fr/resources/news" element={<FrResourcesNews />} />
+            <Route path="/fr/resources/videos" element={<FrResourcesVideos />} />
             <Route path="/fr/about/gep" element={<FrGenderEqualityPlan />} />
             <Route path="/about" element={<About />} />
             <Route path="/partners" element={<Navigate to="/about" replace />} />
