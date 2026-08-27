@@ -41,9 +41,9 @@ export const LanguageSelector: React.FC = () => {
     
     // Navigate to new localized path
     if (langCode === 'en') {
-      navigate(path);
+      navigate(path + location.search + location.hash);
     } else {
-      navigate(`/${langCode}${path === '/' ? '' : path}`);
+      navigate(`/${langCode}${path === '/' ? '' : path}${location.search}${location.hash}`);
     }
   };
 

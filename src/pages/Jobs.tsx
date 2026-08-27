@@ -2,11 +2,16 @@ import { useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { SEO } from '@/components/SEO';
 import { Briefcase, Code, Rocket, Target, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const Jobs = () => {
-  const { currentLanguage } = useTranslation();
+  const { pathname } = useLocation();
+  const { currentLanguage, changeLanguage } = useTranslation();
+
+  useEffect(() => {
+    if (pathname.startsWith('/ko/') && currentLanguage !== 'ko') changeLanguage('ko');
+  }, [pathname, currentLanguage, changeLanguage]);
 
   useEffect(() => {
     document.title = currentLanguage === 'ko' ? '채용 - InsightMatches' : currentLanguage === 'fr' ? 'Emplois - InsightMatches' : 'Jobs - InsightMatches';
@@ -142,10 +147,10 @@ const Jobs = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 relative z-20">
-          {t.jobs.map((job: any, index: number) => (
+          {[...t.jobs].sort((a, b) => Number(b.id === 'korea-country-manager') - Number(a.id === 'korea-country-manager')).map((job: any, index: number) => (
             <Link 
               key={job.id} 
-              to={`/careers#${job.id}`}
+              to={`${currentLanguage === 'ko' ? '/ko' : ''}/careers#${job.id}`}
               className="group block relative"
               style={{ animationDelay: `${index * 150}ms` }}
             >

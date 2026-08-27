@@ -214,7 +214,9 @@ const AppContent = () => {
             <Route path="/nextrise" element={<NextRise />} />
             <Route path="/NEXTRISE" element={<Navigate to="/nextrise" replace />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/ko/careers" element={<Careers />} />
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/ko/jobs" element={<Jobs />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/rnday" element={<Navigate to="/rndday" replace />} />

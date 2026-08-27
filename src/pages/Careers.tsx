@@ -1,68 +1,228 @@
 import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
+import { koreaRoleKorean } from '@/translations/koreaRole';
 import { Navbar } from '@/components/Navbar';
 import { Briefcase, Code, Rocket, Award, ChevronRight, CheckCircle, Target } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
 const Careers = () => {
+  const { pathname, search, hash } = useLocation();
+  const { currentLanguage, changeLanguage } = useTranslation();
+  const isKorean = pathname.startsWith('/ko/');
   useEffect(() => {
-    document.title = 'Careers - InsightMatches';
-  }, []);
+    const language = isKorean ? 'ko' : 'en';
+    if (currentLanguage !== language) changeLanguage(language);
+  }, [isKorean, currentLanguage, changeLanguage]);
+  const copy = (text: string) => isKorean ? (koreaRoleKorean[text] || text) : text;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-card to-background">
       <SEO
-        title="Careers at InsightMatches"
-        description="Join InsightMatches. We are hiring a Founding CTO / Lead Engineer, AI Systems."
-        canonical="/careers"
+        title={isKorean ? '채용 | 한국 컨트리 매니저 | InsightMatches' : 'Careers at InsightMatches'}
+        description={isKorean ? 'InsightMatches의 한국 컨트리 매니저로 합류해 운영, 파트너십 및 성장을 함께 이끌어 주세요.' : 'Join InsightMatches in operations, partnerships, research funding and engineering.'}
+        canonical={isKorean ? '/ko/careers' : '/careers'}
+        lang={isKorean ? 'ko' : 'en'}
       />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center gap-4 mb-6" aria-label="Page language">
+            <Link to={`/careers${search}${hash}`} lang="en" aria-current={!isKorean ? 'page' : undefined} className="text-primary underline underline-offset-4">English</Link>
+            <Link to={`/ko/careers${search}${hash}`} lang="ko" aria-current={isKorean ? 'page' : undefined} className="text-primary underline underline-offset-4">한국어</Link>
+          </div>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
             <Briefcase className="w-4 h-4" />
-            <span className="text-sm font-medium">Join Our Team</span>
+            <span className="text-sm font-medium">{isKorean ? "팀에 합류하세요" : "Join Our Team"}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Help Us Build the Future of Agentic AI</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{isKorean ? "연구와 협업의 미래를 함께 만들어 가세요" : "Help Us Build the Future of Agentic AI"}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We are looking for passionate builders who thrive in ambiguity and deeply understand modern LLM integration.
+            {isKorean ? "운영, 파트너십, 연구 지원 및 기술 개발 분야에서 함께 성장할 동료를 찾고 있습니다." : "Join our founding team across operations, partnerships, research funding and engineering."}
           </p>
 
           {/* Quick Nav Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto text-left">
-            <button 
-              onClick={() => document.getElementById('cto')?.scrollIntoView({behavior: 'smooth'})} 
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
-            >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Code className="w-5 h-5" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-1">Founding CTO</h3>
-              <p className="text-sm text-muted-foreground">Engineering</p>
-            </button>
-
-            <button 
-              onClick={() => document.getElementById('project-coordinator')?.scrollIntoView({behavior: 'smooth'})} 
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
-            >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Briefcase className="w-5 h-5" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-1">Project Coordinator</h3>
-              <p className="text-sm text-muted-foreground">Operations</p>
-            </button>
-
-            <button 
-              onClick={() => document.getElementById('korea-country-manager')?.scrollIntoView({behavior: 'smooth'})}
+            <a href="#korea-country-manager"
               className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Target className="w-5 h-5" />
               </div>
-              <h3 className="font-semibold text-foreground mb-1">Country Manager Korea</h3>
-              <p className="text-sm text-muted-foreground">Operations, Partnerships & Growth</p>
-            </button>
+              <h3 className="font-semibold text-foreground mb-1">{isKorean ? "한국 컨트리 매니저" : "Country Manager Korea"}</h3>
+              <p className="text-sm text-muted-foreground">{isKorean ? "운영, 파트너십 및 성장" : "Operations, Partnerships & Growth"}</p>
+            </a>
+
+            <a href="#cto"
+              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Code className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-1">{isKorean ? "창립 CTO" : "Founding CTO"}</h3>
+              <p className="text-sm text-muted-foreground">{isKorean ? "엔지니어링" : "Engineering"}</p>
+            </a>
+
+            <a href="#project-coordinator"
+              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Briefcase className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-1">{isKorean ? "프로젝트 코디네이터" : "Project Coordinator"}</h3>
+              <p className="text-sm text-muted-foreground">{isKorean ? "운영" : "Operations"}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Job Spec - Country Manager Korea */}
+      <section className="py-8 px-4" style={{ scrollMarginTop: 'calc(var(--demo-banner-h, 0px) + 5rem)' }} id="korea-country-manager" lang={isKorean ? 'ko' : 'en'}>
+        <div id="head-of-growth" className="scroll-mt-24" aria-hidden="true" />
+        <div className="max-w-4xl mx-auto">
+          <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-2">{copy("Country Manager Korea")}</h2>
+                <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Target className="w-4 h-4" /> {copy("Operations, Partnerships & Growth")}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Rocket className="w-4 h-4" /> {copy("Early Stage / Founding Team")}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
+                    <Award className="w-4 h-4" /> {copy("Equity Based")}
+                  </span>
+                </div>
+              </div>
+              <a href="mailto:info@insightmatches.com?subject=Application%3A%20Country%20Manager%20Korea" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
+                {copy("Apply Now")} <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="mb-8">
+              <a href={`${isKorean ? '/ko' : ''}/careers#korea-country-manager`} className="text-primary underline underline-offset-4">
+                {isKorean ? '이 포지션 바로가기 링크' : 'Direct link to this role'}
+              </a>
+            </div>
+            <div className="space-y-10">
+              {/* The Opportunity */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Rocket className="w-5 h-5" />
+                  </span>
+                  {copy("The Opportunity")}
+                </h3>
+                <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
+                  <p>
+                    {copy("Want to help connect researchers around the world and support groundbreaking science? Join us as we build the team to make that happen.")}
+                  </p>
+                  <p>
+                    {copy("InsightMatches is an AI powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.")}
+                  </p>
+                  <p>
+                    {copy("We are looking for a Country Manager Korea to coordinate local operations, build strategic relationships and support our growth in the Korean market. You will work closely with the founder across company administration, startup programmes, partnerships and commercial development.")}
+                  </p>
+                </div>
+              </div>
+
+              {/* Responsibilities */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5" />
+                  </span>
+                  {copy("Responsibilities")}
+                </h3>
+                <div className="pl-10">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{copy("Coordinate company administration, including electronic tax invoices, documentation and communication with our accountants.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{copy("Build and maintain relationships with government agencies, public research institutes, universities and other key stakeholders.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{copy("Identify relevant startup competitions and accelerator programmes in Korea that InsightMatches could participate in.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{copy("Coordinate programme applications, supporting documentation and communication with organisers.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{copy("Contribute to our go to market, marketing and sales strategies for Korea.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{copy("Support outreach, meetings and partnership development with prospective clients and collaborators.")}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Requirements */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Target className="w-5 h-5" />
+                  </span>
+                  {copy("What We’re Looking For")}
+                </h3>
+                <div className="pl-10">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>{copy("Native Korean speaker with professional working proficiency in English.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>{copy("A background in marketing, sales, international relations or a related field.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>{copy("Strong organisational skills and confidence communicating with institutional and commercial partners.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>{copy("A proactive, practical attitude, with honest communication and a willingness to learn.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>{copy("A genuine interest in startups, technology and international collaboration.")}</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>{copy("Experience studying, working or living abroad is a plus.")}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Compensation */}
+              <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
+                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5" />
+                  </span>
+                  {copy("Compensation and Pathway")}
+                </h3>
+                <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
+                  <p>
+                    {copy("The initial role is equity based, with no guaranteed salary at the outset. Scope, commitment, vesting and decision rights will be clearly agreed.")}
+                  </p>
+                  <p>
+                    {copy("The intended pathway is to a full time salaried role once agreed funding or revenue milestones make this sustainable.")}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -201,7 +361,7 @@ const Careers = () => {
                   </ul>
                 </div>
               </div>
-              
+
               {/* Success */}
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
@@ -349,7 +509,7 @@ const Careers = () => {
                   </ul>
                 </div>
               </div>
-              
+
               {/* Compensation */}
               <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
                 <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
@@ -372,150 +532,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Job Spec - Country Manager Korea */}
-      <section className="py-8 px-4 pb-24 scroll-mt-24" id="korea-country-manager">
-        <div id="head-of-growth" className="scroll-mt-24" aria-hidden="true" />
-        <div className="max-w-4xl mx-auto">
-          <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
-              <div>
-                <h2 className="text-3xl font-bold mb-2">Country Manager Korea</h2>
-                <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Target className="w-4 h-4" /> Operations, Partnerships & Growth
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Rocket className="w-4 h-4" /> Early Stage / Founding Team
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Award className="w-4 h-4" /> Equity Based
-                  </span>
-                </div>
-              </div>
-              <a href="mailto:info@insightmatches.com?subject=Application%3A%20Country%20Manager%20Korea" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
-                Apply Now <ChevronRight className="w-4 h-4" />
-              </a>
-            </div>
 
-            <div className="space-y-10">
-              {/* The Opportunity */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <Rocket className="w-5 h-5" />
-                  </span>
-                  The Opportunity
-                </h3>
-                <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
-                  <p>
-                    Want to help connect researchers around the world and support groundbreaking science? Join us as we build the team to make that happen.
-                  </p>
-                  <p>
-                    InsightMatches is an AI powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
-                  </p>
-                  <p>
-                    We are looking for a Country Manager Korea to coordinate local operations, build strategic relationships and support our growth in the Korean market. You will work closely with the founder across company administration, startup programmes, partnerships and commercial development.
-                  </p>
-                </div>
-              </div>
-
-              {/* Responsibilities */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <Briefcase className="w-5 h-5" />
-                  </span>
-                  Responsibilities
-                </h3>
-                <div className="pl-10">
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Coordinate company administration, including electronic tax invoices, documentation and communication with our accountants.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Build and maintain relationships with government agencies, public research institutes, universities and other key stakeholders.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Identify relevant startup competitions and accelerator programmes in Korea that InsightMatches could participate in.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Coordinate programme applications, supporting documentation and communication with organisers.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Contribute to our go to market, marketing and sales strategies for Korea.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Support outreach, meetings and partnership development with prospective clients and collaborators.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Requirements */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <Target className="w-5 h-5" />
-                  </span>
-                  What We’re Looking For
-                </h3>
-                <div className="pl-10">
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Native Korean speaker with professional working proficiency in English.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>A background in marketing, sales, international relations or a related field.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Strong organisational skills and confidence communicating with institutional and commercial partners.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>A proactive, practical attitude, with honest communication and a willingness to learn.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>A genuine interest in startups, technology and international collaboration.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Experience studying, working or living abroad is a plus.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Compensation */}
-              <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
-                <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <Award className="w-5 h-5" />
-                  </span>
-                  Compensation and Pathway
-                </h3>
-                <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
-                  <p>
-                    The initial role is equity based, with no guaranteed salary at the outset. Scope, commitment, vesting and decision rights will be clearly agreed.
-                  </p>
-                  <p>
-                    The intended pathway is to a full time salaried role once agreed funding or revenue milestones make this sustainable.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
