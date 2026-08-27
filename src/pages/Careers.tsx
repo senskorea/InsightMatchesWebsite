@@ -54,14 +54,14 @@ const Careers = () => {
             </button>
 
             <button 
-              onClick={() => document.getElementById('head-of-growth')?.scrollIntoView({behavior: 'smooth'})} 
+              onClick={() => document.getElementById('korea-country-manager')?.scrollIntoView({behavior: 'smooth'})}
               className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-md group text-left flex flex-col items-start"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Target className="w-5 h-5" />
               </div>
-              <h3 className="font-semibold text-foreground mb-1">Head of Growth</h3>
-              <p className="text-sm text-muted-foreground">Sales & Marketing</p>
+              <h3 className="font-semibold text-foreground mb-1">Country Manager Korea</h3>
+              <p className="text-sm text-muted-foreground">Operations, Partnerships & Growth</p>
             </button>
           </div>
         </div>
@@ -372,16 +372,17 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Job Spec - Head of Growth */}
-      <section className="py-8 px-4 pb-24 scroll-mt-24" id="head-of-growth">
+      {/* Job Spec - Country Manager Korea */}
+      <section className="py-8 px-4 pb-24 scroll-mt-24" id="korea-country-manager">
+        <div id="head-of-growth" className="scroll-mt-24" aria-hidden="true" />
         <div className="max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
               <div>
-                <h2 className="text-3xl font-bold mb-2">Founding Head of Growth (Marketing & Sales)</h2>
+                <h2 className="text-3xl font-bold mb-2">Country Manager Korea</h2>
                 <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Target className="w-4 h-4" /> Growth & Sales
+                    <Target className="w-4 h-4" /> Operations, Partnerships & Growth
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
                     <Rocket className="w-4 h-4" /> Early Stage / Founding Team
@@ -391,7 +392,7 @@ const Careers = () => {
                   </span>
                 </div>
               </div>
-              <a href="mailto:info@insightmatches.com?subject=Application%3A%20Founding%20Head%20of%20Growth" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
+              <a href="mailto:info@insightmatches.com?subject=Application%3A%20Country%20Manager%20Korea" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
                 Apply Now <ChevronRight className="w-4 h-4" />
               </a>
             </div>
@@ -407,10 +408,13 @@ const Careers = () => {
                 </h3>
                 <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
                   <p>
-                    InsightMatches is an AI-powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
+                    Want to help connect researchers around the world and support groundbreaking science? Join us as we build the team to make that happen.
                   </p>
                   <p>
-                    We are looking for a relentless, strategic growth leader to own our Go-To-Market strategy. Your mission is to secure our first cohort of paid users and close high-ticket enterprise deals, laying the foundation for our commercial success.
+                    InsightMatches is an AI powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
+                  </p>
+                  <p>
+                    We are looking for a Country Manager Korea to coordinate local operations, build strategic relationships and support our growth in the Korean market. You will work closely with the founder across company administration, startup programmes, partnerships and commercial development.
                   </p>
                 </div>
               </div>
@@ -427,54 +431,70 @@ const Careers = () => {
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Own the Go-To-Market strategy and execute targeted campaigns to drive early revenue.</span>
+                      <span>Coordinate company administration, including electronic tax invoices, documentation and communication with our accountants.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Identify, engage, and close high-ticket enterprise deals with research institutions, universities, and innovative SMEs across Europe.</span>
+                      <span>Build and maintain relationships with government agencies, public research institutes, universities and other key stakeholders.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Build and manage a robust B2B lead generation and sales pipeline.</span>
+                      <span>Identify relevant startup competitions and accelerator programmes in Korea that InsightMatches could participate in.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Craft high-converting marketing materials and sales narratives tailored to the EU research ecosystem.</span>
+                      <span>Coordinate programme applications, supporting documentation and communication with organisers.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Contribute to our go to market, marketing and sales strategies for Korea.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>Support outreach, meetings and partnership development with prospective clients and collaborators.</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* What We're Looking For */}
+              {/* Requirements */}
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Target className="w-5 h-5" />
                   </span>
-                  What We're Looking For
+                  What We’re Looking For
                 </h3>
                 <div className="pl-10">
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Proven track record in B2B enterprise sales, preferably within SaaS, EdTech, or research-adjacent sectors.</span>
+                      <span>Native Korean speaker with professional working proficiency in English.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Strategic thinker with the ability to seamlessly execute hands-on outbound sales and marketing campaigns.</span>
+                      <span>A background in marketing, sales, international relations or a related field.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Excellent negotiation, pitching, and relationship-building skills.</span>
+                      <span>Strong organisational skills and confidence communicating with institutional and commercial partners.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>A builder's mindset: comfortable operating in an early-stage, ambiguous environment and scaling revenue from zero.</span>
+                      <span>A proactive, practical attitude, with honest communication and a willingness to learn.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>A genuine interest in startups, technology and international collaboration.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
+                      <span>Experience studying, working or living abroad is a plus.</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              
+
               {/* Compensation */}
               <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
                 <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
@@ -485,10 +505,10 @@ const Careers = () => {
                 </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
                   <p>
-                    The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.
+                    The initial role is equity based, with no guaranteed salary at the outset. Scope, commitment, vesting and decision rights will be clearly agreed.
                   </p>
                   <p>
-                    There is a defined pathway to a full-time salaried role when agreed funding or revenue milestones are reached.
+                    The intended pathway is to a full time salaried role once agreed funding or revenue milestones make this sustainable.
                   </p>
                 </div>
               </div>

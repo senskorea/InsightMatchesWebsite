@@ -34,10 +34,10 @@ const Jobs = () => {
           tags: ['Early Stage', 'Equity Based']
         },
         {
-          id: 'head-of-growth',
-          title: 'Founding Head of Growth (Sales)',
-          department: 'Growth',
-          description: 'Own our Go-To-Market strategy. Secure our first cohort of paid users and close high-ticket enterprise deals across Europe.',
+          id: 'korea-country-manager',
+          title: 'Country Manager Korea',
+          department: 'Operations & Partnerships',
+          description: 'Coordinate Korean operations, build stakeholder relationships, identify startup programmes and contribute to our marketing and sales strategies.',
           tags: ['Early Stage', 'Equity Based']
         }
       ]
@@ -64,10 +64,10 @@ const Jobs = () => {
           tags: ['초기 단계', '지분 기반']
         },
         {
-          id: 'head-of-growth',
-          title: '창립 그로스 헤드 (세일즈)',
-          department: '그로스',
-          description: 'Go-To-Market 전략을 총괄합니다. 초기 유료 고객을 확보하고 유럽 전역에서 고부가가치 엔터프라이즈 계약을 성사시킵니다.',
+          id: 'korea-country-manager',
+          title: '한국 컨트리 매니저',
+          department: '운영 및 파트너십',
+          description: '한국 내 회사 운영을 조율하고 주요 이해관계자와의 관계를 구축합니다. 스타트업 지원 프로그램을 발굴하고 마케팅 및 영업 전략 수립에 기여합니다.',
           tags: ['초기 단계', '지분 기반']
         }
       ]
@@ -93,10 +93,10 @@ const Jobs = () => {
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         },
         {
-          id: 'head-of-growth',
-          title: 'Directeur de la Croissance Fondateur (Ventes)',
-          department: 'Croissance',
-          description: 'Prenez en charge notre stratégie de commercialisation. Sécurisez nos premiers utilisateurs et signez des contrats majeurs en Europe.',
+          id: 'korea-country-manager',
+          title: 'Country Manager Corée',
+          department: 'Opérations et partenariats',
+          description: 'Coordonnez les opérations en Corée, développez les relations institutionnelles, identifiez les programmes pour startups et contribuez aux stratégies marketing et commerciales.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         }
       ]
@@ -108,7 +108,7 @@ const Jobs = () => {
   const icons = {
     'cto': <Code className="w-6 h-6 text-sky-500" />,
     'project-coordinator': <Briefcase className="w-6 h-6 text-emerald-500" />,
-    'head-of-growth': <Target className="w-6 h-6 text-amber-500" />
+    'korea-country-manager': <Target className="w-6 h-6 text-amber-500" />
   };
 
   return (
