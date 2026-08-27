@@ -228,26 +228,26 @@ const Careers = () => {
       </section>
 
       {/* Job Spec - CTO */}
-      <section className="py-8 px-4 scroll-mt-24" id="cto">
+      <section className="py-8 px-4" lang={isKorean ? 'ko' : 'en'} style={{ scrollMarginTop: 'calc(var(--demo-banner-h, 0px) + 5rem)' }} id="cto">
         <div className="max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
               <div>
-                <h2 className="text-3xl font-bold mb-2">Founding CTO / Lead Engineer, AI Systems</h2>
+                <h2 className="text-3xl font-bold mb-2">{copy("Founding CTO / Lead Engineer, AI Systems")}</h2>
                 <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Code className="w-4 h-4" /> Engineering
+                    <Code className="w-4 h-4" /> {copy("Engineering")}
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Rocket className="w-4 h-4" /> Early Stage / Founding Team
+                    <Rocket className="w-4 h-4" /> {copy("Early Stage / Founding Team")}
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Award className="w-4 h-4" /> Equity Based
+                    <Award className="w-4 h-4" /> {copy("Equity Based")}
                   </span>
                 </div>
               </div>
               <a href="mailto:info@insightmatches.com?subject=Application%3A%20Founding%20CTO%20%2F%20Lead%20Engineer%2C%20AI%20Systems" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
-                Apply Now <ChevronRight className="w-4 h-4" />
+                {copy("Apply Now")} <ChevronRight className="w-4 h-4" />
               </a>
             </div>
 
@@ -258,14 +258,14 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Rocket className="w-5 h-5" />
                   </span>
-                  The Opportunity
+                  {copy("The Opportunity")}
                 </h3>
                 <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
                   <p>
-                    InsightMatches is an AI powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
+                    {copy("InsightMatches is an AI powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.")}
                   </p>
                   <p>
-                    We already have a solid full stack product built with React, TypeScript, Supabase, Vercel, and Google Vertex AI. We need a hands on technical leader to validate the existing platform, lead its production launch, and develop its agentic capabilities.
+                    {copy("We already have a solid full stack product built with React, TypeScript, Supabase, Vercel, and Google Vertex AI. We need a hands on technical leader to validate the existing platform, lead its production launch, and develop its agentic capabilities.")}
                   </p>
                 </div>
               </div>
@@ -276,41 +276,41 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Briefcase className="w-5 h-5" />
                   </span>
-                  Responsibilities
+                  {copy("Responsibilities")}
                 </h3>
                 <div className="pl-10">
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Take technical ownership of the existing codebase and architecture.</span>
+                      <span>{copy("Take technical ownership of the existing codebase and architecture.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Lead production readiness, deployment, security, monitoring, and reliability.</span>
+                      <span>{copy("Lead production readiness, deployment, security, monitoring, and reliability.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Build and improve customer facing features across the proposal workflow.</span>
+                      <span>{copy("Build and improve customer facing features across the proposal workflow.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Strengthen AI quality, evaluation, observability, fallback handling, and cost controls.</span>
+                      <span>{copy("Strengthen AI quality, evaluation, observability, fallback handling, and cost controls.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Develop research agents that monitor funding calls, programme requirements, and templates.</span>
+                      <span>{copy("Develop research agents that monitor funding calls, programme requirements, and templates.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Coordinate work between engineers and AI development agents.</span>
+                      <span>{copy("Coordinate work between engineers and AI development agents.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Translate business priorities into a practical technical roadmap.</span>
+                      <span>{copy("Translate business priorities into a practical technical roadmap.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Help build the future engineering team and development culture.</span>
+                      <span>{copy("Help build the future engineering team and development culture.")}</span>
                     </li>
                   </ul>
                 </div>
@@ -322,41 +322,41 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Code className="w-5 h-5" />
                   </span>
-                  Requirements
+                  {copy("Requirements")}
                 </h3>
                 <div className="pl-10">
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Strong experience building and operating production SaaS applications.</span>
+                      <span>{copy("Strong experience building and operating production SaaS applications.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Excellent TypeScript, React, database, API, and cloud engineering skills.</span>
+                      <span>{copy("Excellent TypeScript, React, database, API, and cloud engineering skills.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Practical experience integrating LLMs into real products.</span>
+                      <span>{copy("Practical experience integrating LLMs into real products.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Understanding of authentication, data isolation, security, and PostgreSQL.</span>
+                      <span>{copy("Understanding of authentication, data isolation, security, and PostgreSQL.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Experience with AI evaluation, structured outputs, agent workflows, and human review.</span>
+                      <span>{copy("Experience with AI evaluation, structured outputs, agent workflows, and human review.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Ability to improve an existing platform without defaulting to a rewrite.</span>
+                      <span>{copy("Ability to improve an existing platform without defaulting to a rewrite.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Comfortable combining hands on development with technical leadership.</span>
+                      <span>{copy("Comfortable combining hands on development with technical leadership.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Supabase, Vercel, and Vertex AI experience is valuable.</span>
+                      <span>{copy("Supabase, Vercel, and Vertex AI experience is valuable.")}</span>
                     </li>
                   </ul>
                 </div>
@@ -368,14 +368,14 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Target className="w-5 h-5" />
                   </span>
-                  Success
+                  {copy("Success")}
                 </h3>
                 <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
                   <p>
-                    Your first priority will be to independently assess the current release candidate and lead a safe production launch.
+                    {copy("Your first priority will be to independently assess the current release candidate and lead a safe production launch.")}
                   </p>
                   <p>
-                    You will then improve platform reliability, establish measurable AI quality and cost controls, and deliver the next generation of agentic research and proposal tools.
+                    {copy("You will then improve platform reliability, establish measurable AI quality and cost controls, and deliver the next generation of agentic research and proposal tools.")}
                   </p>
                 </div>
               </div>
@@ -386,14 +386,14 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Award className="w-5 h-5" />
                   </span>
-                  Compensation and Pathway
+                  {copy("Compensation and Pathway")}
                 </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
                   <p>
-                    The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.
+                    {copy("The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.")}
                   </p>
                   <p>
-                    There is a defined pathway to a full time salaried role when agreed funding or revenue milestones are reached.
+                    {copy("There is a defined pathway to a full time salaried role when agreed funding or revenue milestones are reached.")}
                   </p>
                 </div>
               </div>
@@ -404,26 +404,26 @@ const Careers = () => {
       </section>
 
       {/* Job Spec - Project Coordinator */}
-      <section className="py-8 px-4 scroll-mt-24" id="project-coordinator">
+      <section className="py-8 px-4" lang={isKorean ? 'ko' : 'en'} style={{ scrollMarginTop: 'calc(var(--demo-banner-h, 0px) + 5rem)' }} id="project-coordinator">
         <div className="max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
               <div>
-                <h2 className="text-3xl font-bold mb-2">Founding Project Coordinator, EU Grants & Operations</h2>
+                <h2 className="text-3xl font-bold mb-2">{copy("Founding Project Coordinator, EU Grants & Operations")}</h2>
                 <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Briefcase className="w-4 h-4" /> Operations
+                    <Briefcase className="w-4 h-4" /> {copy("Operations")}
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Rocket className="w-4 h-4" /> Early Stage / Founding Team
+                    <Rocket className="w-4 h-4" /> {copy("Early Stage / Founding Team")}
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">
-                    <Award className="w-4 h-4" /> Equity Based
+                    <Award className="w-4 h-4" /> {copy("Equity Based")}
                   </span>
                 </div>
               </div>
               <a href="mailto:info@insightmatches.com?subject=Application%3A%20Founding%20Project%20Coordinator" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shrink-0">
-                Apply Now <ChevronRight className="w-4 h-4" />
+                {copy("Apply Now")} <ChevronRight className="w-4 h-4" />
               </a>
             </div>
 
@@ -434,14 +434,14 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Rocket className="w-5 h-5" />
                   </span>
-                  The Opportunity
+                  {copy("The Opportunity")}
                 </h3>
                 <div className="pl-10 space-y-3 text-muted-foreground leading-relaxed">
                   <p>
-                    InsightMatches is an AI-powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.
+                    {copy("InsightMatches is an AI-powered platform helping researchers develop Horizon Europe and Erasmus+ proposals.")}
                   </p>
                   <p>
-                    We need a meticulous, hands-on Project Coordinator to act as the operational engine behind our client success. You will take the lead on managing complex EU funding proposals from concept to submission, ensuring our project pipelines run flawlessly.
+                    {copy("We need a meticulous, hands-on Project Coordinator to act as the operational engine behind our client success. You will take the lead on managing complex EU funding proposals from concept to submission, ensuring our project pipelines run flawlessly.")}
                   </p>
                 </div>
               </div>
@@ -452,29 +452,29 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Briefcase className="w-5 h-5" />
                   </span>
-                  Responsibilities
+                  {copy("Responsibilities")}
                 </h3>
                 <div className="pl-10">
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Manage complex EU funding proposals (Horizon Europe, EIC, etc.) from concept to final submission.</span>
+                      <span>{copy("Manage complex EU funding proposals (Horizon Europe, EIC, etc.) from concept to final submission.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Coordinate and communicate effectively with cross-border research consortia and key stakeholders.</span>
+                      <span>{copy("Coordinate and communicate effectively with cross-border research consortia and key stakeholders.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Ensure all project deliverables strictly adhere to EU compliance and administrative requirements.</span>
+                      <span>{copy("Ensure all project deliverables strictly adhere to EU compliance and administrative requirements.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Optimize and maintain our internal proposal pipelines and operational workflows.</span>
+                      <span>{copy("Optimize and maintain our internal proposal pipelines and operational workflows.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>Act as a domain expert to guide our engineering team in developing and refining our AI-powered proposal software.</span>
+                      <span>{copy("Act as a domain expert to guide our engineering team in developing and refining our AI-powered proposal software.")}</span>
                     </li>
                   </ul>
                 </div>
@@ -486,25 +486,25 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Target className="w-5 h-5" />
                   </span>
-                  What We're Looking For
+                  {copy("What We're Looking For")}
                 </h3>
                 <div className="pl-10">
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Deep understanding of EU funding mechanisms and proposal structures.</span>
+                      <span>{copy("Deep understanding of EU funding mechanisms and proposal structures.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Exceptional organizational skills and a track record of managing complex, multi-stakeholder projects.</span>
+                      <span>{copy("Exceptional organizational skills and a track record of managing complex, multi-stakeholder projects.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>Strong written and verbal communication skills; ability to align diverse international teams.</span>
+                      <span>{copy("Strong written and verbal communication skills; ability to align diverse international teams.")}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>A builder's mindset: comfortable operating in an early-stage, fast-paced environment and building processes from scratch.</span>
+                      <span>{copy("A builder's mindset: comfortable operating in an early-stage, fast-paced environment and building processes from scratch.")}</span>
                     </li>
                   </ul>
                 </div>
@@ -516,14 +516,14 @@ const Careers = () => {
                   <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Award className="w-5 h-5" />
                   </span>
-                  Compensation and Pathway
+                  {copy("Compensation and Pathway")}
                 </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed pl-10">
                   <p>
-                    The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.
+                    {copy("The initial role is equity based with clearly agreed scope, vesting, commitment, and decision rights.")}
                   </p>
                   <p>
-                    There is a defined pathway to a full-time salaried role when agreed funding or revenue milestones are reached.
+                    {copy("There is a defined pathway to a full-time salaried role when agreed funding or revenue milestones are reached.")}
                   </p>
                 </div>
               </div>
