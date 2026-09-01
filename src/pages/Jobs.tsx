@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { SEO } from '@/components/SEO';
-import { Briefcase, Code, Rocket, Target, ArrowRight } from 'lucide-react';
+import { Briefcase, Code, Rocket, Target, ArrowRight, Megaphone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -25,24 +25,31 @@ const Jobs = () => {
       subtitle: "We're on a mission to transform how EU research funding is secured through agentic AI. Join us at the ground level.",
       jobs: [
         {
-          id: 'cto',
-          title: 'Founding CTO / Lead Engineer, AI Systems',
-          department: 'Engineering',
-          description: 'Take technical ownership of our AI-powered proposal platform. Lead our production launch and build next-generation agentic research tools.',
+          id: 'technology-lead',
+          title: 'Founding Technology Lead, AI Systems',
+          department: 'Technology and Product',
+          description: 'Own our AI assisted proposal platform, lead its production launch and build the next generation of research tools.',
           tags: ['Early Stage', 'Equity Based']
         },
         {
           id: 'project-coordinator',
-          title: 'Founding Project Coordinator, EU Grants',
-          department: 'Operations',
-          description: 'Act as the operational engine behind our client success. Manage complex EU funding proposals from concept to final submission.',
+          title: 'Founding Project Coordinator, EU Funding',
+          department: 'EU Funding and Operations',
+          description: 'Guide complex EU funding projects from concept to submission and ensure our platform reflects client needs.',
           tags: ['Early Stage', 'Equity Based']
         },
         {
           id: 'korea-country-manager',
-          title: 'Country Manager Korea',
-          department: 'Operations & Partnerships',
-          description: 'Coordinate Korean operations, build stakeholder relationships, identify startup programmes and contribute to our marketing and sales strategies.',
+          title: 'Founding Country Manager, Korea',
+          department: 'Operations, Partnerships and Growth',
+          description: 'Lead our Korean operations, institutional relationships, startup programme activity and early market development.',
+          tags: ['Early Stage', 'Equity Based']
+        },
+        {
+          id: 'growth-content-lead',
+          title: 'Founding Growth and Content Lead',
+          department: 'Marketing, Content and Sales',
+          description: 'Turn our expertise into clear content, qualified demand and repeatable customer acquisition channels.',
           tags: ['Early Stage', 'Equity Based']
         }
       ]
@@ -55,24 +62,31 @@ const Jobs = () => {
       subtitle: "에이전틱 AI를 통해 EU 연구 자금을 확보하는 방식을 혁신하고자 합니다. 그 시작을 함께하세요.",
       jobs: [
         {
-          id: 'cto',
-          title: '창립 CTO / 리드 엔지니어, AI 시스템',
-          department: '엔지니어링',
-          description: 'AI 기반 제안서 플랫폼의 기술적 오너십을 갖습니다. 프로덕션 출시를 이끌고 차세대 에이전틱 연구 도구를 구축합니다.',
+          id: 'technology-lead',
+          title: '창립 기술 리드, AI 시스템',
+          department: '기술 및 제품',
+          description: 'AI 기반 제안서 플랫폼을 총괄하고 정식 출시와 차세대 연구 도구 개발을 이끕니다.',
           tags: ['초기 단계', '지분 기반']
         },
         {
           id: 'project-coordinator',
-          title: '창립 프로젝트 코디네이터, EU 그랜트',
-          department: '운영',
-          description: '고객 성공을 이끄는 핵심 역할을 담당합니다. 개념부터 최종 제출까지 복잡한 EU 자금 제안을 관리합니다.',
+          title: '창립 프로젝트 코디네이터, EU 연구 지원',
+          department: 'EU 연구 지원 및 운영',
+          description: '복잡한 EU 연구 지원 프로젝트를 기획부터 제출까지 관리하고 플랫폼이 고객 요구를 반영하도록 지원합니다.',
           tags: ['초기 단계', '지분 기반']
         },
         {
           id: 'korea-country-manager',
-          title: '한국 컨트리 매니저',
-          department: '운영 및 파트너십',
-          description: '한국 내 회사 운영을 조율하고 주요 이해관계자와의 관계를 구축합니다. 스타트업 지원 프로그램을 발굴하고 마케팅 및 영업 전략 수립에 기여합니다.',
+          title: '창립 한국 컨트리 매니저',
+          department: '운영, 파트너십 및 성장',
+          description: '한국 내 운영, 기관 관계, 스타트업 프로그램 참여 및 초기 시장 개발을 이끕니다.',
+          tags: ['초기 단계', '지분 기반']
+        },
+        {
+          id: 'growth-content-lead',
+          title: '창립 성장 및 콘텐츠 리드',
+          department: '마케팅, 콘텐츠 및 영업',
+          description: '전문성을 명확한 콘텐츠, 잠재 고객 수요 및 반복 가능한 고객 확보 채널로 전환합니다.',
           tags: ['초기 단계', '지분 기반']
         }
       ]
@@ -84,24 +98,31 @@ const Jobs = () => {
       subtitle: "Notre mission est de transformer la façon dont le financement de la recherche européenne est obtenu grâce à l'IA agentique. Rejoignez-nous dès le début.",
       jobs: [
         {
-          id: 'cto',
-          title: 'CTO Fondateur / Ingénieur Lead, Systèmes IA',
-          department: 'Ingénierie',
-          description: 'Prenez la responsabilité technique de notre plateforme. Dirigez notre lancement en production et construisez nos futurs outils.',
+          id: 'technology-lead',
+          title: 'Responsable Technologie Fondateur, Systèmes IA',
+          department: 'Technologie et produit',
+          description: 'Prenez en charge notre plateforme, dirigez son lancement et développez la prochaine génération d’outils de recherche.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         },
         {
           id: 'project-coordinator',
-          title: 'Coordinateur de Projet Fondateur, Subventions UE',
-          department: 'Opérations',
-          description: 'Agissez comme le moteur opérationnel de notre succès. Gérez les propositions de financement complexes de la conception à la soumission finale.',
+          title: 'Coordinateur de Projet Fondateur, Financement UE',
+          department: 'Financement UE et opérations',
+          description: 'Pilotez des projets de financement européens complexes et veillez à ce que la plateforme réponde aux besoins des clients.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         },
         {
           id: 'korea-country-manager',
-          title: 'Country Manager Corée',
-          department: 'Opérations et partenariats',
-          description: 'Coordonnez les opérations en Corée, développez les relations institutionnelles, identifiez les programmes pour startups et contribuez aux stratégies marketing et commerciales.',
+          title: 'Country Manager Fondateur, Corée',
+          department: 'Opérations, partenariats et croissance',
+          description: 'Dirigez nos opérations en Corée, nos relations institutionnelles et notre développement initial sur le marché.',
+          tags: ['Phase Initiale', 'Basé sur l\'équité']
+        },
+        {
+          id: 'growth-content-lead',
+          title: 'Responsable Croissance et Contenu Fondateur',
+          department: 'Marketing, contenu et ventes',
+          description: 'Transformez notre expertise en contenu clair, en demande qualifiée et en canaux d’acquisition reproductibles.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         }
       ]
@@ -111,9 +132,10 @@ const Jobs = () => {
   const t = translations[currentLanguage as string] || translations.en;
 
   const icons = {
-    'cto': <Code className="w-6 h-6 text-sky-500" />,
+    'technology-lead': <Code className="w-6 h-6 text-sky-500" />,
     'project-coordinator': <Briefcase className="w-6 h-6 text-emerald-500" />,
-    'korea-country-manager': <Target className="w-6 h-6 text-amber-500" />
+    'korea-country-manager': <Target className="w-6 h-6 text-amber-500" />,
+    'growth-content-lead': <Megaphone className="w-6 h-6 text-violet-500" />
   };
 
   return (
@@ -146,7 +168,7 @@ const Jobs = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative z-20">
+        <div className="grid md:grid-cols-2 gap-8 relative z-20">
           {[...t.jobs].sort((a, b) => Number(b.id === 'korea-country-manager') - Number(a.id === 'korea-country-manager')).map((job: any, index: number) => (
             <Link 
               key={job.id} 
