@@ -8,6 +8,7 @@ type Role = {
   id: string;
   title: string;
   department: string;
+  mission: string;
   intro: string;
   responsibilities: string[];
   requirements: string[];
@@ -62,26 +63,27 @@ const roles: Record<'en' | 'ko', Role[]> = {
     {
       id: 'korea-country-manager',
       title: 'Founding Country Manager, Korea',
-      department: 'Operations, Partnerships and Growth',
-      intro: 'Lead our Korean operations, strengthen relationships with key institutions and help InsightMatches grow in its home market.',
+      department: 'Korea Strategy, Operations and Partnerships',
+      mission: 'Bring our global strategy to life in Korea',
+      intro: 'Adapt and execute InsightMatches’ global strategy for Korea while running the local administrative layer and building trusted institutional relationships.',
       responsibilities: [
         'Coordinate company administration, electronic tax invoices, documentation and communication with our accountants.',
+        'Adapt global positioning, campaigns and sales materials for Korean audiences and channels.',
         'Build relationships with government agencies, public research institutes, universities and commercial partners.',
-        'Identify relevant Korean startup competitions and accelerator programmes.',
-        'Coordinate programme applications, supporting documentation and communication with organisers.',
-        'Support our Korean market strategy, outreach, partnerships and early commercial development.'
+        'Identify and coordinate relevant Korean startup competitions and accelerator programmes.',
+        'Support local introductions and meetings, and report Korean market feedback to the wider team.'
       ],
       requirements: [
         'Native Korean speaker with professional working proficiency in English.',
-        'Background in operations, marketing, sales, international relations or a related field.',
+        'Background in operations, market development, partnerships, international relations or a related field.',
         'Strong organisational skills and confidence communicating with institutional and commercial partners.',
         'Proactive and practical approach with honest communication and a willingness to learn.',
         'Experience studying, working or living abroad is an advantage.'
       ],
       firstSixMonths: [
         'Establish a reliable rhythm for company administration and accountant coordination.',
-        'Build a prioritised map of Korean institutions, programmes and potential partners.',
-        'Submit selected programme applications and support the first Korean partnership opportunities.'
+        'Localise the global strategy and build a prioritised map of Korean institutions, programmes and partners.',
+        'Submit selected programme applications and support the first local partnership opportunities.'
       ],
       subject: 'Application: Founding Country Manager, Korea',
       icon: 'target'
@@ -90,6 +92,7 @@ const roles: Record<'en' | 'ko', Role[]> = {
       id: 'technology-lead',
       title: 'Founding Technology Lead, AI Systems',
       department: 'Technology and Product',
+      mission: 'Build the product',
       intro: 'Take technical ownership of our existing platform, lead its production launch and build the next generation of AI assisted research tools.',
       responsibilities: [
         'Own the existing codebase, technical architecture and development roadmap.',
@@ -115,15 +118,16 @@ const roles: Record<'en' | 'ko', Role[]> = {
     },
     {
       id: 'project-coordinator',
-      title: 'Founding Project Coordinator, EU Funding',
-      department: 'EU Funding and Operations',
-      intro: 'Guide complex EU funding projects from concept to submission while ensuring that our platform reflects the needs of researchers and clients.',
+      title: 'Founding EU Funding Delivery Lead',
+      department: 'EU Funding Delivery',
+      mission: 'Deliver successful EU funding projects',
+      intro: 'Own the delivery of complex EU funding projects from concept to submission, keeping clients, consortia, quality and deadlines aligned.',
       responsibilities: [
         'Manage Horizon Europe, EIC and related proposals from concept to final submission.',
         'Coordinate international research consortia, clients and key stakeholders.',
         'Ensure deliverables meet EU compliance, quality and administrative requirements.',
         'Improve internal proposal pipelines and operational workflows.',
-        'Guide the product team on client needs, funding requirements and proposal quality.'
+        'Document recurring client and funding requirements as structured input for the product team.'
       ],
       requirements: [
         'Strong understanding of EU funding mechanisms and proposal structures.',
@@ -143,13 +147,14 @@ const roles: Record<'en' | 'ko', Role[]> = {
     {
       id: 'growth-content-lead',
       title: 'Founding Growth and Content Lead',
-      department: 'Marketing, Content and Sales',
-      intro: 'Turn InsightMatches expertise into clear content, qualified demand and the first repeatable customer acquisition channels.',
+      department: 'Global Marketing, Content and Sales',
+      mission: 'Turn expertise into customers',
+      intro: 'Own our global positioning, content engine, campaigns and sales process, turning InsightMatches expertise into qualified demand and customers.',
       responsibilities: [
-        'Develop and execute the company’s early marketing and content strategy.',
+        'Develop and execute the company’s global marketing, content and channel strategy.',
         'Create credible content for researchers, universities, SMEs and research organisations.',
-        'Build targeted campaigns and lead generation activities across priority markets.',
-        'Support outbound sales, qualification, follow up and conversion of early opportunities.',
+        'Build targeted campaigns and lead generation activities for priority customer segments.',
+        'Own the early sales process from outbound activity and qualification through follow up and conversion.',
         'Turn customer insights and performance data into stronger messaging and campaigns.'
       ],
       requirements: [
@@ -172,26 +177,27 @@ const roles: Record<'en' | 'ko', Role[]> = {
     {
       id: 'korea-country-manager',
       title: '창립 한국 컨트리 매니저',
-      department: '운영, 파트너십 및 성장',
-      intro: '한국 내 운영을 이끌고 주요 기관과의 관계를 강화하며 InsightMatches의 국내 성장을 지원합니다.',
+      department: '한국 전략, 운영 및 파트너십',
+      mission: '글로벌 전략을 한국 시장에서 실현합니다',
+      intro: 'InsightMatches의 글로벌 전략을 한국 시장에 맞게 적용하고 실행하며 국내 행정 운영과 신뢰할 수 있는 기관 관계 구축을 담당합니다.',
       responsibilities: [
         '전자세금계산서, 문서 관리 및 회계 담당자와의 소통 등 회사 행정 업무를 조율합니다.',
+        '글로벌 포지셔닝, 캠페인 및 영업 자료를 한국 고객과 채널에 맞게 현지화합니다.',
         '정부 기관, 공공 연구기관, 대학 및 기업 파트너와 관계를 구축합니다.',
-        'InsightMatches가 참여할 수 있는 국내 스타트업 경진대회와 액셀러레이터 프로그램을 발굴합니다.',
-        '프로그램 지원, 증빙 서류 준비 및 주최 기관과의 소통을 조율합니다.',
-        '한국 시장 전략, 대외 활동, 파트너십 및 초기 사업 개발을 지원합니다.'
+        '관련 국내 스타트업 경진대회와 액셀러레이터 프로그램을 발굴하고 지원을 조율합니다.',
+        '국내 소개와 미팅을 지원하고 한국 시장의 의견을 전체 팀에 전달합니다.'
       ],
       requirements: [
         '한국어가 모국어이며 영어로 업무를 수행할 수 있는 분',
-        '운영, 마케팅, 영업, 국제관계 또는 관련 분야의 배경을 갖춘 분',
+        '운영, 시장 개발, 파트너십, 국제관계 또는 관련 분야의 배경을 갖춘 분',
         '체계적인 업무 관리 능력을 갖추고 기관 및 기업 파트너와 원활하게 소통할 수 있는 분',
         '주도적이고 실용적인 태도로 솔직하게 소통하며 배우려는 의지가 있는 분',
         '해외 유학, 근무 또는 거주 경험이 있는 분 우대'
       ],
       firstSixMonths: [
         '회사 행정과 회계 협업을 위한 안정적인 업무 체계를 구축합니다.',
-        '국내 주요 기관, 지원 프로그램 및 잠재 파트너의 우선순위 지도를 만듭니다.',
-        '선정된 프로그램에 지원하고 초기 한국 파트너십 기회를 추진합니다.'
+        '글로벌 전략을 현지화하고 국내 주요 기관, 프로그램 및 파트너의 우선순위 지도를 만듭니다.',
+        '선정된 프로그램에 지원하고 초기 국내 파트너십 기회를 추진합니다.'
       ],
       subject: '지원: 창립 한국 컨트리 매니저',
       icon: 'target'
@@ -200,6 +206,7 @@ const roles: Record<'en' | 'ko', Role[]> = {
       id: 'technology-lead',
       title: '창립 기술 리드, AI 시스템',
       department: '기술 및 제품',
+      mission: '제품을 만듭니다',
       intro: '기존 플랫폼의 기술적 책임을 맡아 정식 출시를 이끌고 차세대 AI 기반 연구 도구를 개발합니다.',
       responsibilities: [
         '기존 코드베이스, 기술 아키텍처 및 개발 로드맵을 총괄합니다.',
@@ -225,15 +232,16 @@ const roles: Record<'en' | 'ko', Role[]> = {
     },
     {
       id: 'project-coordinator',
-      title: '창립 프로젝트 코디네이터, EU 연구 지원',
-      department: 'EU 연구 지원 및 운영',
-      intro: '복잡한 EU 연구 지원 프로젝트를 기획부터 제출까지 관리하고 플랫폼이 연구자와 고객의 요구를 반영하도록 지원합니다.',
+      title: '창립 EU 연구 지원 프로젝트 실행 리드',
+      department: 'EU 연구 지원 프로젝트 실행',
+      mission: 'EU 연구 지원 프로젝트의 성공을 이끕니다',
+      intro: '복잡한 EU 연구 지원 프로젝트의 실행을 기획부터 제출까지 책임지고 고객, 컨소시엄, 품질 및 일정을 조율합니다.',
       responsibilities: [
         'Horizon Europe, EIC 및 관련 제안서를 기획부터 최종 제출까지 관리합니다.',
         '국제 연구 컨소시엄, 고객 및 주요 이해관계자 간의 협업을 조율합니다.',
         '산출물이 EU 규정, 품질 및 행정 요건을 충족하도록 관리합니다.',
         '내부 제안서 진행 체계와 운영 절차를 개선합니다.',
-        '고객 요구, 지원사업 요건 및 제안서 품질에 관해 제품 팀에 방향을 제시합니다.'
+        '반복되는 고객 요구와 지원사업 요건을 구조화하여 제품 팀에 전달합니다.'
       ],
       requirements: [
         'EU 연구 지원 제도와 제안서 구조에 대한 깊은 이해',
@@ -253,13 +261,14 @@ const roles: Record<'en' | 'ko', Role[]> = {
     {
       id: 'growth-content-lead',
       title: '창립 성장 및 콘텐츠 리드',
-      department: '마케팅, 콘텐츠 및 영업',
-      intro: 'InsightMatches의 전문성을 명확한 콘텐츠, 잠재 고객 수요 및 반복 가능한 고객 확보 채널로 전환합니다.',
+      department: '글로벌 마케팅, 콘텐츠 및 영업',
+      mission: '전문성을 고객으로 전환합니다',
+      intro: '글로벌 포지셔닝, 콘텐츠, 캠페인 및 영업 프로세스를 총괄하여 InsightMatches의 전문성을 잠재 고객 수요와 실제 고객으로 전환합니다.',
       responsibilities: [
-        '회사의 초기 마케팅 및 콘텐츠 전략을 수립하고 실행합니다.',
+        '회사의 글로벌 마케팅, 콘텐츠 및 채널 전략을 수립하고 실행합니다.',
         '연구자, 대학, 중소기업 및 연구기관을 위한 신뢰도 높은 콘텐츠를 제작합니다.',
-        '우선시장에 맞춘 캠페인과 잠재 고객 발굴 활동을 구축합니다.',
-        '아웃바운드 영업, 고객 선별, 후속 연락 및 초기 계약 전환을 지원합니다.',
+        '우선 고객군을 위한 캠페인과 잠재 고객 발굴 활동을 구축합니다.',
+        '아웃바운드 활동과 고객 선별부터 후속 연락 및 계약 전환까지 초기 영업 프로세스를 총괄합니다.',
         '고객 의견과 성과 데이터를 더 강력한 메시지와 캠페인으로 전환합니다.'
       ],
       requirements: [
@@ -329,7 +338,7 @@ const Careers = () => {
                   {iconFor(role.icon)}
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{role.title}</h3>
-                <p className="text-sm text-muted-foreground">{role.department}</p>
+                <p className="text-sm text-muted-foreground">{role.mission}</p>
               </a>
             ))}
           </div>

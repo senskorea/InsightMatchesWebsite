@@ -33,23 +33,23 @@ const Jobs = () => {
         },
         {
           id: 'project-coordinator',
-          title: 'Founding Project Coordinator, EU Funding',
-          department: 'EU Funding and Operations',
-          description: 'Guide complex EU funding projects from concept to submission and ensure our platform reflects client needs.',
+          title: 'Founding EU Funding Delivery Lead',
+          department: 'EU Funding Delivery',
+          description: 'Deliver successful EU funding projects by aligning clients, consortia, quality and deadlines.',
           tags: ['Early Stage', 'Equity Based']
         },
         {
           id: 'korea-country-manager',
           title: 'Founding Country Manager, Korea',
-          department: 'Operations, Partnerships and Growth',
-          description: 'Lead our Korean operations, institutional relationships, startup programme activity and early market development.',
+          department: 'Korea Strategy, Operations and Partnerships',
+          description: 'Bring our global strategy to life in Korea while running local administration and institutional relationships.',
           tags: ['Early Stage', 'Equity Based']
         },
         {
           id: 'growth-content-lead',
           title: 'Founding Growth and Content Lead',
-          department: 'Marketing, Content and Sales',
-          description: 'Turn our expertise into clear content, qualified demand and repeatable customer acquisition channels.',
+          department: 'Global Marketing, Content and Sales',
+          description: 'Turn expertise into customers through global positioning, content, campaigns and sales.',
           tags: ['Early Stage', 'Equity Based']
         }
       ]
@@ -70,23 +70,23 @@ const Jobs = () => {
         },
         {
           id: 'project-coordinator',
-          title: '창립 프로젝트 코디네이터, EU 연구 지원',
-          department: 'EU 연구 지원 및 운영',
-          description: '복잡한 EU 연구 지원 프로젝트를 기획부터 제출까지 관리하고 플랫폼이 고객 요구를 반영하도록 지원합니다.',
+          title: '창립 EU 연구 지원 프로젝트 실행 리드',
+          department: 'EU 연구 지원 프로젝트 실행',
+          description: '고객, 컨소시엄, 품질 및 일정을 조율하여 EU 연구 지원 프로젝트의 성공을 이끕니다.',
           tags: ['초기 단계', '지분 기반']
         },
         {
           id: 'korea-country-manager',
           title: '창립 한국 컨트리 매니저',
-          department: '운영, 파트너십 및 성장',
-          description: '한국 내 운영, 기관 관계, 스타트업 프로그램 참여 및 초기 시장 개발을 이끕니다.',
+          department: '한국 전략, 운영 및 파트너십',
+          description: '글로벌 전략을 한국에서 실현하며 국내 행정 운영과 기관 관계를 담당합니다.',
           tags: ['초기 단계', '지분 기반']
         },
         {
           id: 'growth-content-lead',
           title: '창립 성장 및 콘텐츠 리드',
-          department: '마케팅, 콘텐츠 및 영업',
-          description: '전문성을 명확한 콘텐츠, 잠재 고객 수요 및 반복 가능한 고객 확보 채널로 전환합니다.',
+          department: '글로벌 마케팅, 콘텐츠 및 영업',
+          description: '글로벌 포지셔닝, 콘텐츠, 캠페인 및 영업을 통해 전문성을 고객으로 전환합니다.',
           tags: ['초기 단계', '지분 기반']
         }
       ]
@@ -106,23 +106,23 @@ const Jobs = () => {
         },
         {
           id: 'project-coordinator',
-          title: 'Coordinateur de Projet Fondateur, Financement UE',
-          department: 'Financement UE et opérations',
-          description: 'Pilotez des projets de financement européens complexes et veillez à ce que la plateforme réponde aux besoins des clients.',
+          title: 'Responsable Fondateur de la Réalisation des Projets UE',
+          department: 'Réalisation des projets européens',
+          description: 'Livrez des projets de financement européens réussis en alignant clients, consortiums, qualité et délais.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         },
         {
           id: 'korea-country-manager',
           title: 'Country Manager Fondateur, Corée',
-          department: 'Opérations, partenariats et croissance',
-          description: 'Dirigez nos opérations en Corée, nos relations institutionnelles et notre développement initial sur le marché.',
+          department: 'Stratégie Corée, opérations et partenariats',
+          description: 'Adaptez notre stratégie mondiale à la Corée tout en gérant l’administration locale et les relations institutionnelles.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         },
         {
           id: 'growth-content-lead',
           title: 'Responsable Croissance et Contenu Fondateur',
-          department: 'Marketing, contenu et ventes',
-          description: 'Transformez notre expertise en contenu clair, en demande qualifiée et en canaux d’acquisition reproductibles.',
+          department: 'Marketing mondial, contenu et ventes',
+          description: 'Transformez notre expertise en clients grâce au positionnement, au contenu, aux campagnes et aux ventes.',
           tags: ['Phase Initiale', 'Basé sur l\'équité']
         }
       ]
