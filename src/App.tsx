@@ -64,7 +64,7 @@ import KoGenderEqualityPlan from "./pages/ko/KoGenderEqualityPlan";
 
 const AppRedirect = () => {
   useEffect(() => {
-    window.location.replace("https://insight-matches2026.vercel.app/");
+    window.location.replace("https://app.insightmatches.com/");
   }, []);
   return null;
 };
