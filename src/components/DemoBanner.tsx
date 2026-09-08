@@ -74,7 +74,7 @@ const DemoBanner = () => {
             <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
               <button
                 onClick={() => setVideoOpen(true)}
-                className="text-xs sm:text-sm font-semibold underline underline-offset-2 hover:no-underline whitespace-nowrap"
+                className="min-h-11 px-1 text-xs sm:text-sm font-semibold underline underline-offset-2 hover:no-underline whitespace-nowrap"
               >
                 {t.watch}
               </button>
@@ -87,7 +87,7 @@ const DemoBanner = () => {
               <button
                 onClick={dismiss}
                 aria-label={t.dismiss}
-                className="ml-1 p-1 rounded hover:bg-white/15 transition-colors"
+                className="min-h-11 min-w-11 flex items-center justify-center rounded hover:bg-white/15 transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -96,7 +96,7 @@ const DemoBanner = () => {
         </div>
       )}
 
-      <VideoModal open={videoOpen} onOpenChange={setVideoOpen} />
+      <VideoModal open={videoOpen} onOpenChange={setVideoOpen} youtubeId="-q7EZzowLTE" />
     </>
   );
 };

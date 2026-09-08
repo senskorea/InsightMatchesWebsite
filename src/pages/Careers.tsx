@@ -318,7 +318,7 @@ const Careers = () => {
       />
       <Navbar />
 
-      <section className="pt-24 pb-16 px-4">
+      <section className="pt-28 pb-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center gap-4 mb-6" aria-label={text.language}>
             <Link to={`/careers${search}${hash}`} lang="en" aria-current={!isKorean ? 'page' : undefined} className="text-primary underline underline-offset-4">English</Link>
@@ -349,10 +349,10 @@ const Careers = () => {
         <section key={role.id} className="py-8 px-4" style={{ scrollMarginTop: 'calc(var(--demo-banner-h, 0px) + 5rem)' }} id={role.id} lang={language}>
           {role.id === 'technology-lead' && <div id="cto" className="scroll-mt-24" aria-hidden="true" />}
           <div className="max-w-4xl mx-auto">
-            <div className="p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
+            <div className="p-5 sm:p-8 md:p-12 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-sm">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 border-b border-border pb-8">
                 <div>
-                  <h2 className="text-3xl font-bold mb-2">{role.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-2">{role.title}</h2>
                   <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mt-4">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted">{iconFor(role.icon)} {role.department}</span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted"><Rocket className="w-4 h-4" /> {text.stage}</span>
@@ -381,7 +381,7 @@ const Careers = () => {
                 <RoleSection icon={<Rocket className="w-5 h-5" />} title={text.firstSixMonths}>
                   <BulletList items={role.firstSixMonths} checked />
                 </RoleSection>
-                <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-6 md:p-8 rounded-xl border border-border">
+                <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-4 sm:p-6 md:p-8 rounded-xl border border-border">
                   <RoleSection icon={<Award className="w-5 h-5" />} title={text.compensation}>
                     {text.compensationBody.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
                   </RoleSection>

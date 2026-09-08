@@ -18,7 +18,11 @@ const VideoModal = ({
 }: VideoModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl p-0 bg-black border-0 overflow-hidden">
+      <DialogContent
+        className="p-0 bg-black border-0 overflow-hidden"
+        style={{ maxWidth: 'min(56rem, calc((100dvh - 2rem) * 1.7778))' }}
+        aria-describedby={undefined}
+      >
         <VisuallyHidden>
           <DialogTitle>{title}</DialogTitle>
         </VisuallyHidden>

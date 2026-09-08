@@ -74,10 +74,32 @@
 
   body {
     @apply bg-background text-foreground font-inter;
+    padding-top: var(--demo-banner-h, 0px);
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--demo-banner-h, 0px) + 5rem);
+  }
+
+  h1, h2, h3, p, li {
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 639px) {
+    input:not([type='checkbox']):not([type='radio']), textarea, select {
+      font-size: 16px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 

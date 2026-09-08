@@ -8,28 +8,28 @@ export const MockupInterface = () => {
       <div className="rounded-xl overflow-hidden shadow-2xl border border-border/50 bg-slate-900">
         {/* Browser Chrome */}
         <div className="flex items-center gap-2 px-4 py-3 bg-slate-800 border-b border-slate-700">
-          <div className="flex gap-1.5">
+          <div className="flex shrink-0 gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-400" />
             <div className="w-3 h-3 rounded-full bg-yellow-400" />
             <div className="w-3 h-3 rounded-full bg-green-400" />
           </div>
-          <div className="flex-1 flex justify-center">
-            <div className="px-4 py-1.5 bg-slate-700 rounded-lg text-xs text-slate-300 font-mono">
+          <div className="min-w-0 flex-1 flex justify-center">
+            <div className="truncate px-2 sm:px-4 py-1.5 bg-slate-700 rounded-lg text-xs text-slate-300 font-mono">
               app.insightmatches.com/dashboard
             </div>
           </div>
         </div>
 
         {/* Dashboard Content */}
-        <div className="p-6 bg-gradient-to-br from-slate-900 to-slate-950">
+        <div className="p-3 sm:p-6 bg-gradient-to-br from-slate-900 to-slate-950">
           {/* Header Row */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center text-white font-bold text-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div className="min-w-0 flex items-center gap-3">
+              <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center text-white font-bold text-sm">
                 AE
               </div>
-              <div>
-                <div className="flex items-center gap-2">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2 py-0.5 text-xs rounded-full bg-sky-500/20 text-sky-400 border border-sky-500/30 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
                     Mission Active
@@ -39,14 +39,14 @@ export const MockupInterface = () => {
                 <p className="text-white font-semibold text-sm mt-1">AERO-2025: AI for Sustainable Aviation</p>
               </div>
             </div>
-            <button className="px-4 py-2 text-xs rounded-lg bg-slate-600 text-white hover:bg-slate-500 transition-colors flex items-center gap-1">
+            <div className="shrink-0 self-start sm:self-auto px-4 py-2 text-xs rounded-lg bg-slate-600 text-white flex items-center gap-1">
               Resume Pipeline
               <ChevronRight className="w-3 h-3" />
-            </button>
+            </div>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-4 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
             <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-slate-600/50 transition-colors">
               <Users className="w-5 h-5 text-slate-400 mb-2" />
               <p className="text-xs text-slate-400">Consortium</p>
@@ -61,7 +61,7 @@ export const MockupInterface = () => {
               </div>
             </div>
             <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 hover:border-slate-600/50 transition-colors">
-              <Calculator className="w-5 h-5 text-gold-400 mb-2" />
+              <Calculator className="w-5 h-5 text-amber-400 mb-2" />
               <p className="text-xs text-slate-400">Budget</p>
               <p className="text-2xl font-bold text-white">€4.2M</p>
               <p className="text-xs text-sky-400 mt-1">100% Allocated</p>

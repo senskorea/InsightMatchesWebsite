@@ -144,8 +144,8 @@ export default function Referral() {
           <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             {t('transparentRewardsDesc')}
           </p>
-          <div className="mt-10 inline-flex flex-col items-center px-12 py-10 rounded-3xl bg-gradient-to-br from-sky-500/10 to-slate-500/10 border border-sky-500/20">
-            <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent whitespace-nowrap">
+          <div className="mt-10 inline-flex max-w-full flex-col items-center px-5 sm:px-12 py-8 sm:py-10 rounded-3xl bg-gradient-to-br from-sky-500/10 to-slate-500/10 border border-sky-500/20">
+            <span className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-sky-500 to-slate-500 bg-clip-text text-transparent whitespace-nowrap">
               10% / 10%
             </span>
             <span className="mt-2 text-sm font-medium tracking-wide uppercase text-gray-700 dark:text-gray-300">

@@ -51,8 +51,10 @@ export const LanguageSelector: React.FC = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Choose language"
+        aria-expanded={isOpen}
         className="
-          flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg
+          min-h-11 flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg
           bg-white/5 hover:bg-white/10 
           border border-white/10 hover:border-white/20
           transition-all duration-200
@@ -72,7 +74,7 @@ export const LanguageSelector: React.FC = () => {
             onClick={() => setIsOpen(false)}
           />
           <div className="
-            absolute top-full right-0 mt-2 py-2 w-40 sm:w-48
+            absolute bottom-full left-0 mb-2 py-2 w-40 sm:w-48
             bg-white dark:bg-slate-800 rounded-lg shadow-xl
             border border-gray-200 dark:border-slate-600
             z-20

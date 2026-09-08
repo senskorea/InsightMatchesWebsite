@@ -111,15 +111,15 @@ export const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {tiers.map((tier) => (
             <div
               key={tier.name}
               className={cn(
-                'bg-card rounded-xl shadow-sm p-6 lg:p-8 flex flex-col h-full transition-all duration-300 border-t-4',
+                'min-w-0 bg-card rounded-xl shadow-sm p-5 sm:p-6 xl:p-8 flex flex-col h-full transition-all duration-300 border-t-4',
                 tier.theme.topBorder,
                 tier.highlighted
-                  ? 'border-2 border-slate-200 dark:border-slate-800 relative md:scale-[1.02] lg:scale-105 hover:shadow-xl bg-gradient-to-b from-slate-50/60 via-card to-card dark:from-slate-950/25 dark:via-card dark:to-card'
+                  ? 'border-2 border-slate-200 dark:border-slate-800 relative xl:scale-105 hover:shadow-xl bg-gradient-to-b from-slate-50/60 via-card to-card dark:from-slate-950/25 dark:via-card dark:to-card'
                   : 'border border-border hover:shadow-lg'
               )}
             >

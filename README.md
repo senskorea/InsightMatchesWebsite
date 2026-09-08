@@ -50,7 +50,18 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
+## Responsive layout checks
+
+Run `npm ci --legacy-peer-deps`, then `npx playwright install chromium` and
+`npm run test:mobile`. The suite starts a local server with the production
+environment configuration. To use an existing Chrome installation instead,
+run `PW_CHANNEL=chrome npm run test:mobile`.
+
+Checks cover public pages from 320px to 1440px, English/French/Korean layouts,
+portrait and landscape navigation, the demo player, language selection,
+mobile video downloads, input sizing, and dark mode. No forms are submitted.
+
+## Technology stack
 
 This project is built with:
 

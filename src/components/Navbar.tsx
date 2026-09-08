@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 import { ThemeToggle } from './ThemeToggle';
 import { useTranslation } from '../hooks/useTranslation';
@@ -16,12 +16,34 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t, currentLanguage } = useTranslation();
+  const location = useLocation();
+
+  useEffect(() => setIsOpen(false), [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const closeOnDesktop = () => { if (desktop.matches) setIsOpen(false); };
+    document.addEventListener('keydown', closeOnEscape);
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', closeOnEscape);
+      desktop.removeEventListener('change', closeOnDesktop);
+    };
+  }, [isOpen]);
 
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -51,8 +73,8 @@ export const Navbar = () => {
       style={{ top: 'var(--demo-banner-h, 0px)' }}
       className={`
       fixed left-0 right-0 z-50 transition-all duration-300
-      ${scrolled 
-        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-white/10' 
+      ${scrolled || isOpen
+        ? 'bg-white dark:bg-slate-900 shadow-sm border-b border-border'
         : 'bg-transparent'
       }
     `}>
@@ -65,7 +87,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -110,7 +132,7 @@ export const Navbar = () => {
           {/* Desktop Actions — one primary CTA. Sign In and Refer & Earn stay
               as quiet text links rather than competing buttons; Refer & Earn
               is already prominent in the footer for anyone looking for it. */}
-          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+          <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
             <ThemeToggle />
 
             <Link
@@ -134,11 +156,14 @@ export const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-1 sm:space-x-2">
+          <div className="lg:hidden flex items-center space-x-1 sm:space-x-2">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 touch-manipulation"
+              aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+              className="min-h-11 min-w-11 flex items-center justify-center rounded-lg text-gray-600 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 touch-manipulation"
             >
               {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
@@ -147,8 +172,8 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className={`md:hidden fixed inset-0 bg-white dark:bg-slate-900 z-40 overflow-y-auto top-14`}>
-            <div className="px-4 py-6 space-y-4">
+          <div id="mobile-navigation" className="lg:hidden absolute top-full inset-x-0 h-[calc(100dvh-var(--demo-banner-h,0px)-3.5rem)] sm:h-[calc(100dvh-var(--demo-banner-h,0px)-4rem)] bg-white dark:bg-slate-900 z-40 overflow-y-auto overscroll-contain">
+            <div className="px-4 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -166,7 +191,7 @@ export const Navbar = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 font-medium py-1"
+                    className="flex min-h-11 items-center text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 font-medium py-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -184,6 +209,7 @@ export const Navbar = () => {
                 </Link>
 
                 <Link to="/request-demo"
+                  onClick={() => setIsOpen(false)}
                   className="
                     w-full px-6 py-2 rounded-lg font-semibold text-sm
                     bg-gradient-to-r from-sky-500 to-slate-500

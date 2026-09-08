@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Radar, Users, FileText, Sparkles, ArrowRight, Lightbulb, Play } from 'lucide-react';
+import { Radar, Users, FileText, ArrowRight, Lightbulb } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import VideoModal from './VideoModal';
+import { VideoPreview } from './VideoPreview';
 
 const FeatureListItem = ({ item, colorClass }: { item: string; colorClass: string }) => (
   <li className="flex items-center gap-3 text-foreground">
-    <div className={`w-5 h-5 rounded-full ${colorClass} flex items-center justify-center`}>
+    <div className={`shrink-0 w-5 h-5 rounded-full ${colorClass} flex items-center justify-center`}>
       <div
         className={`w-1.5 h-1.5 rounded-full ${
           colorClass.includes('sky')
@@ -29,34 +30,13 @@ export const ProductFeatures = () => {
   const draftingFeatures = [t('draftingFeature1'), t('draftingFeature2'), t('draftingFeature3')];
 
   return (
-    <section id="product-demo" className="py-24 lg:py-32">
+    <section id="product-demo" className="py-14 sm:py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Feature 1: Discovery Engine - Image Left, Text Right */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-16 sm:mb-24 lg:mb-32">
           {/* Visual */}
           <div className="relative order-2 lg:order-1">
-            <div 
-              className="bg-gradient-to-br from-sky-50 to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
-              onClick={() => setActiveVideo('/videos/find-funds.mp4')}
-            >
-              <div className="relative">
-                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
-                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
-                    <Play className="w-8 h-8 text-sky-600 ml-1" />
-                  </div>
-                </div>
-                <video
-                  src="/videos/find-funds.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Find funds demo"
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
-              </div>
-            </div>
+            <VideoPreview src="/videos/find-funds.mp4" label="Watch demo" onPlay={() => setActiveVideo('/videos/find-funds.mp4')} />
           </div>
           
           {/* Text */}
@@ -84,7 +64,7 @@ export const ProductFeatures = () => {
         </div>
 
         {/* Feature 1.5: Conceptualize Your Idea */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-16 sm:mb-24 lg:mb-32">
           {/* Text */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 text-xs font-medium mb-4">
@@ -106,33 +86,12 @@ export const ProductFeatures = () => {
 
           {/* Visual */}
           <div className="relative">
-            <div 
-              className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
-              onClick={() => setActiveVideo('/videos/get-idea.mp4')}
-            >
-              <div className="relative">
-                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
-                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
-                    <Play className="w-8 h-8 text-slate-600 ml-1" />
-                  </div>
-                </div>
-                <video
-                  src="/videos/get-idea.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Conceptualize your idea demo"
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
-              </div>
-            </div>
+            <VideoPreview src="/videos/get-idea.mp4" label="Watch demo" onPlay={() => setActiveVideo('/videos/get-idea.mp4')} />
           </div>
         </div>
 
         {/* Feature 2: Consortium Builder - Text Left, Image Right */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-16 sm:mb-24 lg:mb-32">
 
           {/* Text */}
           <div>
@@ -159,61 +118,19 @@ export const ProductFeatures = () => {
           
           {/* Visual */}
           <div className="relative">
-            <div 
-              className="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
-              onClick={() => setActiveVideo('/videos/make-the-team.mp4')}
-            >
-              <div className="relative">
-                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
-                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
-                    <Play className="w-8 h-8 text-slate-600 ml-1" />
-                  </div>
-                </div>
-                <video
-                  src="/videos/make-the-team.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Build your dream team demo"
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
-              </div>
-            </div>
+            <VideoPreview src="/videos/make-the-team.mp4" label="Watch demo" onPlay={() => setActiveVideo('/videos/make-the-team.mp4')} />
           </div>
         </div>
 
         {/* Feature 3: AI Drafting - Image Left, Text Right */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Visual */}
-          <div className="relative">
-            <div 
-              className="bg-gradient-to-br from-gold-50 to-sky-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-3 sm:p-4 border border-border overflow-hidden cursor-pointer group"
-              onClick={() => setActiveVideo('/videos/write-proposal.mp4')}
-            >
-              <div className="relative">
-                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-xl">
-                  <div className="w-16 h-16 rounded-full bg-white/95 shadow-xl flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
-                    <Play className="w-8 h-8 text-gold-600 ml-1" />
-                  </div>
-                </div>
-                <video
-                  src="/videos/write-proposal.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Draft winning proposals demo"
-                  className="w-full h-auto rounded-xl shadow-lg brightness-[0.85] dark:brightness-75"
-                />
-              </div>
-            </div>
+          <div className="relative order-2 lg:order-1">
+            <VideoPreview src="/videos/write-proposal.mp4" label="Watch demo" onPlay={() => setActiveVideo('/videos/write-proposal.mp4')} />
           </div>
           
           {/* Text */}
-          <div>
+          <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-100 dark:bg-gold-900/30 text-gold-700 dark:text-gold-300 text-xs font-medium mb-4">
               <FileText className="w-3.5 h-3.5" />
               {t('aiDrafting')}
