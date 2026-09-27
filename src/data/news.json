@@ -1,5 +1,22 @@
 [
   {
+    "id": "press-2026-09-22-phihub",
+    "date": "2026-09-22",
+    "image": "/news/phihub-pr-release.png",
+    "type": "press",
+    "title": {
+      "en": "Phi Hub and InsightMatches Build an Africa Asia Europe HealthTech Funding Bridge",
+      "fr": "Phi Hub et InsightMatches bâtissent un pont de financement HealthTech Afrique Asie Europe",
+      "ko": "파이허브와 인사이트매치스, 아프리카·아시아·유럽을 잇는 헬스테크 자금 조달 가교 구축"
+    },
+    "excerpt": {
+      "en": "Connecting African HealthTech startups with Korean innovation networks, European research partners and international funding opportunities through AI-powered matchmaking.",
+      "fr": "Connexion des startups HealthTech africaines aux réseaux d'innovation coréens, aux partenaires de recherche européens et aux financements Horizon Europe.",
+      "ko": "아프리카 헬스테크 스타트업을 한국의 혁신 네트워크, 유럽의 연구 파트너 및 국제 자금 조달 기회와 연결합니다."
+    },
+    "url": "/resources/press/phihub"
+  },
+  {
     "id": "linkedin-2026-08-10",
     "date": "2026-08-10",
     "image": "/news/launch.jpg",

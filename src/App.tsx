@@ -31,6 +31,7 @@ import GuideHorizonEuropeKorea from "./pages/GuideHorizonEuropeKorea";
 import AIToolsEUKoreaConsortium from "./pages/AIToolsEUKoreaConsortium";
 import EUKoreaDigitalPartnership from "./pages/EUKoreaDigitalPartnership";
 import NextRise from "./pages/NextRise";
+import PhiHubPressRelease from "./pages/PhiHubPressRelease";
 import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
 import Careers from "./pages/Careers";
@@ -168,6 +169,8 @@ const AppContent = () => {
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/insights" element={<ResourcesInsights />} />
             <Route path="/resources/news" element={<ResourcesNews />} />
+            <Route path="/resources/press/phihub" element={<PhiHubPressRelease />} />
+            <Route path="/resources/phihub" element={<Navigate to="/resources/press/phihub" replace />} />
             <Route path="/resources/videos" element={<ResourcesVideos />} />
             <Route path="/resources/horizon-europe" element={<HorizonEurope />} />
             <Route path="/resources/guide-horizon-europe-korea" element={<GuideHorizonEuropeKorea />} />
@@ -185,6 +188,7 @@ const AppContent = () => {
             <Route path="/ko/resources" element={<KoResources />} />
             <Route path="/ko/resources/insights" element={<KoResourcesInsights />} />
             <Route path="/ko/resources/news" element={<KoResourcesNews />} />
+            <Route path="/ko/resources/press/phihub" element={<PhiHubPressRelease />} />
             <Route path="/ko/resources/videos" element={<KoResourcesVideos />} />
             <Route path="/ko/about/gep" element={<KoGenderEqualityPlan />} />
             <Route path="/fr" element={<Navigate to="/fr/" replace />} />
@@ -199,6 +203,7 @@ const AppContent = () => {
             <Route path="/fr/resources" element={<FrResources />} />
             <Route path="/fr/resources/insights" element={<FrResourcesInsights />} />
             <Route path="/fr/resources/news" element={<FrResourcesNews />} />
+            <Route path="/fr/resources/press/phihub" element={<PhiHubPressRelease />} />
             <Route path="/fr/resources/videos" element={<FrResourcesVideos />} />
             <Route path="/fr/about/gep" element={<FrGenderEqualityPlan />} />
             <Route path="/about" element={<About />} />
