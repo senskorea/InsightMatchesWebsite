@@ -3,8 +3,8 @@ import type { Language } from '../translations';
 export type TierKey = 'pro' | 'enterprise';
 
 const RATES: Record<TierKey, { eur: number; krw: number }> = {
-  pro: { eur: 2400, krw: 3_500_000 },
-  enterprise: { eur: 3400, krw: 5_000_000 },
+  pro: { eur: 2500, krw: 3_500_000 },
+  enterprise: { eur: 3500, krw: 5_000_000 },
 };
 
 const fmtEUR = (n: number) =>

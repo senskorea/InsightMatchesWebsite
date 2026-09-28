@@ -54,7 +54,10 @@ export const PricingSection = () => {
         t('pricingFreeTierFeature2'),
         t('pricingFreeTierFeature3'),
         t('pricingFreeTierFeature4'),
-      ],
+        t('pricingFreeTierFeature5'),
+        t('pricingFreeTierFeature6'),
+        t('pricingFreeTierFeature7'),
+      ].filter(Boolean),
       cta: t('pricingFreeTierCta'),
       icon: Users,
       highlighted: false,
@@ -72,7 +75,10 @@ export const PricingSection = () => {
         t('pricingProTierFeature2'),
         t('pricingProTierFeature3'),
         t('pricingProTierFeature4'),
-      ],
+        t('pricingProTierFeature5'),
+        t('pricingProTierFeature6'),
+        t('pricingProTierFeature7'),
+      ].filter(Boolean),
       cta: t('pricingProTierCta'),
       icon: Rocket,
       highlighted: true,
@@ -90,7 +96,10 @@ export const PricingSection = () => {
         t('pricingEnterpriseTierFeature2'),
         t('pricingEnterpriseTierFeature3'),
         t('pricingEnterpriseTierFeature4'),
-      ],
+        t('pricingEnterpriseTierFeature5'),
+        t('pricingEnterpriseTierFeature6'),
+        t('pricingEnterpriseTierFeature7'),
+      ].filter(Boolean),
       cta: t('pricingEnterpriseTierCta'),
       icon: Building2,
       highlighted: false,
@@ -123,11 +132,7 @@ export const PricingSection = () => {
                   : 'border border-border hover:shadow-lg'
               )}
             >
-              {tier.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-slate-500 text-slate-50 font-semibold text-xs rounded-full shadow-lg">
-                  {t('pricingRecommended')}
-                </div>
-              )}
+
 
               <div className="flex items-center gap-3 mb-6">
                 <div
