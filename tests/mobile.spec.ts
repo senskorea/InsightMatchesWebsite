@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-const routes = ['/', '/fr/', '/ko/', '/platform', '/fr/platform', '/ko/platform', '/about', '/careers', '/ko/careers', '/jobs', '/resources', '/resources/videos', '/resources/news', '/request-demo', '/dissemination', '/education', '/referral', '/resources/horizon-europe', '/resources/guide-horizon-europe-korea', '/about/gep', '/network-busan'];
+const routes = ['/', '/fr/', '/ko/', '/platform', '/fr/platform', '/ko/platform', '/about', '/careers', '/ko/careers', '/jobs', '/resources', '/resources/videos', '/resources/news', '/request-demo', '/dissemination', '/education', '/referral', '/resources/horizon-europe', '/resources/guide-horizon-europe-korea', '/about/gep'];
 
 for (const width of [320, 375, 390, 768, 1024, 1440]) {
   test(`Public pages fit a ${width}px viewport`, async ({ page }) => {

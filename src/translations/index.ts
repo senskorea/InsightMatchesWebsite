@@ -147,16 +147,6 @@ export const translations = {
     ctaSubtitle: "Join thousands of researchers who have successfully secured funding through our platform",
     getStarted: "Get Started Today",
     
-    // Cafelaunchpad Page
-    cafeTitle: "Connect, Caffeinate, Collaborate: Your Monthly Business Coffee Chat!",
-    cafeWhat: "What",
-    cafeWhatDescription: "Great ideas and valuable connections often spark in informal settings. That's why we host this monthly gathering – a dedicated time for entrepreneurs, professionals, freelancers, and anyone passionate about business to meet, talk, and build.",
-    cafeWhen: "When",
-    cafeWhenDescription: "Every First Saturday of the Month. Starting at 11:00 AM",
-    cafeWhere: "Where",
-    cafeKakaoMaps: "KakaoMaps",
-    cafeGoogleMaps: "GoogleMaps",
-
     // Education Page
     educationTitle: "Education",
     educationSubtitle: "Empowering Innovators of All Ages",
@@ -350,7 +340,6 @@ export const translations = {
     insightsInterviews: "Insights & Interviews",
     newsAnnouncements: "News & Announcements",
     genderEqualityPlan: "Gender Equality Plan",
-    networkBusan: "Network Busan",
     signOut: "Sign Out",
     signedInAs: "Signed in as:",
     
@@ -560,16 +549,6 @@ export const translations = {
     ctaSubtitle: "우리 플랫폼을 통해 성공적으로 자금을 확보한 수천 명의 연구자들과 함께하세요",
     getStarted: "오늘 시작하기",
     
-    // Cafelaunchpad Page
-    cafeTitle: "연결하고, 카페인을 섭취하고, 협업하세요: 월간 비즈니스 커피 채팅!",
-    cafeWhat: "무엇을",
-    cafeWhatDescription: "훌륭한 아이디어와 가치 있는 연결은 종종 비공식적인 환경에서 시작됩니다. 그래서 우리는 이 월간 모임을 주최합니다: 기업가, 전문가, 프리랜서, 그리고 비즈니스에 열정적인 모든 사람들이 만나고, 대화하고, 구축할 수 있는 전용 시간입니다.",
-    cafeWhen: "언제",
-    cafeWhenDescription: "매월 첫 번째 토요일. 오전 11시 시작",
-    cafeWhere: "어디서",
-    cafeKakaoMaps: "카카오맵",
-    cafeGoogleMaps: "구글맵",
-
     // Education Page
     educationTitle: "교육",
     educationSubtitle: "모든 연령의 혁신가들에게 힘을 실어주기",
@@ -762,7 +741,6 @@ export const translations = {
     insightsInterviews: "인사이트 & 인터뷰",
     newsAnnouncements: "뉴스 & 공지사항",
     genderEqualityPlan: "성별 평등 계획",
-    networkBusan: "네트워크 부산",
     signOut: "로그아웃",
     signedInAs: "로그인됨:",
     
@@ -962,16 +940,6 @@ export const translations = {
     ctaSubtitle: "Rejoignez les milliers de chercheurs qui ont déjà obtenu des financements grâce à notre plateforme.",
     getStarted: "Commencer dès aujourd'hui",
 
-    // Cafelaunchpad Page
-    cafeTitle: "Connectez vous, prenez un café, collaborez : notre événement business mensuel !",
-    cafeWhat: "Quoi",
-    cafeWhatDescription: "Les meilleures idées et les plus belles rencontres naissent souvent de moments informels. C'est pourquoi nous organisons chaque mois cet événement, pensé pour les entrepreneurs, les indépendants, les professionnels et tous les passionnés de business qui souhaitent échanger et avancer ensemble.",
-    cafeWhen: "Quand",
-    cafeWhenDescription: "Le premier samedi de chaque mois, à partir de 11 h.",
-    cafeWhere: "Où",
-    cafeKakaoMaps: "KakaoMaps",
-    cafeGoogleMaps: "Google Maps",
-
     // Education Page
     educationTitle: "Éducation",
     educationSubtitle: "Accompagner les innovateurs de tous âges",
@@ -1164,7 +1132,6 @@ export const translations = {
     insightsInterviews: "Analyses & entretiens",
     newsAnnouncements: "Actualités & annonces",
     genderEqualityPlan: "Plan pour l'égalité de genre",
-    networkBusan: "Network Busan",
     signOut: "Se déconnecter",
     signedInAs: "Connecté en tant que :",
 

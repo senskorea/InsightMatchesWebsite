@@ -64,7 +64,6 @@ export const Navbar = () => {
     { name: 'What is Horizon Europe?', href: '/resources/horizon-europe' },
     { name: t('dissemination'), href: '/dissemination' },
     { name: t('educationTitle'), href: '/education' },
-    { name: t('networkBusan'), href: '/network-busan' },
   ], [t, currentLanguage]);
 
 

@@ -20,7 +20,6 @@ import ResourcesNews from "./pages/ResourcesNews";
 import ResourcesVideos from "./pages/ResourcesVideos";
 import About from "./pages/About";
 import GenderEqualityPlan from "./pages/GenderEqualityPlan";
-import NetworkBusan from "./pages/NetworkBusan";
 import Education from "./pages/Education";
 import KBA from "./pages/KBA";
 import NotFound from "./pages/NotFound";
@@ -209,8 +208,6 @@ const AppContent = () => {
             <Route path="/about" element={<About />} />
             <Route path="/partners" element={<Navigate to="/about" replace />} />
             <Route path="/about/gep" element={<GenderEqualityPlan />} />
-            <Route path="/network-busan" element={<NetworkBusan />} />
-            <Route path="/cafelaunchpad" element={<Navigate to="/network-busan" replace />} />
             <Route path="/education" element={<Education />} />
             <Route path="/kba" element={<KBA />} />
             <Route path="/eu-pic" element={<EUPIC />} />

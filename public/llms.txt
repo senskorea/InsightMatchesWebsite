@@ -18,7 +18,6 @@ InsightMatches is a multilingual (English, Korean, French) SaaS that uses AI to 
 - [News](/resources/news): Announcements from the EU research funding ecosystem.
 - [Notice Board](/notice-board): Announcements, calls, and updates from the InsightMatches team.
 - [Education](/education): Training and educational resources on EU funding.
-- [Network Busan](/network-busan): EU-Korea innovation network activity in Busan.
 - [Dissemination](/dissemination): Communication, dissemination and exploitation services.
 - [EU PIC Information](/eu-pic): Legal information (PIC, OID) for EU proposals.
 - [R&D Day 2026](/rndday): Archive page for the R&D Day event.
