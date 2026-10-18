@@ -7,6 +7,7 @@ on:
       - 'vite.config.ts'
       - 'eslint.config.js'
       - 'scripts/check-deck.mjs'
+      - 'scripts/check-deck-currency.mjs'
       - '.github/workflows/deck-check.yml'
 permissions:
   contents: read
@@ -23,3 +24,4 @@ jobs:
       - run: npx eslint deck
       - run: npm run build
       - run: node scripts/check-deck.mjs
+      - run: node scripts/check-deck-currency.mjs
