@@ -9,7 +9,7 @@ const tiers=[
 ];
 export default function ClosingJourney({kind}){
  const reduced=useReducedMotion();
- const {currency,format}=useCurrency();
+ const {currency,price}=useCurrency();
  const [communityFocus,setCommunityFocus]=useState(null);
  const reveal=kind===31?1:kind===34?2:3;
  if(kind===38)return <section className="closing-slide pricing-slide team-slide"><header><h1>The team behind InsightMatches.</h1></header><div className="team-grid">{[
@@ -33,14 +33,14 @@ export default function ClosingJourney({kind}){
  if([31,34,35].includes(kind))return <section className="closing-slide pricing-slide">
  <header><h1>The support you need.</h1><p>Join the community. Create with AI. Bring in our team.</p></header>
  <div className="pricing-tiers">
- {tiers.map((tier,i)=><motion.article key={tier.name} aria-hidden={i>=reveal} initial={{opacity:0,y:reduced?0:24}} animate={{opacity:i<reveal?1:0,y:i<reveal||reduced?0:24}} transition={{duration:reduced?0:.5}}><span className="tier-number">0{i+1} · {['CONNECT','CREATE','TEAM-WRITTEN'][i]}</span><h2>{tier.name}</h2><div className="tier-price">{i?format(i===1?2600:3750):'Free'}</div><p className="tier-basis">{i?currency+(i===1?' per year':' per project')+(currency==='USD'?'':' · converted estimate'):'Free membership'}</p><ul>{tier.items.map(item=><li key={item}>{item}</li>)}</ul></motion.article>)}
+ {tiers.map((tier,i)=><motion.article key={tier.name} aria-hidden={i>=reveal} initial={{opacity:0,y:reduced?0:24}} animate={{opacity:i<reveal?1:0,y:i<reveal||reduced?0:24}} transition={{duration:reduced?0:.5}}><span className="tier-number">0{i+1} · {['CONNECT','CREATE','TEAM-WRITTEN'][i]}</span><h2>{tier.name}</h2><div className="tier-price">{i?price(i===1?2600:3750):'Free'}</div><p className="tier-basis">{i?currency+(i===1?' per year':' per project')+(currency==='USD'?'':' · converted estimate'):'Free membership'}</p><ul>{tier.items.map(item=><li key={item}>{item}</li>)}</ul></motion.article>)}
  </div></section>;
  if(kind===33)return <section className="closing-slide pricing-slide competition-slide">
  <header><h1>Beyond finding a grant.</h1><p>Find the opportunity. Build the team. Prepare the proposal.</p></header>
  <div className="approach-comparison">
  <article><span className="tier-number">DISCOVER</span><h2>Funding-discovery<br/>platforms</h2><p>Find relevant opportunities.</p><ul><li>Search calls and funding programmes</li><li>Screen opportunities and deadlines</li><li>You take the next steps toward a proposal</li></ul><small>Discovery-focused use case; individual platforms may offer more.</small></article>
  <article><span className="tier-number">DELEGATE</span><h2>Traditional<br/>consultants</h2><p>Commission specialist support.</p><ul><li>Agree a brief with an expert</li><li>Commission proposal preparation</li><li>Scope and fees depend on the engagement</li></ul><small>Illustrative engagement model, not a claim about every consultancy.</small></article>
- <article className="approach-ours"><span className="tier-number">CONNECT + CREATE</span><h2>InsightMatches</h2><p>From opportunity to proposal.</p><ul><li>Find funding and connect with collaborators</li><li>Create proposals with your AI copilot</li><li>Choose team-written proposal support</li></ul><small>Free community · {format(2600)}/year AI copilot<br/>{format(3750)}/project team-written support</small></article>
+ <article className="approach-ours"><span className="tier-number">CONNECT + CREATE</span><h2>InsightMatches</h2><p>From opportunity to proposal.</p><ul><li>Find funding and connect with collaborators</li><li>Create proposals with your AI copilot</li><li>Choose team-written proposal support</li></ul><small>Free community · {price(2600)}/year AI copilot<br/>{price(3750)}/project team-written support</small></article>
  </div><small>Comparison of approaches, not a feature audit of named providers or a lowest-price claim. Consultant quotes and equivalent scopes must be verified before comparing fees.</small>
  </section>;
  return <section className="closing-final"><img src="/deck-assets/insightmatches-original.png" alt="InsightMatches"/><h1>More time for research.<br/>More possibilities together.</h1><p>Let’s start with your next research idea.</p><small>An agentic AI platform for research funding and collaboration.</small></section>;
