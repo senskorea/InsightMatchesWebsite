@@ -7,6 +7,12 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
   { ignores: ["dist"] },
   {
+    files: ["deck/**/*.jsx"],
+    languageOptions: { ecmaVersion: 2022, sourceType: "module", globals: globals.browser, parserOptions: { ecmaFeatures: { jsx: true } } },
+    plugins: { "react-hooks": reactHooks },
+    rules: { ...js.configs.recommended.rules, ...reactHooks.configs.recommended.rules, "no-unused-vars": "off" },
+  },
+  {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
