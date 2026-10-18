@@ -1,0 +1,151 @@
+/* Shared presentation type roles. Loaded after scene-specific layout rules. */
+main:has(.funding-scene)>.evidence{display:none}
+main:has(.funding-scene) .morph-stage{height:86vh}
+.funding-scene .eu-funding-pie{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 65px}
+.funding-scene .funding-wheel svg{max-height:65vh}
+.funding-caveat{position:relative;grid-column:1/-1;justify-self:end;max-width:100%;color:#52616e}
+.funding-caveat summary{cursor:pointer;font-size:20px}
+.funding-caveat[open] p{position:absolute;bottom:28px;right:0;width:700px;padding:24px;background:white;border:1px solid #d8dfe4;box-shadow:0 8px 24px #13202d18;font-size:20px;z-index:8}
+.benchmark-groups{grid-template-columns:1fr!important;max-width:1400px;width:100%}
+.benchmark-groups>section>h2{display:none}
+.benchmark-label{font-size:32px!important}
+.benchmark-label b{font-size:46px}
+.benchmark-track{height:44px!important}
+.benchmark-row{margin-bottom:35px}
+.pricing-tiers h2{font-size:34px}
+.pricing-tiers ul{font-size:28px!important}
+.community-slide>div>p{font-size:38px!important}
+.community-slide>div>small{font-size:26px!important;line-height:1.5;max-width:28em}
+.reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px}
+.reasons-grid span{font-size:24px;color:#079fe3}
+.reasons-grid h2{font-size:38px;letter-spacing:-.04em}
+.reasons-grid p{font-size:28px}
+.signup-pending{font-size:22px;color:#64717c;border-top:1px solid #d8dfe4;padding-top:24px;margin-top:25px}
+.preparation-scenario>.svg-small{font-size:22px}
+.presentation-shell{position:fixed;inset:0;background:#e5e9ed;overflow:hidden}
+.presentation-shell iframe{position:absolute;top:50%;left:50%;border:0;transform-origin:center;background:white}
+.presentation-mode{position:fixed;right:14px;bottom:12px;z-index:100;border:1px solid #cbd3da;border-radius:5px;background:#ffffffed;color:#13202d;font:600 12px Arial;padding:8px 12px;cursor:pointer}
+.presentation-mode span{margin-left:10px;color:#64717c}
+.presentation-mode:focus-visible{outline:3px solid #079fe3}
+.benchmark-groups{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.benchmark-groups h2{font-size:28px;letter-spacing:-.035em;margin:0 0 8px}
+.benchmark-groups p.benchmark-basis{font-size:15px;margin:0 0 26px}
+.benchmark-row{margin-bottom:24px}
+.benchmark-label{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:20px}
+.benchmark-label a{color:inherit;text-decoration:none;border-bottom:1px solid #d8dfe4}
+.benchmark-label b{font-size:28px}
+.benchmark-track{height:25px;background:#edf0f2;margin:10px 0}
+.benchmark-track>div{height:100%;background:#b6bfc7}
+.benchmark-ours .benchmark-track>div{background:#079fe3}
+.benchmark-ours b{color:#079fe3}
+.benchmark-slide>small{max-width:none;font-size:12px}
+.funding-scene{position:relative;height:100%}
+.funding-scene .eu-funding-pie{height:100%;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:3vw}
+.funding-scene .funding-wheel svg{max-height:60vh}
+.funding-scene .eu-funding-name{min-height:0!important;margin-bottom:18px!important;font-size:clamp(34px,3.7vw,64px)!important}
+.funding-scene .funding-amount{font-size:clamp(34px,3.8vw,66px)!important;white-space:nowrap}
+.funding-scene .funding-description{margin-top:20px}
+.expansion-overlay{position:absolute;inset:14% -1% 0;z-index:5;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 12px}
+.expansion-overlay .expansion-reports{gap:20px;align-items:end}
+.expansion-overlay figure{background:white;padding:12px;box-shadow:0 14px 40px #13202d30;border:1px solid #d8dfe4}
+.expansion-overlay figure:nth-child(1){rotate:-3deg}
+.expansion-overlay figure:nth-child(2){rotate:1deg}
+.expansion-overlay figure:nth-child(3){rotate:3deg}
+.expansion-overlay>small{background:#fffffff2;padding:10px;margin-top:18px;font-size:11px;color:#64717c}
+.approach-comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.approach-comparison article{border-top:2px solid #d8dfe4;padding-top:20px}
+.approach-comparison h2{font-size:clamp(22px,2vw,34px);letter-spacing:-.04em;line-height:1.15;min-height:2.3em}
+.approach-comparison p{font-size:20px}
+.approach-comparison ul{padding-left:20px;font-size:17px;line-height:1.6}
+.approach-comparison li{margin-bottom:12px}
+.approach-comparison .approach-ours{border-color:#079fe3}
+.approach-ours h2{color:#079fe3}
+.expansion-reports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.expansion-reports figure{margin:0;min-width:0}
+.expansion-reports img{display:block;width:100%;height:36vh;object-fit:contain;object-position:top;background:#f6f8fa;border:1px solid #d8dfe4}
+.expansion-reports figcaption{margin-top:14px;line-height:1.4}
+.expansion-reports strong{display:block;font-size:24px;letter-spacing:-.03em}
+.expansion-reports span{display:block;font-size:16px;margin:5px 0;color:#64717c}
+.expansion-slide>small{max-width:1000px}
+.expansion-reports a:focus-visible{outline:3px solid #079fe3;outline-offset:4px}
+.preparation-stat{display:block;font-size:clamp(17px,1.7vw,29px);letter-spacing:-.04em;color:#13202d;margin-top:16px}
+.preparation-stat-basis{display:block;font-size:clamp(10px,.75vw,13px);font-weight:400;line-height:1.4;margin:6px auto 0;max-width:15em;color:#64717c}
+:root {
+  --deck-title: clamp(34px, 4vw, 68px);
+  --deck-body: clamp(20px, 1.65vw, 32px);
+  --deck-detail: clamp(16px, 1.2vw, 23px);
+  --deck-metric: clamp(38px, 4.5vw, 76px);
+}
+h1, .collage-scene h1, .cluster-story h1,
+.closing-slide h1, .closing-final h1, .pricing-slide header h1,
+.product-explanation h1, .eu-funding-pie h1.eu-funding-name {
+  font-size: var(--deck-title);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -.055em;
+}
+.copy p, .closing-slide p, .closing-final p, .pricing-slide header p,
+.product-explanation .product-lead {
+  font-size: var(--deck-body);
+  line-height: 1.45;
+}
+.product-explanation p {color:#64717c;line-height:1.45;font-size:var(--deck-detail)}
+.product-explanation .product-lead {color:#13202d;margin:14px 0}
+.product-demo-body {grid-template-columns:minmax(0,32fr) minmax(0,68fr);gap:32px}
+.product-art.large {width:110px;height:110px}
+.product-explanation h1 {margin:10px 0 16px}
+.tier-price, .eu-funding-pie h2.funding-amount {font-size:var(--deck-metric)}
+.preparation-headline h2 {font-size:var(--deck-title)}
+.community-flyers {position:relative;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.community-flyers a {width:100%;min-width:0}
+.community-flyers a:first-child {grid-column:1/-1;width:70%;justify-self:center}
+.community-flyers a:first-child img {max-height:40vh}
+.community-flyers a:not(:first-child) img {max-height:25vh}
+.community-flyers a:nth-child(3) {animation-delay:-2s}
+.community-flyers a:focus-visible {outline:3px solid #079fe3;outline-offset:6px}
+/* Readability at the 1920 × 1080 design viewport, before proportional scaling. */
+.preparation-art,.product-art{background:none}
+.preparation-art{height:240px}
+.preparation-stages{gap:18px}
+.preparation-stages button{font-size:20px}
+.preparation-stat-basis{font-size:17px;max-width:14em}
+.preparation-step{font-size:17px}
+.preparation-kicker{font-size:19px}
+.preparation-headline p{font-size:24px}
+.preparation-source{font-size:18px;color:#52616e}
+.community-slide>div>p{font-size:34px;line-height:1.4;max-width:20em}
+.community-slide>div>small{font-size:21px;line-height:1.55;max-width:30em;color:#52616e}
+.evidence{font-size:18px;max-width:1450px;color:#52616e}
+.closing-slide small,.closing-final small{font-size:18px;line-height:1.5}
+.pricing-tiers ul{font-size:24px;line-height:1.5}
+.pricing-tiers p.tier-basis{font-size:21px}
+.tier-number{font-size:18px}
+.product-journey nav button{font-size:21px}
+.product-comparison small{font-size:17px}
+.product-comparison p{font-size:21px}
+.product-demo-body figcaption,.product-note,.product-demo-body a{font-size:18px;line-height:1.45}
+.eu-funding-pie p.funding-period{font-size:22px}
+.eu-funding-pie .funding-description h3{font-size:26px}
+.eu-funding-pie .funding-description p,.eu-funding-detail>a,.funding-wheel .eu-funding-note{font-size:20px}
+.funding-caveat,.expansion-overlay>small{font-size:17px}
+.funding-eyebrow{font-size:18px}
+.benchmark-groups p.benchmark-basis{font-size:20px}
+.benchmark-label{font-size:24px}
+.benchmark-row small{max-width:none}
+.benchmark-slide>small{font-size:17px}
+.cluster-audience{font-size:23px;max-width:30em}
+.cluster-polaroid p{font-size:20px}
+.cluster-polaroid small{font-size:16px}
+.cluster-wheel h2{font-size:28px}
+.cluster-wheel p{font-size:19px}
+@media(max-width:850px) {
+  .preparation-art{height:140px}
+  :root {--deck-title:clamp(28px,4.4vw,38px);--deck-body:16px;--deck-detail:12px;--deck-metric:34px}
+  .product-demo-body {gap:16px;grid-template-columns:minmax(0,38fr) minmax(0,62fr)}
+  .product-art.large {width:64px;height:64px}
+  .community-slide {grid-template-columns:1fr 1fr}
+  .community-flyers {gap:12px}
+  .community-flyers a:first-child {width:100%}
+  .community-flyers a:first-child img {max-height:35vh}
+  .community-flyers a:not(:first-child) img {max-height:20vh}
+}
