@@ -1,5 +1,6 @@
 import React,{useState,useEffect,useRef} from 'react';
 import {createRoot} from 'react-dom/client';
+import {CurrencyProvider} from './currency-context.jsx';
 import {motion,AnimatePresence,useReducedMotion} from 'framer-motion';
 import './swiss.css';
 import './deck-system.css';
@@ -29,7 +30,7 @@ const originalScenes=[
  ['We free up time\nfor research.','Less preparation. More time for the work that matters.','Illustrative targets, not measured results: funding 20 → 3 h; team 40 → 15 h; planning 40 → 12 h; drafting 60 → 20 h. Idea development is not separately timed.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,-4,31,34,35,33,30,36,37,32];
+const sceneMap=[-1,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,-4,-6,31,34,35,33,30,36,37,38];
 const extras={
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
  '-2':['Research moves\nthe world forward.','People like Matti and Daniel are turning research-led ideas into possibilities.','Original imagery from the supplied deck. Project ambitions, not funded outcomes or testimonials.'],
@@ -37,7 +38,7 @@ const extras={
  '-3':['Before the research,\nthe preparation.','Five connected tasks. One proposal. Each depends on the work that came before.','Process overview. Illustration, not a measured allocation of time.'],
  '-4':['A community that\nmultiplies connections.','Many teams. Many connections. Each new organisation opens more possibilities for collaboration.','Hypothetical network: 20 Korean teams × 15 European organisations = 300 possible pairings, not introductions, clients or partnerships achieved.']
 };
-const scenes=sceneMap.map(id=>id>=40&&id<=42?extras[-5]:id>=19?['InsightMatches in action','Five connected stages.','Actual platform captures use demo data.']:extras[id]??originalScenes[id]);
+const scenes=sceneMap.map(id=>id>=40&&id<=42?extras[-5]:id>=19?['InsightMatches in action','Five connected stages.','Actual platform captures use demo data.']:extras[id===-6?-4:id]??originalScenes[id]);
 const dots=Array.from({length:240},(_,i)=>{const y=1-2*(i+.5)/240;return {y,r:Math.sqrt(1-y*y),a:i*Math.PI*(3-Math.sqrt(5))}});
 function target(i,step,angle){
  const d=dots[i],a=d.a+angle;
@@ -66,7 +67,7 @@ function CoreDiagram({step,reduced}){
  {step===6&&stages.map((s,i)=><g key={s}><text x={105+i*180} y="380" textAnchor="middle" className="svg-label">{s}</text><text x={105+i*180} y="410" textAnchor="middle" className="svg-small">{['Discover the fit','Shape the concept','Connect expertise','Align contributions','Write and review'][i]}</text></g>)}
  </motion.g></AnimatePresence></svg>
 }
-function Diagram({step:sceneIndex,reduced}){
+function Diagram({step:sceneIndex,reduced,onPrepDetail}){
  const step=sceneMap[sceneIndex];
  const [angle,setAngle]=useState(0);
  const previous=useRef(step),[settled,setSettled]=useState(true);
@@ -85,7 +86,7 @@ function Diagram({step:sceneIndex,reduced}){
  else if(step>=30)annotations=<ClosingJourney kind={step}/>;
  else if(step>=19)annotations=<ProductJourney stage={step-20}/>;
  else if(step<0)annotations=<ExtraScene kind={step}/>;
- else if(step===2)annotations=<PreparationScenario/>;
+ else if(step===2)annotations=<PreparationScenario onDetailChange={onPrepDetail}/>;
  else if(step===5)annotations=<PillarMean/>;
  else if(step===8)annotations=<ProductScreens/>;
  else if(step>=3&&step<=7)annotations=<ProblemDiagram stage={step-3} reduced={true}/>;
@@ -93,9 +94,9 @@ function Diagram({step:sceneIndex,reduced}){
  else if(step===10)annotations=<BrokenTimeline reduced={true}/>;
  else annotations=<CoreDiagram step={step>=8?step-5:step} reduced={true}/>;
  return <motion.div layout className="morph-stage" transition={{layout:{duration:reduced?0:.7,ease:[.22,1,.36,1]}}}>
-   <motion.div className="scene-annotations" key={step>=40&&step<=42||[-2,-5].includes(step)?'charts':[31,34,35].includes(step)?'pricing':step>=30?step:step>=19?'product':step} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.65,ease:[.22,1,.36,1],delay:reduced||step>=19||[-2,-5].includes(step)?0:.35}}>{annotations}</motion.div>
+   <motion.div className="scene-annotations" key={[-4,-6].includes(step)?'network':step>=40&&step<=42||[-2,-5].includes(step)?'charts':[31,34,35].includes(step)?'pricing':step>=30?step:step>=19?'product':step} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.65,ease:[.22,1,.36,1],delay:reduced||step>=19||[-2,-5].includes(step)?0:.35}}>{annotations}</motion.div>
    <svg className="persistent-particles" viewBox="0 0 940 620" preserveAspectRatio={step===-3?'none':'xMidYMid meet'} aria-hidden="true">
-     {dots.map((_,i)=><motion.circle data-particle={i} key={i} initial={false} animate={journeyTarget(i,step,angle)} transition={{duration:reduced?0:[0,-2].includes(step)&&settled?.12:1.25,ease:[.45,0,.2,1]}}/>)}
+     {dots.map((_,i)=><motion.circle data-particle={i} key={i} initial={false} animate={journeyTarget(i,step,angle)} transition={{duration:reduced?0:[0,-2].includes(step)&&settled?.12:step===-3?2.1:1.25,ease:[.45,0,.2,1]}}/>)}
    </svg>
  </motion.div>;
 }
@@ -128,6 +129,7 @@ function journeyTarget(i,step,angle){
  return target(i,6,angle);
 }
 function App(){
+ const [prepDetail,setPrepDetail]=useState(false);
  const [step,setStep]=useState(0),reduced=useReducedMotion(),gesture=useRef({last:0,total:0,changed:0});
  useEffect(()=>{
  const go=d=>setStep(v=>Math.max(0,Math.min(scenes.length-1,v+d)));
@@ -138,6 +140,6 @@ function App(){
  window.addEventListener('keydown',key);window.addEventListener('wheel',wheel,{passive:false});
  return()=>{window.removeEventListener('keydown',key);window.removeEventListener('wheel',wheel);window.removeEventListener('deck-product-stage',product)}
  },[]);
- return <main className={sceneMap[step]===-2?'collage-scene':''} aria-label="InsightMatches researcher presentation" tabIndex="0"><div className="content"><div className="copy" aria-live="polite"><motion.div key={step} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.45}}><h1>{scenes[step][0]}</h1><p>{scenes[step][1]}</p>{sceneMap[step]===-2&&<Collaborators/>}</motion.div></div><div className="diagram"><Diagram step={step} reduced={reduced}/></div></div><p className="evidence">{scenes[step][2]}</p><span className="sr-only">Use arrow keys or scroll to change scenes. Home returns to the beginning. End opens the final scene.</span></main>
+ return <main className={sceneMap[step]===-2?'collage-scene':''} aria-label="InsightMatches researcher presentation" tabIndex="0"><div className="content"><div className="copy" aria-live="polite"><motion.div key={step} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.45}}><h1>{sceneMap[step]===2?(prepDetail?'≈151,000 people.\nOne full year.':'30% of time on\ngrant preparation.'):scenes[step][0]}</h1><p>{sceneMap[step]===2?(prepDetail?'At a 30% preparation share, Korea’s research effort would equal 151,000 people working full time for a year.':'Research time is precious.'):scenes[step][1]}</p>{sceneMap[step]===-2&&<Collaborators/>}</motion.div></div><div className="diagram"><Diagram step={step} reduced={reduced} onPrepDetail={setPrepDetail}/></div></div><p className="evidence">{scenes[step][2]}</p><span className="sr-only">Use arrow keys or scroll to change scenes. Home returns to the beginning. End opens the final scene.</span></main>
 }
-createRoot(document.getElementById('root')).render(new URLSearchParams(window.location.search).get('canvas')==='1'?<App/>:<PresentationFrame/>);
+createRoot(document.getElementById('root')).render(new URLSearchParams(window.location.search).get('canvas')==='1'?<CurrencyProvider><App/></CurrencyProvider>:<PresentationFrame/>);

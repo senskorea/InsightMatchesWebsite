@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import EUFunding from './eu-funding.jsx';
 import ClusterProfiles from './cluster-profiles.jsx';
 import PreparationArt from './preparation-art.jsx';
+import NetworkPartnerships from './network-partnerships.jsx';
 const labels=['Find funding','Develop the idea','Build the team','Plan the project','Prepare the draft'];
 const stageSummaries=[
  ['20 hours','illustrative search estimate'],
@@ -22,9 +23,9 @@ function PreparationOverview(){
  const fact=active===null?null:stageFacts[active];
  return <section className="preparation-overview" aria-label="Explore the five preparation stages">
   <header className="preparation-headline" aria-live="polite" aria-atomic="true">
-   <span className="preparation-kicker">{active===null?'Five connected tasks. One proposal.':labels[active]}</span>
-   <h2>{fact?.headline??'Before the research, the preparation.'}</h2>
-   <p>{fact?.detail??'Hover over a stage to explore what it takes.'}</p>
+   <span className="preparation-kicker">{active===null?'The effort behind a grant proposal':labels[active]}</span>
+   <h2>{fact?.headline??'One proposal. A lot of preparation.'}</h2>
+   <p>{fact?.detail??'Find calls. Shape the idea. Coordinate partners. Plan the work. Write the proposal.'}</p>
   </header>
   <div className="preparation-stages" onMouseLeave={()=>setActive(null)}>
    {labels.map((label,i)=><button key={label} type="button" aria-pressed={active===i} onMouseEnter={()=>setActive(i)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(i)} onBlur={()=>setActive(null)} onClick={()=>setActive(i)} className={active===i?'is-active':''}>
@@ -49,7 +50,7 @@ export function ProductScreens(){return <svg viewBox="0 0 940 620" role="img" ar
  {[['funding.jpg','Find the fit',55,80,450,255],['partners.jpg','Connect expertise',410,165,450,255],['writing.jpg','Develop the draft',190,340,420,190]].map(([file,label,x,y,w,h])=><g key={file}><rect x={x-7} y={y-29} width={w+14} height={h+36} rx="5" fill="white" stroke="#d8dfe4"/><text x={x+8} y={y-10} className="svg-small">{label}</text><image href={'/deck-assets/'+file} x={x} y={y} width={w} height={h} preserveAspectRatio="xMidYMid meet"/></g>)}
  <text x="470" y="605" textAnchor="middle" className="svg-small">Actual interface · local demo data · October 2026</text></svg>}
 export function ExtraScene({kind}){
- if(kind===-4)return <section className="network-partnerships"><header><h1>One connection.<br/>Whole new networks.</h1><h2>Connect with InsightMatches. Reach into other research communities.</h2><p>We bring together organisations that support researchers and startups in different countries. Each relationship opens a route to more expertise, potential partners and research opportunities.</p><p>You’re not just finding one contact. You’re connecting with a wider network.</p></header><div className="partnership-evidence">{[['synapse-partnership.png','Synapse International','Connecting Korean and Japanese deep tech with European research opportunities.'],['phihub-partnership.png','Phi Hub','Connecting African HealthTech with Korean technology networks and European research partners.']].map(([file,name,copy])=><figure key={file}><a href={'/deck-assets/'+file} target="_blank" rel="noreferrer"><img src={'/deck-assets/'+file} alt={name+' partnership announcement'}/></a><figcaption><strong>{name}</strong><p>{copy}</p></figcaption></figure>)}</div></section>;
+ if(kind===-4||kind===-6)return <NetworkPartnerships reveal={kind===-6}/>;
  if(kind===-2)return <ClusterProfiles/>;
  if(kind===-5)return <EUFunding/>;
  if(kind===-3)return <PreparationOverview/>;
