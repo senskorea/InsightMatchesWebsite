@@ -76,6 +76,13 @@ const DevRedirect = () => {
   return null;
 };
 
+const KoreanRedirect = () => {
+  useEffect(() => {
+    window.location.href = "/korean/index.html";
+  }, []);
+  return null;
+};
+
 const SensRedirect = () => {
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -232,6 +239,8 @@ const AppContent = () => {
             <Route path="/dev/*" element={<DevRedirect />} />
             <Route path="/sens/*" element={<SensRedirect />} />
             <Route path="/senspitch" element={<SensPitchRedirect />} />
+            <Route path="/korean" element={<KoreanRedirect />} />
+            <Route path="/korean/*" element={<KoreanRedirect />} />
 
             {/* 301 Redirects for old URLs */}
             <Route path="/horizon-europe-partner" element={<Navigate to="/dissemination" replace />} />
