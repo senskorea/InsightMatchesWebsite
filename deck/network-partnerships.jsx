@@ -38,7 +38,7 @@ export default function NetworkPartnerships({reveal=false,globe=false}){
     <motion.g initial={false} animate={{opacity:globe?0:1}} transition={{duration:reduced?0:.7,delay:reduced||globe?0:1.5}}>
      <rect x="350" y="272" width="240" height="76" rx="38" fill="white" stroke="#079fe3" strokeWidth="2"/><text x="470" y="320" textAnchor="middle" fontSize="29" fontWeight="600">InsightMatches</text>
     </motion.g>
-    <text x="470" y="605" textAnchor="middle" fontSize="21" fill="#64717c">Selected continents · illustrative links, not measured activity.</text>
+    <text x="470" y="605" textAnchor="middle" fontSize="21" fill="#64717c">{globe?'Symbolic globe · dots do not represent researcher locations.':'Selected continents · illustrative links, not measured activity.'}</text>
    </svg>
    {globe&&<button className="partnership-motion-control" aria-pressed={paused} onClick={()=>setPaused(v=>!v)}>{paused?'Resume rotation':'Pause rotation'}</button>}
   </div>
