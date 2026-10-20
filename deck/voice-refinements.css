@@ -102,3 +102,6 @@ svg[aria-label^="Four broken"] .svg-small{font-size:21px}
 .display-controls .presentation-mode{position:static;min-height:44px}
 .fullscreen-error{position:fixed;right:14px;bottom:70px;max-width:320px;z-index:110;background:white;padding:12px;border:1px solid #cbd3da;font:14px/1.4 sans-serif;color:#13202d}
 @media(max-width:650px){.deck-controls{left:8px;bottom:8px;gap:4px}.deck-controls button{padding:8px}.display-controls{right:8px;bottom:84px}.currency-control{padding:4px 6px}}
+
+main.annex-image-slide{padding:0;width:100%;height:100%;background:white;display:flex;align-items:center;justify-content:center}
+.annex-image-slide>img{display:block;width:100%;height:100%;object-fit:contain}
