@@ -13,7 +13,7 @@ assert(deck.includes('/assets/deck-'),'Separate deck entry required');
 assert(!main.includes('/assets/deck-'),'Homepage must not load deck bundle');
 assert(deck.includes('https://insightmatches.com/deck/'),'Canonical URL missing');
 assert(source.includes("url.searchParams.set('canvas','1')"),'Frame recursion guard missing');
-assert(source.includes('Whole new networks.'),'Approved partnership copy missing');
+assert(source.includes('Research crosses'),'Approved partnership copy missing');
 for(const file of ['cluster-profiles.jsx','eu-funding.jsx']){
  assert(read('deck/'+file).includes('<motion.div layoutId="research-funding-wheel"'),'Shared wheel transition needs an HTML layout container: '+file);
 }
