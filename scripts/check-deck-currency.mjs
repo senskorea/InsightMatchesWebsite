@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {convert,money,validCurrency} from '../deck/currency.mjs';
+import {convert,money,offerPrice,validCurrency} from '../deck/currency.mjs';
 assert.equal(convert(1,'EUR','KRW'),1496.54);
 assert.equal(convert(1,'EUR','USD'),1.1195);
 assert.equal(validCurrency('invalid'),'USD');
@@ -9,5 +9,11 @@ for(const c of ['USD','EUR','KRW']){
  assert(!money(93.5e9,'EUR',c,true).includes('NaN'));
 }
 assert.equal(money(2600,'USD','USD'),'$2,600');
-assert.equal(money(3750,'USD','KRW'),'₩5,012,975');
+assert.equal(offerPrice(2600,'EUR'),'€2,400');
+assert.equal(offerPrice(3750,'EUR'),'€3,400');
+assert.equal(offerPrice(2600,'USD'),'$2,600');
+assert.equal(money(2600,'USD','KRW'),'₩3.5M');
+assert.equal(money(3750,'USD','KRW'),'₩5.0M');
+assert.equal(money(8396,'USD','KRW'),'₩11.2M');
+assert.equal(money(500000,'KRW','KRW'),'₩500,000');
 console.log('PASS: currency rates, round trips, formatting and comparison invariance');
