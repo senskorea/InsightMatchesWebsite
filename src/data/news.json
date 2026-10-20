@@ -1,5 +1,22 @@
 [
   {
+    "id": "press-2026-10-11-leadership",
+    "date": "2026-10-11",
+    "image": "/news/leadership-team-2026.png",
+    "type": "press",
+    "title": {
+      "en": "InsightMatches Expands Leadership Team to Scale AI R&D Funding Copilot",
+      "fr": "InsightMatches renforce son équipe de direction pour accélérer son copilote de financement R&D",
+      "ko": "인사이트매치스, 글로벌 AI R&D 펀딩 코파일럿 확장을 위해 리더십 팀 강화"
+    },
+    "excerpt": {
+      "en": "Junior Mukenze joins as Head of AI Engineering and Technical Advisor, alongside Serena Radano as Founding Grants and Product Lead, joining Paul Conversy and Mark Potapov to scale our cross border research funding platform.",
+      "fr": "Junior Mukenze rejoint l'équipe en tant que responsable ingénierie IA et Serena Radano comme responsable subventions et produit, aux côtés de Paul Conversy et Mark Potapov.",
+      "ko": "주니어 무켄제 AI 엔지니어링 리드와 세레나 라다노 그랜트 및 프로덕트 리드가 합류하여 폴 컨버시, 마크 포타포프와 함께 글로벌 R&D 펀딩 플랫폼을 확장합니다."
+    },
+    "url": "/resources/press/leadership-team"
+  },
+  {
     "id": "press-2026-09-22-phihub",
     "date": "2026-09-22",
     "image": "/news/phihub-pr-release.png",
