@@ -30,7 +30,7 @@ const originalScenes=[
  ['We free up time\nfor research.','Less preparation. More time for the work that matters.','Illustrative targets, not measured results: funding 20 → 3 h; team 40 → 15 h; planning 40 → 12 h; drafting 60 → 20 h. Idea development is not separately timed.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
+const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
 const extras={
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
  '-2':['Research moves\nthe world forward.','People like Matti and Daniel are turning research-led ideas into possibilities.','Original imagery from the supplied deck. Project ambitions, not funded outcomes or testimonials.'],
