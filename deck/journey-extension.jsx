@@ -50,7 +50,7 @@ export function ProductScreens(){return <svg viewBox="0 0 940 620" role="img" ar
  {[['funding.jpg','Find the fit',55,80,450,255],['partners.jpg','Connect expertise',410,165,450,255],['writing.jpg','Develop the draft',190,340,420,190]].map(([file,label,x,y,w,h])=><g key={file}><rect x={x-7} y={y-29} width={w+14} height={h+36} rx="5" fill="white" stroke="#d8dfe4"/><text x={x+8} y={y-10} className="svg-small">{label}</text><image href={'/deck-assets/'+file} x={x} y={y} width={w} height={h} preserveAspectRatio="xMidYMid meet"/></g>)}
  <text x="470" y="605" textAnchor="middle" className="svg-small">Actual interface · local demo data · October 2026</text></svg>}
 export function ExtraScene({kind}){
- if(kind===-4||kind===-6)return <NetworkPartnerships reveal={kind===-6}/>;
+ if(kind===-7||kind===-4||kind===-6)return <NetworkPartnerships globe={kind===-7} reveal={kind===-6}/>;
  if(kind===-2)return <ClusterProfiles/>;
  if(kind===-5)return <EUFunding/>;
  if(kind===-3)return <PreparationOverview/>;

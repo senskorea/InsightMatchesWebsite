@@ -1,22 +1,45 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
+import {motion,useReducedMotion} from 'framer-motion';
 const partners=[
  ['synapse-partnership.png','Synapse International','Connecting Korean and Japanese deep tech with European research opportunities.'],
  ['phihub-partnership.png','Phi Hub','Connecting African HealthTech with Korean technology networks and European research partners.']
 ];
 const hubs=[[205,155],[735,155],[205,455],[735,455]];
-const nodes=hubs.flatMap(([cx,cy],group)=>Array.from({length:7},(_,i)=>{const a=i*Math.PI*2/7;return {x:cx+88*Math.cos(a),y:cy+72*Math.sin(a),group}}));
-export default function NetworkPartnerships({reveal=false}){
- const [paused,setPaused]=useState(false);
+const nodes=Array.from({length:240},(_,i)=>{
+ const group=Math.floor(i/60),j=i%60,a=j*Math.PI*(3-Math.sqrt(5)),radius=22+78*Math.sqrt(j/59);
+ const [cx,cy]=hubs[group];
+ return {x:cx+radius*Math.cos(a),y:cy+radius*.8*Math.sin(a),group};
+});
+function globePoint(i,angle){
+ const y=1-2*(i+.5)/nodes.length,r=Math.sqrt(1-y*y),a=i*Math.PI*(3-Math.sqrt(5))+angle,z=r*Math.cos(a);
+ return {cx:470+245*r*Math.sin(a),cy:300+245*y,r:2.2+(z+1)*1.1,opacity:.18+(z+1)*.37,fill:z>.3?'#079fe3':'#13202d'};
+}
+export default function NetworkPartnerships({reveal=false,globe=false}){
+ const [paused,setPaused]=useState(false),[angle,setAngle]=useState(0),reduced=useReducedMotion();
+ useEffect(()=>{
+  if(!globe||paused||reduced)return;
+  const id=setInterval(()=>{if(!document.hidden)setAngle(v=>v+.012)},50);
+  return()=>clearInterval(id);
+ },[globe,paused,reduced]);
+ const transition={duration:reduced?0:globe?.22:1.8,ease:[.22,1,.36,1]};
  return <section className="network-partnerships">
-  <header><h1>One connection.<br/>Whole new networks.</h1><h2>Connect with InsightMatches. Reach into other research communities.</h2><p>We bring together organisations that support researchers and startups in different countries. Each relationship opens a route to more expertise, potential partners and research opportunities.</p><p>You’re not just finding one contact. You’re connecting with a wider network.</p></header>
+  <header>{globe?<><h1>A world of research.<br/>Connected.</h1><h2>Expertise is everywhere. The next connection can open a new community.</h2><p>Across countries and disciplines, researchers bring different knowledge, facilities and ideas.</p><p>Connect those strengths to create new possibilities together.</p></>:<><h1>One connection.<br/>Whole new networks.</h1><h2>Connect with InsightMatches. Reach into other research communities.</h2><p>We bring together organisations that support researchers and startups in different countries. Each relationship opens a route to more expertise, potential partners and research opportunities.</p><p>You’re not just finding one contact. You’re connecting with a wider network.</p></>}</header>
   <div className="partnership-overlay-area">
-   <svg className="network-graph" viewBox="0 0 940 620" role="img" aria-label="Illustration of connected research communities, with many connections within and between networks">
-    {nodes.map((n,i)=>{const next=nodes[n.group*7+(i+2)%7],across=nodes[(i+9)%nodes.length];return <g key={i}><path d={`M${n.x} ${n.y}L${next.x} ${next.y}`} stroke="#cddde6" strokeWidth="2"/><path d={`M${n.x} ${n.y}Q470 310 ${across.x} ${across.y}`} fill="none" stroke="#079fe3" strokeOpacity=".18" strokeWidth="1.8"/></g>})}
-    {hubs.map(([x,y],i)=><g key={i}><path d={`M${x} ${y}L470 310`} stroke="#079fe3" strokeWidth="3"/>{nodes.filter(n=>n.group===i).map((n,j)=><path key={j} d={`M${x} ${y}L${n.x} ${n.y}`} stroke="#8bc8e5" strokeWidth="2"/>)}<circle cx={x} cy={y} r="17" fill="#079fe3"/></g>)}
-    {nodes.map((n,i)=><circle key={i} cx={n.x} cy={n.y} r={i%3===0?9:6} fill={i%3===0?'#13202d':'#079fe3'} stroke="white" strokeWidth="3"/>)}
-    <rect x="350" y="272" width="240" height="76" rx="38" fill="white" stroke="#079fe3" strokeWidth="2"/><text x="470" y="320" textAnchor="middle" fontSize="29" fontWeight="600">InsightMatches</text>
-    <text x="470" y="590" textAnchor="middle" fontSize="21" fill="#64717c">Illustration of network reach, not measured connections.</text>
+   <svg className="network-graph" viewBox="0 0 940 620" role="img" aria-label={globe?'Rotating globe of research communities':'Globe particles connected into four research communities'}>
+    <motion.g animate={{opacity:globe?1:0}} transition={{duration:reduced?0:.7}} fill="none" stroke="#dce6ec" strokeWidth="1.4">
+     <circle cx="470" cy="300" r="245"/><ellipse cx="470" cy="300" rx="100" ry="245"/><ellipse cx="470" cy="300" rx="195" ry="245"/><ellipse cx="470" cy="300" rx="245" ry="85"/><ellipse cx="470" cy="300" rx="245" ry="175"/>
+    </motion.g>
+    <motion.g initial={false} animate={{opacity:globe?0:1}} transition={{duration:reduced?0:1.1,delay:reduced||globe?0:.8}}>
+     {hubs.map(([x,y],i)=><g key={i}><motion.path d={`M${x} ${y}Q470 310 470 310`} fill="none" stroke="#079fe3" strokeWidth="2.5" animate={{pathLength:globe?0:1}} transition={{duration:reduced?0:1.3,delay:reduced||globe?0:1}}/>{nodes.filter((n,j)=>n.group===i&&j%5===0).map((n,j)=><path key={j} d={`M${x} ${y}L${n.x} ${n.y}`} stroke="#8bc8e5" strokeWidth="1.4"/>)}<circle cx={x} cy={y} r="13" fill="#079fe3"/></g>)}
+     {hubs.map(([x,y],i)=><path key={i} d={`M${x} ${y}Q470 310 ${hubs[(i+1)%4][0]} ${hubs[(i+1)%4][1]}`} fill="none" stroke="#079fe3" strokeOpacity=".2" strokeWidth="1.5"/>)}
+    </motion.g>
+    {nodes.map((n,i)=><motion.circle data-network-particle={i} key={i} initial={false} animate={globe?globePoint(i,angle):{cx:n.x,cy:n.y,r:i%5===0?4.5:2.8,opacity:.85,fill:i%5===0?'#13202d':'#079fe3'}} transition={transition}/>)}
+    <motion.g initial={false} animate={{opacity:globe?0:1}} transition={{duration:reduced?0:.7,delay:reduced||globe?0:1.5}}>
+     <rect x="350" y="272" width="240" height="76" rx="38" fill="white" stroke="#079fe3" strokeWidth="2"/><text x="470" y="320" textAnchor="middle" fontSize="29" fontWeight="600">InsightMatches</text>
+    </motion.g>
+    <text x="470" y="605" textAnchor="middle" fontSize="21" fill="#64717c">Illustration of research communities, not measured connections.</text>
    </svg>
+   {globe&&<button className="partnership-motion-control" aria-pressed={paused} onClick={()=>setPaused(v=>!v)}>{paused?'Resume rotation':'Pause rotation'}</button>}
    {reveal&&<><button className="partnership-motion-control" aria-pressed={paused} onClick={()=>setPaused(v=>!v)}>{paused?'Resume motion':'Pause motion'}</button>
    <div className={'partnership-evidence '+(paused?'is-paused':'')}>
     {partners.map(([file,name,copy])=><figure key={file}><a href={'/deck-assets/'+file} target="_blank" rel="noreferrer"><img src={'/deck-assets/'+file} alt={name+' partnership announcement'}/></a><figcaption><strong>{name}</strong><p>{copy}</p></figcaption></figure>)}
