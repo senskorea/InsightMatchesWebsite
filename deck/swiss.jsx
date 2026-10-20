@@ -30,7 +30,7 @@ const originalScenes=[
  ['We free up time\nfor research.','Less preparation. More time for the work that matters.','Illustrative targets, not measured results: funding 20 → 3 h; team 40 → 15 h; planning 40 → 12 h; drafting 60 → 20 h. Idea development is not separately timed.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,-4,-6,31,34,35,33,30,36,37,38];
+const sceneMap=[-1,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,-4,-6,31,34,35,33,30,36,37,38,50,51,52];
 const extras={
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
  '-2':['Research moves\nthe world forward.','People like Matti and Daniel are turning research-led ideas into possibilities.','Original imagery from the supplied deck. Project ambitions, not funded outcomes or testimonials.'],
@@ -39,6 +39,7 @@ const extras={
  '-4':['A community that\nmultiplies connections.','Many teams. Many connections. Each new organisation opens more possibilities for collaboration.','Hypothetical network: 20 Korean teams × 15 European organisations = 300 possible pairings, not introductions, clients or partnerships achieved.']
 };
 const scenes=sceneMap.map(id=>id>=40&&id<=42?extras[-5]:id>=19?['InsightMatches in action','Five connected stages.','Actual platform captures use demo data.']:extras[id===-6?-4:id]??originalScenes[id]);
+const indiaAnnex=[['india-status.png','Where does India fit in Horizon Europe?'],['india-consortium.png','How does your institution join a consortium?'],['india-research-fit.png','Where could your research fit?']];
 const dots=Array.from({length:240},(_,i)=>{const y=1-2*(i+.5)/240;return {y,r:Math.sqrt(1-y*y),a:i*Math.PI*(3-Math.sqrt(5))}});
 function target(i,step,angle){
  const d=dots[i],a=d.a+angle;
@@ -140,6 +141,7 @@ function App(){
  window.addEventListener('keydown',key);window.addEventListener('wheel',wheel,{passive:false});
  return()=>{window.removeEventListener('keydown',key);window.removeEventListener('wheel',wheel);window.removeEventListener('deck-product-stage',product)}
  },[]);
+ if(sceneMap[step]>=50){const [file,title]=indiaAnnex[sceneMap[step]-50];return <main className="annex-image-slide" aria-label={title} tabIndex="0"><img src={'/deck-assets/'+file} alt={title}/><span className="sr-only">Use arrow keys to navigate. Home returns to the beginning.</span></main>}
  return <main className={sceneMap[step]===-2?'collage-scene':''} aria-label="InsightMatches researcher presentation" tabIndex="0"><div className="content"><div className="copy" aria-live="polite"><motion.div key={step} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.45}}><h1>{sceneMap[step]===2?(prepDetail?'≈151,000 people.\nOne full year.':'30% of time on\ngrant preparation.'):scenes[step][0]}</h1><p>{sceneMap[step]===2?(prepDetail?'At a 30% preparation share, Korea’s research effort would equal 151,000 people working full time for a year.':'Research time is precious.'):scenes[step][1]}</p>{sceneMap[step]===-2&&<Collaborators/>}</motion.div></div><div className="diagram"><Diagram step={step} reduced={reduced} onPrepDetail={setPrepDetail}/></div></div><p className="evidence">{scenes[step][2]}</p><span className="sr-only">Use arrow keys or scroll to change scenes. Home returns to the beginning. End opens the final scene.</span></main>
 }
 createRoot(document.getElementById('root')).render(new URLSearchParams(window.location.search).get('canvas')==='1'?<CurrencyProvider><App/></CurrencyProvider>:<PresentationFrame/>);
