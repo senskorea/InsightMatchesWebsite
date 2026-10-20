@@ -30,7 +30,7 @@ const originalScenes=[
  ['We free up time\nfor research.','Less preparation. More time for the work that matters.','Illustrative targets, not measured results: funding 20 → 3 h; team 40 → 15 h; planning 40 → 12 h; drafting 60 → 20 h. Idea development is not separately timed.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,-4,-6,31,34,35,33,30,36,37,38,50,51,52];
+const sceneMap=[-1,-2,-5,40,41,42,0,1,2,-3,20,21,22,23,24,10,-7,-4,-6,31,34,35,33,30,36,37,38,50,51,52];
 const extras={
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
  '-2':['Research moves\nthe world forward.','People like Matti and Daniel are turning research-led ideas into possibilities.','Original imagery from the supplied deck. Project ambitions, not funded outcomes or testimonials.'],
@@ -38,7 +38,7 @@ const extras={
  '-3':['Before the research,\nthe preparation.','Five connected tasks. One proposal. Each depends on the work that came before.','Process overview. Illustration, not a measured allocation of time.'],
  '-4':['A community that\nmultiplies connections.','Many teams. Many connections. Each new organisation opens more possibilities for collaboration.','Hypothetical network: 20 Korean teams × 15 European organisations = 300 possible pairings, not introductions, clients or partnerships achieved.']
 };
-const scenes=sceneMap.map(id=>id>=40&&id<=42?extras[-5]:id>=19?['InsightMatches in action','Five connected stages.','Actual platform captures use demo data.']:extras[id===-6?-4:id]??originalScenes[id]);
+const scenes=sceneMap.map(id=>id>=40&&id<=42?extras[-5]:id>=19?['InsightMatches in action','Five connected stages.','Actual platform captures use demo data.']:extras[[-7,-6].includes(id)?-4:id]??originalScenes[id]);
 const indiaAnnex=[['india-status.png','Where does India fit in Horizon Europe?'],['india-consortium.png','How does your institution join a consortium?'],['india-research-fit.png','Where could your research fit?']];
 const dots=Array.from({length:240},(_,i)=>{const y=1-2*(i+.5)/240;return {y,r:Math.sqrt(1-y*y),a:i*Math.PI*(3-Math.sqrt(5))}});
 function target(i,step,angle){
@@ -95,7 +95,7 @@ function Diagram({step:sceneIndex,reduced,onPrepDetail}){
  else if(step===10)annotations=<BrokenTimeline reduced={true}/>;
  else annotations=<CoreDiagram step={step>=8?step-5:step} reduced={true}/>;
  return <motion.div layout className="morph-stage" transition={{layout:{duration:reduced?0:.7,ease:[.22,1,.36,1]}}}>
-   <motion.div className="scene-annotations" key={[-4,-6].includes(step)?'network':step>=40&&step<=42||[-2,-5].includes(step)?'charts':[31,34,35].includes(step)?'pricing':step>=30?step:step>=19?'product':step} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.65,ease:[.22,1,.36,1],delay:reduced||step>=19||[-2,-5].includes(step)?0:.35}}>{annotations}</motion.div>
+   <motion.div className="scene-annotations" key={[-7,-4,-6].includes(step)?'network':step>=40&&step<=42||[-2,-5].includes(step)?'charts':[31,34,35].includes(step)?'pricing':step>=30?step:step>=19?'product':step} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.65,ease:[.22,1,.36,1],delay:reduced||step>=19||[-2,-5].includes(step)?0:.35}}>{annotations}</motion.div>
    <svg className="persistent-particles" viewBox="0 0 940 620" preserveAspectRatio={step===-3?'none':'xMidYMid meet'} aria-hidden="true">
      {dots.map((_,i)=><motion.circle data-particle={i} key={i} initial={false} animate={journeyTarget(i,step,angle)} transition={{duration:reduced?0:[0,-2].includes(step)&&settled?.12:step===-3?2.1:1.25,ease:[.45,0,.2,1]}}/>)}
    </svg>
