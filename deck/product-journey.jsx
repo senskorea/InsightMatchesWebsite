@@ -4,9 +4,9 @@ import PreparationArt from './preparation-art.jsx';
 const stages=[
  ['Find funding','Find the opportunity that fits.','Screen the call, eligibility, deadlines and expected outcomes.','Scattered opportunity information','Funding filters and call details in one view','funding.jpg','Actual funding discovery screen · demo data'],
  ['Develop the idea','Give the research question a clear direction.','Connect the scientific idea to the call’s objectives and expected impact.','A question without a proposal structure','A structured narrative to develop and review','writing.jpg','Temporary stand-in: actual writing editor, NOT an idea-development screen'],
- ['Build the team','Bring complementary expertise together.','Review expertise, contributions and the partner requirements of the call.','Separate searches and disconnected profiles','Partner discovery and contributions in context','partners.jpg','Actual partner discovery screen · demo data'],
+ ['Build the team','Bring complementary expertise together.','Review partner profiles, contributions and the call’s requirements.','Separate searches and disconnected profiles','Partner discovery and contributions in context','partners.jpg','Actual partner discovery screen · demo data'],
  ['Plan the project','Make the work and budget tell one story.','Define work packages, leads, milestones, deliverables, dependencies and costs.','Responsibilities and budget in separate documents','Work packages, ownership and timing in one plan','planning.jpg','Actual project work plan · demo data'],
- ['Prepare the draft','Bring the proposal together.','Develop Excellence, Impact and Implementation; check ethics, required documents and submission requirements.','Contributions assembled and checked manually','Guided sections and a compiled proposal review','writing.jpg','Actual guided section editor · demo data']
+ ['Prepare the draft','Bring the proposal together.','Develop Excellence, Impact and Implementation, then check ethics, mandatory documents and submission rules.','Contributions assembled and checked manually','Guided sections and a compiled proposal review','writing.jpg','Actual guided section editor · demo data']
 ];
 export function goProduct(stage){window.dispatchEvent(new CustomEvent('deck-product-stage',{detail:stage}));}
 const Art=PreparationArt;

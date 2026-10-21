@@ -5,11 +5,11 @@ import PreparationArt from './preparation-art.jsx';
 import NetworkPartnerships from './network-partnerships.jsx';
 const labels=['Find funding','Develop the idea','Build the team','Plan the project','Prepare the draft'];
 const stageSummaries=[
- ['20 hours','illustrative search estimate'],
- ['One clear idea','qualitative step'],
+ ['20 hours',''],
+ ['One clear idea',''],
  ['16 partners','Pillar II mean · organisations'],
- ['40 hours','illustrative planning estimate'],
- ['60 hours','illustrative drafting estimate']
+ ['40 hours',''],
+ ['60 hours','']
 ];
 const stageFacts=[
  {headline:'≈5,000 PAGES.',detail:'500 calls × 10 pages per call',note:'Founder’s estimate of annual EU call material. Not a verified count or the reading required of every researcher.'},
