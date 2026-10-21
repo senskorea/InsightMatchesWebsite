@@ -141,3 +141,14 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 .cluster-polaroid{width:min(440px,90%)}
 .cluster-polaroid .researcher-portrait{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:white}
 .cluster-polaroid .researcher-affiliation{display:block;font:17px/1.35 Arial,sans-serif;color:#52616e;margin:8px 0}
+
+/* Annual hiring context stays separate from per-proposal consultancy bars. */
+.hiring-benchmark{display:grid;grid-template-columns:1fr 1fr;gap:32px;border-top:1px solid #d8dfe4;padding-top:18px;max-width:1400px}
+.hiring-benchmark>div>span{font-size:16px;letter-spacing:.06em;color:#64717c}
+.hiring-benchmark h2{font-size:27px;margin:6px 0;letter-spacing:-.025em}
+.hiring-benchmark p{font-size:19px;line-height:1.35;margin:5px 0}
+.hiring-benchmark a{color:inherit;text-underline-offset:3px}
+.hiring-benchmark strong{font-size:38px;letter-spacing:-.03em;color:#13202d}
+.hiring-benchmark strong span{font-size:23px;font-weight:400;letter-spacing:0}
+.benchmark-slide:has(.hiring-benchmark){gap:20px}
+.benchmark-slide:has(.hiring-benchmark) .benchmark-row{margin-bottom:22px}
