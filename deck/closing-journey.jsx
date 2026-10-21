@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {motion,useReducedMotion} from 'framer-motion';
 import PriceBenchmarks from './price-benchmarks.jsx';
 import {useCurrency} from './currency-context.jsx';
+import {preparationTotal,assistedTotal,preparationReduction} from './preparation-effort.mjs';
 const tiers=[
  {name:'Join the community',price:'Free',basis:'Free membership',items:['Get listed on our platform','Join upcoming consortia','Join the community']},
  {name:'Create with AI Copilot',price:'$2,600',basis:'USD per year',items:['Create your own proposal','Assemble your research team','Write it with our AI Copilot']},
@@ -19,7 +20,7 @@ export default function ClosingJourney({kind}){
   ['team-mark-illustrated-v1.png','Mark Potapov','Full Stack Product Engineer','Leads platform development.']
  ].map(([photo,name,role,description])=><article key={name} tabIndex={0}><div className="team-portrait-frame"><img className="team-portrait" src={'/deck-assets/'+photo} alt={'Illustrated portrait of '+name}/></div><h2>{name}</h2><p className="team-role">{role}</p><p className="team-description">{description}</p></article>)}</div></section>;
  if(kind===36)return <section className="closing-slide pricing-slide reasons-slide"><header><h1>Why work with us?</h1><p>Pursue a portfolio of proposals, not just one application.</p></header><div className="reasons-grid">{[
-  ['Prepare faster. Pursue more.','Use our AI Copilot to prepare proposals faster and pursue more calls. We estimate around 70% less preparation time: 160 hours down to 50. Not measured results.'],
+  ['Prepare faster. Pursue more.','Use our AI Copilot to prepare proposals faster and pursue more calls. Around '+preparationReduction+'% less preparation time: ≈'+preparationTotal+' hours down to ≈'+assistedTotal+'.'],
   ['Extend your network.','Tap into an existing research community to discover partners and introductions beyond your own contacts, without building every relationship from scratch.'],
   ['Keep preparation costs down.','Get AI and expert proposal support without adding a dedicated grant-writing role to your team.']
  ].map(([title,copy],i)=><motion.article key={title} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.55,delay:reduced?0:i*.2}}>
@@ -29,7 +30,7 @@ export default function ClosingJourney({kind}){
  </motion.article>)}</div></section>;
  if(kind===37)return <section className="closing-final mailing-slide"><img className="closing-brand" src="/deck-assets/insightmatches-original.png" alt="InsightMatches"/><h1>Let’s connect.</h1><p>Scan the QR code to join our mailing list.</p><a className="mailing-qr-link" href="https://www.insightmatches.com/mailing" target="_blank" rel="noreferrer"><img src="/deck-assets/mailing-qr.png" alt="Scan to visit the InsightMatches mailing list"/><span>www.insightmatches.com/mailing</span></a></section>;
  if(kind===33)return <PriceBenchmarks/>;
- if(kind===30)return <section className="closing-slide community-slide"><div><h1>Building a<br/>research community.</h1><p className="community-purpose" aria-live="polite">{communityFocus??<>Meet across disciplines.<br/>Build relationships beyond the proposal.</>}</p></div><div className="community-flyers">{[['community-rd-day-v1.png','R&D Day 2026','Pitching opportunities'],['community-mixer.png','Seoul Researcher Mixer','Networking for researchers'],['community-dinner.png','Leadership dinners','C-level meetings']].map(([file,label,purpose])=><a key={file} onMouseEnter={()=>setCommunityFocus(purpose)} onMouseLeave={()=>setCommunityFocus(null)} onFocus={()=>setCommunityFocus(purpose)} onBlur={()=>setCommunityFocus(null)} href={'/deck-assets/'+file} target="_blank" rel="noreferrer"><img src={'/deck-assets/'+file} alt={label}/></a>)}</div></section>;
+ if(kind===30)return <section className="closing-slide community-slide"><div><h1>Building a<br/>research community.</h1><p className="community-purpose" aria-live="polite">{communityFocus??<>Seoul Researcher Mixer<br/>3 November 2026</>}</p></div><div className="community-flyers">{[['community-mixer.png','Seoul Researcher Mixer','Networking for researchers · 3 November 2026'],['community-rd-day-v1.png','R&D Day 2026','Pitching opportunities'],['community-dinner.png','Leadership dinners','C-level meetings']].map(([file,label,purpose])=><a key={file} onMouseEnter={()=>setCommunityFocus(purpose)} onMouseLeave={()=>setCommunityFocus(null)} onFocus={()=>setCommunityFocus(purpose)} onBlur={()=>setCommunityFocus(null)} href={'/deck-assets/'+file} target="_blank" rel="noreferrer"><img src={'/deck-assets/'+file} alt={label}/></a>)}</div></section>;
  if([31,34,35].includes(kind))return <section className="closing-slide pricing-slide">
  <header><h1>The support you need.</h1><p>Join the community. Create with AI. Bring in our team.</p></header>
  <div className="pricing-tiers">

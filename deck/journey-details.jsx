@@ -1,5 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion';
+import {preparationEffort,preparationTotal,assistedTotal,preparationSaved} from './preparation-effort.mjs';
 const blue='#079fe3',grey='#d8dfe4',ink='#13202d';
 // Natural Earth 1:110m admin-0 KOR mainland, public-domain geographic data.
 // Simplified at this scale: Jeju and small islands are omitted.
@@ -7,33 +8,26 @@ const coast=[[126.174759,37.749686],[126.237339,37.840378],[126.68372,37.804773]
 function inside(x,y){let yes=false;for(let i=0,j=coast.length-1;i<coast.length;j=i++){const [a,b]=coast[i],[c,d]=coast[j];if((b>y)!==(d>y)&&x<(c-a)*(y-b)/(d-b)+a)yes=!yes}return yes}
 const candidates=[];for(let y=34.39;y<=38.62;y+=.12)for(let x=126.11;x<=129.48;x+=.12)if(inside(x,y))candidates.push([280+(x-126.11)*95*Math.cos(36.5*Math.PI/180),520-(y-34.39)*95]);
 export const koreaPoints=Array.from({length:240},(_,i)=>candidates[Math.floor(i*candidates.length/240)]);
-const labels=['Find funding','Build the team','Plan the project','Prepare the draft'];
-const before=[20,40,40,60],after=[3,15,12,20];
+const labels=preparationEffort.map(s=>s.label);
 function Canvas({label,children}){return <svg viewBox="0 0 940 620" role="img" aria-label={label}>{children}</svg>}
-export function TimeBars({reduced}){
- return <Canvas label="Illustrative preparation target: 160 hours without InsightMatches, 50 hours with InsightMatches. Not measured results.">
- <text x="90" y="95" className="svg-small">ILLUSTRATIVE TARGET · SAME PREPARATION SCOPE</text>
- {[160,50].map((hours,i)=><g key={hours}><text x="90" y={170+i*180} className="svg-label">{i?'With InsightMatches · target':'Without InsightMatches · estimate'}</text><motion.rect x="90" y={195+i*180} height="55" fill={i?blue:grey} initial={{width:0}} animate={{width:hours*4}} transition={{duration:reduced?0:1}}/><text x={110+hours*4} y={233+i*180} className="svg-label">{hours} h</text></g>)}
- <path d="M90 500 H730" stroke={grey}/>{[0,40,80,120,160].map(n=><text key={n} x={90+n*4} y="528" textAnchor="middle" className="svg-small">{n} h</text>)}
- <text x="90" y="585" className="svg-label">110 hours less preparation in this illustrative scenario.</text>
- </Canvas>
-}
-export function BrokenTimeline({reduced}){
- return <Canvas label="Four broken preparation stages compared with connected target stages. Widths use the same hours scale.">
- <text x="70" y="55" style={{fontSize:23,fill:blue}}>With InsightMatches</text><text x="500" y="55" style={{fontSize:23,fill:'#a04f4c'}}>Without InsightMatches</text>
- {labels.map((label,i)=><g key={label}>
- <text x="70" y={120+i*95} className="svg-label">{label}</text>
- <motion.rect x={300+[0,45,15,70][i]} y={100+i*95} height="20" fill="#e6aaa7" initial={{width:0}} animate={{width:before[i]*5}} transition={{duration:reduced?0:.7}}/>
- <text x={315+[0,45,15,70][i]+before[i]*5} y={114+i*95} className="svg-small">{before[i]} h</text>
- <motion.rect x="300" y={128+i*95} height="16" fill={blue} initial={{width:0}} animate={{width:after[i]*5}} transition={{duration:reduced?0:.8}}/>
- <text x={315+after[i]*5} y={142+i*95} className="svg-small">{after[i]} h</text>
- {i<3&&<path d={'M300 '+(144+i*95)+' v79'} stroke={blue} fill="none" strokeWidth="2"/>}
+export function TimeBars({reduced}){return <Canvas label={'Approximately '+preparationTotal+' preparation hours without InsightMatches and '+assistedTotal+' with InsightMatches'}>
+ {[preparationTotal,assistedTotal].map((hours,i)=><g key={hours}><text x="90" y={170+i*180} className="svg-label">{i?'With InsightMatches':'Without InsightMatches'}</text><motion.rect x="90" y={195+i*180} height="55" fill={i?blue:grey} initial={{width:0}} animate={{width:hours*4}} transition={{duration:reduced?0:1}}/><text x={110+hours*4} y={233+i*180} className="svg-label">≈{hours} h</text></g>)}
+ <text x="90" y="585" className="svg-label">≈{preparationSaved} hours freed up for research.</text>
+ </Canvas>}
+export function BrokenTimeline({reduced}){return <Canvas label="Five proposal preparation stages compared on the same person-hour scale">
+ <text x="260" y="38" fontSize="20" fill="#a04f4c">Without InsightMatches</text><text x="650" y="38" fontSize="20" fill={blue}>With InsightMatches</text>
+ {preparationEffort.map(({label,before,after},i)=><g key={label}>
+  <text x="35" y={85+i*78} fontSize="21" fill={ink}>{label}</text>
+  <motion.rect x="260" y={65+i*78} height="19" fill="#e6aaa7" initial={{width:0}} animate={{width:before*5}} transition={{duration:reduced?0:.7}}/>
+  <text x={270+before*5} y={80+i*78} fontSize="18" fill="#64717c">≈{before} h</text>
+  <motion.rect x="260" y={93+i*78} height="15" fill={blue} initial={{width:0}} animate={{width:after*5}} transition={{duration:reduced?0:.8}}/>
+  <text x={270+after*5} y={106+i*78} fontSize="18" fill="#64717c">≈{after} h</text>
+  {i<4&&<path d={'M260 '+(110+i*78)+'v33'} stroke={blue} fill="none"/>}
  </g>)}
- <text x="70" y="535" style={{fontSize:45,fontWeight:700,fill:blue}}>50 hours</text><text x="500" y="535" style={{fontSize:45,fontWeight:700,fill:'#a04f4c'}}>160 hours</text>
- <text x="70" y="570" style={{fontSize:22}}>With InsightMatches</text><text x="500" y="570" style={{fontSize:22}}>Without InsightMatches</text>
- <text x="70" y="610" style={{fontSize:19}}>Founder’s estimates · 110 hours less preparation. Not measured savings.</text>
- </Canvas>
-}
+ <text x="45" y="525" fontSize="42" fontWeight="700" fill={blue}>≈{assistedTotal} hours</text><text x="500" y="525" fontSize="42" fontWeight="700" fill="#a04f4c">≈{preparationTotal} hours</text>
+ <text x="45" y="557" fontSize="21">With InsightMatches</text><text x="500" y="557" fontSize="21">Without InsightMatches</text>
+ <text x="45" y="608" fontSize="21" fill="#64717c">≈{preparationSaved} hours freed up for research · same five preparation stages</text>
+ </Canvas>}
 export function ProblemDiagram({stage,reduced}){
  return <Canvas label={['Horizon Europe opportunity screening','Developing a concept from question, call and evidence','Mean consortium sizes: 12 Horizon 2020, 16 Horizon Europe Pillar II','Illustrative project planning and work packages','Illustrative drafting and review'][stage]}>
  <motion.g key={stage} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.5}}>
