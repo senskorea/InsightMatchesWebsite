@@ -167,3 +167,32 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 .hiring-range-track i{position:absolute;left:0;top:-3px;width:4px;height:16px;background:#079fe3}
 .hiring-range-track i:last-child{left:auto;right:0}
 .hiring-range-unit{font-size:17px;color:#64717c}
+
+/* Preparation intro and final hierarchy. */
+.preparation-share h1{font-size:72px;margin-bottom:18px}
+.preparation-share-pair{flex-direction:column;align-items:flex-start;gap:4px;margin:12px 0 22px}
+.preparation-share-pair svg{width:280px}
+.preparation-share-pair p{font-size:30px!important;color:#13202d!important;font-weight:600}
+.copy .preparation-share-subtitle{font-size:34px;line-height:1.25;color:#64717c}
+.preparation-intro{position:fixed;inset:0;z-index:50;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.preparation-intro h2{font-size:64px;letter-spacing:-.045em;margin:0 0 12px;color:#13202d}
+.preparation-intro svg{width:420px}
+.preparation-intro p{font-size:34px;font-weight:600;margin:4px 0 16px;color:#13202d}
+.preparation-intro>span{font-size:28px;color:#64717c}
+/* Extended annual row, visibly separate compressed scale. */
+.benchmark-slide .benchmark-groups{max-width:none;width:73%}
+.benchmark-slide .hiring-comparison-row{width:100%}
+.hiring-comparison-row .benchmark-label{position:relative;min-height:68px;align-items:flex-end}
+.salary-endpoints{display:flex;justify-content:space-between;width:22%;flex-shrink:0;align-items:flex-end}
+.salary-endpoints b{font-size:36px!important;color:#567e97}
+.salary-endpoints b:last-child{text-align:right}
+.salary-endpoints small{font-size:13px;max-width:none;letter-spacing:.06em}
+.extended-salary-track{height:44px;position:relative;margin:12px 0 10px;background:#edf0f2}
+.salary-base{position:absolute;inset:0 17% 0 0;background:#b6bfc7;transform-origin:left}
+.salary-band{position:absolute;inset:0 0 0 17%;left:83%;background:#567e97;border-left:3px solid #13202d;border-right:3px solid #13202d}
+.salary-scale-break{position:absolute;left:75%;top:-4px;font-size:42px;line-height:50px;background:white;color:#64717c;padding:0 5px;letter-spacing:-.15em;transform:skew(-12deg)}
+.hiring-comparison-row>small{font-size:21px;max-width:none}
+.benchmark-slide .compressed-scale-note{font-size:18px;margin:0;color:#64717c}
+.benchmark-slide:has(.hiring-comparison-row){gap:16px}
+.benchmark-slide:has(.hiring-comparison-row) .benchmark-row{margin-bottom:18px}
+.benchmark-slide:has(.hiring-comparison-row) .benchmark-basis{margin-bottom:14px}
