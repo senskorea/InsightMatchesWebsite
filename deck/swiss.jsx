@@ -30,7 +30,7 @@ const originalScenes=[
  ['Prepare a draft.\nBring it together.','Combine contributions into a coherent proposal. Check evaluation criteria, ethics, required documents and submission requirements.','Supplied deck: 60 hours illustrative drafting effort. Not a research finding or a measured product benchmark.'],
  ['The idea is connected.\nThe process isn’t.','Search. Interpret. Contact. Coordinate. Write. Repeat.','Illustrative preparation journey. No measured duration is implied.'],
  ['More time\nfor research.','Our ambition: use agentic AI to reduce repetitive funding preparation.','≈'+preparationTotal+' → ≈'+assistedTotal+' preparation hours. Excludes scientific research, waiting and final submission.'],
- ['From 30% to ≈9.5% of time on preparation.','Scenario: a 30% starting share, reduced in proportion to our preparation model.','Conditional scenario: 30% × '+assistedTotal+'/'+preparationTotal+' ≈ 9.5%. Assumes the same proportional reduction in preparation time; not a measured researcher-wide outcome.'],
+ ['More time for research.','','Conditional scenario: 30% × '+assistedTotal+'/'+preparationTotal+' ≈ 9.5%. Assumes the same proportional reduction in preparation time; not a measured researcher-wide outcome.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
 const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
