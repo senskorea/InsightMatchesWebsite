@@ -17,7 +17,7 @@ export default function ClusterProfiles(){
  const [cluster,name,topic,crop]=profiles[active];
  return <section className="cluster-story"><button className="cluster-play-top" type="button" aria-label={playing?'Pause cluster rotation':'Play cluster rotation'} title={playing?'Pause rotation · Space restarts':'Play rotation · Space restarts'} onClick={()=>setPlaying(v=>!v)}>{playing?'Ⅱ':'▶'}</button>
  <div><h1>We work with researchers<br/>across every field.</h1>
- <p className="cluster-audience">Universities, research labs and companies—with a focus on deep-tech startups.</p>
+ <p className="cluster-audience">Universities, research labs and companies, with a focus on deep tech startups.</p>
  <figure className="cluster-polaroid" aria-live="polite">
  {crop?<svg viewBox={crop} role="img" aria-label={name+' original project portrait'}><image href="/deck-assets/entrepreneurs-original.png" width="1672" height="941"/></svg>:<div className="mock-portrait" aria-label="Portrait placeholder"><span aria-hidden="true">◯</span><small>PORTRAIT TO FOLLOW</small></div>}
  <figcaption><small>{crop?'Original project profile':'Mock profile · replace before publishing'}</small><strong>{name}</strong><p>{topic}</p></figcaption>
