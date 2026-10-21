@@ -13,6 +13,8 @@ import PreparationScenario from './preparation-scenario.jsx';
 import ExpansionJourney from './expansion-journey.jsx';
 import EUFunding from './eu-funding.jsx';
 import PresentationFrame from './presentation-frame.jsx';
+import {organisationPoints} from './organisation-buildings.jsx';
+import {preparationTotal,assistedTotal,preparationReduction} from './preparation-effort.mjs';
 
 const blue='#079fe3',ink='#13202d',grey='#d8dfe4';
 const stages=['Find funding','Develop the idea','Build the team','Plan the project','Prepare the draft'];
@@ -26,12 +28,13 @@ const originalScenes=[
  ['Plan the work.\nMake it add up.','Work packages, leads, milestones, deliverables, dependencies and budget rules must tell the same story.','Illustrative planning diagram, not an actual project. 40 hours is the supplied deck’s planning estimate, not a measured average.'],
  ['Prepare a draft.\nBring it together.','Combine contributions into a coherent proposal. Check evaluation criteria, ethics, required documents and submission requirements.','Supplied deck: 60 hours illustrative drafting effort. Not a research finding or a measured product benchmark.'],
  ['The idea is connected.\nThe process isn’t.','Search. Interpret. Contact. Coordinate. Write. Repeat.','Illustrative preparation journey. No measured duration is implied.'],
- ['More time\nfor research.','Our ambition: use agentic AI to reduce repetitive funding preparation.','Illustrative target from the supplied deck: 160 → 50 hours (68.75% reduction). Not measured results. Excludes scientific research, waiting and final submission.'],
- ['We free up time\nfor research.','Less preparation. More time for the work that matters.','Illustrative targets, not measured results: funding 20 → 3 h; team 40 → 15 h; planning 40 → 12 h; drafting 60 → 20 h. Idea development is not separately timed.'],
+ ['More time\nfor research.','Our ambition: use agentic AI to reduce repetitive funding preparation.','≈'+preparationTotal+' → ≈'+assistedTotal+' preparation hours. Excludes scientific research, waiting and final submission.'],
+ ['≈'+preparationReduction+'% less time\non preparation.','More time for research. More opportunities to pursue.','≈'+preparationTotal+' → ≈'+assistedTotal+' person-hours across the same five preparation stages.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
+const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
 const extras={
+ '-8':['Research happens\nin many places.','We work with universities, research institutes, private companies and deep tech startups.','Different organisations. Shared research ambitions.'],
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
  '-2':['Research moves\nthe world forward.','People like Matti and Daniel are turning research-led ideas into possibilities.','Original imagery from the supplied deck. Project ambitions, not funded outcomes or testimonials.'],
  '-5':['EU funding.\nFind your route.','Research, collaboration and innovation. Explore the programmes that could support your next project.','Full programme budgets, not remaining funds or grants open today. Approximate USD at ECB rates, 14 October 2026: EUR 1 = USD 1.1195. Related programmes are not exclusively research funding.'],
@@ -97,14 +100,16 @@ function Diagram({step:sceneIndex,reduced,onPrepDetail}){
  return <motion.div layout className="morph-stage" transition={{layout:{duration:reduced?0:.7,ease:[.22,1,.36,1]}}}>
    <motion.div className="scene-annotations" key={[-7,-4,-6].includes(step)?'network':step>=40&&step<=42||[-2,-5].includes(step)?'charts':[31,34,35].includes(step)?'pricing':step>=30?step:step>=19?'product':step} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.65,ease:[.22,1,.36,1],delay:reduced||step>=19||[-2,-5].includes(step)?0:.35}}>{annotations}</motion.div>
    <svg className="persistent-particles" viewBox="0 0 940 620" preserveAspectRatio={step===-3?'none':'xMidYMid meet'} aria-hidden="true">
-     {dots.map((_,i)=><motion.circle data-particle={i} key={i} initial={false} animate={journeyTarget(i,step,angle)} transition={{duration:reduced?0:[0,-2].includes(step)&&settled?.12:step===-3?2.1:1.25,ease:[.45,0,.2,1]}}/>)}
+     {dots.map((_,i)=><motion.circle data-particle={i} key={i} initial={false} animate={journeyTarget(i,step,angle)} transition={{duration:reduced?0:[0,-2].includes(step)&&settled?.12:step===-8?1.8:step===-3?2.1:1.25,ease:[.45,0,.2,1]}}/>)}
    </svg>
  </motion.div>;
 }
 // The same 240 SVG nodes survive every chapter, including reverse navigation.
 // Only coordinates and colour change; scene annotations never own the particles.
 function journeyTarget(i,step,angle){
+ if(step===10)return {cx:470,cy:310,r:2,fill:blue,opacity:0};
  if(step>=19)return {cx:100+i%48*14,cy:310,r:2,fill:blue,opacity:0};
+ if(step===-8)return {cx:organisationPoints[i][0],cy:organisationPoints[i][1],r:2.8,fill:blue,opacity:1};
  if(step===-5){const a=i/240*Math.PI*2;return {cx:225+165*Math.cos(a),cy:290+165*Math.sin(a),r:2.5,fill:blue,opacity:.75};}
  if(step===-2)return target(i,0,angle);
  if(step===-1){const a=i/240*Math.PI*2;return {cx:470+Math.cos(a)*180,cy:290+Math.sin(a)*180,r:2,fill:blue,opacity:0};}

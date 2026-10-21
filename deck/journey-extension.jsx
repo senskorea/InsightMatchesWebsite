@@ -1,23 +1,24 @@
 import React,{useState} from 'react';
+import OrganisationBuildings from './organisation-buildings.jsx';
+import {preparationEffort,preparationTotal} from './preparation-effort.mjs';
 import EUFunding from './eu-funding.jsx';
 import ClusterProfiles from './cluster-profiles.jsx';
 import PreparationArt from './preparation-art.jsx';
 import NetworkPartnerships from './network-partnerships.jsx';
 const labels=['Find funding','Develop the idea','Build the team','Plan the project','Prepare the draft'];
-const stageSummaries=[
- ['20 hours',''],
- ['One clear idea',''],
- ['16 partners','Pillar II mean · organisations'],
- ['40 hours',''],
- ['60 hours','']
-];
 const stageFacts=[
- {headline:'≈5,000 PAGES.',detail:'500 calls × 10 pages per call',note:'Founder’s estimate of annual EU call material. Not a verified count or the reading required of every researcher.'},
- {headline:'ONE CLEAR IDEA.',detail:'A research question. A convincing fit with the call.',note:'A qualitative step, not a measured statistic. No universal time estimate asserted.'},
- {headline:'16 PARTNERS.',detail:'mean consortium size · Horizon Europe Pillar II',note:'European Commission interim evaluation, 2025. Partner organisations, not people or separate teams.',source:'https://research-and-innovation.ec.europa.eu/document/download/a3aa9b90-15c0-4ea7-b25e-9f4e29cfa740_en'},
- {headline:'40 HOURS.',detail:'to plan the project',note:'Founder’s estimate: work packages, responsibilities and budgets.'},
- {headline:'60 HOURS.',detail:'to prepare the draft',note:'Founder’s estimate of drafting time, not a measured average.'}
+ {headline:'≈20 HOURS.',detail:'Find and screen the opportunities that fit.',note:'Call fit, eligibility, deadlines and expected outcomes.'},
+ {headline:'≈5 HOURS.',detail:'Shape an existing research idea into a proposal concept.',note:'Connect the research question to the call’s objectives and expected impact.'},
+ {headline:'≈40 HOURS.',detail:'Bring complementary expertise together.',note:'16 partner organisations on average · Horizon Europe Pillar II. European Commission interim evaluation, 2025.',source:'https://research-and-innovation.ec.europa.eu/document/download/a3aa9b90-15c0-4ea7-b25e-9f4e29cfa740_en'},
+ {headline:'≈40 HOURS.',detail:'Make the work and budget tell one story.',note:'Work packages, responsibilities, milestones and budgets.'},
+ {headline:'≈60 HOURS.',detail:'Bring contributions into a coherent proposal.',note:'Drafting, integration and proposal review.'}
 ];
+function PreparationClock({hours}){return <svg className="preparation-clock" viewBox="0 0 160 110" aria-label={'Approximately '+hours+' hours'} role="img">
+ <path d="M72 8h16m-8 0v10M44 24l-8-8M116 24l8-8" stroke="#13202d" strokeWidth="3" fill="none" strokeLinecap="round"/>
+ <circle cx="80" cy="62" r="43" fill="white" stroke="#13202d" strokeWidth="2.5"/>
+ <path d="M80 19a43 43 0 0 1 43 43" fill="none" stroke="#079fe3" strokeWidth="4" strokeLinecap="round"/>
+ <text x="80" y="65" textAnchor="middle" fontSize="27" fontWeight="600" fill="#13202d">≈{hours}</text><text x="80" y="84" textAnchor="middle" fontSize="13" fill="#64717c">hours</text>
+ </svg>}
 function PreparationOverview(){
  const [active,setActive]=useState(null);
  const fact=active===null?null:stageFacts[active];
@@ -31,9 +32,10 @@ function PreparationOverview(){
    {labels.map((label,i)=><button key={label} type="button" aria-pressed={active===i} onMouseEnter={()=>setActive(i)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(i)} onBlur={()=>setActive(null)} onClick={()=>setActive(i)} className={active===i?'is-active':''}>
     <PreparationArt i={i} overview/>
     <span className="preparation-step">0{i+1}</span><span>{label}</span>
-    <strong className="preparation-stat">{stageSummaries[i][0]}</strong><span className="preparation-stat-basis">{stageSummaries[i][1]}</span>
+    <PreparationClock hours={preparationEffort[i].before}/>{i===2&&<span className="preparation-team-mean">16 partner organisations on average</span>}
    </button>)}
   </div>
+  <p className="preparation-total">≈{preparationTotal} hours of preparation <span>From funding search to proposal draft</span></p>
   <p className="preparation-source" style={{visibility:fact?'visible':'hidden'}}>{fact?.note??'Five connected tasks. Each depends on the work that came before.'} {fact?.source&&<a href={fact.source} target="_blank" rel="noreferrer">Source ↗</a>}</p>
  </section>;
 }
@@ -50,6 +52,7 @@ export function ProductScreens(){return <svg viewBox="0 0 940 620" role="img" ar
  {[['funding.jpg','Find the fit',55,80,450,255],['partners.jpg','Connect expertise',410,165,450,255],['writing.jpg','Develop the draft',190,340,420,190]].map(([file,label,x,y,w,h])=><g key={file}><rect x={x-7} y={y-29} width={w+14} height={h+36} rx="5" fill="white" stroke="#d8dfe4"/><text x={x+8} y={y-10} className="svg-small">{label}</text><image href={'/deck-assets/'+file} x={x} y={y} width={w} height={h} preserveAspectRatio="xMidYMid meet"/></g>)}
  <text x="470" y="605" textAnchor="middle" className="svg-small">Actual interface · local demo data · October 2026</text></svg>}
 export function ExtraScene({kind}){
+ if(kind===-8)return <OrganisationBuildings/>;
  if(kind===-7||kind===-4||kind===-6)return <NetworkPartnerships globe={kind===-7} reveal={kind===-6}/>;
  if(kind===-2)return <ClusterProfiles/>;
  if(kind===-5)return <EUFunding/>;
