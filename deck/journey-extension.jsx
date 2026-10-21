@@ -13,11 +13,10 @@ const stageFacts=[
  {headline:'≈40 HOURS.',detail:'Make the work and budget tell one story.',note:'Work packages, responsibilities, milestones and budgets.'},
  {headline:'≈60 HOURS.',detail:'Bring contributions into a coherent proposal.',note:'Drafting, integration and proposal review.'}
 ];
-function PreparationClock({hours}){return <svg className="preparation-clock" viewBox="0 0 160 110" aria-label={'Approximately '+hours+' hours'} role="img">
- <path d="M72 8h16m-8 0v10M44 24l-8-8M116 24l8-8" stroke="#13202d" strokeWidth="3" fill="none" strokeLinecap="round"/>
- <circle cx="80" cy="62" r="43" fill="white" stroke="#13202d" strokeWidth="2.5"/>
- <path d="M80 19a43 43 0 0 1 43 43" fill="none" stroke="#079fe3" strokeWidth="4" strokeLinecap="round"/>
- <text x="80" y="65" textAnchor="middle" fontSize="27" fontWeight="600" fill="#13202d">≈{hours}</text><text x="80" y="84" textAnchor="middle" fontSize="13" fill="#64717c">hours</text>
+function PreparationDuration({hours}){return <svg className="preparation-duration" viewBox="0 0 120 120" aria-label={'Approximately '+hours+' hours'} role="img">
+ <circle cx="60" cy="60" r="55" fill="white" stroke="#079fe3" strokeWidth="2"/>
+ <text x="60" y="60" textAnchor="middle" fontSize="34" fontWeight="600" fill="#13202d">≈{hours}</text>
+ <text x="60" y="83" textAnchor="middle" fontSize="17" fill="#64717c">hours</text>
  </svg>}
 function PreparationOverview(){
  const [active,setActive]=useState(null);
@@ -32,7 +31,7 @@ function PreparationOverview(){
    {labels.map((label,i)=><button key={label} type="button" aria-pressed={active===i} onMouseEnter={()=>setActive(i)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(i)} onBlur={()=>setActive(null)} onClick={()=>setActive(i)} className={active===i?'is-active':''}>
     <PreparationArt i={i} overview/>
     <span className="preparation-step">0{i+1}</span><span>{label}</span>
-    <PreparationClock hours={preparationEffort[i].before}/>{i===2&&<span className="preparation-team-mean">16 partner organisations on average</span>}
+    <PreparationDuration hours={preparationEffort[i].before}/>{i===2&&<span className="preparation-team-mean">16 partner organisations on average</span>}
    </button>)}
   </div>
   <p className="preparation-total">≈{preparationTotal} hours of preparation <span>From funding search to proposal draft</span></p>

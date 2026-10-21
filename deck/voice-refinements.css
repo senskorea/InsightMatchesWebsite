@@ -115,13 +115,13 @@ main.annex-image-slide.has-funding-estimate{flex-direction:column}
 .india-funding-estimate strong{display:block}.india-funding-estimate span{display:block;font-size:18px;margin-top:8px;color:#52616e}
 
 /* Rehearsal refinement: durations, organisation transition and mixer focus. */
-.preparation-overview .preparation-art{height:25cqh}
+.preparation-overview .preparation-art{height:22cqh}
 .preparation-overview .preparation-step{margin:1cqh 0 8px}
-.preparation-clock{width:160px!important;height:110px!important;max-height:none!important;margin:14px auto 0}
-.scene-annotations .preparation-clock circle{visibility:visible}
+.preparation-duration{width:120px!important;height:120px!important;max-height:none!important;margin:16px auto 0}
+.scene-annotations .preparation-duration circle{visibility:visible}
 .preparation-team-mean{display:block;font:18px/1.3 Arial;color:#64717c;max-width:15em;margin:6px auto 0}
-.preparation-total{position:absolute;bottom:9%;width:100%;margin:0;font-size:34px;font-weight:600;color:#13202d}
-.preparation-total span{font-size:21px;font-weight:400;margin-left:20px;color:#64717c}
+.preparation-total{position:absolute;bottom:7%;width:100%;margin:0;font-size:56px;line-height:1.12;letter-spacing:-.035em;font-weight:600;color:#13202d}
+.preparation-total span{display:block;font-size:30px;line-height:1.3;letter-spacing:0;font-weight:400;margin-top:10px;color:#64717c}
 .preparation-overview .preparation-source{font-size:19px;line-height:1.35;bottom:0}
 .community-slide{grid-template-columns:34fr 66fr;gap:32px}
 .community-flyers{grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:center}
