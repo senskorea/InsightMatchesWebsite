@@ -149,3 +149,8 @@ h1, .collage-scene h1, .cluster-story h1,
   .community-flyers a:first-child img {max-height:35vh}
   .community-flyers a:not(:first-child) img {max-height:20vh}
 }
+
+.expansion-article-crop{background:white;border:1px solid #d8dfe4;padding:12px;overflow:hidden}
+.expansion-article-crop svg{display:block;width:100%;overflow:hidden}
+.expansion-crop-headline{height:100px;margin:0 0 14px}
+.expansion-article-crop .expansion-crop-photo{height:39vh;max-height:none}
