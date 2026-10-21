@@ -137,3 +137,7 @@ main.annex-image-slide.has-funding-estimate{flex-direction:column}
 main:has(.preparation-overview) .persistent-particles{opacity:0}
 .preparation-overview .preparation-stages button{display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
 .preparation-overview .preparation-art{width:100%}
+
+.cluster-polaroid{width:min(440px,90%)}
+.cluster-polaroid .researcher-portrait{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:white}
+.cluster-polaroid .researcher-affiliation{display:block;font:17px/1.35 Arial,sans-serif;color:#52616e;margin:8px 0}
