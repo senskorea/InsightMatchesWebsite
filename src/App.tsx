@@ -84,6 +84,13 @@ const KoreanRedirect = () => {
   return null;
 };
 
+const MailingRedirect = () => {
+  useEffect(() => {
+    window.location.replace("https://forms.gle/rci5WGWw9k1wW35C8");
+  }, []);
+  return null;
+};
+
 const SensRedirect = () => {
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -246,6 +253,8 @@ const AppContent = () => {
             <Route path="/senspitch" element={<SensPitchRedirect />} />
             <Route path="/korean" element={<KoreanRedirect />} />
             <Route path="/korean/*" element={<KoreanRedirect />} />
+            <Route path="/mailing" element={<MailingRedirect />} />
+            <Route path="/mailing/*" element={<MailingRedirect />} />
 
             {/* 301 Redirects for old URLs */}
             <Route path="/horizon-europe-partner" element={<Navigate to="/dissemination" replace />} />
