@@ -6,7 +6,7 @@ import {preparationTotal,assistedTotal,preparationReduction} from './preparation
 const tiers=[
  {name:'Join the community',price:'Free',basis:'Free membership',items:['Get listed on our platform','Join upcoming consortia','Join the community']},
  {name:'Create with AI Copilot',price:'$2,600',basis:'USD per year',items:['Create your own proposal','Assemble your research team','Write it with our AI Copilot']},
- {name:'We write it with you',price:'$3,750',basis:'USD per project',items:['The InsightMatches team writes your proposal','Support from start to finish','Your science. Our proposal support.']}
+ {name:'We write it with you',price:'$3,750',basis:'USD per project',items:['The InsightMatches team writes your proposal','Support from start to finish','A network of 2,800+ experts for early evaluation and refinement']}
 ];
 export default function ClosingJourney({kind}){
  const reduced=useReducedMotion();
