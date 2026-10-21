@@ -14,7 +14,8 @@ import ExpansionJourney from './expansion-journey.jsx';
 import EUFunding from './eu-funding.jsx';
 import PresentationFrame from './presentation-frame.jsx';
 import {organisationPoints} from './organisation-buildings.jsx';
-import {preparationTotal,assistedTotal,preparationReduction} from './preparation-effort.mjs';
+import PreparationShare from './preparation-share.jsx';
+import {preparationTotal,assistedTotal} from './preparation-effort.mjs';
 
 const blue='#079fe3',ink='#13202d',grey='#d8dfe4';
 const stages=['Find funding','Develop the idea','Build the team','Plan the project','Prepare the draft'];
@@ -29,7 +30,7 @@ const originalScenes=[
  ['Prepare a draft.\nBring it together.','Combine contributions into a coherent proposal. Check evaluation criteria, ethics, required documents and submission requirements.','Supplied deck: 60 hours illustrative drafting effort. Not a research finding or a measured product benchmark.'],
  ['The idea is connected.\nThe process isn’t.','Search. Interpret. Contact. Coordinate. Write. Repeat.','Illustrative preparation journey. No measured duration is implied.'],
  ['More time\nfor research.','Our ambition: use agentic AI to reduce repetitive funding preparation.','≈'+preparationTotal+' → ≈'+assistedTotal+' preparation hours. Excludes scientific research, waiting and final submission.'],
- ['≈'+preparationReduction+'% less time\non preparation.','More time for research. More opportunities to pursue.','≈'+preparationTotal+' → ≈'+assistedTotal+' person-hours across the same five preparation stages.'],
+ ['From 30% to ≈9.5% of time on preparation.','Scenario: a 30% starting share, reduced in proportion to our preparation model.','Conditional scenario: 30% × '+assistedTotal+'/'+preparationTotal+' ≈ 9.5%. Assumes the same proportional reduction in preparation time; not a measured researcher-wide outcome.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
 const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
@@ -147,6 +148,6 @@ function App(){
  return()=>{window.removeEventListener('keydown',key);window.removeEventListener('wheel',wheel);window.removeEventListener('deck-product-stage',product)}
  },[]);
  if(sceneMap[step]>=50){const [file,title]=indiaAnnex[sceneMap[step]-50];return <main className={'annex-image-slide'+(sceneMap[step]===50?' has-funding-estimate':'')} aria-label={title} tabIndex="0"><img src={'/deck-assets/'+file} alt={title}/>{sceneMap[step]===50&&<aside className="india-funding-estimate"><strong>Indian government co-funding: approximately 1.5%, assuming 300–350 total topics.</strong><span>Working estimate for Horizon Europe 2026–27: 5 identified co-funded topics ÷ an assumed 300–350 total topics. Topic count, not budget share or participation eligibility.</span></aside>}<span className="sr-only">Use arrow keys to navigate. Home returns to the beginning.</span></main>}
- return <main className={sceneMap[step]===-2?'collage-scene':''} aria-label="InsightMatches researcher presentation" tabIndex="0"><div className="content"><div className="copy" aria-live="polite"><motion.div key={step} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.45}}><h1>{sceneMap[step]===2?(prepDetail?'≈151,000 people.\nOne full year.':'30% of time on\ngrant preparation.'):scenes[step][0]}</h1><p>{sceneMap[step]===2?(prepDetail?'At a 30% preparation share, Korea’s research effort would equal 151,000 people working full time for a year.':'Research time is precious.'):scenes[step][1]}</p>{sceneMap[step]===-2&&<Collaborators/>}</motion.div></div><div className="diagram"><Diagram step={step} reduced={reduced} onPrepDetail={setPrepDetail}/></div></div><p className="evidence">{scenes[step][2]}</p><span className="sr-only">Use arrow keys or scroll to change scenes. Home returns to the beginning. End opens the final scene.</span></main>
+ return <main className={sceneMap[step]===-2?'collage-scene':''} aria-label="InsightMatches researcher presentation" tabIndex="0"><div className="content"><div className="copy" aria-live="polite"><motion.div key={step} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.45}}><>{sceneMap[step]===10?<PreparationShare/>:<h1>{sceneMap[step]===2?(prepDetail?'≈151,000 people.\nOne full year.':'30% of time on\ngrant preparation.'):scenes[step][0]}</h1>}</><p>{sceneMap[step]===2?(prepDetail?'At a 30% preparation share, Korea’s research effort would equal 151,000 people working full time for a year.':'Research time is precious.'):scenes[step][1]}</p>{sceneMap[step]===-2&&<Collaborators/>}</motion.div></div><div className="diagram"><Diagram step={step} reduced={reduced} onPrepDetail={setPrepDetail}/></div></div><p className="evidence">{scenes[step][2]}</p><span className="sr-only">Use arrow keys or scroll to change scenes. Home returns to the beginning. End opens the final scene.</span></main>
 }
 createRoot(document.getElementById('root')).render(new URLSearchParams(window.location.search).get('canvas')==='1'?<CurrencyProvider><App/></CurrencyProvider>:<PresentationFrame/>);
