@@ -196,3 +196,9 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 .benchmark-slide:has(.hiring-comparison-row){gap:16px}
 .benchmark-slide:has(.hiring-comparison-row) .benchmark-row{margin-bottom:18px}
 .benchmark-slide:has(.hiring-comparison-row) .benchmark-basis{margin-bottom:14px}
+
+/* Pricing hierarchy and concise comparison notes. */
+.benchmark-slide:has(.pricing-comparison-footer){justify-content:space-between;gap:24px}
+.benchmark-slide .pricing-comparison-footer{margin-top:4px;border-top:1px solid #d8dfe4;padding-top:12px}
+.benchmark-slide .pricing-comparison-footer p{font-size:18px;line-height:1.4;margin:3px 0;color:#64717c}
+.benchmark-slide .pricing-comparison-footer p:first-child{font-size:20px;color:#52616e}

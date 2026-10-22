@@ -5,7 +5,8 @@ assert.equal(convert(1,'EUR','USD'),1.1195);
 assert.equal(validCurrency('invalid'),'USD');
 assert.equal(convert(1,'EUR','JPY'),177.39);
 assert.equal(convert(1,'EUR','AUD'),1.5971);
-for(const c of ['USD','EUR','KRW','JPY','AUD']){
+assert.equal(convert(1,'EUR','INR'),106.5283);
+for(const c of ['USD','EUR','KRW','JPY','AUD','INR']){
  assert(Math.abs(convert(convert(2600,'USD',c),c,'USD')-2600)<1e-8);
  assert.equal(Math.round((1-convert(3750,'USD',c)/convert(8396,'USD',c))*100),55);
  assert(!money(93.5e9,'EUR',c,true).includes('NaN'));
@@ -23,4 +24,6 @@ assert.equal(offerPrice(3750,'JPY'),'¥600,000');
 assert.equal(offerPrice(2600,'AUD'),'A$3,800');
 assert.equal(offerPrice(3750,'AUD'),'A$5,400');
 assert.equal(offerPrice(3750,'KRW'),'₩5.1M');
+assert.equal(offerPrice(2600,'INR'),'₹2,50,000');
+assert.equal(offerPrice(3750,'INR'),'₹3,60,000');
 console.log('PASS: currency rates, round trips, formatting and comparison invariance');
