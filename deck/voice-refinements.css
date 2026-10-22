@@ -202,3 +202,13 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 .benchmark-slide .pricing-comparison-footer{margin-top:4px;border-top:1px solid #d8dfe4;padding-top:12px}
 .benchmark-slide .pricing-comparison-footer p{font-size:18px;line-height:1.4;margin:3px 0;color:#64717c}
 .benchmark-slide .pricing-comparison-footer p:first-child{font-size:20px;color:#52616e}
+
+/* All three cost rows share one vertical rhythm, regardless of bar width. */
+.cost-comparison-rows{display:grid;gap:44px;width:100%}
+.benchmark-slide .cost-comparison-rows .benchmark-groups,.cost-comparison-rows .benchmark-groups>section{display:contents!important}
+.cost-comparison-rows .benchmark-groups h2{display:none}
+.cost-comparison-rows .benchmark-row{width:73%;margin:0!important}
+.cost-comparison-rows .benchmark-label{height:68px;min-height:68px;align-items:flex-end}
+.cost-comparison-rows .benchmark-track,.cost-comparison-rows .extended-salary-track{height:44px!important;margin:12px 0 0}
+.preparation-process-thread{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.preparation-intro .draft-to-research-thread{position:absolute;inset:0;width:100%;height:100%;z-index:-1}

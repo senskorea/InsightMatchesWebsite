@@ -72,6 +72,8 @@ function CoreDiagram({step,reduced}){
  {step===6&&stages.map((s,i)=><g key={s}><text x={105+i*180} y="380" textAnchor="middle" className="svg-label">{s}</text><text x={105+i*180} y="410" textAnchor="middle" className="svg-small">{['Discover the fit','Shape the concept','Connect expertise','Align contributions','Write and review'][i]}</text></g>)}
  </motion.g></AnimatePresence></svg>
 }
+// Equal point counts let the blue preparation arc unwind into one process line.
+function processThread(step){return Array.from({length:73},(_,i)=>{const t=i/72,a=-Math.PI/2+t*Math.PI*.6;const x=step===2?470+202*Math.cos(a):86+t*768,y=step===2?310+202*Math.sin(a):337;return (i?'L':'M')+x+' '+y}).join(' ')}
 function Diagram({step:sceneIndex,reduced,onPrepDetail}){
  const step=sceneMap[sceneIndex];
  const [angle,setAngle]=useState(0);
@@ -100,6 +102,7 @@ function Diagram({step:sceneIndex,reduced,onPrepDetail}){
  else annotations=<CoreDiagram step={step>=8?step-5:step} reduced={true}/>;
  return <motion.div layout className="morph-stage" transition={{layout:{duration:reduced?0:.7,ease:[.22,1,.36,1]}}}>
    <motion.div className="scene-annotations" key={[-7,-4,-6].includes(step)?'network':step>=40&&step<=42||[-2,-5].includes(step)?'charts':[31,34,35].includes(step)?'pricing':step>=30?step:step>=19?'product':step} initial={{opacity:0,y:reduced?0:12}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.65,ease:[.22,1,.36,1],delay:reduced||step>=19||[-2,-5].includes(step)?0:.35}}>{annotations}</motion.div>
+   {[2,-3].includes(step)&&<svg className="preparation-process-thread" viewBox="0 0 940 620" preserveAspectRatio={step===-3?'none':'xMidYMid meet'} aria-hidden="true"><motion.path data-process-thread="true" initial={false} animate={{d:processThread(step)}} transition={{duration:reduced?0:1.8,ease:[.45,0,.2,1]}} fill="none" stroke={blue} strokeWidth="2.5" strokeLinecap="round"/>{step===-3&&Array.from({length:5},(_,i)=><motion.circle key={i} cx={86+i*192} cy="337" r="3" fill={blue} initial={{opacity:0}} animate={{opacity:1}} transition={{delay:reduced?0:1.35+i*.1,duration:reduced?0:.3}}/>)}</svg>}
    <svg className="persistent-particles" viewBox="0 0 940 620" preserveAspectRatio={step===-3?'none':'xMidYMid meet'} aria-hidden="true">
      {dots.map((_,i)=><motion.circle data-particle={i} key={i} initial={false} animate={journeyTarget(i,step,angle)} transition={{duration:reduced?0:[0,-2].includes(step)&&settled?.12:step===-8?1.8:step===-3?2.1:1.25,ease:[.45,0,.2,1]}}/>)}
    </svg>
