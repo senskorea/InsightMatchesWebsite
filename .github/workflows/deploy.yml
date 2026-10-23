@@ -36,6 +36,12 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: Install PDF browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Generate offline deck PDFs
+        run: npm run export:deck-pdf
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         

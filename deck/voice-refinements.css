@@ -212,3 +212,12 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 .cost-comparison-rows .benchmark-track,.cost-comparison-rows .extended-salary-track{height:44px!important;margin:12px 0 0}
 .preparation-process-thread{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
 .preparation-intro .draft-to-research-thread{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+
+.deck-settings{position:relative;color:#13202d}
+.deck-settings summary{list-style:none;background:white;border:1px solid #d8dfe4;border-radius:6px;padding:10px 15px;min-height:44px;font:600 14px/22px Arial;cursor:pointer}
+.deck-settings summary::-webkit-details-marker{display:none}
+.deck-settings summary:focus-visible,.deck-settings-panel a:focus-visible{outline:3px solid #079fe3;outline-offset:3px}
+.deck-settings-panel{position:absolute;right:0;bottom:54px;width:280px;padding:18px;background:white;border:1px solid #d8dfe4;border-radius:8px;box-shadow:0 8px 32px #13202d20}
+.deck-settings-panel a{display:block;color:#13202d;font:600 17px/1.4 Arial;text-decoration:none;padding:8px 0}
+.deck-settings-panel a:hover{color:#079fe3}
+.deck-settings-panel small{display:block;color:#64717c;font:13px/1.4 Arial;margin-top:6px}
