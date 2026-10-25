@@ -265,6 +265,11 @@
       color: #5b21b6;
     }
 
+    .tag_rose {
+      background: #ffe4e6;
+      color: #9f1239;
+    }
+
     .box_content {
       padding: 6px 8px;
     }
@@ -432,14 +437,16 @@
   <header class="screen_toolbar">
     <div class="title_block">
       <h1>Sogang Korean 1A Desk Reference</h1>
-      <span class="badge">A4 Print Ready</span>
+      <span class="badge">A4 Print Ready • 6 Sheets</span>
     </div>
     <div class="actions">
       <nav class="jump_links">
-        <a href="#page1" class="jump_btn">Page 1: Active Unit & Dialogues</a>
-        <a href="#page2" class="jump_btn">Page 2: Vocabulary Directory</a>
-        <a href="#page3" class="jump_btn">Page 3: Numbers & Counters</a>
-        <a href="#page4" class="jump_btn">Page 4: Alphabet & Particle Tree</a>
+        <a href="#page1" class="jump_btn">Page 1: 1과 Phone & Time</a>
+        <a href="#page2" class="jump_btn">Page 2: 준비 2과 Objects & Hanbok</a>
+        <a href="#page3" class="jump_btn">Page 3: 준비 3·4과 Roots & Orders</a>
+        <a href="#page4" class="jump_btn">Page 4: Vocabulary Directory</a>
+        <a href="#page5" class="jump_btn">Page 5: Numbers & Counters</a>
+        <a href="#page6" class="jump_btn">Page 6: Alphabet & Particles</a>
       </nav>
       <button class="btn_print" onclick="window.print()">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
@@ -450,15 +457,430 @@
 
   <main class="sheet_workspace">
 
-    <!-- ================= PAGE 1: MORPHOLOGY, DIALOGUES & SINO CONTEXT ================= -->
+    <!-- ================= PAGE 1: 1과 PHONE, TIME & CALENDAR (NEWEST ACTIVE TOPIC) ================= -->
     <article id="page1" class="print_page">
       <header class="page_header">
         <div class="header_title_group">
-          <span class="header_badge">Sheet 1 of 4 • Lexical Engineering & Discourse</span>
-          <h2 class="page_title">Building Root Morphemes & Target Unit Dialogues</h2>
-          <p class="page_subtitle">Sino Korean place morphemes, ordering scripts, contact exchanges, and building floor anchors</p>
+          <span class="header_badge">Sheet 1 of 6 • Active Unit • 1과 전화번호가 몇 번이에요?</span>
+          <h2 class="page_title">Phone Protocols, Time Telling & Calendar System</h2>
+          <p class="page_subtitle">Sogang 1A Unit 1 • Mobile phone calling exchange, telling time (시 native + 분 sino), and calendar dates (년/월/일)</p>
         </div>
         <span class="page_number_tag">PAGE 1</span>
+      </header>
+
+      <div class="page_body">
+
+        <!-- SECTION 1: TELEPHONE EXCHANGE & MOBILE CALLING PROTOCOL (NEWEST TOPIC FIRST) -->
+        <div class="box_card">
+          <div class="box_header" style="background: #e0f2fe; border-color: #7dd3fc;">
+            <h3 class="box_title" style="color: #0369a1;">
+              <span>Telephone Calling Protocol & Contact Exchange (전화 통화 및 연락처 교환)</span>
+            </h3>
+            <span class="box_tag tag_sky">Latest Topic Focus • WB pp. 76-77</span>
+          </div>
+          <div class="box_content" style="padding: 6px 8px;">
+            <div style="display: grid; grid-template-columns: 1.15fr 1.15fr 0.9fr; gap: 8px;">
+              
+              <!-- Dialogue 1: Calling Protocol -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 5px; background: #f8fafc;">
+                <div style="font-weight: 800; color: #0369a1; margin-bottom: 3px; font-size: 10px;">Phone Call Etiquette (통화 예절)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td style="width: 20px; font-weight: 800; color: #0284c7;">A</td><td><strong>여보세요?</strong> (Hello on the phone)</td></tr>
+                    <tr><td style="font-weight: 800; color: #475569;">B</td><td><strong>안녕하세요. 저 폴이에요.</strong> (Hello. I am Paul.)</td></tr>
+                    <tr><td style="font-weight: 800; color: #475569;">B</td><td><strong>미나 씨 있어요? / 좀 바꿔 주세요.</strong></td></tr>
+                    <tr><td style="font-weight: 800; color: #0284c7;">A</td><td><strong>네, 잠깐만 기다리세요.</strong> (Wait a moment.)</td></tr>
+                    <tr><td style="font-weight: 800; color: #0284c7;">A</td><td><em>(If absent)</em> <strong>지금 없는데요.</strong> (Not here now.)</td></tr>
+                    <tr><td style="font-weight: 800; color: #475569;">B</td><td><strong>그럼 나중에 다시 걸겠습니다.</strong> (Call later.)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Dialogue 2: Asking & Reading Phone Numbers -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 5px; background: #f8fafc;">
+                <div style="font-weight: 800; color: #065f46; margin-bottom: 3px; font-size: 10px;">Exchanging Phone Numbers (전화번호)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td style="width: 20px; font-weight: 800; color: #0284c7;">Q</td><td><strong>전화번호가 몇 번이에요?</strong></td></tr>
+                    <tr><td style="font-weight: 800; color: #0284c7;">Q</td><td><strong>핸드폰 번호가 몇 번이에요?</strong> (Mobile #)</td></tr>
+                    <tr><td style="font-weight: 800; color: #475569;">A</td><td><strong>010-8888-0852 번이에요.</strong> [Paul's Mobile]<br><span class="pron_tag">공일공 에 팔팔팔팔 에 공팔오이 번이에요</span></td></tr>
+                    <tr><td colspan="2" style="font-size: 8px; color: #64748b; background: #ffffff;">
+                      • <strong>0</strong> is read as <strong>공</strong> (or 영) in phone numbers<br>
+                      • Hyphen <strong>-</strong> is read as <strong>의</strong> [에]<br>
+                      • Digits ending in vowel: <strong>예요</strong> (2, 4, 5, 9)<br>
+                      • Digits ending in consonant: <strong>이에요</strong> (0, 1, 3, 6, 7, 8, 10)
+                    </td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Key Question Formulas -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 5px; background: #fffbeb;">
+                <div style="font-weight: 800; color: #92400e; margin-bottom: 3px; font-size: 10px;">Key Question Anchors (핵심 의문형)</div>
+                <div style="font-size: 8.5px; line-height: 1.45; color: #0f172a;">
+                  • <strong>몇 번이에요?</strong> (What number?)<br>
+                  • <strong>몇 시예요?</strong> (What time?)<br>
+                  • <strong>몇 월 며칠이에요?</strong> (What date?)<br>
+                  • <strong>무슨 요일이에요?</strong> (What day of week?)<br>
+                  • <strong>얼마예요?</strong> (How much?)<br>
+                  • <strong>몇 층이에요?</strong> (Which floor?)<br>
+                  • <strong>누구예요?</strong> (Who is it?)
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: TIME TELLING ARCHITECTURE (시간 말하기: 시 Native + 분 Sino) -->
+        <div class="box_card">
+          <div class="box_header" style="background: #fef3c7; border-color: #fcd34d;">
+            <h3 class="box_title" style="color: #92400e;">
+              <span>Telling Time Architecture (시간 말하기 체계: 고유어 '시' + 한자어 '분')</span>
+            </h3>
+            <span class="box_tag tag_amber">Native Hour + Sino Minute</span>
+          </div>
+          <div class="box_content" style="padding: 6px 8px;">
+            
+            <!-- Time Formula Bar -->
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; background: #f8fafc; border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px;">
+              <div style="text-align: center; flex: 1;">
+                <span style="font-size: 8px; color: #0369a1; font-weight: 700; text-transform: uppercase;">Time Marker</span><br>
+                <strong style="color: #0369a1; font-size: 11px;">오전 (AM) / 오후 (PM)</strong>
+              </div>
+              <span style="font-size: 13px; font-weight: 900; color: #94a3b8;">+</span>
+              <div style="text-align: center; flex: 1.2;">
+                <span style="font-size: 8px; color: #92400e; font-weight: 700; text-transform: uppercase;">Native Korean (Contraction)</span><br>
+                <strong style="color: #b45309; font-size: 11px;">[한, 두, 세, 네...] 시 (Hour)</strong>
+              </div>
+              <span style="font-size: 13px; font-weight: 900; color: #94a3b8;">+</span>
+              <div style="text-align: center; flex: 1.2;">
+                <span style="font-size: 8px; color: #065f46; font-weight: 700; text-transform: uppercase;">Sino Korean Number</span><br>
+                <strong style="color: #059669; font-size: 11px;">[일, 이, 삼, 사, 오...] 분 (Minute)</strong>
+              </div>
+              <span style="font-size: 13px; font-weight: 900; color: #94a3b8;">=</span>
+              <div style="text-align: center; flex: 1.6; background: #ecfdf5; border-radius: 4px; padding: 2px 4px;">
+                <span style="font-size: 8px; color: #047857; font-weight: 700;">Complete Clock Reading</span><br>
+                <strong style="color: #065f46; font-size: 10px;">지금 몇 시예요? → 2시 30분이에요 [두 시 반이에요]</strong>
+              </div>
+            </div>
+
+            <!-- Hour and Minute Dual Grid -->
+            <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 8px;">
+              
+              <!-- Hours (1 to 12) -->
+              <div>
+                <div style="font-size: 9px; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Hours 1 to 12 (시간: 고유어 수사 축약형 + 시)</div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; font-size: 8.5px;">
+                  <div style="border: 1px solid #fed7aa; background: #fff7ed; padding: 2px 4px; border-radius: 3px;"><strong>1시:</strong> 한 시</div>
+                  <div style="border: 1px solid #fed7aa; background: #fff7ed; padding: 2px 4px; border-radius: 3px;"><strong>2시:</strong> 두 시</div>
+                  <div style="border: 1px solid #fed7aa; background: #fff7ed; padding: 2px 4px; border-radius: 3px;"><strong>3시:</strong> 세 시</div>
+                  <div style="border: 1px solid #fed7aa; background: #fff7ed; padding: 2px 4px; border-radius: 3px;"><strong>4시:</strong> 네 시</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>5시:</strong> 다섯 시</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>6시:</strong> 여섯 시</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>7시:</strong> 일곱 시</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>8시:</strong> 여덟 시</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>9시:</strong> 아홉 시</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>10시:</strong> 열 시</div>
+                  <div style="border: 1px solid #fed7aa; background: #fff7ed; padding: 2px 4px; border-radius: 3px;"><strong>11시:</strong> 열한 시</div>
+                  <div style="border: 1px solid #fed7aa; background: #fff7ed; padding: 2px 4px; border-radius: 3px;"><strong>12시:</strong> 열두 시</div>
+                </div>
+              </div>
+
+              <!-- Minutes & Key Terms -->
+              <div>
+                <div style="font-size: 9px; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Minutes & Special Readings (분 & 특수 표현)</div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; font-size: 8.5px;">
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>5분:</strong> 오 분</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>10분:</strong> 십 분</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>15분:</strong> 십오 분</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>20분:</strong> 이십 분</div>
+                  <div style="border: 1px solid #a7f3d0; background: #ecfdf5; padding: 2px 4px; border-radius: 3px;"><strong>30분:</strong> 삼십분 (<strong>반</strong>)</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>45분:</strong> 사십오 분</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>50분:</strong> 오십 분</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>초:</strong> Second</div>
+                  <div style="border: 1px solid var(--border_light); background: #ffffff; padding: 2px 4px; border-radius: 3px;"><strong>정각:</strong> Exactly / Sharp</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: CALENDAR, MONTHS & DAYS OF THE WEEK (날짜와 요일) -->
+        <div class="box_card">
+          <div class="box_header" style="background: #ede9fe; border-color: #c4b5fd;">
+            <h3 class="box_title" style="color: #5b21b6;">
+              <span>Calendar Dates, Months & Days of the Week (달력, 날짜, 요일 체계)</span>
+            </h3>
+            <span class="box_tag tag_purple">Sino Dates + 7 Days</span>
+          </div>
+          <div class="box_content" style="padding: 6px 8px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+              
+              <!-- 7 Days of the Week -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
+                <div style="font-weight: 800; color: #5b21b6; margin-bottom: 2px; font-size: 9.5px;">7 Days of the Week (요일)</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; font-size: 8.5px;">
+                  <div>• <strong>월요일</strong> (Mon • Moon)</div>
+                  <div>• <strong>화요일</strong> (Tue • Fire)</div>
+                  <div>• <strong>수요일</strong> (Wed • Water)</div>
+                  <div>• <strong>목요일</strong> (Thu • Wood)</div>
+                  <div>• <strong>금요일</strong> (Fri • Gold/Metal)</div>
+                  <div>• <strong>토요일</strong> (Sat • Earth)</div>
+                  <div style="color: #e11d48;">• <strong>일요일</strong> (Sun • Sun)</div>
+                  <div style="color: #0284c7;">• <strong>주말</strong> (Weekend)</div>
+                </div>
+              </div>
+
+              <!-- Irregular Month Alert -->
+              <div style="border: 1px solid #fecaca; border-radius: 4px; padding: 4px 6px; background: #fef2f2;">
+                <div style="font-weight: 800; color: #b91c1c; margin-bottom: 2px; font-size: 9.5px;">Irregular Months & Inquiries (주의!)</div>
+                <div style="font-size: 8.5px; line-height: 1.4;">
+                  • <strong>6월 = 유월</strong> (NOT 육월! 받침 ㄱ drops)<br>
+                  • <strong>10월 = 시월</strong> (NOT 십월! 받침 ㅂ drops)<br>
+                  • <strong>며칠</strong> = Which day (Always 며칠, NEVER 몇 일)<br>
+                  • <strong>1월 = 일월 [이뤌]</strong>, <strong>11월 = 십일월 [시비뤌]</strong><br>
+                  • <strong>생일이 언제예요?</strong> → 3월 15일이에요.
+                </div>
+              </div>
+
+              <!-- Relative Time Markers -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
+                <div style="font-weight: 800; color: #0f172a; margin-bottom: 2px; font-size: 9.5px;">Relative Time Markers (시점 어휘)</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; font-size: 8.5px;">
+                  <div>• <strong>오늘</strong> (Today)</div>
+                  <div>• <strong>내일</strong> (Tomorrow)</div>
+                  <div>• <strong>어제</strong> (Yesterday)</div>
+                  <div>• <strong>모레</strong> (Day after tom.)</div>
+                  <div>• <strong>지금</strong> (Now / Present)</div>
+                  <div>• <strong>생일</strong> (Birthday)</div>
+                  <div>• <strong>올해</strong> (This year)</div>
+                  <div>• <strong>내년</strong> (Next year)</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="page_footer">
+        <span>Sogang Korean 1A Desk Reference Pack</span>
+        <span>InsightMatches Language Study Unit</span>
+        <span>Page 1 of 6</span>
+      </footer>
+    </article>
+
+
+    <!-- ================= PAGE 2: 준비 2과 OBJECTS, POSSESSION & HANBOK ================= -->
+    <article id="page2" class="print_page">
+      <header class="page_header">
+        <div class="header_title_group">
+          <span class="header_badge">Sheet 2 of 6 • Prepared Unit • 준비 2과 이게 뭐예요?</span>
+          <h2 class="page_title">Demonstratives, Ownership & Personal Belongings</h2>
+          <p class="page_subtitle">Sogang 1A Prep 2 • Demonstratives (이게/그게/저게), ownership (누구 거예요/제 거예요), classroom objects, and Hanbok</p>
+        </div>
+        <span class="page_number_tag">PAGE 2</span>
+      </header>
+
+      <div class="page_body">
+
+        <!-- SECTION 1: DEMONSTRATIVE PROXIMITY & OWNERSHIP FORMULA -->
+        <div class="box_card">
+          <div class="box_header" style="background: #ede9fe; border-color: #c4b5fd;">
+            <h3 class="box_title" style="color: #5b21b6;">
+              <span>Demonstratives & Possession Discourse (지시대명사 및 소유권 확인)</span>
+            </h3>
+            <span class="box_tag tag_purple">Proximity Geometry</span>
+          </div>
+          <div class="box_content" style="padding: 6px 8px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+              
+              <!-- Demonstratives Triangle -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 5px; background: #f8fafc;">
+                <div style="font-weight: 800; color: #5b21b6; margin-bottom: 3px; font-size: 10px;">Demonstrative Triangle (사물 가리키기)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td><strong>이게</strong> (이것이)</td><td>Close to speaker</td><td><strong>이게 뭐예요?</strong></td></tr>
+                    <tr><td><strong>그게</strong> (그것이)</td><td>Close to listener</td><td><strong>그게 뭐예요?</strong></td></tr>
+                    <tr><td><strong>저게</strong> (저것이)</td><td>Far from both</td><td><strong>저게 뭐예요?</strong></td></tr>
+                    <tr><td colspan="3" style="font-size: 8px; color: #475569; background: #ffffff;">
+                      • Noun Modifier form: <strong>이</strong> 책 (this book), <strong>그</strong> 시계 (that watch), <strong>저</strong> 사람 (that person)
+                    </td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Ownership & Possession Dialogue -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 5px; background: #f8fafc;">
+                <div style="font-weight: 800; color: #0369a1; margin-bottom: 3px; font-size: 10px;">Possession: 누구 거예요? (소유 확인)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td style="width: 20px; font-weight: 800; color: #0284c7;">A</td><td><strong>이게 누구 거예요?</strong> (Whose is this?)</td></tr>
+                    <tr><td style="font-weight: 800; color: #475569;">B</td><td><strong>제 거예요.</strong> (It is mine • 저의 → 제)</td></tr>
+                    <tr><td style="font-weight: 800; color: #0284c7;">A</td><td><strong>와! 참 멋있어요.</strong> (Wow, really cool!)</td></tr>
+                    <tr><td style="font-weight: 800; color: #475569;">B</td><td><strong>고마워요.</strong> (Thank you.)</td></tr>
+                    <tr><td colspan="2" style="font-size: 8px; color: #475569; background: #ffffff;">
+                      • <strong>선생님 거예요.</strong> (Teacher's) • <strong>앤디 씨 거예요.</strong> (Andy's)
+                    </td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Person & Occupation Inquiries -->
+              <div style="border: 1px solid var(--border_light); border-radius: 4px; padding: 5px; background: #fffbeb;">
+                <div style="font-weight: 800; color: #92400e; margin-bottom: 3px; font-size: 10px;">Identity, Person & Profession (신원 확인)</div>
+                <div style="font-size: 8.5px; line-height: 1.45; color: #0f172a;">
+                  • <strong>이분은 누구예요?</strong> (Who is this esteemed person?)<br>
+                  • <strong>제 친구예요.</strong> (My friend.)<br>
+                  • <strong>인도 사람이에요.</strong> (Indian person.)<br>
+                  • <strong>이름이 뭐예요?</strong> → 폴이에요.<br>
+                  • <strong>직업이 뭐예요?</strong> → 회사원이에요. (Office worker)<br>
+                  • <strong>이분</strong> (Esteemed person) vs <strong>이 사람</strong> (Informal)
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: CLASSROOM & PERSONAL OBJECTS DIRECTORY (WITH BATCHIM & COPULA INDICATORS) -->
+        <div class="box_card">
+          <div class="box_header" style="background: #e0f2fe; border-color: #7dd3fc;">
+            <h3 class="box_title" style="color: #0369a1;">
+              <span>Classroom, Stationery & Personal Belongings (사물 및 소지품 분류)</span>
+            </h3>
+            <span class="box_tag tag_sky">이에요 vs 예요 Matrix</span>
+          </div>
+          <div class="box_content" style="padding: 6px 8px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+              
+              <!-- Column 1: Stationery & Study Tools -->
+              <div>
+                <div style="font-size: 9px; font-weight: 800; color: #0369a1; margin-bottom: 3px;">Stationery & Study Tools (문구류)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td><strong>책</strong> (Book)</td><td><span class="badge_consonant">이에</span></td><td>[채기에요]</td></tr>
+                    <tr><td><strong>공책</strong> (Notebook)</td><td><span class="badge_consonant">이에</span></td><td>[공채기에요]</td></tr>
+                    <tr><td><strong>사전</strong> (Dictionary)</td><td><span class="badge_consonant">이에</span></td><td>[사저니에요]</td></tr>
+                    <tr><td><strong>연필</strong> (Pencil)</td><td><span class="badge_consonant">이에</span></td><td>[연피리에요]</td></tr>
+                    <tr><td><strong>볼펜</strong> (Ballpoint Pen)</td><td><span class="badge_consonant">이에</span></td><td>[볼페니에요]</td></tr>
+                    <tr><td><strong>지우개</strong> (Eraser)</td><td><span class="badge_vowel">예요</span></td><td>[지우개예요]</td></tr>
+                    <tr><td><strong>필통</strong> (Pencil Case)</td><td><span class="badge_consonant">이에</span></td><td>[필통이에요]</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Column 2: Personal Belongings & Daily Wear -->
+              <div>
+                <div style="font-size: 9px; font-weight: 800; color: #065f46; margin-bottom: 3px;">Personal Belongings & Carry (소지품)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td><strong>가방</strong> (Bag)</td><td><span class="badge_consonant">이에</span></td><td>[가방이에요]</td></tr>
+                    <tr><td><strong>배낭</strong> (Backpack)</td><td><span class="badge_consonant">이에</span></td><td>[배낭이에요]</td></tr>
+                    <tr><td><strong>지갑</strong> (Wallet)</td><td><span class="badge_consonant">이에</span></td><td>[지가비에요]</td></tr>
+                    <tr><td><strong>안경</strong> (Glasses)</td><td><span class="badge_consonant">이에</span></td><td>[안경이에요]</td></tr>
+                    <tr><td><strong>모자</strong> (Hat / Cap)</td><td><span class="badge_vowel">예요</span></td><td>[모자예요]</td></tr>
+                    <tr><td><strong>우산</strong> (Umbrella)</td><td><span class="badge_consonant">이에</span></td><td>[우사니에요]</td></tr>
+                    <tr><td><strong>시계</strong> (Watch / Clock)</td><td><span class="badge_vowel">예요</span></td><td>[시계예요]</td></tr>
+                    <tr><td><strong>여권</strong> (Passport)</td><td><span class="badge_consonant">이에</span></td><td>[여꿔니에요]</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Column 3: Electronics & Room Furniture -->
+              <div>
+                <div style="font-size: 9px; font-weight: 800; color: #92400e; margin-bottom: 3px;">Electronics & Room Furniture (가구 및 기기)</div>
+                <table class="ref_table" style="font-size: 8.5px;">
+                  <tbody>
+                    <tr><td><strong>핸드폰</strong> (Mobile Phone)</td><td><span class="badge_consonant">이에</span></td><td>[핸드포니에요]</td></tr>
+                    <tr><td><strong>컴퓨터</strong> (Computer)</td><td><span class="badge_vowel">예요</span></td><td>[컴퓨터예요]</td></tr>
+                    <tr><td><strong>텔레비전</strong> (Television)</td><td><span class="badge_consonant">이에</span></td><td>[텔레비저니에요]</td></tr>
+                    <tr><td><strong>라디오</strong> (Radio)</td><td><span class="badge_vowel">예요</span></td><td>[라디오예요]</td></tr>
+                    <tr><td><strong>책상</strong> (Desk)</td><td><span class="badge_consonant">이에</span></td><td>[책상이에요]</td></tr>
+                    <tr><td><strong>의자</strong> (Chair)</td><td><span class="badge_vowel">예요</span></td><td>[의자예요]</td></tr>
+                    <tr><td><strong>탁자</strong> (Table)</td><td><span class="badge_vowel">예요</span></td><td>[탁자예요]</td></tr>
+                    <tr><td><strong>침대</strong> (Bed)</td><td><span class="badge_vowel">예요</span></td><td>[침대예요]</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: TRADITIONAL KOREAN CLOTHING / HANBOK (CULTURAL ANCHOR • WB P. 53) -->
+        <div class="box_card">
+          <div class="box_header" style="background: #fdf2f8; border-color: #fbcfe8;">
+            <h3 class="box_title" style="color: #9d174d;">
+              <span>Traditional Korean Clothing Culture (한복 문화와 전통 복식 어휘 • WB p. 53)</span>
+            </h3>
+            <span class="box_tag tag_rose">Cultural Heritage</span>
+          </div>
+          <div class="box_content" style="padding: 6px 8px;">
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;">
+              
+              <div style="border: 1px solid #fbcfe8; background: #fff1f2; border-radius: 4px; padding: 4px 6px;">
+                <div style="font-size: 11px; font-weight: 800; color: #9d174d;">한복 (Hanbok)</div>
+                <div style="font-size: 8px; color: #64748b; margin-bottom: 2px;">Traditional Attire <span class="badge_consonant">이에</span></div>
+                <div style="font-size: 8px; line-height: 1.35; color: #334155;">Korean traditional clothes characterized by vibrant colors and fluid lines without pockets.</div>
+              </div>
+
+              <div style="border: 1px solid #fbcfe8; background: #ffffff; border-radius: 4px; padding: 4px 6px;">
+                <div style="font-size: 11px; font-weight: 800; color: #9d174d;">저고리 (Jeogori)</div>
+                <div style="font-size: 8px; color: #64748b; margin-bottom: 2px;">Upper Garment <span class="badge_vowel">예요</span></div>
+                <div style="font-size: 8px; line-height: 1.35; color: #334155;">Basic jacket worn on upper body by both men and women with breast ties (옷고름).</div>
+              </div>
+
+              <div style="border: 1px solid #fbcfe8; background: #ffffff; border-radius: 4px; padding: 4px 6px;">
+                <div style="font-size: 11px; font-weight: 800; color: #9d174d;">치마 (Chima)</div>
+                <div style="font-size: 8px; color: #64748b; margin-bottom: 2px;">Wrap Skirt <span class="badge_vowel">예요</span></div>
+                <div style="font-size: 8px; line-height: 1.35; color: #334155;">Full, pleated traditional wrap skirt worn by women, wrapped high around the chest.</div>
+              </div>
+
+              <div style="border: 1px solid #fbcfe8; background: #ffffff; border-radius: 4px; padding: 4px 6px;">
+                <div style="font-size: 11px; font-weight: 800; color: #9d174d;">바지 (Baji)</div>
+                <div style="font-size: 8px; color: #64748b; margin-bottom: 2px;">Trousers <span class="badge_vowel">예요</span></div>
+                <div style="font-size: 8px; line-height: 1.35; color: #334155;">Roomy, comfortable pants worn by men for floor sitting, tied at ankles with daenim straps.</div>
+              </div>
+
+              <div style="border: 1px solid #fbcfe8; background: #ffffff; border-radius: 4px; padding: 4px 6px;">
+                <div style="font-size: 11px; font-weight: 800; color: #9d174d;">두루마기 (Durumagi)</div>
+                <div style="font-size: 8px; color: #64748b; margin-bottom: 2px;">Overcoat <span class="badge_vowel">예요</span></div>
+                <div style="font-size: 8px; line-height: 1.35; color: #334155;">Traditional formal long overcoat worn over 저고리 and 바지 for warmth and outdoor formality.</div>
+              </div>
+
+              <div style="border: 1px solid #fbcfe8; background: #ffffff; border-radius: 4px; padding: 4px 6px;">
+                <div style="font-size: 11px; font-weight: 800; color: #9d174d;">버선 & 고무신</div>
+                <div style="font-size: 8px; color: #64748b; margin-bottom: 2px;">Footwear <span class="badge_consonant">이에</span></div>
+                <div style="font-size: 8px; line-height: 1.35; color: #334155;"><strong>버선:</strong> Padded white socks with upturned toes.<br><strong>고무신:</strong> Curved traditional rubber shoes.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="page_footer">
+        <span>Sogang Korean 1A Desk Reference Pack</span>
+        <span>InsightMatches Language Study Unit</span>
+        <span>Page 2 of 6</span>
+      </footer>
+    </article>
+
+
+    <!-- ================= PAGE 3: 준비 3과 & 4과 MORPHOLOGY, DIALOGUES & SINO CONTEXT ================= -->
+    <article id="page3" class="print_page">
+      <header class="page_header">
+        <div class="header_title_group">
+          <span class="header_badge">Sheet 3 of 6 • Prepared Units • 준비 3과 & 4과 주문 및 위치</span>
+          <h2 class="page_title">Building Root Morphemes, Cafe Ordering & Facility Locations</h2>
+          <p class="page_subtitle">Sino Korean place morphemes, ordering scripts, contact exchanges, and building floor anchors</p>
+        </div>
+        <span class="page_number_tag">PAGE 3</span>
       </header>
 
       <div class="page_body">
@@ -541,7 +963,7 @@
           </div>
         </div>
 
-        <!-- SECTION 2: TARGET UNIT DIALOGUE SCRIPTS (EXPANDED TO REPLACE CLASSROOM SURVIVAL) -->
+        <!-- SECTION 2: TARGET UNIT DIALOGUE SCRIPTS -->
         <div class="grid_three" style="gap: 8px;">
 
           <!-- Flow 1: Ordering Drinks & Food -->
@@ -620,7 +1042,7 @@
             </div>
           </div>
 
-          <!-- Flow 3: Phone Numbers, Prices & Dates (Unit 1 Focus) -->
+          <!-- Flow 3: Phone Numbers, Prices & Dates -->
           <div class="box_card">
             <div class="box_header">
               <h3 class="box_title">Script 3: Phone, Price & Date</h3>
@@ -714,22 +1136,51 @@
       <footer class="page_footer">
         <span>Sogang Korean 1A Desk Reference Pack</span>
         <span>InsightMatches Language Study Unit</span>
-        <span>Page 1 of 4</span>
+        <span>Page 3 of 6</span>
       </footer>
     </article>
 
-    <!-- ================= PAGE 2: VOCABULARY QUICK FINDER ================= -->
-    <article id="page2" class="print_page">
+
+    <!-- ================= PAGE 4: VOCABULARY QUICK FINDER ================= -->
+    <article id="page4" class="print_page">
       <header class="page_header">
         <div class="header_title_group">
-          <span class="header_badge">Sheet 2 of 4 • Lexicon Directory</span>
+          <span class="header_badge">Sheet 4 of 6 • Lexicon Directory</span>
           <h2 class="page_title">High Frequency Classroom Vocabulary Directory</h2>
-          <p class="page_subtitle">Categorized Sogang 1A lexicon with 받침 indicators and copula pairings</p>
+          <p class="page_subtitle">Categorized Sogang 1A lexicon with 받침 indicators, copula pairings, and latest unit additions</p>
         </div>
-        <span class="page_number_tag">PAGE 2</span>
+        <span class="page_number_tag">PAGE 4</span>
       </header>
 
       <div class="page_body">
+
+        <!-- LATEST INTRODUCED VOCABULARY HIGHLIGHT (NEWEST TOPICS FIRST ON PAGE) -->
+        <div class="box_card" style="border: 1.5px solid #0284c7; background: #f0f9ff;">
+          <div class="box_header" style="background: #e0f2fe; border-color: #7dd3fc;">
+            <h3 class="box_title" style="color: #0369a1;">
+              <span>⚡ Recent Class Additions & Focal Anchors (최신 학습 단어)</span>
+            </h3>
+            <span class="box_tag tag_sky">Latest Topics First</span>
+          </div>
+          <div class="box_content" style="padding: 4px 8px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 9px;">
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>탁자</strong> (Table) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>인도 사람</strong> (Indian person) <span class="badge_consonant">이에</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>직업</strong> (Occupation) <span class="badge_consonant">이에</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>이분</strong> (This person) <span class="badge_consonant">이에</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>저고리</strong> (Hanbok jacket) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>치마</strong> (Hanbok skirt) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>바지</strong> (Trousers) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>두루마기</strong> (Hanbok overcoat) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>버선</strong> (Padded socks) <span class="badge_consonant">이에</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>고무신</strong> (Rubber shoes) <span class="badge_consonant">이에</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>핸드폰</strong> (Mobile phone) <span class="badge_consonant">이에</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>시계</strong> (Clock/Watch) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>모자</strong> (Hat) <span class="badge_vowel">예요</span></span>
+              <span style="background: #ffffff; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 4px;"><strong>안경</strong> (Glasses) <span class="badge_consonant">이에</span></span>
+            </div>
+          </div>
+        </div>
 
         <!-- 3 COLUMN CATEGORIZED VOCABULARY -->
         <div class="grid_three" style="gap: 8px;">
@@ -741,7 +1192,7 @@
                 <h3 class="box_title" style="color: #0369a1;">Everyday & Classroom Objects</h3>
               </div>
               <div class="box_content" style="padding: 2px;">
-                <table class="ref_table" style="font-size: 9px;">
+                <table class="ref_table" style="font-size: 8.5px;">
                   <tbody>
                     <tr><td><strong>가방</strong> (Bag)</td><td><span class="badge_consonant">이에</span></td><td><strong>볼펜</strong> (Pen)</td><td><span class="badge_consonant">이에</span></td></tr>
                     <tr><td><strong>모자</strong> (Hat)</td><td><span class="badge_vowel">예요</span></td><td><strong>연필</strong> (Pencil)</td><td><span class="badge_consonant">이에</span></td></tr>
@@ -770,7 +1221,7 @@
                 <h3 class="box_title" style="color: #92400e;">Food & Beverages (카페/식당)</h3>
               </div>
               <div class="box_content" style="padding: 2px;">
-                <table class="ref_table" style="font-size: 9px;">
+                <table class="ref_table" style="font-size: 8.5px;">
                   <tbody>
                     <tr><td><strong>물</strong> (Water)</td><td><span class="badge_consonant">이에</span></td><td><strong>김밥</strong> (Kimbap)</td><td><span class="badge_consonant">이에</span></td></tr>
                     <tr><td><strong>커피</strong> (Coffee)</td><td><span class="badge_vowel">예요</span></td><td><strong>라면</strong> (Ramen)</td><td><span class="badge_consonant">이에</span></td></tr>
@@ -792,7 +1243,7 @@
                 <h3 class="box_title" style="color: #065f46;">Places, Facilities & Landmarks</h3>
               </div>
               <div class="box_content" style="padding: 2px;">
-                <table class="ref_table" style="font-size: 9px;">
+                <table class="ref_table" style="font-size: 8.5px;">
                   <tbody>
                     <tr><td><strong>학교</strong> (School)</td><td><span class="badge_vowel">예요</span></td><td><strong>서울역</strong> (Seoul Station)</td><td><span class="badge_consonant">이에</span></td></tr>
                     <tr><td><strong>도서관</strong> (Library)</td><td><span class="badge_consonant">이에</span></td><td><strong>신촌</strong> (Sinchon)</td><td><span class="badge_consonant">이에</span></td></tr>
@@ -820,63 +1271,62 @@
                 <h3 class="box_title" style="color: #5b21b6;">Time, Calendar & Days</h3>
               </div>
               <div class="box_content" style="padding: 2px;">
-                <table class="ref_table" style="font-size: 9px;">
+                <table class="ref_table" style="font-size: 8.5px;">
                   <tbody>
                     <tr><td><strong>오늘</strong> (Today)</td><td><span class="badge_consonant">이에</span></td><td><strong>지금</strong> (Now)</td><td><span class="badge_consonant">이에</span></td></tr>
                     <tr><td><strong>내일</strong> (Tomorrow)</td><td><span class="badge_consonant">이에</span></td><td><strong>생일</strong> (Birthday)</td><td><span class="badge_consonant">이에</span></td></tr>
                     <tr><td><strong>어제</strong> (Yesterday)</td><td><span class="badge_vowel">예요</span></td><td><strong>몇 년</strong> (Which year)</td><td><span class="badge_consonant">이에</span></td></tr>
                     <tr><td><strong>월요일</strong> (Monday)</td><td><span class="badge_consonant">이에</span></td><td><strong>몇 월</strong> (Which month)</td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>금요일</strong> (Friday)</td><td><span class="badge_consonant">이에</span></td><td><strong>며칠</strong> (Which day)</td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>주말</strong> (Weekend)</td><td><span class="badge_consonant">이에</span></td><td><strong>몇 시</strong> (What hour)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>화요일</strong> (Tuesday)</td><td><span class="badge_consonant">이에</span></td><td><strong>며칠</strong> (Which day)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>수요일</strong> (Wednesday)</td><td><span class="badge_consonant">이에</span></td><td><strong>몇 시</strong> (What hour)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>목요일</strong> (Thursday)</td><td><span class="badge_consonant">이에</span></td><td><strong>몇 분</strong> (What min)</td><td><span class="badge_consonant">이에</span></td></tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
 
-          <!-- COLUMN 3: PEOPLE, PROFESSIONS & QUESTIONS -->
+          <!-- COLUMN 3: PEOPLE, NATIONS & CORE GRAMMAR -->
           <div>
             <div class="box_card">
               <div class="box_header" style="background: #fdf2f8; border-color: #fbcfe8;">
-                <h3 class="box_title" style="color: #9d174d;">Nationalities & Occupations</h3>
+                <h3 class="box_title" style="color: #9d174d;">People, Nations & Positions</h3>
               </div>
               <div class="box_content" style="padding: 2px;">
-                <table class="ref_table" style="font-size: 9px;">
+                <table class="ref_table" style="font-size: 8.5px;">
                   <tbody>
-                    <tr><td><strong>직업</strong> (Occupation)</td><td><span class="badge_consonant">이에</span></td><td><strong>한국 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>학생</strong> (Student)</td><td><span class="badge_consonant">이에</span></td><td><strong>미국 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>선생님</strong> (Teacher)</td><td><span class="badge_consonant">이에</span></td><td><strong>인도 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>의사</strong> (Doctor)</td><td><span class="badge_vowel">예요</span></td><td><strong>일본 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>회사원</strong> (Employee)</td><td><span class="badge_consonant">이에</span></td><td><strong>중국 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>요리사</strong> (Chef)</td><td><span class="badge_vowel">예요</span></td><td><strong>태국 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>이분</strong> (This person)</td><td><span class="badge_consonant">이에</span></td><td><strong>독일 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>친구</strong> (Friend)</td><td><span class="badge_vowel">예요</span></td><td><strong>영국 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>이름</strong> (Name)</td><td><span class="badge_consonant">이에</span></td><td><strong>프랑스 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>전화번호</strong> (Phone #)</td><td><span class="badge_vowel">예요</span></td><td><strong>호주 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
-                    <tr><td><strong>사람</strong> (Person)</td><td><span class="badge_consonant">이에</span></td><td><strong>러시아 사람</strong></td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>한국</strong> (Korea)</td><td><span class="badge_consonant">이에</span></td><td><strong>학생</strong> (Student)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>미국</strong> (USA)</td><td><span class="badge_consonant">이에</span></td><td><strong>선생님</strong> (Teacher)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>일본</strong> (Japan)</td><td><span class="badge_consonant">이에</span></td><td><strong>회사원</strong> (Employee)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>중국</strong> (China)</td><td><span class="badge_consonant">이에</span></td><td><strong>의사</strong> (Doctor)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>호주</strong> (Australia)</td><td><span class="badge_vowel">예요</span></td><td><strong>간호사</strong> (Nurse)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>영국</strong> (UK)</td><td><span class="badge_consonant">이에</span></td><td><strong>요리사</strong> (Chef)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>프랑스</strong> (France)</td><td><span class="badge_vowel">예요</span></td><td><strong>경찰</strong> (Police)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>독일</strong> (Germany)</td><td><span class="badge_consonant">이에</span></td><td><strong>가수</strong> (Singer)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>러시아</strong> (Russia)</td><td><span class="badge_vowel">예요</span></td><td><strong>친구</strong> (Friend)</td><td><span class="badge_vowel">예요</span></td></tr>
+                    <tr><td><strong>태국</strong> (Thailand)</td><td><span class="badge_consonant">이에</span></td><td><strong>이름</strong> (Name)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>베트남</strong> (Vietnam)</td><td><span class="badge_consonant">이에</span></td><td><strong>사람</strong> (Person)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>인도 사람</strong> (Indian)</td><td><span class="badge_consonant">이에</span></td><td><strong>이분</strong> (This person)</td><td><span class="badge_consonant">이에</span></td></tr>
+                    <tr><td><strong>직업</strong> (Occupation)</td><td><span class="badge_consonant">이에</span></td><td><strong>나이</strong> (Age)</td><td><span class="badge_vowel">예요</span></td></tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-            <!-- QUESTION WORDS MASTER DIRECTORY -->
+            <!-- CORE VERBS & SPATIAL TERMS -->
             <div class="box_card" style="margin-top: 6px;">
               <div class="box_header" style="background: #f1f5f9; border-color: #cbd5e1;">
-                <h3 class="box_title" style="color: #0f172a;">Essential Question Words (의문사)</h3>
+                <h3 class="box_title" style="color: #334155;">Verbs & Spatial Positions</h3>
               </div>
               <div class="box_content" style="padding: 2px;">
-                <table class="ref_table" style="font-size: 9px;">
+                <table class="ref_table" style="font-size: 8.5px;">
                   <tbody>
-                    <tr><td><strong>뭐예요?</strong></td><td>What is it?</td><td>이게 뭐예요?</td></tr>
-                    <tr><td><strong>누구예요?</strong></td><td>Who is it?</td><td>누구예요? / 앤디 씨예요.</td></tr>
-                    <tr><td><strong>누구 거예요?</strong></td><td>Whose is it?</td><td>제 거예요. (Mine)</td></tr>
-                    <tr><td><strong>어디예요?</strong></td><td>Where is it?</td><td>서울역이 어디에 있어요?</td></tr>
-                    <tr><td><strong>얼마예요?</strong></td><td>How much is it?</td><td>이 사과 얼마예요?</td></tr>
-                    <tr><td><strong>몇 번이에요?</strong></td><td>What number?</td><td>전화번호가 몇 번이에요?</td></tr>
-                    <tr><td><strong>몇 층이에요?</strong></td><td>Which floor?</td><td>식당이 몇 층에 있어요?</td></tr>
-                    <tr><td><strong>몇 시예요?</strong></td><td>What time is it?</td><td>지금 몇 시예요?</td></tr>
-                    <tr><td><strong>몇 살이에요?</strong></td><td>How old?</td><td>미나 씨는 몇 살이에요?</td></tr>
-                    <tr><td><strong>몇 개 드릴까요?</strong></td><td>How many?</td><td>커피 몇 잔 드릴까요?</td></tr>
+                    <tr><td><strong>있어요</strong> (Exist/Have)</td><td><strong>위</strong> (Above / On)</td><td><strong>앞</strong> (Front)</td></tr>
+                    <tr><td><strong>없어요</strong> (Not have)</td><td><strong>아래 / 밑</strong> (Under)</td><td><strong>뒤</strong> (Behind)</td></tr>
+                    <tr><td><strong>주세요</strong> (Please give)</td><td><strong>안 / 속</strong> (Inside)</td><td><strong>옆</strong> (Beside)</td></tr>
+                    <tr><td><strong>가요</strong> (Go)</td><td><strong>밖</strong> (Outside)</td><td><strong>사이</strong> (Between)</td></tr>
+                    <tr><td><strong>와요</strong> (Come)</td><td><strong>여기</strong> (Here)</td><td><strong>어디</strong> (Where)</td></tr>
+                    <tr><td><strong>얼마예요?</strong> (How much)</td><td><strong>거기</strong> (There)</td><td><strong>저기</strong> (Over there)</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -890,20 +1340,20 @@
       <footer class="page_footer">
         <span>Sogang Korean 1A Desk Reference Pack</span>
         <span>InsightMatches Language Study Unit</span>
-        <span>Page 2 of 4</span>
+        <span>Page 4 of 6</span>
       </footer>
     </article>
 
 
-    <!-- ================= PAGE 3: NUMBERS, COUNTERS & SYNTAX ================= -->
-    <article id="page3" class="print_page">
+    <!-- ================= PAGE 5: NUMBERS, COUNTERS & SYNTAX ================= -->
+    <article id="page5" class="print_page">
       <header class="page_header">
         <div class="header_title_group">
-          <span class="header_badge">Sheet 3 of 4 • Quantitative Architecture</span>
+          <span class="header_badge">Sheet 5 of 6 • Quantitative Architecture</span>
           <h2 class="page_title">Dual Number Systems & Counter Architecture</h2>
           <p class="page_subtitle">Sino vs Native Korean, numerical contractions, and ordering syntax</p>
         </div>
-        <span class="page_number_tag">PAGE 3</span>
+        <span class="page_number_tag">PAGE 5</span>
       </header>
 
       <div class="page_body">
@@ -978,195 +1428,194 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>1</td><td>하나 → <strong style="color: #b45309;">한</strong> (한 개, 한 명, 한 시)</td><td>일 [이리에요] (1층, 1월, 1일)</td></tr>
-                  <tr><td>2</td><td>둘 → <strong style="color: #b45309;">두</strong> (두 잔, 두 병, 두 시)</td><td>이 [이예요] (2층, 2월, 20번)</td></tr>
-                  <tr><td>3</td><td>셋 → <strong style="color: #b45309;">세</strong> (세 권, 세 명, 세 시)</td><td>삼 [사미에요] (3층, 30분, 3,000원)</td></tr>
-                  <tr><td>4</td><td>넷 → <strong style="color: #b45309;">네</strong> (네 개, 네 자루, 네 시)</td><td>사 [사예요] (4층, 4월, 40분)</td></tr>
-                  <tr><td>5</td><td>다섯 (다섯 개, 다섯 명)</td><td>오 [오예요] (5층, 5월, 50,000원)</td></tr>
-                  <tr><td>6</td><td>여섯 (여섯 병, 여섯 시)</td><td>육 [유기에요] (6층, 6월 = 유월)</td></tr>
-                  <tr><td>7</td><td>일곱 (일곱 잔, 일곱 시)</td><td>칠 [치리에요] (7층, 7월, 7,000원)</td></tr>
-                  <tr><td>8</td><td>여덟 [여덜] (여덟 개)</td><td>팔 [파리에요] (8층, 8월, 80번)</td></tr>
-                  <tr><td>9</td><td>아홉 (아홉 명, 아홉 시)</td><td>구 [구예요] (9층, 9월, 90분)</td></tr>
-                  <tr><td>10</td><td>열 (열 개, 열 시)</td><td>십 [시비에요] (10층, 10월 = 시월)</td></tr>
-                  <tr><td>20</td><td>스물 → <strong style="color: #b45309;">스무</strong> (스무 살, 스무 명)</td><td>이십 (20층, 20일)</td></tr>
-                  <tr><td>30</td><td>서른 (서른 살)</td><td>삼십 (30분, 30일)</td></tr>
-                  <tr><td>100</td><td>온 (rare) / 백</td><td>백 (Say 백, never 일백)</td></tr>
-                  <tr><td>10k</td><td>지문 (archaic) / 만</td><td>만 (Say 만, never 일만)</td></tr>
+                  <tr><td>0</td><td>—</td><td><strong>영 / 공</strong> (Phone: 공)</td></tr>
+                  <tr><td>1</td><td><strong>하나</strong> → <strong>한</strong> [개/명/잔/권/시]</td><td><strong>일</strong> (il)</td></tr>
+                  <tr><td>2</td><td><strong>둘</strong> → <strong>두</strong> [개/명/잔/권/시]</td><td><strong>이</strong> (i)</td></tr>
+                  <tr><td>3</td><td><strong>셋</strong> → <strong>세</strong> [개/명/잔/권/시]</td><td><strong>삼</strong> (sam)</td></tr>
+                  <tr><td>4</td><td><strong>넷</strong> → <strong>네</strong> [개/명/잔/권/시]</td><td><strong>사</strong> (sa)</td></tr>
+                  <tr><td>5</td><td><strong>다섯</strong></td><td><strong>오</strong> (o)</td></tr>
+                  <tr><td>6</td><td><strong>여섯</strong></td><td><strong>육</strong> (yuk) [유기에요]</td></tr>
+                  <tr><td>7</td><td><strong>일곱</strong></td><td><strong>칠</strong> (chil)</td></tr>
+                  <tr><td>8</td><td><strong>여덟</strong> [여덜]</td><td><strong>팔</strong> (pal)</td></tr>
+                  <tr><td>9</td><td><strong>아홉</strong></td><td><strong>구</strong> (gu)</td></tr>
+                  <tr><td>10</td><td><strong>열</strong></td><td><strong>십</strong> (sip)</td></tr>
+                  <tr><td>11</td><td><strong>열하나</strong> → <strong>열한</strong></td><td><strong>십일</strong> [시빌]</td></tr>
+                  <tr><td>12</td><td><strong>열둘</strong> → <strong>열두</strong></td><td><strong>십이</strong> [시비]</td></tr>
+                  <tr><td>20</td><td><strong>스물</strong> → <strong>스무</strong> [살/개]</td><td><strong>이십</strong></td></tr>
+                  <tr><td>30</td><td><strong>서른</strong></td><td><strong>삼십</strong></td></tr>
+                  <tr><td>40</td><td><strong>마흔</strong></td><td><strong>사십</strong></td></tr>
+                  <tr><td>50</td><td><strong>쉰</strong></td><td><strong>오십</strong></td></tr>
+                  <tr><td>100</td><td>— (Use Sino)</td><td><strong>백</strong> (baek) (Never 일백)</td></tr>
+                  <tr><td>1,000</td><td>— (Use Sino)</td><td><strong>천</strong> (cheon) (Never 일천)</td></tr>
+                  <tr><td>10,000</td><td>— (Use Sino)</td><td><strong>만</strong> (man) (Never 일만)</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
 
-          <!-- When to use which guide & Contraction summary -->
-          <div class="box_card">
-            <div class="box_header">
-              <h3 class="box_title">When to Use Which System (사용 원칙)</h3>
-              <span class="box_tag tag_amber">Crucial Split</span>
-            </div>
-            <div class="box_content" style="padding: 4px 6px;">
-              <table class="ref_table" style="margin-bottom: 6px;">
-                <tbody>
-                  <tr>
-                    <td style="width: 75px; font-weight: 700; color: #b45309; background: #fef3c7;">USE NATIVE</td>
-                    <td>
-                      • Counting individual physical items (개, 병, 잔, 권)<br>
-                      • Counting people and animals (명, 분, 마리)<br>
-                      • Stating age in everyday speech (살: 스무 살)<br>
-                      • Clock hours and duration (한 시, 두 시간)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="font-weight: 700; color: #0284c7; background: #e0f2fe;">USE SINO</td>
-                    <td>
-                      • Phone numbers: 010 (공일공...)<br>
-                      • Prices and currency: 얼마예요? (원: 만 원)<br>
-                      • Building floors and room numbers (층, 호)<br>
-                      • Dates: year, month, day (년, 월, 일)<br>
-                      • Clock minutes and seconds (분, 초)<br>
-                      • Restaurant food portions (인분: 2인분)
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <!-- Contraction Alert -->
-              <div style="background: #f8fafc; border: 1px solid var(--border_light); border-radius: 4px; padding: 4px 6px; font-size: 8.5px; line-height: 1.35;">
-                <strong style="color: #0f172a;">Important Native Contractions Before Counters:</strong><br>
-                하나 → <strong>한</strong> 개/명/권/시  •  둘 → <strong>두</strong> 개/명/잔/시<br>
-                셋 → <strong>세</strong> 개/명/권/시  •  넷 → <strong>네</strong> 개/명/자루/시<br>
-                스물 → <strong>스무</strong> 살/개/명 (21 reverts: 스물한 개)
+          <!-- Selection Logic & Native Contraction Rules -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            
+            <!-- Contraction Rules Card -->
+            <div class="box_card">
+              <div class="box_header" style="background: #fef3c7; border-color: #fcd34d;">
+                <h3 class="box_title" style="color: #92400e;">Native Contractions Before Counters (주의!)</h3>
+                <span class="box_tag tag_amber">Core Grammar</span>
+              </div>
+              <div class="box_content" style="padding: 5px 8px; font-size: 9px; line-height: 1.4;">
+                <p style="margin-bottom: 4px; color: #78350f;">
+                  The 5 numbers below <strong>drop their final consonants</strong> when placed directly before any counter noun:
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 8.5px;">
+                  <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3px;">• 하나 → <strong>한</strong> (한 개, 한 명, 한 잔)</div>
+                  <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3px;">• 둘 → <strong>두</strong> (두 개, 두 명, 두 시)</div>
+                  <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3px;">• 셋 → <strong>세</strong> (세 개, 세 권, 세 시)</div>
+                  <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3px;">• 넷 → <strong>네</strong> (네 개, 네 명, 네 시)</div>
+                  <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3px; grid-column: span 2;">• 스물 → <strong>스무</strong> (스무 살 = 20 years old)</div>
+                </div>
               </div>
             </div>
+
+            <!-- When to Use Which System -->
+            <div class="box_card" style="flex: 1;">
+              <div class="box_header" style="background: #ede9fe; border-color: #c4b5fd;">
+                <h3 class="box_title" style="color: #5b21b6;">System Selection Guide (시스템 선택 기준)</h3>
+                <span class="box_tag tag_purple">Decision Guide</span>
+              </div>
+              <div class="box_content" style="padding: 5px 8px; font-size: 9px; line-height: 1.4;">
+                
+                <div style="margin-bottom: 6px;">
+                  <div style="font-weight: 800; color: #b45309; margin-bottom: 2px;">Use Native Korean When Counting:</div>
+                  <div style="font-size: 8.5px; color: #475569;">
+                    • <strong>Physical items</strong> (사과 세 개, 빵 두 개)<br>
+                    • <strong>People</strong> (학생 네 명, 친구 세 명)<br>
+                    • <strong>Cups & Bottles</strong> (커피 한 잔, 맥주 세 병)<br>
+                    • <strong>Clock Hours</strong> (한 시, 두 시, 세 시)<br>
+                    • <strong>Age / Years old</strong> (스물다섯 살)
+                  </div>
+                </div>
+
+                <div>
+                  <div style="font-weight: 800; color: #0284c7; margin-bottom: 2px;">Use Sino Korean When Reading:</div>
+                  <div style="font-size: 8.5px; color: #475569;">
+                    • <strong>Money & Prices</strong> (만 원, 천오백 원)<br>
+                    • <strong>Phone Numbers</strong> (010-8113-7787)<br>
+                    • <strong>Calendar Dates</strong> (2026년 10월 25일)<br>
+                    • <strong>Clock Minutes & Seconds</strong> (30분, 45초)<br>
+                    • <strong>Building Floors</strong> (1층, 2층, 지하 1층)
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>
 
-        <!-- SECTION 3: COMPREHENSIVE COUNTERS MASTER TAXONOMY (WHICH ONE TO USE WHEN) -->
+        <!-- SECTION 3: COMPREHENSIVE COUNTER DIRECTORY MATRIX -->
         <div class="box_card">
-          <div class="box_header" style="background: #d1fae5; border-color: #6ee7b7;">
-            <h3 class="box_title" style="color: #065f46;">
-              <span>Counters Master Taxonomy: Which One to Use When (단위 명사 분류 및 완벽 사용법)</span>
-            </h3>
-            <span class="box_tag tag_emerald">Usage Rules & Contexts</span>
+          <div class="box_header">
+            <h3 class="box_title">Sogang 1A Master Counter Directory (분야별 단위 명사)</h3>
+            <span class="box_tag tag_emerald">18 Master Counters</span>
           </div>
-          <div class="box_content" style="padding: 6px 8px;">
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-
-              <!-- COLUMN 1: PEOPLE & ANIMALS -->
-              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
-                <div style="font-size: 10px; font-weight: 800; color: #0369a1; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 4px;">
-                  People & Animals (사람 · 동물)
-                </div>
-                <div style="font-size: 9px; line-height: 1.4;">
-                  <div>
-                    <strong style="color: #0f172a;">명</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">General people, peers, friends:</span><br>
-                    학생 세 명, 사람 네 명, 친구 두 명
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">분</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Polite/honored guests, elders:</span><br>
-                    선생님 한 분, 손님 두 분, 어르신 세 분
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">마리</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Animals, pets, birds, fish:</span><br>
-                    강아지 두 마리, 고양이 한 마리, 생선 세 마리
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMN 2: HOUSING, BUILDINGS & MACHINERY -->
-              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
-                <div style="font-size: 10px; font-weight: 800; color: #92400e; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 4px;">
-                  Housing & Machines (주택 · 기계)
-                </div>
-                <div style="font-size: 9px; line-height: 1.4;">
-                  <div>
-                    <strong style="color: #0f172a;">채</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Standalone houses, homes, villas:</span><br>
-                    집 한 채, 전원주택 두 채, 기와집 한 채
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">동</strong> <span class="badge_vowel" style="font-size: 7.5px;">Sino #</span><br>
-                    <span style="color: #475569;">Apartment blocks, building towers:</span><br>
-                    101동 (백일 동), 아파트 세 동
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">대</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Vehicles, appliances, electronics:</span><br>
-                    차 한 대, 컴퓨터 두 대, 핸드폰 세 대
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">층</strong> <span class="badge_vowel" style="font-size: 7.5px;">Sino #</span><br>
-                    <span style="color: #475569;">Building floor levels:</span> 1층, 2층, 지하 1층
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMN 3: FOOD, DINING & BEVERAGES -->
-              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
-                <div style="font-size: 10px; font-weight: 800; color: #065f46; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 4px;">
-                  Food & Dining (식음료 · 외식)
-                </div>
-                <div style="font-size: 9px; line-height: 1.4;">
-                  <div>
-                    <strong style="color: #0f172a;">잔</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Cups, mugs, glasses:</span><br>
-                    커피 두 잔, 녹차 한 잔, 물 한 잔
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">병</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Bottles of liquid:</span><br>
-                    물 세 병, 맥주 두 병, 콜라 네 병
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">그릇 / 공기</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Bowls of soup, food, rice:</span><br>
-                    밥 한 공기, 라면 두 그릇, 찌개 세 그릇
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">인분</strong> <span class="badge_vowel" style="font-size: 7.5px;">Sino #</span><br>
-                    <span style="color: #475569;">Restaurant portions per person:</span><br>
-                    삼겹살 2인분 (이 인분), 떡볶이 1인분
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMN 4: OBJECTS, PAPER & WEARABLES -->
-              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
-                <div style="font-size: 10px; font-weight: 800; color: #5b21b6; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 4px;">
-                  Objects, Paper & Wear (사물 · 지류)
-                </div>
-                <div style="font-size: 9px; line-height: 1.4;">
-                  <div>
-                    <strong style="color: #0f172a;">개</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">General discrete items, fruit:</span><br>
-                    사과 세 개, 의자 두 개, 지우개 네 개
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">권</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Bound volumes, books, notebooks:</span><br>
-                    책 한 권, 사전 두 권, 공책 세 권
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">장</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Thin flat sheets, paper, tickets, photos:</span><br>
-                    표 한 장, 사진 두 장, 종이 세 장
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">자루</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Slender pens, pencils:</span> 연필 세 자루
-                  </div>
-                  <div style="margin-top: 4px;">
-                    <strong style="color: #0f172a;">켤레 / 벌</strong> <span class="badge_consonant" style="font-size: 7.5px;">Native #</span><br>
-                    <span style="color: #475569;">Pairs of shoes / Suits of clothes:</span><br>
-                    구두 한 켤레, 옷 한 벌, 한복 두 벌
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          <div class="box_content" style="padding: 4px 6px;">
+            <table class="ref_table" style="font-size: 8.5px;">
+              <thead>
+                <tr>
+                  <th style="width: 70px;">Counter (단위)</th>
+                  <th style="width: 75px;">System</th>
+                  <th>Target Objects & Typical Context</th>
+                  <th>Examples in Sentence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>잔 (Jan)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Cups, glasses of beverages (coffee, tea, juice)</td>
+                  <td><strong>커피 두 잔</strong> 주세요. (Two cups of coffee.)</td>
+                </tr>
+                <tr>
+                  <td><strong>병 (Byeong)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Bottles of liquid (water, beer, cola, soju)</td>
+                  <td><strong>콜라 세 병</strong> 있어요. (There are 3 bottles of cola.)</td>
+                </tr>
+                <tr>
+                  <td><strong>개 (Gae)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>General inanimate items, fruit, snacks, bread</td>
+                  <td><strong>사과 네 개</strong> 얼마예요? (How much are 4 apples?)</td>
+                </tr>
+                <tr>
+                  <td><strong>명 (Myeong)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>People, students, friends (Honorific: <strong>분</strong>)</td>
+                  <td><strong>학생 다섯 명</strong> 있어요. (There are 5 students.)</td>
+                </tr>
+                <tr>
+                  <td><strong>권 (Gwon)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Bound volumes, books, notebooks, dictionaries</td>
+                  <td><strong>한국어 책 한 권</strong> 주세요. (One Korean book.)</td>
+                </tr>
+                <tr>
+                  <td><strong>대 (Dae)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Vehicles, machinery, cars, computers, phones</td>
+                  <td><strong>컴퓨터 두 대</strong> 있어요. (There are 2 computers.)</td>
+                </tr>
+                <tr>
+                  <td><strong>마리 (Mari)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Animals, fish, birds, pets</td>
+                  <td><strong>강아지 한 마리</strong> 있어요. (I have 1 puppy.)</td>
+                </tr>
+                <tr>
+                  <td><strong>원 (Won)</strong></td>
+                  <td><span class="badge_consonant">Sino</span></td>
+                  <td>Korean Currency unit (KRW)</td>
+                  <td><strong>오천오백 원</strong>이에요. (It is 5,500 KRW.)</td>
+                </tr>
+                <tr>
+                  <td><strong>층 (Cheung)</strong></td>
+                  <td><span class="badge_consonant">Sino</span></td>
+                  <td>Building levels and basement floors</td>
+                  <td><strong>지하 1층</strong>에 서점이 있어요. (Bookstore on B1.)</td>
+                </tr>
+                <tr>
+                  <td><strong>년 / 월 / 일</strong></td>
+                  <td><span class="badge_consonant">Sino</span></td>
+                  <td>Calendar years, months, and specific calendar days</td>
+                  <td><strong>10월 25일</strong>이에요. [시월 이십오일]</td>
+                </tr>
+                <tr>
+                  <td><strong>시 (Si)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Clock hours (Native numbers contract: 한, 두, 세, 네)</td>
+                  <td><strong>오후 세 시</strong>예요. (It is 3:00 PM.)</td>
+                </tr>
+                <tr>
+                  <td><strong>분 (Bun)</strong></td>
+                  <td><span class="badge_consonant">Sino</span></td>
+                  <td>Clock minutes (Sino Korean: 10분, 30분)</td>
+                  <td><strong>세 시 삼십 분</strong>이에요. (It is 3:30.)</td>
+                </tr>
+                <tr>
+                  <td><strong>번 (Beon)</strong></td>
+                  <td><span class="badge_consonant">Sino</span></td>
+                  <td>Telephone number digits, bus routes, room numbers</td>
+                  <td><strong>몇 번</strong>이에요? (What number is it?)</td>
+                </tr>
+                <tr>
+                  <td><strong>살 (Sal)</strong></td>
+                  <td><span class="badge_vowel">Native</span></td>
+                  <td>Age in years (Honorific: <strong>세</strong> [Sino])</td>
+                  <td><strong>스물다섯 살</strong>이에요. (I am 25 years old.)</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -1175,20 +1624,20 @@
       <footer class="page_footer">
         <span>Sogang Korean 1A Desk Reference Pack</span>
         <span>InsightMatches Language Study Unit</span>
-        <span>Page 3 of 4</span>
+        <span>Page 5 of 6</span>
       </footer>
     </article>
 
 
-    <!-- ================= PAGE 4: ALPHABET, DECISION LOGIC & SCHEMATICS ================= -->
-    <article id="page4" class="print_page">
+    <!-- ================= PAGE 6: ALPHABET, DECISION LOGIC & SCHEMATICS ================= -->
+    <article id="page6" class="print_page">
       <header class="page_header">
         <div class="header_title_group">
-          <span class="header_badge">Sheet 4 of 4 • Foundations & Logic</span>
+          <span class="header_badge">Sheet 6 of 6 • Foundations & Logic</span>
           <h2 class="page_title">Hangul Alphabet, Batchim Rules & Particle Tree</h2>
           <p class="page_subtitle">Letter names, vowel vs consonant classification, batchim collapse, and particle selection</p>
         </div>
-        <span class="page_number_tag">PAGE 4</span>
+        <span class="page_number_tag">PAGE 6</span>
       </header>
 
       <div class="page_body">
@@ -1296,271 +1745,206 @@
                 <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                   <div style="flex: 1; border: 1.5px solid #0284c7; background: #e0f2fe; border-radius: 4px; padding: 3px; text-align: center;">
                     <div style="font-size: 7.5px; color: #0369a1; font-weight: 700;">초성 Initial</div>
-                    <div style="font-size: 12px; font-weight: 800; color: #0c4a6e;">ㄱ, ㄴ, ㄷ...</div>
+                    <div style="font-size: 11px; font-weight: 800; color: #0c4a6e;">ㄱ~ㅎ (19)</div>
                   </div>
                   <div style="flex: 1; border: 1.5px solid #059669; background: #d1fae5; border-radius: 4px; padding: 3px; text-align: center;">
-                    <div style="font-size: 7.5px; color: #065f46; font-weight: 700;">중성 Vowel</div>
-                    <div style="font-size: 12px; font-weight: 800; color: #064e3b;">ㅏ, ㅓ, ㅗ...</div>
+                    <div style="font-size: 7.5px; color: #065f46; font-weight: 700;">중성 Medial</div>
+                    <div style="font-size: 11px; font-weight: 800; color: #064e3b;">ㅏ~ㅣ (21)</div>
                   </div>
                 </div>
                 <div style="border: 1.5px solid #b45309; background: #fef3c7; border-radius: 4px; padding: 3px; text-align: center;">
-                  <div style="font-size: 7.5px; color: #92400e; font-weight: 800;">종성 Final Consonant (받침)</div>
-                  <div style="font-size: 9px; font-weight: 700; color: #78350f;">Dictates Particle Branching & Liaison</div>
+                  <div style="font-size: 7.5px; color: #92400e; font-weight: 700;">종성 Final (받침 Batchim)</div>
+                  <div style="font-size: 10px; font-weight: 800; color: #78350f;">Collapses to 7 Representative Sounds</div>
                 </div>
               </div>
 
-              <!-- 7 Representative Sounds -->
-              <div>
-                <table class="ref_table" style="font-size: 9px;">
-                  <thead>
-                    <tr>
-                      <th style="width: 50px;">Sound</th>
-                      <th>Spelled Letters</th>
-                      <th>Word Examples</th>
-                      <th>Phonetic Liaison (연음 법칙)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㄱ ]</span></td>
-                      <td>ㄱ, ㅋ, ㄲ</td>
-                      <td>책 (Book), 부엌 (Kitchen), 밖 (Outside)</td>
-                      <td>책 + 이에요 → <strong>[채기에요]</strong></td>
-                    </tr>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㄴ ]</span></td>
-                      <td>ㄴ</td>
-                      <td>눈 (Eye), 문 (Door), 볼펜 (Pen)</td>
-                      <td>볼펜 + 이에요 → <strong>[볼페니에요]</strong></td>
-                    </tr>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㄷ ]</span></td>
-                      <td>ㄷ, ㅌ, ㅅ, ㅆ, ㅈ, ㅊ, ㅎ</td>
-                      <td>옷 (Clothes), 꽃 (Flower), 낮 (Day), 끝 (End)</td>
-                      <td>옷 + 이에요 → <strong>[오시에요]</strong></td>
-                    </tr>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㄹ ]</span></td>
-                      <td>ㄹ</td>
-                      <td>물 (Water), 발 (Foot), 달 (Moon), 연필 (Pencil)</td>
-                      <td>물 + 이에요 → <strong>[무리에요]</strong></td>
-                    </tr>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㅁ ]</span></td>
-                      <td>ㅁ</td>
-                      <td>몸 (Body), 사람 (Person), 밤 (Night)</td>
-                      <td>사람 + 이에요 → <strong>[사라미에요]</strong></td>
-                    </tr>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㅂ ]</span></td>
-                      <td>ㅂ, ㅍ</td>
-                      <td>집 (House), 밥 (Rice), 잎 (Leaf), 지갑 (Wallet)</td>
-                      <td>지갑 + 이에요 → <strong>[지가비에요]</strong></td>
-                    </tr>
-                    <tr>
-                      <td><span class="badge_consonant">[ ㅇ ]</span></td>
-                      <td>ㅇ (ng sound)</td>
-                      <td>방 (Room), 공 (Ball), 안경 (Glasses), 가방 (Bag)</td>
-                      <td>가방 + 이에요 → <strong>[가방이에요]</strong></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <!-- 7 Batchim Representative Sounds Table -->
+              <table class="ref_table" style="font-size: 8.5px;">
+                <thead>
+                  <tr>
+                    <th style="width: 55px;">Sound</th>
+                    <th style="width: 110px;">Batchim Letters</th>
+                    <th>Examples with Phonetic Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>[ㄱ]</strong></td>
+                    <td><strong>ㄱ, ㅋ, ㄲ, ㄳ, ㄺ</strong></td>
+                    <td><strong>책</strong> [책], <strong>부엌</strong> [부억], <strong>밖</strong> [박]</td>
+                  </tr>
+                  <tr>
+                    <td><strong>[ㄴ]</strong></td>
+                    <td><strong>ㄴ, ㄵ, ㄶ</strong></td>
+                    <td><strong>문</strong> [문], <strong>돈</strong> [돈], <strong>신문</strong> [신문]</td>
+                  </tr>
+                  <tr>
+                    <td><strong>[ㄷ]</strong></td>
+                    <td><strong>ㄷ, ㅌ, ㅅ, ㅆ, ㅈ, ㅊ, ㅎ</strong></td>
+                    <td><strong>옷</strong> [옫], <strong>꽃</strong> [꼳], <strong>밑</strong> [믿], <strong>있어요</strong> [이써요]</td>
+                  </tr>
+                  <tr>
+                    <td><strong>[ㄹ]</strong></td>
+                    <td><strong>ㄹ, ㄼ, ㄽ, ㄾ, ㅀ</strong></td>
+                    <td><strong>물</strong> [물], <strong>연필</strong> [연필], <strong>생일</strong> [생일]</td>
+                  </tr>
+                  <tr>
+                    <td><strong>[ㅁ]</strong></td>
+                    <td><strong>ㅁ, ㄻ</strong></td>
+                    <td><strong>이름</strong> [이름], <strong>김밥</strong> [김밥], <strong>점심</strong> [점심]</td>
+                  </tr>
+                  <tr>
+                    <td><strong>[ㅂ]</strong></td>
+                    <td><strong>ㅂ, ㅍ, ㅄ, ㄿ</strong></td>
+                    <td><strong>밥</strong> [밥], <strong>지갑</strong> [지갑], <strong>앞</strong> [압]</td>
+                  </tr>
+                  <tr>
+                    <td><strong>[ㅇ]</strong></td>
+                    <td><strong>ㅇ</strong> (Velar Nasal /ng/)</td>
+                    <td><strong>가방</strong> [가방], <strong>안경</strong> [안경], <strong>식당</strong> [식당]</td>
+                  </tr>
+                </tbody>
+              </table>
 
             </div>
           </div>
         </div>
 
-        <!-- SECTION 3: VECTOR SVG PARTICLE DECISION TREE -->
-        <div class="box_card">
-          <div class="box_header">
-            <h3 class="box_title">
-              <span>Particle Selection Binary Decision Tree (받침 기반 조사 결정 체계)</span>
-            </h3>
-            <span class="box_tag tag_amber">Core Decision Tree</span>
+        <!-- SECTION 3: PARTICLE TREE & DEMONSTRATIVE SCHEMATICS -->
+        <div class="grid_two">
+          
+          <!-- Binary Particle Decision Tree -->
+          <div class="box_card">
+            <div class="box_header">
+              <h3 class="box_title">Particle & Copula Binary Selector Tree</h3>
+              <span class="box_tag tag_emerald">Binary Decision</span>
+            </div>
+            <div class="box_content" style="padding: 4px 6px;">
+              <table class="ref_table" style="font-size: 8.5px;">
+                <thead>
+                  <tr>
+                    <th>Grammar Role</th>
+                    <th>Ends in Vowel (받침 X)</th>
+                    <th>Ends in Consonant (받침 O)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Topic Marker</strong></td>
+                    <td><strong>-는</strong> (저<strong>는</strong>, 미나<strong>는</strong>)</td>
+                    <td><strong>-은</strong> (선생님<strong>은</strong>, 폴<strong>은</strong>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Subject Marker</strong></td>
+                    <td><strong>-가</strong> (친구<strong>가</strong>, 시계<strong>가</strong>)</td>
+                    <td><strong>-이</strong> (가방<strong>이</strong>, 이름<strong>이</strong>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Copula (To be)</strong></td>
+                    <td><strong>-예요</strong> (의자<strong>예요</strong>, 시계<strong>예요</strong>)</td>
+                    <td><strong>-이에요</strong> (책<strong>이에요</strong>, 학생<strong>이에요</strong>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Object Marker</strong></td>
+                    <td><strong>-를</strong> (커피<strong>를</strong>, 사과<strong>를</strong>)</td>
+                    <td><strong>-을</strong> (빵<strong>을</strong>, 책<strong>을</strong>)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>And / With</strong></td>
+                    <td><strong>-와</strong> (의자<strong>와</strong> 탁자)</td>
+                    <td><strong>-과</strong> (가방<strong>과</strong> 모자)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Colloquial And</strong></td>
+                    <td colspan="2" style="text-align: center; background: #ffffff;">
+                      <strong>-하고</strong> (Universal • 커피<strong>하고</strong> 빵 주세요)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Location / Time</strong></td>
+                    <td colspan="2" style="text-align: center; background: #ffffff;">
+                      <strong>-에</strong> (Static: 서점<strong>에</strong> 있어요, 3시<strong>에</strong> 만나요)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Action Location</strong></td>
+                    <td colspan="2" style="text-align: center; background: #ffffff;">
+                      <strong>-에서</strong> (Dynamic: 도서관<strong>에서</strong> 공부해요)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Possession</strong></td>
+                    <td colspan="2" style="text-align: center; background: #ffffff;">
+                      <strong>-의</strong> [Pronounced 에] (선생님<strong>의</strong> 책, 저<strong>의</strong> → <strong>제</strong>)
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="box_content" style="padding: 2px 4px;">
-            <svg viewBox="0 0 940 270" style="width: 100%; height: auto; display: block;" xmlns="http://www.w3.org/2000/svg">
-              <!-- Root Node -->
-              <g transform="translate(370, 8)">
-                <rect x="0" y="0" width="200" height="40" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1.5"/>
-                <text x="100" y="17" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">NOUN FINAL SYLLABLE</text>
-                <text x="100" y="31" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">명사 마지막 글자 검사</text>
-              </g>
 
-              <!-- Left Branch: Batchim Exists -->
-              <path d="M 430 48 V 64 H 240 V 76" fill="none" stroke="#b45309" stroke-width="2"/>
-              <g transform="translate(140, 76)">
-                <rect x="0" y="0" width="200" height="22" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
-                <text x="100" y="15" fill="#92400e" font-size="10.5" font-weight="800" text-anchor="middle">받침 있음 (CLOSED CONSONANT)</text>
-              </g>
-
-              <!-- Right Branch: No Batchim -->
-              <path d="M 510 48 V 64 H 700 V 76" fill="none" stroke="#059669" stroke-width="2"/>
-              <g transform="translate(600, 76)">
-                <rect x="0" y="0" width="200" height="22" rx="4" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
-                <text x="100" y="15" fill="#065f46" font-size="10.5" font-weight="800" text-anchor="middle">받침 없음 (OPEN VOWEL)</text>
-              </g>
-
-              <!-- Left Column: Closed Syllable Particles -->
-              <g transform="translate(40, 106)">
-                <!-- Copula -->
-                <rect x="0" y="0" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="18" fill="#475569" font-size="9.5" font-weight="700">To Be (서술격)</text>
-                <text x="120" y="19" fill="#b45309" font-size="13" font-weight="900">이에요</text>
-                <text x="180" y="18" fill="#0f172a" font-size="9.5">선생님이에요, 책이에요 [채기에요]</text>
-
-                <!-- Subject -->
-                <rect x="0" y="32" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="50" fill="#475569" font-size="9.5" font-weight="700">Subject (주격)</text>
-                <text x="120" y="51" fill="#b45309" font-size="13" font-weight="900">이</text>
-                <text x="180" y="50" fill="#0f172a" font-size="9.5">선생님이, 학생이, 이름이, 서울역이</text>
-
-                <!-- Topic -->
-                <rect x="0" y="64" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="82" fill="#475569" font-size="9.5" font-weight="700">Topic (보조사)</text>
-                <text x="120" y="83" fill="#b45309" font-size="13" font-weight="900">은</text>
-                <text x="180" y="82" fill="#0f172a" font-size="9.5">선생님은, 이름은, 한국은</text>
-
-                <!-- Object -->
-                <rect x="0" y="96" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="114" fill="#475569" font-size="9.5" font-weight="700">Object (목적격)</text>
-                <text x="120" y="115" fill="#b45309" font-size="13" font-weight="900">을</text>
-                <text x="180" y="114" fill="#0f172a" font-size="9.5">책을, 물을, 가방을, 김밥을</text>
-
-                <!-- Direction -->
-                <rect x="0" y="128" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="146" fill="#475569" font-size="9.5" font-weight="700">Direction (도구/방향)</text>
-                <text x="120" y="147" fill="#b45309" font-size="13" font-weight="900">으로</text>
-                <text x="180" y="146" fill="#0f172a" font-size="9.5">한국어로, 서울역으로 (Exception: ㄹ 받침 → 로)</text>
-              </g>
-
-              <!-- Right Column: Open Syllable Particles -->
-              <g transform="translate(500, 106)">
-                <!-- Copula -->
-                <rect x="0" y="0" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="18" fill="#475569" font-size="9.5" font-weight="700">To Be (서술격)</text>
-                <text x="120" y="19" fill="#059669" font-size="13" font-weight="900">예요</text>
-                <text x="180" y="18" fill="#0f172a" font-size="9.5">의사예요, 시계예요, 모자예요</text>
-
-                <!-- Subject -->
-                <rect x="0" y="32" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="50" fill="#475569" font-size="9.5" font-weight="700">Subject (주격)</text>
-                <text x="120" y="51" fill="#059669" font-size="13" font-weight="900">가</text>
-                <text x="180" y="50" fill="#0f172a" font-size="9.5">앤디 씨가, 시계가, 의자가, 친구가</text>
-
-                <!-- Topic -->
-                <rect x="0" y="64" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="82" fill="#475569" font-size="9.5" font-weight="700">Topic (보조사)</text>
-                <text x="120" y="83" fill="#059669" font-size="13" font-weight="900">는</text>
-                <text x="180" y="82" fill="#0f172a" font-size="9.5">저는, 앤디 씨는, 미나 씨는</text>
-
-                <!-- Object -->
-                <rect x="0" y="96" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="114" fill="#475569" font-size="9.5" font-weight="700">Object (목적격)</text>
-                <text x="120" y="115" fill="#059669" font-size="13" font-weight="900">를</text>
-                <text x="180" y="114" fill="#0f172a" font-size="9.5">커피를, 모자를, 시계를, 사과를</text>
-
-                <!-- Direction -->
-                <rect x="0" y="128" width="400" height="28" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-                <text x="12" y="146" fill="#475569" font-size="9.5" font-weight="700">Direction (도구/방향)</text>
-                <text x="120" y="147" fill="#059669" font-size="13" font-weight="900">로</text>
-                <text x="180" y="146" fill="#0f172a" font-size="9.5">버스로, 지하철로, 제주도로</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <!-- SECTION 4: SPATIAL PERSPECTIVE & DEMONSTRATIVES -->
-        <div class="box_card">
-          <div class="box_header">
-            <h3 class="box_title">
-              <span>Spatial Perspective Triad (지시사 공간 구도: 이 · 그 · 저)</span>
-            </h3>
-            <span class="box_tag tag_purple">Spatial Triad</span>
-          </div>
-          <div class="box_content" style="padding: 4px 8px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: center;">
-
-              <!-- SVG Demonstrative Visual -->
-              <svg viewBox="0 0 450 160" style="width: 100%; height: auto; display: block;" xmlns="http://www.w3.org/2000/svg">
-                <!-- Speaker -->
-                <circle cx="70" cy="110" r="26" fill="#f8fafc" stroke="#0284c7" stroke-width="2"/>
-                <text x="70" y="107" fill="#0284c7" font-size="8.5" font-weight="800" text-anchor="middle">SPEAKER</text>
-                <text x="70" y="120" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">나 (앤디)</text>
-
-                <!-- Listener -->
-                <circle cx="380" cy="110" r="26" fill="#f8fafc" stroke="#059669" stroke-width="2"/>
-                <text x="380" y="107" fill="#059669" font-size="8.5" font-weight="800" text-anchor="middle">LISTENER</text>
-                <text x="380" y="120" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">상대방 (미나)</text>
-
-                <!-- Zone 1: 이 / 이게 / 여기 (Close to speaker) -->
-                <g transform="translate(40, 16)">
-                  <rect x="0" y="0" width="95" height="42" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
-                  <text x="47" y="16" fill="#0369a1" font-size="11" font-weight="900" text-anchor="middle">이게 / 여기</text>
-                  <text x="47" y="31" fill="#475569" font-size="8" text-anchor="middle">Close to Speaker</text>
-                </g>
-
-                <!-- Zone 2: 그 / 그게 / 거기 (Close to listener) -->
-                <g transform="translate(315, 16)">
-                  <rect x="0" y="0" width="95" height="42" rx="4" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
-                  <text x="47" y="16" fill="#065f46" font-size="11" font-weight="900" text-anchor="middle">그게 / 거기</text>
-                  <text x="47" y="31" fill="#475569" font-size="8" text-anchor="middle">Close to Listener</text>
-                </g>
-
-                <!-- Zone 3: 저 / 저게 / 저기 (Far from both) -->
-                <g transform="translate(178, 10)">
-                  <rect x="0" y="0" width="95" height="42" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
-                  <text x="47" y="16" fill="#92400e" font-size="11" font-weight="900" text-anchor="middle">저게 / 저기</text>
-                  <text x="47" y="31" fill="#475569" font-size="8" text-anchor="middle">Far from Both</text>
-                </g>
-
-                <!-- Connection Lines -->
-                <line x1="85" y1="58" x2="72" y2="84" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
-                <line x1="365" y1="58" x2="378" y2="84" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,3"/>
-              </svg>
-
-              <!-- Demonstratives Comparison Matrix -->
-              <div>
-                <table class="ref_table">
-                  <thead>
-                    <tr>
-                      <th>Prefix</th>
-                      <th>Object (이것이)</th>
-                      <th>Location (Place)</th>
-                      <th>Noun Modifier</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>이 (Near Me)</strong></td>
-                      <td><strong>이게</strong> (This thing)</td>
-                      <td><strong>여기</strong> (Here)</td>
-                      <td><strong>이 책</strong> (This book)</td>
-                    </tr>
-                    <tr>
-                      <td><strong>그 (Near You)</strong></td>
-                      <td><strong>그게</strong> (That thing)</td>
-                      <td><strong>거기</strong> (There)</td>
-                      <td><strong>그 시계</strong> (That watch)</td>
-                    </tr>
-                    <tr>
-                      <td><strong>저 (Far Over)</strong></td>
-                      <td><strong>저게</strong> (That over there)</td>
-                      <td><strong>저기</strong> (Over there)</td>
-                      <td><strong>저 사람</strong> (That person)</td>
-                    </tr>
-                    <tr>
-                      <td colspan="4" style="background: #f8fafc; font-size: 9px; padding: 3px 5px;">
-                        <strong>Possession Check:</strong> 누구 거예요? (Whose is it?) → <strong>제 거예요</strong> (Mine) / <strong>선생님 거예요</strong> (Teacher's)
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+          <!-- Demonstrative & Spatial Relationship Matrix -->
+          <div class="box_card">
+            <div class="box_header">
+              <h3 class="box_title">Demonstrative Geometry (이 · 그 · 저 체계)</h3>
+              <span class="box_tag tag_purple">Spatial Geometry</span>
+            </div>
+            <div class="box_content" style="padding: 4px 6px;">
+              
+              <div style="display: flex; justify-content: space-between; gap: 4px; margin-bottom: 6px;">
+                <div style="flex: 1; border: 1.5px solid #0284c7; background: #f0f9ff; border-radius: 4px; padding: 4px; text-align: center;">
+                  <strong style="color: #0369a1; font-size: 11px;">이 (Near Speaker)</strong>
+                  <div style="font-size: 8px; color: #475569;">Close to me</div>
+                </div>
+                <div style="flex: 1; border: 1.5px solid #059669; background: #ecfdf5; border-radius: 4px; padding: 4px; text-align: center;">
+                  <strong style="color: #065f46; font-size: 11px;">그 (Near Listener)</strong>
+                  <div style="font-size: 8px; color: #475569;">Close to you / Context</div>
+                </div>
+                <div style="flex: 1; border: 1.5px solid #7c3aed; background: #f5f3ff; border-radius: 4px; padding: 4px; text-align: center;">
+                  <strong style="color: #5b21b6; font-size: 11px;">저 (Far from Both)</strong>
+                  <div style="font-size: 8px; color: #475569;">Distant over there</div>
+                </div>
               </div>
+
+              <table class="ref_table" style="font-size: 8.5px;">
+                <thead>
+                  <tr>
+                    <th>Prefix</th>
+                    <th>Object (이것이)</th>
+                    <th>Location (Place)</th>
+                    <th>Noun Modifier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>이 (Near Me)</strong></td>
+                    <td><strong>이게</strong> (This thing)</td>
+                    <td><strong>여기</strong> (Here)</td>
+                    <td><strong>이 책</strong> (This book)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>그 (Near You)</strong></td>
+                    <td><strong>그게</strong> (That thing)</td>
+                    <td><strong>거기</strong> (There)</td>
+                    <td><strong>그 시계</strong> (That watch)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>저 (Far Over)</strong></td>
+                    <td><strong>저게</strong> (That over there)</td>
+                    <td><strong>저기</strong> (Over there)</td>
+                    <td><strong>저 사람</strong> (That person)</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" style="background: #f8fafc; font-size: 8.5px; padding: 3px 5px;">
+                      <strong>Possession Check:</strong> 누구 거예요? (Whose is it?) → <strong>제 거예요</strong> (Mine) / <strong>선생님 거예요</strong> (Teacher's)
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 
             </div>
           </div>
+
         </div>
 
       </div>
@@ -1568,10 +1952,9 @@
       <footer class="page_footer">
         <span>Sogang Korean 1A Desk Reference Pack</span>
         <span>InsightMatches Language Study Unit</span>
-        <span>Page 4 of 4</span>
+        <span>Page 6 of 6</span>
       </footer>
     </article>
-
 
   </main>
 
