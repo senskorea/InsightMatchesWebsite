@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   base: '/',
   build: {
     rollupOptions: {
-      input: { main: path.resolve(__dirname, 'index.html'), deck: path.resolve(__dirname, 'deck/index.html') },
+      input: { main: path.resolve(__dirname, 'index.html'), deck: path.resolve(__dirname, 'deck/index.html'), workShareTimer: path.resolve(__dirname, 'work-share-timer/index.html') },
     },
   },
   server: {
