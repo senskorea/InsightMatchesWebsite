@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {freshClock,tickClock,toggleClock,choosePhase,restoreClock} from './timer-model.mjs';
+const now=1_000_000;
+test('pause preserves remaining time and resume establishes a new deadline',()=>{let clock=toggleClock(freshClock(),now);clock=toggleClock(clock,now+90_000);assert.equal(clock.remaining,210_000);assert.equal(clock.deadline,null);clock=toggleClock(clock,now+190_000);assert.equal(clock.deadline,now+400_000)});
+test('a phase boundary advances without adding drift',()=>{const clock=toggleClock(freshClock(),now);const next=tickClock(clock,now+300_075);assert.equal(next.phase,'focus');assert.equal(next.remaining,2_399_925)});
+test('sleeping-tab recovery crosses rounds and stops at three hours',()=>{const clock=toggleClock(freshClock(),now);assert.equal(tickClock(clock,now+3_600_000).round,2);assert.equal(tickClock(clock,now+7_200_000).round,3);const complete=tickClock(clock,now+10_800_000);assert.equal(complete.complete,true);assert.equal(complete.deadline,null);assert.equal(complete.remaining,0)});
+test('manual phase selection creates a fresh paused timer',()=>{const clock=choosePhase(toggleClock(freshClock(),now),'share');assert.equal(clock.remaining,600_000);assert.equal(clock.deadline,null)});
+test('invalid storage cannot break the timer',()=>{assert.deepEqual(restoreClock({phase:'invalid'},now),freshClock());assert.deepEqual(restoreClock({...freshClock(),remaining:-1},now),freshClock())});
+test('starting after completion begins a new first round',()=>{const complete=tickClock(toggleClock(freshClock(),now),now+10_800_000);const clock=toggleClock(complete,now+11_000_000);assert.equal(clock.phase,'plan');assert.equal(clock.round,1);assert.equal(clock.complete,false);assert.equal(clock.deadline,now+11_300_000)});
+test('custom durations and round limit survive restore and control advancement',()=>{const config={minutes:{plan:2,focus:15,share:3,reset:1},rounds:2};const start=toggleClock(freshClock(config),now);assert.equal(tickClock(start,now+120000).phase,'focus');assert.equal(tickClock(start,now+120000).remaining,900000);assert.equal(restoreClock(start,now+120000).config.rounds,2);assert.equal(tickClock(start,now+42*60000).complete,true);assert.equal(choosePhase(start,'share').remaining,180000)});
