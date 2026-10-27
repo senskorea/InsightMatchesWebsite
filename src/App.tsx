@@ -86,7 +86,7 @@ const KoreanRedirect = () => {
 
 const MailingRedirect = () => {
   useEffect(() => {
-    window.location.replace("/mailing/index.html");
+    window.location.replace("https://forms.gle/rci5WGWw9k1wW35C8");
   }, []);
   return null;
 };
