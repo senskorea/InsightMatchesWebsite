@@ -1,6 +1,6 @@
 # Work & Share timer
 
-Local preview: http://127.0.0.1:5190/work-share-timer/
+Local preview: https://insightmatches.com/timer/
 
 Frosted neon timer with Plan, Focus, Share and Reset phases. Defaults: 5, 40, 10 and 5 minutes, three rounds. Space toggles playback, manual phase changes pause, restart resets the current phase. Automatic advancement uses absolute deadlines to recover after a background tab or reload.
 
@@ -15,3 +15,5 @@ Phase bell: soft synthesized two-note chime on automatic phase/round boundaries 
 Phase copy: pencil beside timer instruction opens Configuration, where every phase has an editable instruction and optional line beneath its phase button. Changes persist and do not reset timing. Fullscreen uses an expanded presentation layout with viewport/container scaled digits, headings and phase buttons.
 
 Website URL in Configuration generates a local 768 px QR PNG with four-module white quiet zone and medium error correction. Accepts full HTTP/HTTPS URLs. Save configuration displays the generated image and persists its destination. Uploading a different image clears the QR destination. Automatic timer ticks do not repeatedly rewrite image storage.
+
+The legacy /work-share-timer/ URL redirects to /timer/. Browser settings are preserved because the storage key and origin are unchanged.
