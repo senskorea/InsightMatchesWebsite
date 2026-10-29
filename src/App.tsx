@@ -30,6 +30,7 @@ import GuideHorizonEuropeKorea from "./pages/GuideHorizonEuropeKorea";
 import AIToolsEUKoreaConsortium from "./pages/AIToolsEUKoreaConsortium";
 import EUKoreaDigitalPartnership from "./pages/EUKoreaDigitalPartnership";
 import NextRise from "./pages/NextRise";
+import RequestDemo from "./pages/RequestDemo";
 import PhiHubPressRelease from "./pages/PhiHubPressRelease";
 import LeadershipTeamPressRelease from "./pages/LeadershipTeamPressRelease";
 import Admin from "./pages/Admin";
@@ -231,7 +232,7 @@ const AppContent = () => {
             <Route path="/kba" element={<KBA />} />
             <Route path="/eu-pic" element={<EUPIC />} />
             <Route path="/rndday" element={<RnDDay />} />
-            <Route path="/request-demo" element={<NextRise />} />
+            <Route path="/request-demo" element={<RequestDemo />} />
             <Route path="/nextrise" element={<NextRise />} />
             <Route path="/NEXTRISE" element={<Navigate to="/nextrise" replace />} />
             <Route path="/careers" element={<Careers />} />

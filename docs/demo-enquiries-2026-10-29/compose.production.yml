@@ -1,0 +1,39 @@
+services:
+  demo:
+    image: python:3.13-alpine
+    network_mode: host
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.5
+    restart: unless-stopped
+    command: ["python", "-B", "/app/demo_server.py"]
+    environment:
+      LISTMONK_API_TOKEN_FILE: /run/secrets/demo_api
+      LISTMONK_URL: http://127.0.0.1:9000
+      DEMO_DB: /data/demo.sqlite3
+      DEMO_LIST_ID: ${DEMO_LIST_ID:?Set the private Demo enquiries list ID}
+      DEMO_ACK_TEMPLATE_ID: ${DEMO_ACK_TEMPLATE_ID:?Set acknowledgement template ID}
+      DEMO_NOTIFY_TEMPLATE_ID: ${DEMO_NOTIFY_TEMPLATE_ID:?Set notification template ID}
+    volumes:
+      - ./demo_server.py:/app/demo_server.py:ro
+      - ../secrets/demo_api:/run/secrets/demo_api:ro
+      - ./data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9011/health',timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options: {max-size: "1m", max-file: "2"}
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.demo-enquiry.rule: 'Host("mail.insightmatches.com") && Path("/demo/request")'
+      traefik.http.routers.demo-enquiry.priority: "100"
+      traefik.http.routers.demo-enquiry.entrypoints: websecure
+      traefik.http.routers.demo-enquiry.tls.certresolver: letsencrypt
+      traefik.http.services.demo-enquiry.loadbalancer.server.port: "9011"
