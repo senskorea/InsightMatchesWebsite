@@ -12,8 +12,8 @@ const icons={plan:ListTodo,focus:Play,share:MessagesSquare,reset:RotateCcw};
 const key='work-share-session-v1';
 function readSaved(){try{const value=JSON.parse(localStorage.getItem(key)||'{}');return value&&typeof value==='object'?value:{}}catch{return {}}}
 type Note={title:string;body:string;image:string;qrUrl?:string};
-const defaultNote={title:'Bring a task.\nLeave with progress.',body:'Plan a little. Focus together.\nShare what you’re working on.\nThen do it again.',image:''};
-function initial(){const d=readSaved();return {bell:d.bell!==false,copy:Object.fromEntries((phases as Phase[]).map(p=>[p,{hint:typeof d.copy?.[p]?.hint==='string'?d.copy[p].hint:hints[p],caption:typeof d.copy?.[p]?.caption==='string'?d.copy[p].caption:''}])),clock:restoreClock(d.clock,Date.now()),note:d.note&&typeof d.note.title==='string'&&typeof d.note.body==='string'&&typeof d.note.image==='string'?d.note:defaultNote}}
+const defaultNote={title:'Bring a task.\nLeave with progress.',body:'Plan a little. Focus together.\nShare what you’re working on.\nThen do it again.',image:'/drive/work-share-files-qr.svg',qrUrl:'https://drive.google.com/drive/folders/1h1jOwu76xOu3WGhOUiUQwszLs5-DM9cW?usp=drive_link'};
+function initial(){const d=readSaved();return {bell:d.bell!==false,copy:Object.fromEntries((phases as Phase[]).map(p=>[p,{hint:typeof d.copy?.[p]?.hint==='string'?d.copy[p].hint:hints[p],caption:typeof d.copy?.[p]?.caption==='string'?d.copy[p].caption:''}])),clock:restoreClock(d.clock,Date.now()),note:d.note&&typeof d.note.title==='string'&&typeof d.note.body==='string'&&typeof d.note.image==='string'?{...d.note,...(!d.note.image?{image:defaultNote.image,qrUrl:defaultNote.qrUrl}:{})}:defaultNote}}
 function AmbientCanvas(){return <div className="ambient" aria-hidden="true"><div className="orb lavender"/><div className="orb cyan"/><div className="orb rose"/>{[0,1,2,3,4,5].map(i=><div key={i} className={`floating-tile tile-${i}`}/>)}</div>}
 export default function TimerApp(){
  const [saved]=useState(initial),[clock,setClock]=useState(saved.clock),[note,setNote]=useState<Note>(saved.note);
