@@ -148,6 +148,50 @@ const SensPitchRedirect = () => {
   );
 };
 
+const MixRedirect = () => {
+  useEffect(() => {
+    window.location.replace("https://sensai-dh2z.vercel.app/#/login?code=MIX");
+  }, []);
+
+  return (
+    <main className="min-h-screen flex items-center justify-center px-6">
+      <section className="max-w-xl text-center space-y-3">
+        <h1 className="text-2xl font-semibold">Redirecting to Seoul Researcher Mixer…</h1>
+        <p className="text-muted-foreground">If you are not redirected automatically, open:</p>
+        <a
+          href="https://sensai-dh2z.vercel.app/#/login?code=MIX"
+          className="underline underline-offset-4"
+          rel="noopener noreferrer"
+        >
+          https://sensai-dh2z.vercel.app/#/login?code=MIX
+        </a>
+      </section>
+    </main>
+  );
+};
+
+const PrintRedirect = () => {
+  useEffect(() => {
+    window.location.replace("https://drive.google.com/drive/folders/1IIk892niyfjFKQ-MMZxpPy7X2PQUyMhq");
+  }, []);
+
+  return (
+    <main className="min-h-screen flex items-center justify-center px-6">
+      <section className="max-w-xl text-center space-y-3">
+        <h1 className="text-2xl font-semibold">Redirecting to Print Assets Folder…</h1>
+        <p className="text-muted-foreground">If you are not redirected automatically, open:</p>
+        <a
+          href="https://drive.google.com/drive/folders/1IIk892niyfjFKQ-MMZxpPy7X2PQUyMhq"
+          className="underline underline-offset-4"
+          rel="noopener noreferrer"
+        >
+          Google Drive Print Assets Folder
+        </a>
+      </section>
+    </main>
+  );
+};
+
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -252,6 +296,8 @@ const AppContent = () => {
             <Route path="/dev/*" element={<DevRedirect />} />
             <Route path="/sens/*" element={<SensRedirect />} />
             <Route path="/senspitch" element={<SensPitchRedirect />} />
+            <Route path="/mix" element={<MixRedirect />} />
+            <Route path="/print" element={<PrintRedirect />} />
             <Route path="/korean" element={<KoreanRedirect />} />
             <Route path="/korean/*" element={<KoreanRedirect />} />
             <Route path="/mailing" element={<MailingRedirect />} />
