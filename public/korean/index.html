@@ -66,6 +66,31 @@
       gap: 12px;
     }
 
+    .btn_app {
+      background: #7c3aed;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 5px 11px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: background 0.15s ease, transform 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .btn_app:hover {
+      background: #6d28d9;
+      transform: translateY(-1px);
+    }
+
+    .btn_app:active {
+      transform: translateY(0);
+    }
+
     .screen_toolbar h1 {
       font-family: 'Outfit', sans-serif;
       font-size: 16px;
@@ -436,6 +461,10 @@
   <!-- Screen Navigation Toolbar (Hidden during print) -->
   <header class="screen_toolbar">
     <div class="title_block">
+      <a href="https://korean-sentence-builder-5s6k.vercel.app" target="_blank" rel="noopener noreferrer" class="btn_app">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        <span>Open Korean App</span>
+      </a>
       <h1>Sogang Korean 1A Desk Reference</h1>
       <span class="badge">A4 Print Ready • 7 Sheets</span>
     </div>
