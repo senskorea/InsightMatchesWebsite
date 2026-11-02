@@ -12,7 +12,7 @@ npm run build -- --config vite.deploy.config.ts
 DECK_BROWSER_CHANNEL=chrome node scripts/export-cit-pdf.mjs
 ```
 
-The HTML embeds its six local image assets and needs no network connection. Its Save HTML button downloads that standalone copy. The PDF is generated from the exact deployment HTML and published at `/cit/InsightMatches-CIT.pdf`. GitHub Pages generates it on every deployment.
+The HTML embeds its eight local image assets and needs no network connection. Its Save HTML button downloads that standalone copy. The PDF is generated from the exact deployment HTML and published at `/cit/InsightMatches-CIT.pdf`. GitHub Pages generates it on every deployment.
 
 Fourteen main slides and two annex slides. Native PDF text and SVG preserve sharpness. Print size is 16 × 9 inches, one slide per page.
 
@@ -29,3 +29,7 @@ Primary source links are in the presentation and `sources` in `slides.mjs`. Chec
 * Standard support plans are orientation prices converted from the existing deck, not a bespoke commercial quotation.
 
 FX: ECB 14 October 2026, €1 = ₩1,496.54 and US$1.1195. KRW values rounded; EUR programme amounts authoritative.
+
+## Story revision, 2 November 2026
+
+The cover now sells InsightMatches’ funding, partner and proposal support. CIT’s technology pillars and a three topic comparison lead directly into the three opportunity details. Generic research network, programme hierarchy and Korean association opening slides were removed. Korea’s participation conditions remain in the sources annex. New product and value slides explain how the platform and team support preparation. The team slide pairs each person’s documented expertise with its relevance to CIT. Team background source: internal October 2026 leadership announcement and the general deck; no invented track record, award totals or success rates.
