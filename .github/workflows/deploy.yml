@@ -33,6 +33,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
         
+      - name: Build standalone CIT presentation
+        run: node scripts/build-cit-deck.mjs
+
       - name: Build
         run: npm run build -- --config vite.deploy.config.ts
         
@@ -40,6 +43,11 @@ jobs:
         env:
           DECK_BROWSER_CHANNEL: chrome
         run: npm run export:deck-pdf
+
+      - name: Generate CIT presentation PDF
+        env:
+          DECK_BROWSER_CHANNEL: chrome
+        run: node scripts/export-cit-pdf.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
