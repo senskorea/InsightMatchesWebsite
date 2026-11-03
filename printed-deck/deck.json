@@ -1,6 +1,6 @@
 {
   "title": "InsightMatches",
-  "iteration": 1,
+  "iteration": 2,
   "phase": "HTML review only",
   "currency": "KRW",
   "url": "https://insightmatches.com/printed-deck/",
@@ -23,7 +23,7 @@
     {
       "position": 4,
       "chapter": "Our base",
-      "title": "Based in Korea.  Connected internationally. "
+      "title": "Based in Korea  and Europe. "
     },
     {
       "position": 5,
@@ -32,46 +32,41 @@
     },
     {
       "position": 6,
-      "chapter": "Our mission",
-      "title": "Less preparation. More room for research."
-    },
-    {
-      "position": 7,
       "chapter": "Our solution · 01",
       "title": "Find the opportunity. Build the team."
     },
     {
-      "position": 8,
+      "position": 7,
       "chapter": "Our solution · 02",
       "title": "Turn the collaboration into a proposal."
     },
     {
-      "position": 9,
+      "position": 8,
       "chapter": "The preparation model",
       "title": "More time for research."
     },
     {
-      "position": 10,
+      "position": 9,
       "chapter": "Plans and support",
       "title": "Our pricing."
     },
     {
-      "position": 11,
+      "position": 10,
       "chapter": "Cost comparison",
       "title": "Up to 55% more affordable."
     },
     {
-      "position": 12,
+      "position": 11,
       "chapter": "Our community",
       "title": "Building a researcher community."
     },
     {
-      "position": 13,
+      "position": 12,
       "chapter": "Our team",
       "title": "Grant experience. AI research. Product engineering."
     },
     {
-      "position": 14,
+      "position": 13,
       "chapter": "Let’s connect",
       "title": "Your next research idea.  More possibilities together. "
     }

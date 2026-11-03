@@ -1,6 +1,6 @@
 import{readFile,writeFile,mkdir}from'node:fs/promises';
 import{resolve}from'node:path';
-import{slides,count}from'../printed-deck/slides.mjs';
+import{slides,count,iteration}from'../printed-deck/slides.mjs';
 if(slides.length!==count)throw Error('Printed deck slide count mismatch');
 const font=await readFile(new URL('../cit/assets/Inter.ttf',import.meta.url));
 const license=await readFile(new URL('../cit/assets/Inter-LICENSE.txt',import.meta.url),'utf8');
@@ -11,5 +11,5 @@ let html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=
 const assets=[...new Set([...html.matchAll(/asset:([^"<>]+)/g)].map(m=>m[1]))];
 for(const name of assets){if(!/^[\w.-]+$/.test(name))throw Error('Invalid asset');const bytes=await readFile(resolve('public/deck-assets',name));const mime=name.endsWith('.png')?'image/png':'image/jpeg';html=html.replaceAll('asset:'+name,'data:'+mime+';base64,'+bytes.toString('base64'))}
 await mkdir('public/printed-deck',{recursive:true});await writeFile('public/printed-deck/index.html',html);
-await writeFile('printed-deck/deck.json',JSON.stringify({title:'InsightMatches',iteration:1,phase:'HTML review only',currency:'KRW',url:'https://insightmatches.com/printed-deck/',slides:slides.map(({n,chapter,title})=>({position:n,chapter,title:title.replace(/<[^>]*>/g,' ')}))},null,2)+'\n');
+await writeFile('printed-deck/deck.json',JSON.stringify({title:'InsightMatches',iteration,phase:'HTML review only',currency:'KRW',url:'https://insightmatches.com/printed-deck/',slides:slides.map(({n,chapter,title})=>({position:n,chapter,title:title.replace(/<[^>]*>/g,' ')}))},null,2)+'\n');
 console.log(`Built printed-deck HTML: ${count} slides, ${assets.length} embedded assets, ${(Buffer.byteLength(html)/1e6).toFixed(1)} MB`);
