@@ -32,3 +32,7 @@ Expanded the network list with universities and research labs; Korea and Europe 
 ## Third HTML review
 
 Matching South Korea, France and Austria location panels now show Seoul/Busan, Paris and Vienna. Organisation types use an aligned row beneath them. A deck-wide readability pass improves small text contrast, caption sizes, supporting copy and spacing. Natural Earth source information is in `assets/README.md`. Other slide copy and figures are unchanged.
+
+## Current audience slide
+
+Slide 4 now focuses on who InsightMatches works with: organisation types and the approved logo examples. The location heading and maps have been removed from this slide. Previous map source data is retained as a historical asset, not rendered in the current deck.
