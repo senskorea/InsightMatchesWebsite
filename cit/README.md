@@ -33,3 +33,7 @@ FX: ECB 14 October 2026, €1 = ₩1,496.54 and US$1.1195. KRW values rounded; E
 ## Story revision, 2 November 2026
 
 The cover now sells InsightMatches’ funding, partner and proposal support. CIT’s technology pillars and a three topic comparison lead directly into the three opportunity details. Generic research network, programme hierarchy and Korean association opening slides were removed. Korea’s participation conditions remain in the sources annex. New product and value slides explain how the platform and team support preparation. The team slide pairs each person’s documented expertise with its relevance to CIT. Team background source: internal October 2026 leadership announcement and the general deck; no invented track record, award totals or success rates.
+
+## Design polish, 3 November 2026
+
+See `DESIGN-REVIEW-2026-11-03.md` for the slide by slide audit. Story and copy are retained. Inter is embedded from `cit/assets/Inter.ttf`, with its SIL Open Font License included in the source and standalone HTML. The PDF and HTML therefore share typography without a font network request.
