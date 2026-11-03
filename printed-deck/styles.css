@@ -73,3 +73,19 @@ h2{letter-spacing:-1.25px}h3,h4{letter-spacing:-.35px}
 .organisation-logo.amsterdam img{height:48px;width:250px}
 .organisation-logo.bioneer img{height:44px;max-width:215px}
 .organisation-logo.synapse img{height:56px;max-width:270px}
+
+/* Keep the location context compact and separate examples from organisation types. */
+.location-panels{gap:24px;margin-top:25px}
+.location-panel{min-height:148px;padding:12px 20px;grid-template-columns:132px 1fr;gap:18px;background:#fff;border-top:1px solid var(--line)}
+.location-panel svg{height:120px}
+.location-panel figcaption{gap:7px}
+.location-panel figcaption span{font-size:17px}
+.location-panel figcaption strong{font-size:26px}
+.organisation-section{margin-top:25px}
+.organisation-section .organisations{margin-top:18px}
+.organisation-section .organisations>div{padding-top:14px}
+.organisation-section .organisations .icon{margin-bottom:10px}
+.relationship-section{margin-top:24px;padding:19px 24px 21px;border:1px solid #dce7ef;border-radius:6px;background:#f3f7fa}
+.relationship-section>h3{font-size:23px;font-weight:600;line-height:1.25;letter-spacing:-.3px}
+.relationship-section .organisation-logos{margin-top:18px;padding-top:0;border-top:0;gap:30px}
+.relationship-section .organisation-logo{height:55px}
