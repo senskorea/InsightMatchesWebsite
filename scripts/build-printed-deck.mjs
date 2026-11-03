@@ -1,0 +1,15 @@
+import{readFile,writeFile,mkdir}from'node:fs/promises';
+import{resolve}from'node:path';
+import{slides,count}from'../printed-deck/slides.mjs';
+if(slides.length!==count)throw Error('Printed deck slide count mismatch');
+const font=await readFile(new URL('../cit/assets/Inter.ttf',import.meta.url));
+const license=await readFile(new URL('../cit/assets/Inter-LICENSE.txt',import.meta.url),'utf8');
+const css='/* '+license+' */\n@font-face{font-family:Inter;src:url(data:font/ttf;base64,'+font.toString('base64')+') format("truetype");font-weight:100 900;font-display:block}\n'+await readFile(new URL('../printed-deck/styles.css',import.meta.url),'utf8');
+const script=await readFile(new URL('../printed-deck/viewer.js',import.meta.url),'utf8');
+const options=slides.map(s=>`<option value="${s.n-1}">${String(s.n).padStart(2,'0')} · ${s.chapter}</option>`).join('');
+let html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="InsightMatches: research funding, international collaboration and proposal support. Korean won HTML review deck."><meta name="robots" content="noindex,nofollow"><title>InsightMatches · Printed Deck · HTML Review</title><style>${css}</style></head><body><svg class="asset-library" aria-hidden="true"><defs><symbol id="insightmatches-logo" viewBox="0 0 2862 786"><image href="asset:insightmatches-original.png" width="2862" height="786"/></symbol></defs></svg><main class="stage" aria-label="InsightMatches presentation">${slides.map(s=>`<div class="slide-shell" data-index="${s.n-1}">${s.html}</div>`).join('\n')}</main><div id="progress"></div><nav aria-label="Presentation controls"><div><button id="prev" aria-label="Previous slide">←</button><span id="position"></span><button id="next" aria-label="Next slide">→</button><select id="jump" aria-label="Go to slide">${options}</select></div><div><span class="krw">KRW</span><button id="overview" aria-pressed="false">All slides</button><button id="save">Save HTML</button></div></nav><div id="announce" role="status" aria-live="polite"></div><script>${script}</script></body></html>`;
+const assets=[...new Set([...html.matchAll(/asset:([^"<>]+)/g)].map(m=>m[1]))];
+for(const name of assets){if(!/^[\w.-]+$/.test(name))throw Error('Invalid asset');const bytes=await readFile(resolve('public/deck-assets',name));const mime=name.endsWith('.png')?'image/png':'image/jpeg';html=html.replaceAll('asset:'+name,'data:'+mime+';base64,'+bytes.toString('base64'))}
+await mkdir('public/printed-deck',{recursive:true});await writeFile('public/printed-deck/index.html',html);
+await writeFile('printed-deck/deck.json',JSON.stringify({title:'InsightMatches',iteration:1,phase:'HTML review only',currency:'KRW',url:'https://insightmatches.com/printed-deck/',slides:slides.map(({n,chapter,title})=>({position:n,chapter,title:title.replace(/<[^>]*>/g,' ')}))},null,2)+'\n');
+console.log(`Built printed-deck HTML: ${count} slides, ${assets.length} embedded assets, ${(Buffer.byteLength(html)/1e6).toFixed(1)} MB`);
