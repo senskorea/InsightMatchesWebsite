@@ -15,7 +15,7 @@ Embedded Inter and its SIL Open Font License in the standalone HTML for consiste
 | 05 · Advanced materials | Uses the same detail grid as slide 04 so the audience can compare the opportunity rather than relearn the layout. |
 | 06 · Virtual worlds | Consistent paragraph rhythm, badges and deadline treatment; the wider text column accommodates the longer partner requirement. |
 | 07 · Decision | Lighter table headers, more cell breathing room and aligned date/readiness values improve scanning without changing the decision criteria. |
-| 08 · Preparation | Enlarged the existing illustration by giving it adequate height. Stage numbers, titles and explanations now share consistent rows. |
+| 08 · Preparation | Enlarged the original artwork and framed its five scenes separately without changing the image pixels. Each scene now aligns with its stage number, title and explanation. |
 | 09 · Support | The complete 16:9 Radar capture replaces the clipped frame. The scope note sits with the service explanation, keeping the image and caption legible. |
 | 10 · Product | Larger full captures with identical 16:9 frames and aligned headings. The previous letterboxing and small image scale are removed. |
 | 11 · Value | Aligns category labels, headings, descriptions and outputs across all three columns, reducing uneven vertical gaps. |
