@@ -3,7 +3,7 @@ import {convert,rates} from '../deck/currency.mjs';
 import {readFileSync} from 'node:fs';
 const locations=JSON.parse(readFileSync(new URL('./assets/locations.json',import.meta.url),'utf8')).countries;
 export const count=13;
-export const iteration=3;
+export const iteration=4;
 const img=(file,alt,cls='')=>file==='insightmatches-original.png'?`<svg viewBox="0 0 2862 786" role="img" aria-label="${alt}" class="${cls}"><use href="#insightmatches-logo"/></svg>`:`<img src="asset:${file}" alt="${alt}" class="${cls}">`;
 const logo=()=>img('insightmatches-original.png','InsightMatches','brand');
 const footer=(n,note='Research funding. International collaboration. Proposal support.')=>`<footer><span>${note}</span><span class="folio">${String(n).padStart(2,'0')} / ${count}</span></footer>`;
