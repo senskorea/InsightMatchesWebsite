@@ -28,3 +28,7 @@ User reviews the HTML. Print layout/PDF implementation and the formal Phase 4 ch
 ## Second HTML review
 
 Expanded the network list with universities and research labs; Korea and Europe positioning with Paris, France and Austria; minimal organisation icons; market entry emphasis; removed the duplicate preparation slide while retaining More time for research; the 510만원 team plan includes one year of platform access. Thirteen slides, HTML only.
+
+## Third HTML review
+
+Matching South Korea, France and Austria location panels now show Seoul/Busan, Paris and Vienna. Organisation types use an aligned row beneath them. A deck-wide readability pass improves small text contrast, caption sizes, supporting copy and spacing. Natural Earth source information is in `assets/README.md`. Other slide copy and figures are unchanged.
