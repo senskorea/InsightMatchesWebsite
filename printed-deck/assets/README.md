@@ -6,4 +6,4 @@ The three country panels are independently scaled location illustrations, not a 
 
 ## Approved logo row
 
-Original files copied unchanged from the company logo vault, approved in this left-to-right order: Le Mans Université, University of Amsterdam, Bioneer, Synapse International. Uses light-background primary SVGs, Bioneer Supplied v2 PNG and Synapse Primary PNG. No heading is displayed above the row. Optical sizing is applied with CSS while preserving aspect ratio.
+Original files copied unchanged from the company logo vault, approved in this left-to-right order: Le Mans Université, University of Amsterdam, Bioneer, Synapse International. Uses light-background primary SVGs, Bioneer Supplied v2 PNG and Synapse Primary PNG. The row is separated under “Organisations we’ve worked with”. Optical sizing is applied with CSS while preserving aspect ratio.
