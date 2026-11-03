@@ -64,3 +64,12 @@ h2{letter-spacing:-1.25px}h3,h4{letter-spacing:-.35px}
 /* Separate the original community posters from the white slide. */
 .community-gallery{padding:14px;background:#eef3f7;border:1px solid #dce6ee;border-radius:8px}
 .community-gallery img{width:auto!important;max-width:100%;margin:0 auto;border:1px solid #d4dfe7;box-shadow:0 6px 16px #10223826}
+
+/* Approved organisation marks, in the agreed left-to-right order. */
+.organisation-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;align-items:center;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.organisation-logo{height:56px;display:flex;align-items:center;justify-content:center}
+.organisation-logo img{display:block;max-width:100%;width:auto;height:44px;object-fit:contain}
+.organisation-logo.le-mans img{height:52px;max-width:190px}
+.organisation-logo.amsterdam img{height:48px;width:250px}
+.organisation-logo.bioneer img{height:44px;max-width:215px}
+.organisation-logo.synapse img{height:56px;max-width:270px}
