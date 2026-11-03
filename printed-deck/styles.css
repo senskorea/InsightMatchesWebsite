@@ -89,3 +89,15 @@ h2{letter-spacing:-1.25px}h3,h4{letter-spacing:-.35px}
 .relationship-section>h3{font-size:23px;font-weight:600;line-height:1.25;letter-spacing:-.3px}
 .relationship-section .organisation-logos{margin-top:18px;padding-top:0;border-top:0;gap:30px}
 .relationship-section .organisation-logo{height:55px}
+
+/* Organisation types and named relationships form the complete story here. */
+.audience-slide .organisation-section{margin-top:35px}
+.audience-slide .organisations{margin-top:0;gap:28px}
+.audience-slide .organisations>div{min-height:237px;padding-top:23px;border-top:2px solid var(--blue)}
+.audience-slide .organisations .icon{width:46px;height:46px;margin-bottom:20px}
+.audience-slide .organisations h4{font-size:27px;margin-bottom:13px}
+.audience-slide .organisations p{font-size:23px;line-height:1.42}
+.audience-slide .relationship-section{margin-top:30px;padding:24px 27px 26px}
+.audience-slide .relationship-section>h3{font-size:25px}
+.audience-slide .relationship-section .organisation-logos{margin-top:24px}
+.audience-slide .relationship-section .organisation-logo{height:64px}
