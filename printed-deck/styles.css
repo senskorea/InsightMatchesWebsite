@@ -115,3 +115,20 @@ h2{letter-spacing:-1.25px}h3,h4{letter-spacing:-.35px}
 .benefit-proof{margin-top:23px;padding-top:21px;border-top:1px solid #cddfe9}
 .benefit-proof strong{display:block;font-size:22px;font-weight:600;line-height:1.3;color:#0873a5}
 .benefit-proof span{display:block;font-size:19px;line-height:1.4;margin-top:10px;color:var(--muted)}
+
+/* Eight approved marks in two balanced rows. */
+.audience-slide .organisation-section{margin-top:28px}
+.audience-slide .organisations>div{min-height:210px;padding-top:18px}
+.audience-slide .organisations .icon{margin-bottom:14px}
+.audience-slide .relationship-section{margin-top:24px;padding:22px 27px 24px}
+.audience-slide .relationship-section .organisation-logos{margin-top:20px;gap:22px 34px}
+.audience-slide .relationship-section .organisation-logo{height:64px}
+.organisation-logo.kaist img{height:52px;max-width:200px}
+.organisation-logo.latvia img{height:60px;max-width:225px}
+.organisation-logo.scanagen img{height:48px;max-width:220px}
+.organisation-logo.ortcloud img{height:45px;max-width:220px}
+.audience-slide .relationship-section .organisation-logo{height:82px;background:#fff;border:1px solid #e2eaf0;border-radius:5px;padding:8px 12px}
+.organisation-logo.kaist img{height:68px}
+.organisation-logo.latvia img{height:74px}
+.audience-slide .relationship-section .organisation-logo.ortcloud{background:#102238;border-color:#102238}
+.organisation-logo.scanagen img{height:66px;max-width:245px}
