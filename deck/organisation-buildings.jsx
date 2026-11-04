@@ -13,7 +13,7 @@ function sample(path,t){
  return path.at(-1);
 }
 export const organisationPoints=buildings.flatMap(b=>Array.from({length:60},(_,i)=>sample(b.path,i/60)));
-export default function OrganisationBuildings(){return <svg viewBox="0 0 940 620" role="img" aria-label="Universities, research institutes, private companies and deep tech startups">
+export default function OrganisationBuildings(){return <div className="organisation-proof-scene"><svg viewBox="0 0 940 620" role="img" aria-label="Universities, research institutes, private companies and deep tech startups">
  {buildings.map((b,i)=><g key={b.label}><polyline points={b.path.map(p=>p.join(',')).join(' ')} fill="none" stroke="#079fe3" strokeOpacity=".25" strokeWidth="2" strokeLinejoin="round"/><text x={145+i*220} y="475" textAnchor="middle" fontSize="22" fill="#13202d">{b.label}</text></g>)}
 
- </svg>}
+ </svg><section className="main-organisation-logos"><h2>Organisations we’ve worked with</h2><div><figure className=""><img src="/deck-assets/Le_Mans_Universite_Logo_Primary.svg" alt="Le Mans Université"/></figure><figure className=""><img src="/deck-assets/University_of_Amsterdam_Logo_Primary.svg" alt="University of Amsterdam"/></figure><figure className=""><img src="/deck-assets/KAIST_Logo_Primary.svg" alt="KAIST"/></figure><figure className=""><img src="/deck-assets/University_of_Latvia_Logo_Primary.svg" alt="University of Latvia"/></figure><figure className=""><img src="/deck-assets/Bioneer_Logo_Supplied_v2.png" alt="Bioneer"/></figure><figure className=""><img src="/deck-assets/Synapse_International_Logo_Primary.png" alt="Synapse International"/></figure><figure className=""><img src="/deck-assets/Scanagen_Logo_No_Tagline_v2.png" alt="Scanagen"/></figure><figure className="dark-logo"><img src="/deck-assets/OrtCloud_Logo_Original.png" alt="OrtCloud"/></figure></div></section></div>}
