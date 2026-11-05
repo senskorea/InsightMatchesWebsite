@@ -60,3 +60,7 @@ Authentic image provenance, retrieved 5 November 2026, originals preserved witho
 - `CIT_Transparent_Antenna_Official.png`: https://englobalcit.imweb.me/transparentantenna ; https://cdn.imweb.me/upload/S202310241972110d1f98e/04c7e3908c8a7.png
 
 PDF generation remains deferred.
+
+## Company-first hierarchy · approved 5 November 2026
+
+19 slides: 18 main plus sources annex. Cover now leads with the approved Global CIT value statement; former headline becomes subtitle. Replaced 12-million world statistic with a labelled conceptual connection diagram. Removed the funding-amounts annex; opportunity-level assumptions and caveats remain. Rebuilt all three detailed opportunity pages to prioritise indicative funding for CIT, consortium planning range and deadline, followed by contribution/evidence/partner copy and smaller supporting product imagery and programme budgets. Closing heading is “Next steps.” Existing research amounts, source dates and assumptions are unchanged. HTML only; PDF remains deferred.
