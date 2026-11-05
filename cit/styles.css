@@ -166,3 +166,40 @@
 .cit-cover>p{font-size:27px;color:var(--muted);margin-top:25px}
 .cit-cover-contact{font-size:21px;line-height:1.6;margin-top:30px;color:var(--muted)}
 .cit-cover-contact a{text-decoration:none}
+/* Reviewed CIT iteration: authentic technology and company-level scenarios. */
+.cit-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:29px}
+.cit-overview article{padding-top:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cit-authentic-image{height:205px;background:#f4f7fa;padding:13px;display:flex;align-items:center;justify-content:center}
+.cit-authentic-image img{max-width:100%;max-height:100%;object-fit:contain}
+.cit-overview .eyebrow{font-size:14px;letter-spacing:.3px;margin:20px 22px 12px}
+.cit-overview h3{font-size:28px;line-height:1.2;margin:0 22px 14px;min-height:68px}
+.cit-overview p{font-size:21px;line-height:1.42;color:var(--muted);margin:0 22px 18px;min-height:90px}
+.cit-topic-ref{display:block;font-size:12px;letter-spacing:.1px;margin:0 22px 20px;color:#0873a5}
+.cit-opportunity .op-layout{grid-template-columns:.85fr 1.15fr;gap:36px}
+.cit-opportunity .authentic-tech{height:290px;padding:15px;background:#f4f7fa;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cit-opportunity .authentic-tech img{width:100%;height:235px;object-fit:contain}
+.cit-opportunity .authentic-tech .small{font-size:14px;margin:12px 0 0}
+.cit-opportunity .op-stats{margin-top:16px}
+.cit-opportunity .op-stats .metric{font-size:43px}
+.cit-opportunity .op-stats .small{font-size:16px}
+.cit-opportunity .op-content h3{font-size:22px;margin:14px 0 7px}
+.cit-opportunity .op-content .body{font-size:20px;line-height:1.35}
+.cit-opportunity .op-content .sp24{margin-top:12px}
+.cit-planning{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;background:#eef7fc;border:1px solid #cce3ef;border-radius:5px;padding:14px 16px;margin-top:17px}
+.cit-planning span{display:block;font-size:15px;color:var(--muted);line-height:1.3;margin-bottom:5px}
+.cit-planning strong{display:block;font-size:24px;color:#0873a5;line-height:1.3}
+.cit-planning p{grid-column:1/-1;font-size:14px;line-height:1.4;color:var(--muted)}
+.cit-opportunity .dateband{margin-top:13px;padding-top:12px}
+.cit-organisations .relationship-section{background:#fff;border:1px solid var(--line)}
+.cit-organisations .relationship-section .organisation-logo{background:transparent!important;border:0!important;height:90px;padding:0;display:flex;flex-direction:column;gap:9px}
+.cit-organisations .logo-mark{height:62px;display:flex;align-items:center;justify-content:center;width:100%}
+.cit-organisations .logo-mark img{height:auto!important;max-height:62px!important;max-width:240px!important;object-fit:contain}
+.cit-organisations .organisation-logo>span{font-size:16px;line-height:1.25;color:var(--ink);font-weight:550;text-align:center}
+.cit-organisations .logo-mark .ortcloud-symbol{height:62px;width:60px}
+.cit-organisations .organisation-logo.kaist .logo-mark img,.cit-organisations .organisation-logo.latvia .logo-mark img{max-width:80px!important;height:62px!important}
+.sponsorship-note{font-size:18px!important;color:#0873a5!important;margin-top:20px!important;border-top:1px solid var(--line);padding-top:16px}
+.cit-opportunity .op-content h3{margin-top:11px;margin-bottom:6px}
+.cit-opportunity .op-content .body{font-size:19px;line-height:1.3}
+.cit-opportunity .cit-planning{margin-top:12px;padding:12px 14px;gap:8px 16px}
+.cit-opportunity .cit-planning strong{font-size:23px}
+.cit-opportunity .dateband{margin-top:10px;padding-top:10px}

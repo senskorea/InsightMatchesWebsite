@@ -45,3 +45,18 @@ The current `/cit/` deck has 19 main slides plus two annex slides. It reuses the
 The original InsightMatches logo is embedded through the shared logo symbol. CIT logo source: https://englobalcit.imweb.me/ (official header image https://cdn.imweb.me/thumbnail/20240901/8a3dc743bc365.png), retrieved 5 November 2026, preserved in `assets/Global_CIT_Logo_Official.png`.
 
 Build: `node scripts/build-cit-deck.mjs`. Browser viewer supports arrow keys, slide selector, overview and Save HTML. PDF and print controls are omitted during HTML review. The automatic CIT PDF job is disabled until the user requests final PDF work; the independent main-deck PDF job remains active.
+
+## Approved refinement · 5 November 2026
+
+20 slides: 18 main plus two annex. Combined technology/opportunity overview; authentic CIT imagery; KRW-only indicative funding scenarios on the three detailed opportunity pages; consortium planning ranges; updated problem, sponsorship and next-step copy. Logo marks retain colours on a common white panel, with readable organisation names; OrtCloud uses the original symbol crop plus a text name rather than a dark tile.
+
+Approved scenario assumptions (not award forecasts): AI and materials CIT eligible costs €0.5–1M, modelled 70% EU contribution €0.35–0.7M, displayed as approximately 5억–10.5억원. Antenna eligible costs/contribution €0.3–0.6M at 100%, displayed 4.5억–9억원. Fixed deck rate ₩1,496.54/EUR; display ranges deliberately rounded. Consortium planning ranges: AI 8–12, materials 12–20, antenna 8–12 organisations. These are judgement-based planning ranges, not topic requirements, equal allocation calculations, or measured percentiles. Conditional on project selection, agreed role, eligible costs, consortium agreement and topic conditions.
+
+Evidence reviewed: https://cordis.europa.eu/project/id/101070178 (ADOPTION), https://cordis.europa.eu/project/id/101136156 (MODERATOR), https://cordis.europa.eu/project/id/101003785 (SALEMA), https://cordis.europa.eu/project/id/101298672 (IRIS-XR), https://rea.ec.europa.eu/horizon-europe-how-apply_en (rates). CORDIS participants lists must be distinguished from separately listed coordinator and associated partners.
+
+Authentic image provenance, retrieved 5 November 2026, originals preserved without generative editing:
+- `CIT_Glass_Substrate_Official.png`: https://englobalcit.imweb.me/SemiconductorGlassSubstrate ; https://cdn.imweb.me/upload/S202310241972110d1f98e/f627cee55fdad.png (generic official glass-substrate image, not a new verified CuFlat product capture).
+- `CIT_ASE_Process_Official.png`: https://englobalcit.imweb.me/TECHNOLOGIES ; https://cdn.imweb.me/thumbnail/20240908/e596968e7145f.png
+- `CIT_Transparent_Antenna_Official.png`: https://englobalcit.imweb.me/transparentantenna ; https://cdn.imweb.me/upload/S202310241972110d1f98e/04c7e3908c8a7.png
+
+PDF generation remains deferred.
