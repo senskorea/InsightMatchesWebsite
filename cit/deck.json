@@ -1,6 +1,6 @@
 {
   "title": "InsightMatches × Global CIT",
-  "iteration": 3,
+  "iteration": 4,
   "phase": "HTML review only",
   "currency": "KRW",
   "url": "https://insightmatches.com/cit/",
@@ -12,8 +12,8 @@
     },
     {
       "position": 2,
-      "chapter": "Connected research",
-      "title": "A world of researchers.  Connected across borders. "
+      "chapter": "International research teams",
+      "title": "Connect with the expertise  your research needs. "
     },
     {
       "position": 3,
@@ -93,15 +93,10 @@
     {
       "position": 18,
       "chapter": "Next steps",
-      "title": "Choose an opportunity together."
+      "title": "Next steps."
     },
     {
       "position": 19,
-      "chapter": "Annex · funding amounts",
-      "title": "Understanding the funding amounts."
-    },
-    {
-      "position": 20,
       "chapter": "Annex · sources and conditions",
       "title": "Sources and conditions."
     }

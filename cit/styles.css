@@ -203,3 +203,37 @@
 .cit-opportunity .cit-planning{margin-top:12px;padding:12px 14px;gap:8px 16px}
 .cit-opportunity .cit-planning strong{font-size:23px}
 .cit-opportunity .dateband{margin-top:10px;padding-top:10px}
+/* Fourth review: service-led story and company-first opportunity hierarchy. */
+.cit-cover h1{font-size:48px;max-width:1385px;line-height:1.18;letter-spacing:-1.2px}
+.cit-cover>p{font-size:27px;line-height:1.45;max-width:1250px;margin-top:25px}
+.cit-connection{display:grid;grid-template-columns:.82fr 1.18fr;gap:35px;align-items:center;margin-top:43px}
+.connection-copy h3{font-size:32px;line-height:1.25;margin-bottom:24px}
+.connection-copy>p{font-size:25px;line-height:1.45;color:var(--muted)}
+.connection-outcomes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.connection-outcomes span{padding:10px 14px;border:1px solid #cce3ef;background:#eef7fc;color:#0873a5;font-size:19px;border-radius:4px}
+.cit-connection figure{margin:0}.cit-connection svg{display:block;width:100%;height:410px}
+.cit-connection figcaption{text-align:center;font-size:17px;color:var(--muted);margin-top:8px}
+.cit-opportunity-redesign>h2{font-size:48px}
+.cit-opportunity-redesign>.intro{font-size:22px;line-height:1.4}
+.op-keyfacts{display:grid;grid-template-columns:1.3fr 1fr 1.05fr;gap:0;background:#f4f8fb;border:1px solid #d5e5ed;border-radius:7px;margin-top:25px;overflow:hidden}
+.op-keyfacts>div{padding:20px 24px;border-left:1px solid #d5e5ed;display:flex;flex-direction:column;justify-content:center}
+.op-keyfacts>div:first-child{border-left:0;background:#eef7fc}
+.op-keyfacts span{font-size:17px;color:var(--muted);margin-bottom:10px}
+.op-keyfacts strong{font-size:29px;line-height:1.2;letter-spacing:-.5px;font-weight:650}
+.op-keyfacts .cit-funding strong{font-size:38px;color:#0873a5}
+.op-keyfacts small{font-size:17px;color:var(--muted);margin-top:5px}
+.op-detail-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:43px;margin-top:28px}
+.op-explanations>section{display:grid;grid-template-columns:32px 1fr;gap:15px;margin-bottom:22px}
+.op-detail-number{font-size:17px;color:#0873a5;font-weight:600;padding-top:4px}
+.op-explanations h3{font-size:24px;margin-bottom:9px}
+.op-explanations section p{font-size:21px;line-height:1.4;color:var(--muted)}
+.op-assumption{padding-top:14px;border-top:1px solid var(--line);font-size:16px;line-height:1.4;color:var(--muted);margin-top:8px}
+.op-support figure{height:197px;margin:0;background:#f4f7fa;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px;border-radius:5px}
+.op-support img{width:100%;height:145px;object-fit:contain}
+.op-support figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.op-scope{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.op-scope span{display:block;font-size:14px;line-height:1.3;color:var(--muted);margin-bottom:7px}
+.op-scope strong{font-size:23px;font-weight:600}.op-scope .money-unit{font-size:.65em}
+.op-call{font-size:12px;color:#0873a5;margin-top:19px;line-height:1.4}
+.op-conditions{font-size:14px;color:var(--muted);margin-top:7px;line-height:1.4}
+.op-scope strong .money-unit{display:inline-block;font-size:.65em;color:inherit;margin:0 0 0 3px}
