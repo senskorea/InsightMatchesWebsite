@@ -1,6 +1,6 @@
 {
   "title": "InsightMatches × Global CIT",
-  "iteration": 4,
+  "iteration": 5,
   "phase": "HTML review only",
   "currency": "KRW",
   "url": "https://insightmatches.com/cit/",
@@ -12,7 +12,7 @@
     },
     {
       "position": 2,
-      "chapter": "International research teams",
+      "chapter": "Research partners",
       "title": "Connect with the expertise  your research needs. "
     },
     {
@@ -22,81 +22,76 @@
     },
     {
       "position": 4,
-      "chapter": "Who we work with",
-      "title": "We work with organisations  of every size. "
+      "chapter": "CIT technologies and opportunities",
+      "title": "Connect CIT’s capabilities  to EU research challenges. "
     },
     {
       "position": 5,
-      "chapter": "CIT technologies and opportunities",
-      "title": "Three technologies.  Three possible research projects. "
-    },
-    {
-      "position": 6,
       "chapter": "AI computing",
       "title": "Advanced packaging for AI computing."
     },
     {
-      "position": 7,
+      "position": 6,
       "chapter": "Advanced materials",
       "title": "Copper technologies for advanced materials."
     },
     {
-      "position": 8,
+      "position": 7,
       "chapter": "Connected devices",
       "title": "Transparent antennas for connected devices."
     },
     {
-      "position": 9,
+      "position": 8,
       "chapter": "Choose an opportunity",
       "title": "Which opportunity should CIT pursue?"
     },
     {
-      "position": 10,
+      "position": 9,
       "chapter": "The preparation problem",
       "title": "The problem InsightMatches solves."
     },
     {
-      "position": 11,
+      "position": 10,
       "chapter": "Our solution · 01",
       "title": "Find the opportunity. Build the team."
     },
     {
-      "position": 12,
+      "position": 11,
       "chapter": "Our solution · 02",
       "title": "Turn the collaboration into a proposal."
     },
     {
-      "position": 13,
+      "position": 12,
       "chapter": "The preparation model",
       "title": "More time for research."
     },
     {
-      "position": 14,
+      "position": 13,
       "chapter": "Our team",
-      "title": "Grant experience. AI research. Product engineering."
+      "title": "The InsightMatches team"
     },
     {
-      "position": 15,
+      "position": 14,
       "chapter": "Plans and support",
       "title": "Our pricing."
     },
     {
-      "position": 16,
+      "position": 15,
       "chapter": "Cost comparison",
       "title": "Up to 55% more affordable."
     },
     {
-      "position": 17,
+      "position": 16,
       "chapter": "Our community",
       "title": "Building a researcher community."
     },
     {
-      "position": 18,
+      "position": 17,
       "chapter": "Next steps",
       "title": "Next steps."
     },
     {
-      "position": 19,
+      "position": 18,
       "chapter": "Annex · sources and conditions",
       "title": "Sources and conditions."
     }
