@@ -1,5 +1,6 @@
 import React,{useState,useRef} from 'react';
 import {motion,useReducedMotion} from 'framer-motion';
+import DigijeunesPortfolio from './digijeunes-portfolio.jsx';
 import PriceBenchmarks from './price-benchmarks.jsx';
 import {useCurrency} from './currency-context.jsx';
 import {preparationTotal,assistedTotal,preparationReduction} from './preparation-effort.mjs';
@@ -16,6 +17,7 @@ export default function ClosingJourney({kind}){
  const openPhoto=e=>{e.preventDefault();photoTrigger.current=e.currentTarget;photoDialog.current?.showModal();};
  const closePhoto=()=>{photoDialog.current?.close();photoTrigger.current?.focus();};
  const reveal=kind===31?1:kind===34?2:3;
+ if(kind===39)return <DigijeunesPortfolio/>;
  if(kind===38)return <section className="closing-slide pricing-slide team-slide"><header><h1>Grant experience. AI research.<br/>Product engineering.</h1></header><div className="team-grid">{[
   ['team-paul-illustrated-v1.png','Paul Conversy','Founder & CEO','20+ EU funded projects. Former EdTech and STEM researcher in Europe and cofounder of Digijeunes. Leads international strategy and consortium architecture.'],
   ['team-serena-illustrated-v1.png','Serena Radano','Founding Grants & Product Lead','Professional grant writing consultant and recognised EU funding expert, based in Austria. Turns programme requirements into practical proposal and product guidance.'],
