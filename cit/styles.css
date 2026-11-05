@@ -301,3 +301,12 @@
 }
 .preparation-context strong,
 .preparation-context > div:last-child strong { font-size: 54px; color: var(--ink); }
+.merged-connection-slide .relationship-section .organisation-logo {
+  height: 64px;
+}
+.merged-connection-slide .organisation-logo.ortcloud .logo-mark {
+  background: #102238;
+  border-radius: 4px;
+  width: min(100%, 220px);
+  padding: 10px 14px;
+}

@@ -1,7 +1,7 @@
 import {slides as printed} from '../printed-deck/slides.mjs';
 import {slides as original} from './opportunity-source.mjs';
 export const count=18;
-export const iteration=6;
+export const iteration=7;
 const logo='<svg class="brand" role="img" aria-label="InsightMatches" viewBox="0 0 2862 786"><use href="#insightmatches-logo"/></svg>';
 function page(n,chapter,title,body,note='',classes=''){
  return {n,chapter,title,html:`<section class="slide ${classes}"><header>${logo}<span>${chapter}</span></header><h2>${title}</h2>${body}<footer><span>${note||'InsightMatches × Global CIT · European research opportunities'}</span><span class="folio">${String(n).padStart(2,'0')} / ${count}</span></footer></section>`};
@@ -11,9 +11,7 @@ function specific(i,n,chapter,title){const s=original[i-1];let content=s.slice(s
 function organisations(){
  const s=reuse(4,4);s.html=s.html.replace('audience-slide','audience-slide cit-organisations');
  s.html=s.html.replace(/<div class="organisation-logo ([^"]+)">([\s\S]*?)<\/div>/g,(_,cls,img)=>{
-  const name=img.match(/alt="([^"]+)"/)[1];
-  const mark=cls==='ortcloud'?`<svg class="ortcloud-symbol" viewBox="0 0 190 201" role="img" aria-label="OrtCloud symbol"><image href="asset:OrtCloud_Logo_Original.png" width="851" height="201"/></svg>`:img;
-  return `<div class="organisation-logo ${cls}"><div class="logo-mark">${mark}</div><span>${name}</span></div>`;
+  return `<div class="organisation-logo ${cls}"><div class="logo-mark">${img}</div></div>`;
  });return s;
 }
 function opportunity(old,n,chapter,title,file,partners,grant,budget){
