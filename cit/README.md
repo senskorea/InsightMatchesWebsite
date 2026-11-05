@@ -37,3 +37,11 @@ The cover now sells InsightMatches’ funding, partner and proposal support. CIT
 ## Design polish, 3 November 2026
 
 See `DESIGN-REVIEW-2026-11-03.md` for the slide by slide audit. Story and copy are retained. Inter is embedded from `cit/assets/Inter.ttf`, with its SIL Open Font License included in the source and standalone HTML. The PDF and HTML therefore share typography without a font network request.
+
+## Merged HTML review · 5 November 2026
+
+The current `/cit/` deck has 19 main slides plus two annex slides. It reuses the printed deck design, organisation logos, product screens, preparation scenario, leadership profiles, pricing and community material, with dedicated CIT technology and funding pages preserved from `opportunity-source.mjs`. These source opportunity records retain their original evidence date and conditions; this revision does not claim a fresh funding audit.
+
+The original InsightMatches logo is embedded through the shared logo symbol. CIT logo source: https://englobalcit.imweb.me/ (official header image https://cdn.imweb.me/thumbnail/20240901/8a3dc743bc365.png), retrieved 5 November 2026, preserved in `assets/Global_CIT_Logo_Official.png`.
+
+Build: `node scripts/build-cit-deck.mjs`. Browser viewer supports arrow keys, slide selector, overview and Save HTML. PDF and print controls are omitted during HTML review. The automatic CIT PDF job is disabled until the user requests final PDF work; the independent main-deck PDF job remains active.
