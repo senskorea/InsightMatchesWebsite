@@ -261,3 +261,13 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
   .digijeunes-slide .digijeunes-projects .digijeunes-budget { margin-bottom: 3px; }
   .digijeunes-projects a { margin-top: 4px; }
 }
+
+.digijeunes-slide header .digijeunes-subtitle { margin: 4px 0; font-weight: 600; }
+.digijeunes-partners { border-top: 1px solid #dce5ed; margin-top: 14px; padding-top: 10px; }
+.digijeunes-slide .digijeunes-partners p { font-size: clamp(13px, 1.02vw, 20px); }
+.digijeunes-partner-logos { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.digijeunes-partner-logos img { width: min(28%, 110px); height: clamp(20px, 3vw, 54px); object-fit: contain; }
+@media (max-width: 700px) {
+  .digijeunes-slide { max-height: 78vh; overflow-y: auto; }
+  .digijeunes-partners { margin-top: 6px; padding-top: 5px; }
+}
