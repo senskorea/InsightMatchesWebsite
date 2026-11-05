@@ -270,7 +270,7 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 
 .organisation-logo-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(8px, 1.2vw, 24px);
 }
 .organisation-logo-grid figure {
