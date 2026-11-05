@@ -31,6 +31,9 @@ const organisationLogos = [
   ['Synapse International', 'Synapse_International_Logo_Primary.png'],
   ['Digijeunes', 'Digijeunes_Logo_Primary.png'],
   ['OrtCloud', 'OrtCloud_Logo_Original.png', true],
+  ['CodER', 'digijeunes/CodER_Logo.png'],
+  ['FemPower', 'digijeunes/FemPower_Logo.png'],
+  ['DEEDU', 'digijeunes/DEEDU_Logo.png'],
 ];
 
 export function OrganisationLogoSlide() {
