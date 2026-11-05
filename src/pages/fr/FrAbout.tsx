@@ -1,3 +1,4 @@
+import { LeadershipTeam } from '@/components/LeadershipTeam';
 import { useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -107,6 +108,7 @@ const FrAbout = () => {
         </div>
       </section>
 
+      <LeadershipTeam language="fr" />
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">

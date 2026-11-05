@@ -1,3 +1,4 @@
+import { LeadershipTeam } from '@/components/LeadershipTeam';
 import { useEffect, useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -175,6 +176,7 @@ const About = () => {
       </section>
 
       {/* Partner Network Section */}
+      <LeadershipTeam language="en" />
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
