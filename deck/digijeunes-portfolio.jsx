@@ -51,7 +51,7 @@ export default function DigijeunesPortfolio() {
     <div className="digijeunes-projects">
       {projects.map(project => <article key={project.name}>
         <span className="tier-number">Digijeunes · {project.role}</span>
-        <h2>{project.name}</h2>
+        <div className="digijeunes-project-heading"><h2>{project.name}</h2><img src={'/deck-assets/digijeunes/' + project.name + '_Logo.png'} alt="" /></div>
         <p className="digijeunes-budget">{project.budget ? <>{currency !== 'EUR' && '≈'}{format(project.budget, 'EUR')}</> : 'Erasmus+ co-funded'}</p>
         <p>{project.output}</p>
         <div className="digijeunes-partners">
