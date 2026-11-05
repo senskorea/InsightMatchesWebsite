@@ -18,6 +18,32 @@ export default function OrganisationBuildings(){return <div className="organisat
 
  </svg></div>}
 
+const organisationLogos = [
+  ['KAIST', 'KAIST_Logo_Primary.svg'],
+  ['University of Amsterdam', 'University_of_Amsterdam_Logo_Primary.svg'],
+  ['University of Melbourne', 'University_of_Melbourne_Logo_Primary.svg'],
+  ['University of Latvia', 'University_of_Latvia_Logo_Primary.svg'],
+  ['Le Mans Université', 'Le_Mans_Universite_Logo_Primary.svg'],
+  ['EURAXESS', 'Euraxess_Logo_Horizontal_Transparent.png'],
+  ['European Chamber of Commerce in Korea', 'ECCK_Logo_Primary.png'],
+  ['Bioneer', 'Bioneer_Logo_Supplied_v2.png'],
+  ['Scanagen', 'Scanagen_Logo_No_Tagline_v2.png'],
+  ['Synapse International', 'Synapse_International_Logo_Primary.png'],
+  ['Digijeunes', 'Digijeunes_Logo_Primary.png'],
+  ['OrtCloud', 'OrtCloud_Logo_Original.png', true],
+];
+
 export function OrganisationLogoSlide() {
-  return <section className="closing-slide pricing-slide organisation-logo-slide"><header><h1>Organisations we’ve worked with</h1></header><section className="main-organisation-logos"><div><figure className=""><img src="/deck-assets/Le_Mans_Universite_Logo_Primary.svg" alt="Le Mans Université"/></figure><figure className=""><img src="/deck-assets/University_of_Amsterdam_Logo_Primary.svg" alt="University of Amsterdam"/></figure><figure className=""><img src="/deck-assets/KAIST_Logo_Primary.svg" alt="KAIST"/></figure><figure className=""><img src="/deck-assets/University_of_Latvia_Logo_Primary.svg" alt="University of Latvia"/></figure><figure className=""><img src="/deck-assets/Bioneer_Logo_Supplied_v2.png" alt="Bioneer"/></figure><figure className=""><img src="/deck-assets/Synapse_International_Logo_Primary.png" alt="Synapse International"/></figure><figure className=""><img src="/deck-assets/Scanagen_Logo_No_Tagline_v2.png" alt="Scanagen"/></figure><figure className="dark-logo"><img src="/deck-assets/OrtCloud_Logo_Original.png" alt="OrtCloud"/></figure></div></section></section>;
+  return (
+    <section className="closing-slide pricing-slide organisation-logo-slide">
+      <header><h1>Organisations we’ve worked with</h1></header>
+      <div className="organisation-logo-grid">
+        {organisationLogos.map(([name, file, dark]) => (
+          <figure key={name} className={dark ? 'dark-logo' : undefined}>
+            <img src={'/deck-assets/' + file} alt={name} />
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
 }
