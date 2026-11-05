@@ -276,3 +276,28 @@
 .solution-range-track{width:52%}
 .solution-range-track i{left:0}
 .solution-range-track b{left:0}
+
+.connection-story {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 22px;
+}
+.connection-story article {
+  border-top: 2px solid var(--blue);
+  padding: 13px 8px 0 0;
+}
+.connection-story h3 { font-size: 23px; margin: 7px 0; }
+.connection-story p { font-size: 18px; line-height: 1.35; color: var(--muted); }
+.merged-connection-slide .relationship-section { margin-top: 20px; }
+.merged-connection-slide .relationship-section .organisation-logos { row-gap: 12px; }
+.preparation-context { gap: 24px; padding: 0; border: 0; background: transparent; }
+.preparation-context > div {
+  background: #f4f8fb;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  border-radius: 5px;
+  padding: 24px;
+}
+.preparation-context strong,
+.preparation-context > div:last-child strong { font-size: 54px; color: var(--ink); }
