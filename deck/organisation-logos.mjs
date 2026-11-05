@@ -1,0 +1,17 @@
+export const organisationLogos = [
+  ['KAIST', 'KAIST_Logo_Primary.svg'],
+  ['University of Amsterdam', 'University_of_Amsterdam_Logo_Primary.svg'],
+  ['University of Melbourne', 'University_of_Melbourne_Logo_Primary.svg'],
+  ['University of Latvia', 'University_of_Latvia_Logo_Primary.svg'],
+  ['Le Mans Université', 'Le_Mans_Universite_Logo_Primary.svg'],
+  ['EURAXESS', 'Euraxess_Logo_Horizontal_Transparent.png'],
+  ['European Chamber of Commerce in Korea', 'ECCK_Logo_Primary.png'],
+  ['Bioneer', 'Bioneer_Logo_Supplied_v2.png'],
+  ['Scanagen', 'Scanagen_Logo_No_Tagline_v2.png'],
+  ['Synapse International', 'Synapse_International_Logo_Primary.png'],
+  ['Digijeunes', 'Digijeunes_Logo_Primary.png'],
+  ['OrtCloud', 'OrtCloud_Logo_Original.png', true],
+  ['CodER', 'digijeunes/CodER_Logo.png'],
+  ['FemPower', 'digijeunes/FemPower_Logo.png'],
+  ['DEEDU', 'digijeunes/DEEDU_Logo.png'],
+];

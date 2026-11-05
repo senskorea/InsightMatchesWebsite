@@ -1,19 +1,14 @@
+import {organisationLogos} from '../deck/organisation-logos.mjs';
 import {slides as printed} from '../printed-deck/slides.mjs';
 import {slides as original} from './opportunity-source.mjs';
-export const count=18;
-export const iteration=7;
+export const count=19;
+export const iteration=8;
 const logo='<svg class="brand" role="img" aria-label="InsightMatches" viewBox="0 0 2862 786"><use href="#insightmatches-logo"/></svg>';
 function page(n,chapter,title,body,note='',classes=''){
  return {n,chapter,title,html:`<section class="slide ${classes}"><header>${logo}<span>${chapter}</span></header><h2>${title}</h2>${body}<footer><span>${note||'InsightMatches × Global CIT · European research opportunities'}</span><span class="folio">${String(n).padStart(2,'0')} / ${count}</span></footer></section>`};
 }
 function reuse(i,n){const s=printed[i-1];return {...s,n,html:s.html.replace(/\d{2} \/ 13/g,`${String(n).padStart(2,'0')} / ${count}`)}}
 function specific(i,n,chapter,title){const s=original[i-1];let content=s.slice(s.indexOf('<h2>'),s.indexOf('<div class="footer">'));if(title)content=content.replace(/<h2>[\s\S]*?<\/h2>/,`<h2>${title}</h2>`);const note=s.match(/<div class="source">([\s\S]*?)<\/div>/)?.[1]||'';return page(n,chapter,title||content.match(/<h2>([\s\S]*?)<\/h2>/)?.[1],content.replace(/^<h2>[\s\S]*?<\/h2>/,''),note,'cit-specific');}
-function organisations(){
- const s=reuse(4,4);s.html=s.html.replace('audience-slide','audience-slide cit-organisations');
- s.html=s.html.replace(/<div class="organisation-logo ([^"]+)">([\s\S]*?)<\/div>/g,(_,cls,img)=>{
-  return `<div class="organisation-logo ${cls}"><div class="logo-mark">${img}</div></div>`;
- });return s;
-}
 function opportunity(old,n,chapter,title,file,partners,grant,budget){
  const source=specific(old,n,chapter,title).html;
  const intro=source.match(/<p class="intro">([\s\S]*?)<\/p>/)[1];
@@ -33,7 +28,7 @@ const overview=page(4,'CIT technologies and opportunities','Connect CIT’s capa
 const problem=specific(8,10,'The preparation problem','The problem InsightMatches solves.');
 problem.html=problem.html.replace(/<p class="intro">[\s\S]*?<\/p>/,'<p class="intro">Finding funding is only the start. Researchers still need to build a team, plan the project and prepare the proposal.</p>');
 const community=reuse(11,17);community.html=community.html.replace('</div><div class="community-gallery">','<p class="sponsorship-note">Sponsorship opportunities available.</p></div><div class="community-gallery">');
-const next=page(17,'Next steps','Next steps.',`<div class="next-list"><div>${[['01','Sign an NDA','Agree confidentiality before sharing sensitive technical information.'],['02','Share company materials','Provide the company presentation, product information, performance data and current development stage.'],['03','Choose an opportunity','Review technical fit, timing and the partners needed for a credible proposal.']].map(([n,title,copy])=>`<div class="next-step"><span class="num">${n}</span><div><h3>${title}</h3><p>${copy}</p></div></div>`).join('')}</div><div class="contact"><h3>Let’s map the first step.</h3><p class="sp24">Paul Conversy<br>Founder & CEO · InsightMatches</p><a href="mailto:info@insightmatches.com">info@insightmatches.com</a><a href="https://calendar.app.google/ukQe5T1754RKVPedA" data-booking>Book an alignment call ↗</a></div></div>`,'InsightMatches × Global CIT','cit-specific');
+const next=page(18,'Next steps','Next steps.',`<div class="next-list"><div>${[['01','Sign an NDA','Agree confidentiality before sharing sensitive technical information.'],['02','Share company materials','Provide the company presentation, product information, performance data and current development stage.'],['03','Choose an opportunity','Review technical fit, timing and the partners needed for a credible proposal.']].map(([n,title,copy])=>`<div class="next-step"><span class="num">${n}</span><div><h3>${title}</h3><p>${copy}</p></div></div>`).join('')}</div><div class="contact"><h3>Let’s map the first step.</h3><p class="sp24">Paul Conversy<br>Founder & CEO · InsightMatches</p><a href="mailto:info@insightmatches.com">info@insightmatches.com</a><a href="https://calendar.app.google/ukQe5T1754RKVPedA" data-booking>Book an alignment call ↗</a></div></div>`,'InsightMatches × Global CIT','cit-specific');
 const mergedConnection=page(2,'Research partners','Build a research team<br><span class="blue">around CIT’s technology.</span>',`
 <p class="intro">InsightMatches helps CIT find the expertise, facilities and industry partners needed to test its technology in a European research project.</p>
 <div class="connection-story">
@@ -41,11 +36,15 @@ const mergedConnection=page(2,'Research partners','Build a research team<br><spa
   <article><span class="eyebrow">02 · Find complementary expertise</span><h3>Who can help test it?</h3><p>Look for research labs with the right facilities and companies that could test it in use.</p></article>
   <article><span class="eyebrow">03 · Shape the project</span><h3>What could we do together?</h3><p>Agree what each partner would contribute to a joint proposal.</p></article>
 </div>
-${organisations().html.match(/<section class="relationship-section"[\s\S]*?<\/section>/)[0]}`,
-'Logos show organisations InsightMatches has worked with. CIT’s research partners would be selected for each project.','audience-slide cit-organisations merged-connection-slide');
+`,'InsightMatches × Global CIT','cit-research-partners');
+const organisations=page(14,'Past collaborations','Who we’ve worked with',`
+<p class="intro">Selected organisations and collaborative projects.</p>
+<div class="cit-partner-grid">${organisationLogos.map(([name,file,dark])=>`<figure class="${dark?'dark-logo':''}"><img src="asset:${file}" alt="${name}"></figure>`).join('')}</div>
+`,'InsightMatches × Global CIT','cit-partner-slide');
+
 const team=reuse(12,13);team.title='The InsightMatches team';team.html=team.html.replace('<h2>Grant experience. AI research. Product engineering.</h2>','<h2>The InsightMatches team</h2>').replace('Practical knowledge of international grants, brought together with reliable technology.','Grant experience. AI research. Product engineering.');
-const pricing=reuse(9,14);pricing.html=pricing.html.replace('Be listed.','Be listed.<br>Join existing projects.').replace('Write your own projects.','Create your own project.').replace('Be visible to potential collaborators','Be visible to collaborators and explore existing projects').replace('<section class="slide','<section class="slide cit-pricing');
-const costs=reuse(10,15);costs.html=costs.html.replace('InsightMatches team written','InsightMatches solutions').replace(/<div class="cost-row ours">[\s\S]*?<\/div><\/div><\/div><\/div><\/div>/,`<div class="cost-row ours"><div class="cost-heading"><h3>InsightMatches solutions</h3></div><div class="solution-range"><div><strong>350만원</strong><span>AI Copilot · per year</span></div><div><strong>510만원</strong><span>Team support · per proposal</span></div></div><div class="solution-range-track"><i></i><b></b><b></b></div></div></div></div>`).replace('Proposal support compared with the consultancy survey median.','Proposal support compared with the consultancy survey median. Plans shown with their respective billing periods.');
+const pricing=reuse(9,15);pricing.html=pricing.html.replace('Be listed.','Be listed.<br>Join existing projects.').replace('Write your own projects.','Create your own project.').replace('Be visible to potential collaborators','Be visible to collaborators and explore existing projects').replace('<section class="slide','<section class="slide cit-pricing');
+const costs=reuse(10,16);costs.html=costs.html.replace('InsightMatches team written','InsightMatches solutions').replace(/<div class="cost-row ours">[\s\S]*?<\/div><\/div><\/div><\/div><\/div>/,`<div class="cost-row ours"><div class="cost-heading"><h3>InsightMatches solutions</h3></div><div class="solution-range"><div><strong>350만원</strong><span>AI Copilot · per year</span></div><div><strong>510만원</strong><span>Team support · per proposal</span></div></div><div class="solution-range-track"><i></i><b></b><b></b></div></div></div></div>`).replace('Proposal support compared with the consultancy survey median.','Proposal support compared with the consultancy survey median. Plans shown with their respective billing periods.');
 const costRowStart=costs.html.indexOf('<div class="cost-row ours">');
 const costFooterStart=costs.html.indexOf('<footer>');
 costs.html=costs.html.slice(0,costRowStart)+`<div class="cost-row ours"><div class="cost-heading"><h3>InsightMatches solutions</h3></div><div class="solution-range"><div><strong>350만원</strong><span>AI Copilot · per year</span></div><div><strong>510만원</strong><span>Team support · per proposal</span></div></div><div class="solution-range-track"><i></i><b></b><b></b></div></div></div></div>`+costs.html.slice(costFooterStart);
@@ -57,6 +56,6 @@ opportunity(4,5,'AI computing','Advanced packaging for AI computing.','CIT_AI_Pa
 opportunity(5,6,'Advanced materials','Copper technologies for advanced materials.','CIT_ASE_Process_Official.png','12–20','약 5억–10.5억원','약 7.5억–15억원'),
 opportunity(6,7,'Connected devices','Transparent antennas for connected devices.','CIT_Transparent_Antenna_Official.png','8–12','약 4.5억–9억원','약 4.5억–9억원'),
 specific(7,8,'Choose an opportunity','Which opportunity should CIT pursue?'),quantifiedProblem,
-reuse(6,10),reuse(7,11),reuse(8,12),team,pricing,costs,{...community,n:16,html:community.html.replace(/17 \/ 18/g,'16 / 18')},next,
-specific(16,18,'Annex · sources and conditions','Sources and conditions.')
+reuse(6,10),reuse(7,11),reuse(8,12),team,organisations,pricing,costs,community,next,
+specific(16,19,'Annex · sources and conditions','Sources and conditions.')
 ];
