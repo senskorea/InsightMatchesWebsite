@@ -1,6 +1,6 @@
 {
   "title": "InsightMatches × Global CIT",
-  "iteration": 6,
+  "iteration": 8,
   "phase": "HTML review only",
   "currency": "KRW",
   "url": "https://insightmatches.com/cit/",
@@ -72,26 +72,31 @@
     },
     {
       "position": 14,
+      "chapter": "Past collaborations",
+      "title": "Who we’ve worked with"
+    },
+    {
+      "position": 15,
       "chapter": "Plans and support",
       "title": "Our pricing."
     },
     {
-      "position": 15,
+      "position": 16,
       "chapter": "Cost comparison",
       "title": "Up to 55% more affordable."
     },
     {
-      "position": 16,
+      "position": 17,
       "chapter": "Our community",
       "title": "Building a researcher community."
     },
     {
-      "position": 17,
+      "position": 18,
       "chapter": "Next steps",
       "title": "Next steps."
     },
     {
-      "position": 18,
+      "position": 19,
       "chapter": "Annex · sources and conditions",
       "title": "Sources and conditions."
     }
