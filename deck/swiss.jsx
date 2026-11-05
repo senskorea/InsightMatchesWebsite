@@ -33,7 +33,7 @@ const originalScenes=[
  ['More time for research.','','Conditional scenario: 30% × '+assistedTotal+'/'+preparationTotal+' ≈ 9.5%. Assumes the same proportional reduction in preparation time; not a measured researcher-wide outcome.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,50,51,52];
+const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,30,36,37,38,39,50,51,52];
 const extras={
  '-8':['Research happens\nin many places.','We work with universities, research institutes, private companies and deep tech startups.','Different organisations. Shared research ambitions.'],
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
