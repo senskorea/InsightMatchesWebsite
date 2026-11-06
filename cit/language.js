@@ -4,6 +4,23 @@ const citLanguage = (() => {
   const overview = document.querySelector('#overview');
   const announce = document.querySelector('#announce');
   const entries = [];
+  const attributes = [];
+  for (const element of document.querySelectorAll('main [alt], main [aria-label]')) {
+    for (const name of ['alt', 'aria-label']) {
+      const value = element.getAttribute(name);
+      if (value && Object.hasOwn(korean, value)) {
+        attributes.push([element, name, value, korean[value]]);
+      }
+    }
+  }
+
+  function headingText(shell) {
+    const heading = shell.querySelector('h1,h2').cloneNode(true);
+    for (const br of heading.querySelectorAll('br')) br.replaceWith(' ');
+    return heading.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  const labelledSlides = [...document.querySelectorAll('.slide[aria-label]')];
   for (const slide of document.querySelectorAll('.slide')) {
     const walker = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
     for (let node = walker.nextNode(); node; node = walker.nextNode()) {
@@ -25,14 +42,27 @@ const citLanguage = (() => {
 
   const text = (english, translated) => root.lang === 'ko' ? translated : english;
 
+  function announcement(shell) {
+    return text('Slide ', '슬라이드 ') + (Number(shell.dataset.index) + 1) + ': ' + headingText(shell);
+  }
+
   function render(useKorean) {
     root.lang = useKorean ? 'ko' : 'en';
     for (const [node, original, translation] of entries) {
       node.data = useKorean ? translation : original;
     }
+    for (const [element, name, original, translation] of attributes) {
+      element.setAttribute(name, useKorean ? translation : original);
+    }
+    for (const slide of labelledSlides) {
+      const shell = slide.closest('.slide-shell');
+      slide.setAttribute('aria-label', announcement(shell));
+    }
+    document.querySelector('main').setAttribute('aria-label',
+      text('InsightMatches presentation for Global CIT', 'Global CIT를 위한 InsightMatches 프레젠테이션'));
     toggle.textContent = text('한국어', 'English');
     toggle.lang = text('ko', 'en');
-    toggle.setAttribute('aria-label', text('Switch to Korean', 'Switch to English'));
+    toggle.setAttribute('aria-label', text('Switch to Korean', '영어로 전환'));
     document.querySelector('nav').setAttribute('aria-label', text('Presentation controls', '프레젠테이션 조작'));
     document.querySelector('#prev').setAttribute('aria-label', text('Previous slide', '이전 슬라이드'));
     document.querySelector('#next').setAttribute('aria-label', text('Next slide', '다음 슬라이드'));
@@ -41,10 +71,7 @@ const citLanguage = (() => {
     overview.textContent = overview.getAttribute('aria-pressed') === 'true'
       ? text('Single slide', '한 장씩 보기') : text('All slides', '전체 보기');
     const active = document.querySelector('.slide-shell.active');
-    if (active) {
-      announce.textContent = text('Slide ', '슬라이드 ') + (Number(active.dataset.index) + 1)
-        + ': ' + active.querySelector('h1,h2').textContent;
-    }
+    if (active) announce.textContent = announcement(active);
   }
 
   toggle.addEventListener('click', () => {
@@ -66,5 +93,5 @@ const citLanguage = (() => {
     return html;
   }
 
-  return {text, serialize};
+  return {text, announcement, serialize};
 })();
