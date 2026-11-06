@@ -1,6 +1,6 @@
 {
   "title": "InsightMatches × Global CIT",
-  "iteration": 8,
+  "iteration": 9,
   "phase": "HTML review only",
   "currency": "KRW",
   "url": "https://insightmatches.com/cit/",
@@ -47,56 +47,51 @@
     },
     {
       "position": 9,
-      "chapter": "The preparation problem",
-      "title": "The problem InsightMatches solves."
-    },
-    {
-      "position": 10,
       "chapter": "Our solution · 01",
       "title": "Find the opportunity. Build the team."
     },
     {
-      "position": 11,
+      "position": 10,
       "chapter": "Our solution · 02",
       "title": "Turn the collaboration into a proposal."
     },
     {
-      "position": 12,
+      "position": 11,
       "chapter": "The preparation model",
       "title": "More time for research."
     },
     {
-      "position": 13,
+      "position": 12,
       "chapter": "Our team",
       "title": "The InsightMatches team"
     },
     {
-      "position": 14,
+      "position": 13,
       "chapter": "Past collaborations",
       "title": "Who we’ve worked with"
     },
     {
-      "position": 15,
+      "position": 14,
       "chapter": "Plans and support",
       "title": "Our pricing."
     },
     {
-      "position": 16,
+      "position": 15,
       "chapter": "Cost comparison",
       "title": "Up to 55% more affordable."
     },
     {
-      "position": 17,
+      "position": 16,
       "chapter": "Our community",
       "title": "Building a researcher community."
     },
     {
-      "position": 18,
+      "position": 17,
       "chapter": "Next steps",
       "title": "Next steps."
     },
     {
-      "position": 19,
+      "position": 18,
       "chapter": "Annex · sources and conditions",
       "title": "Sources and conditions."
     }
