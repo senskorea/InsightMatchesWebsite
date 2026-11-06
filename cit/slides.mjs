@@ -44,10 +44,27 @@ const organisations=page(13,'Past collaborations','Who we’ve worked with',`
 
 const team=reuse(12,12);team.title='The InsightMatches team';team.html=team.html.replace('<h2>Grant experience. AI research. Product engineering.</h2>','<h2>The InsightMatches team</h2>').replace('Practical knowledge of international grants, brought together with reliable technology.','Grant experience. AI research. Product engineering.');
 const pricing=reuse(9,14);pricing.html=pricing.html.replace('Be listed.','Be listed.<br>Join existing projects.').replace('Write your own projects.','Create your own project.').replace('Be visible to potential collaborators','Be visible to collaborators and explore existing projects').replace('<section class="slide','<section class="slide cit-pricing');
-const costs=reuse(10,15);costs.html=costs.html.replace('InsightMatches team written','InsightMatches solutions').replace(/<div class="cost-row ours">[\s\S]*?<\/div><\/div><\/div><\/div><\/div>/,`<div class="cost-row ours"><div class="cost-heading"><h3>InsightMatches solutions</h3></div><div class="solution-range"><div><strong>350만원</strong><span>AI Copilot · per year</span></div><div><strong>510만원</strong><span>Team support · per proposal</span></div></div><div class="solution-range-track"><i></i><b></b><b></b></div></div></div></div>`).replace('Proposal support compared with the consultancy survey median.','Proposal support compared with the consultancy survey median. Plans shown with their respective billing periods.');
-const costRowStart=costs.html.indexOf('<div class="cost-row ours">');
-const costFooterStart=costs.html.indexOf('<footer>');
-costs.html=costs.html.slice(0,costRowStart)+`<div class="cost-row ours"><div class="cost-heading"><h3>InsightMatches solutions</h3></div><div class="solution-range"><div><strong>350만원</strong><span>AI Copilot · per year</span></div><div><strong>510만원</strong><span>Team support · per proposal</span></div></div><div class="solution-range-track"><i></i><b></b><b></b></div></div></div></div>`+costs.html.slice(costFooterStart);
+const proposalCosts = [
+  ['Consultancy survey median', 1120, 'benchmark'],
+  ['InsightMatches team support', 510, 'team-support'],
+];
+const proposalScale = 1200;
+const costs = page(15, 'Cost comparison', 'About 55% more affordable.', `
+<p class="intro">InsightMatches team support costs about 55% less per proposal than the consultancy survey median.</p>
+<div class="cit-proposal-comparison">
+  <h3>Cost per proposal <span>만원</span></h3>
+${proposalCosts.map(([label, amount, style]) => `
+  <div class="cit-proposal-row ${style}">
+    <div><span>${label}</span><strong>${amount.toLocaleString('en-US')}만원</strong></div>
+    <div class="cit-proposal-track" aria-hidden="true"><span style="width:${amount / proposalScale * 100}%"></span></div>
+  </div>`).join('')}
+  <div class="cit-proposal-axis" aria-hidden="true"><span>0</span><span>400</span><span>800</span><span>1,200</span></div>
+</div>
+<div class="cit-annual-costs" aria-label="Annual cost benchmarks">
+  <article><h3>InsightMatches AI Copilot</h3><p><strong>350만원</strong><span>per year</span></p></article>
+  <article><h3>Research Grant Application Manager</h3><p><strong>7,700–9,200만원</strong><span>annual base salary</span></p></article>
+</div>
+`, 'KRW estimates. Sources: EC consultancy survey and LSE salary benchmark. Employer costs, taxes and success fees excluded.', 'cit-proposal-pricing');
 
 export const slides=[
 page(1,'InsightMatches × Global CIT','Research funding and international partners for Global CIT.',`<div class="cit-cover"><div class="cit-cover-brands"><svg role="img" aria-label="InsightMatches" viewBox="0 0 2862 786"><use href="#insightmatches-logo"/></svg><span>×</span><img src="asset:Global_CIT_Logo_Official.png" alt="Global CIT"/></div><h1>We help Global CIT connect its technology<br><span class="blue">with European research opportunities.</span></h1><p>Find research funding. Build an international team. Prepare the proposal.</p><div class="cit-cover-contact">Paul Conversy · Founder & CEO<br><a href="mailto:info@insightmatches.com">info@insightmatches.com</a></div></div>`,'Prepared for Global CIT · HTML review · November 2026','cit-cover-slide'),
