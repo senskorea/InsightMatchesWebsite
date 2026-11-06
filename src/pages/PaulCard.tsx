@@ -1,6 +1,18 @@
 import { useState } from "react";
-import { ChevronDown, Globe, Phone, Mail, Linkedin, Download, Calendar, MapPin } from "lucide-react";
-import paulPhoto from "@/assets/paul-conversy-illustration.jpg";
+import {
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  Globe,
+  Calendar,
+  Download,
+  MapPin,
+  ChevronDown,
+  ExternalLink,
+  Sparkles,
+} from "lucide-react";
+import paulPhoto from "@/assets/paul-photo.jpg";
 import SEO from "@/components/SEO";
 
 const VCARD = `BEGIN:VCARD
@@ -13,18 +25,20 @@ TEL;TYPE=CELL,VOICE:+821081137787
 EMAIL;TYPE=INTERNET:info@insightmatches.com
 URL:https://insightmatches.com
 ADR;TYPE=WORK:;;;Paris / Seoul / Busan;;;
-NOTE:Founder at InsightMatches. AI-Powered EU Grant Proposals, Start to Submission.
+NOTE:Founder of InsightMatches (grant funding platform) and SENS AI (AI matching during events).
 END:VCARD`;
 
-const contacts = [
-  { id: "web", icon: Globe, label: "Website", value: "insightmatches.com", href: "https://insightmatches.com" },
-  { id: "phone", icon: Phone, label: "Phone", value: "+82 10 8113 7787", href: "tel:+821081137787" },
-  { id: "email", icon: Mail, label: "Email", value: "info@insightmatches.com", href: "mailto:info@insightmatches.com" },
-  { id: "linkedin", icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/paulconversy", href: "https://linkedin.com/in/paulconversy" },
-];
+const RememberIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <rect width="24" height="24" rx="5" fill="#1C1C1E" />
+    <text x="12" y="17" fontSize="15" fontWeight="bold" fontFamily="Georgia, serif" textAnchor="middle" fill="#FFFFFF">
+      R
+    </text>
+  </svg>
+);
 
 const PaulCard = () => {
-  const [open, setOpen] = useState<string | null>(null);
+  const [showInfo, setShowInfo] = useState(false);
 
   const saveContact = () => {
     const blob = new Blob([VCARD], { type: "text/vcard;charset=utf-8" });
@@ -39,103 +53,269 @@ const PaulCard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black font-inter">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 font-inter flex flex-col justify-between p-4 sm:p-6">
       <SEO
-        title="Paul Conversy — Founder, InsightMatches"
-        description="Founder at InsightMatches. AI-Powered EU Grant Proposals, Start to Submission."
+        title="Paul Conversy — Founder, InsightMatches & SENS AI"
+        description="Founder of InsightMatches, the grant funding platform and SENS AI for AI matching during events."
       />
-      <div className="min-h-screen md:flex">
-        {/* Photo */}
-        <div className="relative w-full h-[55vh] md:h-screen md:w-1/2 md:sticky md:top-0 overflow-hidden">
-          <img
-            src={paulPhoto}
-            alt="Paul Conversy"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
 
-        {/* Content */}
-        <div className="relative md:w-1/2 md:min-h-screen flex items-start md:items-center">
-          <div className="w-full -mt-16 md:mt-0 px-6 md:px-14 pb-16">
-            <div className="bg-white md:bg-transparent md:p-0 p-8 rounded-t-3xl md:rounded-none relative">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
-                Paul Conversy
-              </h1>
-              <p className="mt-4 text-base md:text-lg font-medium text-black">
-                Founder at InsightMatches. AI-Powered EU Grant Proposals, Start to Submission.
-              </p>
-              <p className="mt-4 text-sm md:text-base text-neutral-600 leading-relaxed">
-                I help companies navigate and win Horizon Europe funding by combining AI intelligence with expert architecture.
-              </p>
-              <div className="mt-4 flex items-center gap-2 text-sm text-neutral-500">
-                <MapPin className="w-4 h-4" />
-                <span>Paris · Seoul · Busan</span>
-              </div>
-
-              {/* Actions */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={saveContact}
-                  className="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-4 text-sm font-semibold tracking-tight hover:bg-[#0ea5e9] transition-colors duration-200 rounded-none"
-                >
-                  <Download className="w-4 h-4" />
-                  Save Contact
-                </button>
-                <a
-                  href="https://calendar.app.google/ukQe5T1754RKVPedA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 border border-black text-black px-6 py-4 text-sm font-semibold tracking-tight hover:border-[#0ea5e9] hover:text-[#0ea5e9] transition-colors duration-200"
-                >
-                  <Calendar className="w-4 h-4" />
-                  Book a Meeting
-                </a>
-              </div>
-
-              {/* Accordion contacts */}
-              <div className="mt-10 border-t border-black/10">
-                {contacts.map((c) => {
-                  const Icon = c.icon;
-                  const isOpen = open === c.id;
-                  return (
-                    <div key={c.id} className="border-b border-black/10">
-                      <button
-                        onClick={() => setOpen(isOpen ? null : c.id)}
-                        className="w-full flex items-center justify-between py-5 group"
-                      >
-                        <span className="flex items-center gap-4">
-                          <Icon className="w-5 h-5 group-hover:text-[#0ea5e9] transition-colors" />
-                          <span className="text-sm font-semibold tracking-tight uppercase">{c.label}</span>
-                        </span>
-                        <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#0ea5e9]" : ""}`}
-                        />
-                      </button>
-                      <div
-                        className="overflow-hidden transition-all duration-300 ease-out"
-                        style={{ maxHeight: isOpen ? 80 : 0 }}
-                      >
-                        <a
-                          href={c.href}
-                          target={c.href.startsWith("http") ? "_blank" : undefined}
-                          rel="noopener noreferrer"
-                          className="block pb-5 pl-9 text-sm text-neutral-700 hover:text-[#0ea5e9] transition-colors break-all"
-                        >
-                          {c.value}
-                        </a>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <p className="mt-10 text-xs text-neutral-400 tracking-wide">
-                © {new Date().getFullYear()} Paul Conversy · InsightMatches
-              </p>
-            </div>
+      <main className="w-full max-w-md mx-auto pt-4 pb-8 flex-1 flex flex-col">
+        {/* Profile Header */}
+        <div className="text-center">
+          <div className="relative inline-block">
+            <img
+              src={paulPhoto}
+              alt="Paul Conversy"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-top mx-auto shadow-sm border-2 border-white ring-1 ring-neutral-200"
+            />
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 mt-3.5">
+            Paul Conversy
+          </h1>
+          <p className="mt-1.5 text-sm sm:text-base font-medium text-neutral-600 leading-snug px-2">
+            Founder of InsightMatches, the grant funding platform and SENS AI for AI matching during events.
+          </p>
+          <div className="mt-2.5 inline-flex items-center gap-1.5 text-xs text-neutral-400 font-medium">
+            <MapPin className="w-3.5 h-3.5" />
+            <span>Paris · Seoul · Busan</span>
           </div>
         </div>
-      </div>
+
+        {/* Action Buttons Section */}
+        <div className="mt-6 flex flex-col gap-2.5">
+          {/* Top Priority Action: Book a Meeting */}
+          <a
+            href="https://calendar.app.google/ukQe5T1754RKVPedA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <Calendar className="w-5 h-5 text-white" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block text-[11px] uppercase tracking-wider text-sky-100 font-bold leading-tight">
+                  Priority
+                </span>
+                <span className="block font-bold text-sm sm:text-base leading-snug truncate">
+                  Book a Meeting
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-white/80 group-hover:translate-x-0.5 transition-transform shrink-0" />
+          </a>
+
+          {/* 1. LinkedIn */}
+          <a
+            href="https://linkedin.com/in/paulconversy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center shrink-0">
+                <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  LinkedIn
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  linkedin.com/in/paulconversy
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 2. Instagram */}
+          <a
+            href="https://instagram.com/paulconversy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center shrink-0">
+                <Instagram className="w-5 h-5 text-pink-600" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  Instagram
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  instagram.com/paulconversy
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 3. Remember (리멤버) */}
+          <a
+            href="https://link.rmbr.in/3pohsay"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-neutral-900/10 flex items-center justify-center shrink-0">
+                <RememberIcon className="w-6 h-6" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  Remember (리멤버)
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  Digital Business Card Exchange
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 4. Email */}
+          <a
+            href="mailto:info@insightmatches.com"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0">
+                <Mail className="w-5 h-5 text-amber-600" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  Email
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  info@insightmatches.com
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 5. Phone */}
+          <a
+            href="tel:+821081137787"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5 text-emerald-600" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  Phone
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  +82 10 8113 7787
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 6. Websites: InsightMatches */}
+          <a
+            href="https://insightmatches.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0">
+                <Globe className="w-5 h-5 text-indigo-600" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  InsightMatches
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  insightmatches.com · EU Grant Platform
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 6b. Websites: SENS AI */}
+          <a
+            href="https://insightmatches.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0">
+                <Sparkles className="w-5 h-5 text-purple-600" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block font-bold text-sm text-neutral-900 leading-snug">
+                  SENS AI
+                </span>
+                <span className="block text-xs text-neutral-500 truncate">
+                  AI Matching Engine for Events
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+          </a>
+
+          {/* 7. Save Contact to Phone */}
+          <button
+            type="button"
+            onClick={saveContact}
+            className="w-full mt-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-neutral-900 hover:bg-black active:scale-[0.99] text-white font-semibold text-sm shadow-sm transition-all"
+          >
+            <Download className="w-4 h-4" />
+            <span>Save Contact to Phone (.vcf)</span>
+          </button>
+        </div>
+
+        {/* Information Last Section */}
+        <div className="mt-8 pt-5 border-t border-neutral-200">
+          <button
+            type="button"
+            onClick={() => setShowInfo((prev) => !prev)}
+            className="w-full flex items-center justify-between py-2 text-xs uppercase tracking-wider font-bold text-neutral-500 hover:text-neutral-900 transition-colors"
+          >
+            <span>About InsightMatches & SENS</span>
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-200 ${
+                showInfo ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {showInfo && (
+            <div className="mt-3 text-xs leading-relaxed text-neutral-600 bg-white border border-neutral-200 p-4 rounded-2xl space-y-2.5 shadow-sm">
+              <p>
+                I help deep tech companies, researchers, and innovators navigate and win Horizon Europe and international funding by combining AI intelligence with expert architecture.
+              </p>
+              <p>
+                Direct inquiry:{" "}
+                <a
+                  href="mailto:info@insightmatches.com"
+                  className="font-semibold text-sky-600 hover:underline"
+                >
+                  info@insightmatches.com
+                </a>
+              </p>
+              <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-neutral-400 text-[11px]">
+                <MapPin className="w-3 h-3" />
+                <span>InsightMatches Corp. · Paris · Seoul · Busan</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="text-center py-4 text-[11px] text-neutral-400 tracking-wide">
+        © {new Date().getFullYear()} Paul Conversy · InsightMatches
+      </footer>
     </div>
   );
 };
