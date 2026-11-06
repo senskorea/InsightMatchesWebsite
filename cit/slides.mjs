@@ -16,7 +16,8 @@ function opportunity(old,n,chapter,title,file,partners,grant,budget){
  const pills=[...source.matchAll(/<span class="pill">([\s\S]*?)<\/span>/g)].map(m=>m[1]);
  const details=[...source.matchAll(/<h3>([^<]+)<\/h3><p class="body">([\s\S]*?)<\/p>/g)];
  const deadline=source.match(/<div class="dateband"><span>[^<]*<\/span><strong>([^<]+)<\/strong>/)[1];
- const stats=[...source.matchAll(/<div class="metric">([\s\S]*?)<\/div>/g)].map(m=>m[1]);
+ const stats=[...source.matchAll(/<div class="metric">([\s\S]*?)<\/div>/g)].map(m=>
+  m[1].replace('≈', '약 ').replace('>억</span>', '>억원</span>'));
  return page(n,chapter,title,`<p class="intro">${intro}</p><div class="op-keyfacts"><div class="cit-funding"><span>Indicative EU funding for CIT</span><strong>${grant}</strong></div><div><span>Consortium planning range</span><strong>${partners}</strong><small>organisations</small></div><div><span>Application deadline</span><strong>${deadline}</strong></div></div><div class="op-detail-layout"><div class="op-explanations">${details.map((m,i)=>`<section><span class="op-detail-number">0${i+1}</span><div><h3>${m[1]}</h3><p>${m[2]}</p></div></section>`).join('')}<p class="op-assumption">Assumed CIT eligible budget: ${budget}. Planning scenario, not an award forecast.</p></div><aside class="op-support"><figure><img src="asset:${file}" alt="${file.includes('Concept')?'Concept illustration of AI computing packaging':'Official CIT technology image'}"/><figcaption>${file.includes('Concept')?'AI-generated application concept, not an exact CIT product':'CIT product and technology materials'}</figcaption></figure><div class="op-scope"><div><span>Total topic budget</span><strong>${stats[0]}</strong></div><div><span>EU funding per consortium</span><strong>${stats[1]}</strong></div></div><p class="op-call">${id}</p><p class="op-conditions">${pills.join(' · ')}</p></aside></div>`, 'Indicative scenario, assuming project selection. CIT’s allocation depends on its agreed role, eligible costs, consortium agreement and topic conditions. Fixed conversion basis: 14 Oct 2026.','cit-opportunity-redesign');
 }
 const connection=page(2,'International research teams','Connect with the expertise<br><span class="blue">your research needs.</span>',`<p class="intro">InsightMatches helps researchers and companies find complementary partners and build international research teams.</p><div class="cit-connection"><div class="connection-copy"><h3>From one technology<br>to a shared research project.</h3><p>Connect CIT’s capabilities with researchers, facilities and industrial partners who bring complementary expertise.</p><div class="connection-outcomes"><span>Find partners</span><span>Build the team</span><span>Develop the proposal</span></div></div><figure><svg viewBox="0 0 740 440" role="img" aria-label="Conceptual illustration of CIT connecting through InsightMatches to universities, research institutes and companies"><g fill="none" stroke="#b6d8e9" stroke-width="2"><path d="M120 220H350L570 90M350 220H590M350 220L570 350"/><path d="M570 90L590 220L570 350" stroke-dasharray="5 8"/></g><circle cx="120" cy="220" r="62" fill="#102238"/><text x="120" y="229" text-anchor="middle" fill="white" font-size="28" font-weight="650">CIT</text><circle cx="350" cy="220" r="82" fill="#eef7fc" stroke="#0284c7" stroke-width="2"/><text x="350" y="228" text-anchor="middle" fill="#0873a5" font-size="20" font-weight="650">InsightMatches</text>${[[570,90,'Universities'],[590,220,'Research institutes'],[570,350,'Companies']].map(([x,y,label])=>`<circle cx="${x}" cy="${y}" r="10" fill="#0284c7"/><text x="${x}" y="${y+39}" text-anchor="middle" fill="#102238" font-size="20">${label}</text>`).join('')}</svg><figcaption>Conceptual illustration of how teams connect.</figcaption></figure></div>`, 'Illustration describes the service, not a measured customer network.','cit-connection-slide');
@@ -49,7 +50,7 @@ const organisations=page(13,'Past collaborations','Who we’ve worked with',`
 `,'InsightMatches × Global CIT','cit-partner-slide');
 
 const team=reuse(12,12);team.title='The InsightMatches team';team.html=team.html.replace('<h2>Grant experience. AI research. Product engineering.</h2>','<h2>The InsightMatches team</h2>').replace('Practical knowledge of international grants, brought together with reliable technology.','Grant experience. AI research. Product engineering.');
-const pricing=reuse(9,14);pricing.html=pricing.html.replace('Be listed.','Be listed.<br>Join existing projects.').replace('Write your own projects.','Create your own project.').replace('Be visible to potential collaborators','Be visible to collaborators and explore existing projects').replace('<section class="slide','<section class="slide cit-pricing');
+const pricing=reuse(9,14);pricing.html=pricing.html.replace('Converted offers rounded upwards.', 'Prices are approximate conversions.').replace('Be listed.','Be listed.<br>Join existing projects.').replace('Write your own projects.','Create your own project.').replace('Be visible to potential collaborators','Be visible to collaborators and explore existing projects').replace('<section class="slide','<section class="slide cit-pricing');
 const proposalCosts = [
   ['Consultancy survey median', 1120, 'benchmark'],
   ['InsightMatches team support', 510, 'team-support'],
@@ -72,13 +73,28 @@ ${proposalCosts.map(([label, amount, style]) => `
 </div>
 `, 'KRW estimates. Sources: EC consultancy survey and LSE salary benchmark. Employer costs, taxes and success fees excluded.', 'cit-proposal-pricing');
 
+const consortiumBenefits = reuse(5,3);
+consortiumBenefits.html = consortiumBenefits.html.replace('약 60억 ~ 150억원', '약 72억–150억원');
+
+const decision = specific(7,8,'Choose an opportunity','Which opportunity should CIT pursue?');
+decision.html = decision.html.replace(
+  'Deadlines are 17:00 Brussels time.',
+  'Deadlines are 17:00 Brussels time (01:00 the following day in Korea).'
+);
+
+const researchTime = reuse(8,11);
+researchTime.html = researchTime.html.replace(
+  '<b>113 hours</b> potentially redirected towards research.',
+  'Potential time freed for research: <b>113 hours</b>'
+);
+
 export const slides=[
 page(1,'InsightMatches × Global CIT','Research funding and international partners for Global CIT.',`<div class="cit-cover"><div class="cit-cover-brands"><svg role="img" aria-label="InsightMatches" viewBox="0 0 2862 786"><use href="#insightmatches-logo"/></svg><span>×</span><img src="asset:Global_CIT_Logo_Official.png" alt="Global CIT"/></div><h1>We help Global CIT connect its technology<br><span class="blue">with European research opportunities.</span></h1><p>Find research funding. Build an international team. Prepare the proposal.</p><div class="cit-cover-contact">Paul Conversy · Founder & CEO<br><a href="mailto:info@insightmatches.com">info@insightmatches.com</a></div></div>`,'Prepared for Global CIT · HTML review · November 2026','cit-cover-slide'),
-mergedConnection,reuse(5,3),overview,
+mergedConnection,consortiumBenefits,overview,
 opportunity(4,5,'AI computing','Advanced packaging for AI computing.','CIT_AI_Packaging_Concept_v01.png','8–12','약 5억–10.5억원','약 7.5억–15억원'),
 opportunity(5,6,'Advanced materials','Copper technologies for advanced materials.','CIT_ASE_Process_Official.png','12–20','약 5억–10.5억원','약 7.5억–15억원'),
 opportunity(6,7,'Connected devices','Transparent antennas for connected devices.','CIT_Transparent_Antenna_Official.png','8–12','약 4.5억–9억원','약 4.5억–9억원'),
-specific(7,8,'Choose an opportunity','Which opportunity should CIT pursue?'),
-reuse(6,9),reuse(7,10),reuse(8,11),team,organisations,pricing,costs,community,next,
+decision,
+reuse(6,9),reuse(7,10),researchTime,team,organisations,pricing,costs,community,next,
 specific(16,18,'Annex · sources and conditions','Sources and conditions.')
 ];

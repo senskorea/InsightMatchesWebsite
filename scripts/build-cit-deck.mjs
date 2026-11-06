@@ -10,7 +10,7 @@ const css='/* '+license+' */\n@font-face{font-family:Inter;src:url(data:font/ttf
 const languageScript = await readFile(new URL('../cit/language.js', import.meta.url), 'utf8');
 const script = (await readFile(new URL('../printed-deck/viewer.js', import.meta.url), 'utf8'))
   .replace('InsightMatches-Printed-Deck-HTML-Review.html', 'InsightMatches-Global-CIT-HTML-Review.html')
-  .replace("'Slide '+", "citLanguage.text('Slide ', '슬라이드 ')+")
+  .replace("'Slide '+(current+1)+': '+shells[current].querySelector('h1,h2').textContent", 'citLanguage.announcement(shells[current])')
   .replace("overview?'Single slide':'All slides'", "overview?citLanguage.text('Single slide','한 장씩 보기'):citLanguage.text('All slides','전체 보기')")
   .replace('document.documentElement.outerHTML', 'citLanguage.serialize()');
 const options=slides.map(s=>`<option value="${s.n-1}">${String(s.n).padStart(2,'0')} · ${s.chapter}</option>`).join('');
