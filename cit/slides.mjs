@@ -37,9 +37,15 @@ const mergedConnection=page(2,'Research partners','Build a research team<br><spa
   <article><span class="eyebrow">03 · Shape the project</span><h3>Agree who does what</h3><p>Define CIT’s role and each partner’s contribution to the joint proposal.</p></article>
 </div>
 `,'InsightMatches × Global CIT','cit-research-partners');
+const citOrganisationLogos = organisationLogos.filter(([, file]) =>
+  file !== 'KAIST_Logo_Primary.svg' && file !== 'ECCK_Logo_Primary.png'
+);
 const organisations=page(13,'Past collaborations','Who we’ve worked with',`
 <p class="intro">Selected organisations and collaborative projects.</p>
-<div class="cit-partner-grid">${organisationLogos.map(([name,file,dark])=>`<figure class="${dark?'dark-logo':''}"><img src="asset:${file}" alt="${name}"></figure>`).join('')}</div>
+<div class="cit-partner-grid">${citOrganisationLogos.map(([name, file, dark]) => {
+  const caption = name === 'DEEDU' ? name : '';
+  return `<figure class="${dark ? 'dark-logo' : ''}"><img src="asset:${file}" alt="${caption ? '' : name}">${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+}).join('')}</div>
 `,'InsightMatches × Global CIT','cit-partner-slide');
 
 const team=reuse(12,12);team.title='The InsightMatches team';team.html=team.html.replace('<h2>Grant experience. AI research. Product engineering.</h2>','<h2>The InsightMatches team</h2>').replace('Practical knowledge of international grants, brought together with reliable technology.','Grant experience. AI research. Product engineering.');
