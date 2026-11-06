@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Linkedin,
   Instagram,
@@ -11,7 +11,10 @@ import {
   ChevronDown,
   ExternalLink,
   Sparkles,
+  QrCode,
+  X,
 } from "lucide-react";
+import QRCode from "qrcode";
 import paulPhoto from "@/assets/paul-photo.jpg";
 import SEO from "@/components/SEO";
 
@@ -39,6 +42,21 @@ const RememberIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
 
 const PaulCard = () => {
   const [showInfo, setShowInfo] = useState(false);
+  const [showQR, setShowQR] = useState(false);
+  const [qrDataUrl, setQrDataUrl] = useState<string>("");
+
+  useEffect(() => {
+    QRCode.toDataURL("https://insightmatches.com/paul", {
+      width: 320,
+      margin: 2,
+      color: {
+        dark: "#000000",
+        light: "#FFFFFF",
+      },
+    })
+      .then(setQrDataUrl)
+      .catch(console.error);
+  }, []);
 
   const saveContact = () => {
     const blob = new Blob([VCARD], { type: "text/vcard;charset=utf-8" });
@@ -131,7 +149,7 @@ const PaulCard = () => {
 
           {/* 2. Instagram */}
           <a
-            href="https://instagram.com/paulconversy"
+            href="https://instagram.com/paul_converce"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
@@ -145,7 +163,7 @@ const PaulCard = () => {
                   Instagram
                 </span>
                 <span className="block text-xs text-neutral-500 truncate">
-                  instagram.com/paulconversy
+                  instagram.com/paul_converce
                 </span>
               </span>
             </span>
@@ -272,6 +290,16 @@ const PaulCard = () => {
             <Download className="w-4 h-4" />
             <span>Save Contact to Phone (.vcf)</span>
           </button>
+
+          {/* 8. Show QR Code (Last Action Option) */}
+          <button
+            type="button"
+            onClick={() => setShowQR(true)}
+            className="w-full mt-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] text-neutral-900 font-semibold text-sm shadow-sm transition-all group"
+          >
+            <QrCode className="w-4 h-4 text-neutral-700 group-hover:text-black transition-colors" />
+            <span>Show QR Code</span>
+          </button>
         </div>
 
         {/* Information Last Section */}
@@ -311,6 +339,60 @@ const PaulCard = () => {
           )}
         </div>
       </main>
+
+      {/* QR Code Modal */}
+      {showQR && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+          onClick={() => setShowQR(false)}
+        >
+          <div
+            className="relative w-full max-w-xs sm:max-w-sm bg-white rounded-3xl p-6 text-center shadow-2xl border border-neutral-100 flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setShowQR(false)}
+              className="absolute top-4 right-4 p-2 rounded-full text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 transition-colors"
+              aria-label="Close QR Code"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <img
+              src={paulPhoto}
+              alt="Paul Conversy"
+              className="w-14 h-14 rounded-full object-cover object-top border-2 border-white shadow-sm ring-1 ring-neutral-200 mt-1"
+            />
+            <h3 className="text-lg font-bold text-neutral-900 mt-2">
+              Paul Conversy
+            </h3>
+            <p className="text-xs text-neutral-500 mt-0.5">
+              Scan to open card on insightmatches.com
+            </p>
+
+            <div className="mt-4 p-3 bg-white rounded-2xl border border-neutral-200/80 shadow-inner">
+              {qrDataUrl ? (
+                <img
+                  src={qrDataUrl}
+                  alt="QR Code for insightmatches.com/paul"
+                  className="w-56 h-56 rounded-lg"
+                />
+              ) : (
+                <div className="w-56 h-56 flex items-center justify-center text-xs text-neutral-400">
+                  Generating QR Code...
+                </div>
+              )}
+            </div>
+
+            <p className="mt-3 text-xs font-mono text-neutral-500 font-medium">
+              insightmatches.com/paul
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="text-center py-4 text-[11px] text-neutral-400 tracking-wide">
