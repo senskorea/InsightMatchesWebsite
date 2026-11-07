@@ -362,5 +362,13 @@ export const korean = {...citKorean,
   "Per-proposal cost comparison": "제안서당 비용 비교",
   "Full time Research Grant Application Manager": "전일제 연구비 신청 매니저",
   "Per-proposal and annual costs use separate scales, each starting at zero.": "제안서당 비용과 연간 비용은 각각 0에서 시작하는 별도 척도를 사용합니다.",
-  "Sources: EC consultancy survey (€7,500 median) and LSE base salary (£43,277 to £51,714). Fixed ECB exchange rates, 14 Oct 2026. Employer costs, taxes and success fees excluded.": "출처는 유럽위원회 컨설팅 조사 중앙값 7,500유로 및 LSE 기본급 43,277 to 51,714파운드입니다. 2026년 10월 14일 ECB 환율 기준이며 고용주 부담 비용, 세금 및 성공 수수료는 제외했습니다."
+  "Sources: EC consultancy survey (€7,500 median) and LSE base salary (£43,277 to £51,714). Fixed ECB exchange rates, 14 Oct 2026. Employer costs, taxes and success fees excluded.": "출처는 유럽위원회 컨설팅 조사 중앙값 7,500유로 및 LSE 기본급 43,277 to 51,714파운드입니다. 2026년 10월 14일 ECB 환율 기준이며 고용주 부담 비용, 세금 및 성공 수수료는 제외했습니다.",
+  "Maximum team-support fee compared with the consultancy survey median.": "전문팀 지원의 최대 요금을 컨설팅 업체 조사 중앙값과 비교합니다.",
+  "External benchmarks": "외부 비용 기준",
+  "One platform. Two ways to prepare.": "하나의 플랫폼, 두 가지 준비 방식",
+  "Team support": "전문팀 지원",
+  "Per proposal": "제안서당",
+  "Annual base salary": "연간 기본급",
+  "Annual subscription": "연간 구독료",
+  "· Per-proposal and annual costs use separate scales, each starting at zero.": "· 제안서당 비용과 연간 비용은 각각 0에서 시작하는 별도 척도를 사용합니다."
 };
