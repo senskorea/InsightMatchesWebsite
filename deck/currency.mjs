@@ -9,9 +9,10 @@ export function money(value,from,to,compact=false){
  return new Intl.NumberFormat(currency==='INR'?'en-IN':'en-US',{style:'currency',currency,notation:compact?'compact':'standard',maximumFractionDigits:compact?1:0}).format(amount);
 }
 // Round converted offers upwards to clean presentation prices.
-export function offerPrice(usd,to){
+export function offerAmount(usd,to){
  const currency=validCurrency(to),step={GBP:100,EUR:100,KRW:100000,JPY:10000,AUD:100,INR:10000}[currency];
- if(!step)return money(usd,'USD',currency);
- const rounded=Math.ceil(convert(usd,'USD',currency)/step)*step;
- return money(rounded,currency,currency);
+ return step ? Math.ceil(convert(usd,'USD',currency)/step)*step : usd;
+}
+export function offerPrice(usd,to){
+ return money(offerAmount(usd,to),to,to);
 }

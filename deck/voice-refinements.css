@@ -295,3 +295,24 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
   .organisation-logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .organisation-logo-grid figure { height: clamp(42px, 11vh, 96px); }
 }
+
+.proposal-fee-chart h2 { font-size: clamp(17px, 1.7vw, 28px); margin: 0 0 10px; }
+.proposal-fee-chart h2 small { color: #64717c; margin-left: 8px; }
+.proposal-fee-row { margin-top: clamp(8px, 2vh, 20px); }
+.proposal-fee-row > div:first-child,
+.proposal-fee-axis { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.proposal-fee-row > div:first-child { font-size: clamp(13px, 1.5vw, 24px); }
+.proposal-fee-row strong { font-size: clamp(17px, 2.1vw, 34px); white-space: nowrap; }
+.proposal-fee-track { height: clamp(9px, 2.5vh, 24px); margin-top: 6px; background: #edf2f6; }
+.proposal-fee-track span { display: block; height: 100%; background: #64788a; }
+.team-fee .proposal-fee-track span { background: #0284c7; }
+.team-fee strong { color: #0873a5; }
+.proposal-fee-axis { color: #53677b; font-size: clamp(11px, 1vw, 17px); margin-top: 6px; }
+.annual-cost-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(8px, 1.5vw, 24px); }
+.annual-cost-cards article { background: #f4f8fb; border: 1px solid #dce5ed; border-radius: 6px; padding: clamp(8px, 1.3vw, 22px); }
+.annual-cost-cards h2 { font-size: clamp(12px, 1.35vw, 22px); margin: 0 0 5px; }
+.annual-cost-cards p { font-size: clamp(11px, 1.15vw, 18px); margin: 0; }
+.annual-cost-cards strong { font-size: clamp(14px, 1.8vw, 30px); color: #13202d; }
+.benchmark-slide .pricing-comparison-footer p:first-child { font-size: clamp(10px, 1vw, 16px); }
+.organisation-logo-grid figure:has(figcaption) { grid-template-rows: minmax(0, 1fr) auto; gap: 4px; }
+.organisation-logo-grid figcaption { font-size: clamp(10px, 1vw, 16px); font-weight: 650; }
