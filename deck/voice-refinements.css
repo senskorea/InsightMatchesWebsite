@@ -316,3 +316,22 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
 .benchmark-slide .pricing-comparison-footer p:first-child { font-size: clamp(10px, 1vw, 16px); }
 .organisation-logo-grid figure:has(figcaption) { grid-template-rows: minmax(0, 1fr) auto; gap: 4px; }
 .organisation-logo-grid figcaption { font-size: clamp(10px, 1vw, 16px); font-weight: 650; }
+
+.consortium-benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(15px, 2.5vw, 44px); }
+.consortium-benefit-grid article { border-top: 2px solid #079fe3; padding: clamp(15px, 2vw, 32px); background: #f4f8fb; }
+.benefit-number { display: block; font-size: clamp(30px, 4vw, 64px); color: #079fe3; margin-bottom: 18px; }
+.benefit-label { display: block; color: #53677b; font-size: clamp(13px, 1.2vw, 20px); margin-bottom: 14px; }
+.consortium-benefit-grid h2 { font-size: clamp(20px, 2.2vw, 36px); margin: 0 0 18px; }
+.consortium-benefit-grid p { font-size: clamp(14px, 1.5vw, 24px); line-height: 1.45; }
+.next-steps-list { display: grid; gap: clamp(14px, 2.5vh, 30px); }
+.next-steps-list article { display: flex; gap: clamp(18px, 3vw, 48px); border-top: 1px solid #dbe6ed; padding-top: 18px; }
+.next-steps-list article > span { color: #079fe3; font-size: clamp(22px, 3vw, 44px); }
+.next-steps-list h2 { font-size: clamp(20px, 2vw, 34px); margin: 0 0 8px; }
+.next-steps-list p { margin: 0; font-size: clamp(14px, 1.4vw, 24px); }
+.next-steps-contact { color: #0873a5; font-size: clamp(15px, 1.4vw, 24px); }
+html[lang="ko"] { word-break: keep-all; }
+@media (max-width: 420px) {
+  .deck-controls { right: 8px; justify-content: space-between; }
+  .deck-controls button, .deck-controls select { font-size: 14px; padding-inline: 7px; }
+  .deck-controls select.currency-control { min-width: 64px; }
+}

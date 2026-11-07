@@ -1,5 +1,6 @@
 import React,{useState,useRef} from 'react';
 import {motion,useReducedMotion} from 'framer-motion';
+import {NextSteps} from './consortium-benefits.jsx';
 import {OrganisationLogoSlide} from './organisation-buildings.jsx';
 import DigijeunesPortfolio from './digijeunes-portfolio.jsx';
 import PriceBenchmarks from './price-benchmarks.jsx';
@@ -18,6 +19,7 @@ export default function ClosingJourney({kind}){
  const openPhoto=e=>{e.preventDefault();photoTrigger.current=e.currentTarget;photoDialog.current?.showModal();};
  const closePhoto=()=>{photoDialog.current?.close();photoTrigger.current?.focus();};
  const reveal=kind===31?1:kind===34?2:3;
+ if(kind===45)return <NextSteps/>;
  if(kind===43)return <OrganisationLogoSlide/>;
  if(kind===39)return <DigijeunesPortfolio/>;
  if(kind===38)return <section className="closing-slide pricing-slide team-slide"><header><h1>Grant experience. AI research.<br/>Product engineering.</h1></header><div className="team-grid">{[
