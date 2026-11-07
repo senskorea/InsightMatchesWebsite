@@ -357,5 +357,10 @@ export const korean = {...citKorean,
   "Close image": "이미지 닫기",
   "Networking for researchers · 3 November 2026": "연구자 네트워킹 · 2026년 11월 3일",
   "Pitching opportunities": "피칭 기회",
-  "C-level meetings": "경영진 간 만남"
+  "C-level meetings": "경영진 간 만남",
+  "Annual cost comparison": "연간 비용 비교",
+  "Per-proposal cost comparison": "제안서당 비용 비교",
+  "Full time Research Grant Application Manager": "전일제 연구비 신청 매니저",
+  "Per-proposal and annual costs use separate scales, each starting at zero.": "제안서당 비용과 연간 비용은 각각 0에서 시작하는 별도 척도를 사용합니다.",
+  "Sources: EC consultancy survey (€7,500 median) and LSE base salary (£43,277 to £51,714). Fixed ECB exchange rates, 14 Oct 2026. Employer costs, taxes and success fees excluded.": "출처는 유럽위원회 컨설팅 조사 중앙값 7,500유로 및 LSE 기본급 43,277 to 51,714파운드입니다. 2026년 10월 14일 ECB 환율 기준이며 고용주 부담 비용, 세금 및 성공 수수료는 제외했습니다."
 };

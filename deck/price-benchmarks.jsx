@@ -2,14 +2,25 @@ import React from 'react';
 import {useCurrency} from './currency-context.jsx';
 import {convert, offerAmount} from './currency.mjs';
 
-const survey = 'https://ec.europa.eu/transparency/documents-register/api/files/SWD%282025%29110_0/090166e525ea7d8b?rendition=false';
-const salary = 'https://jobs.lse.ac.uk/Vacancies/W/3508/0/470040/15539/research-grant-application-manager';
+function BenchmarkRow({label, value, lower = 0, upper, maximum, ours = false}) {
+  return (
+    <div className={'cost-chart-row' + (ours ? ' cost-chart-ours' : '')}>
+      <div className="cost-chart-heading"><span>{label}</span><strong>{value}</strong></div>
+      <div className="cost-chart-track" aria-hidden="true">
+        <span className={lower ? 'cost-chart-interval' : 'cost-chart-bar'}
+          style={{left: lower / maximum * 100 + '%', width: (upper - lower) / maximum * 100 + '%'}} />
+      </div>
+    </div>
+  );
+}
 
 export default function PriceBenchmarks() {
   const {currency, format, price} = useCurrency();
   const median = convert(7500, 'EUR', currency);
   const teamSupport = offerAmount(3750, currency);
-  const salaryRange = [43277, 51714].map(value => format(value, 'GBP', true)).join('–');
+  const salaryRange = [43277, 51714].map(value => convert(value, 'GBP', currency));
+  const salaryLabel = [43277, 51714].map(value => format(value, 'GBP')).join(' to ');
+  const copilot = offerAmount(2600, currency);
 
   return (
     <section className="closing-slide pricing-slide benchmark-slide">
@@ -17,24 +28,25 @@ export default function PriceBenchmarks() {
         <h1>About 55% more affordable.</h1>
         <p>InsightMatches team support compared with the consultancy survey median.</p>
       </header>
-      <section className="proposal-fee-chart" aria-label="Proposal fees on a shared scale starting at zero">
-        <h2>Cost per proposal <small>{currency}</small></h2>
-        <div className="proposal-fee-row">
-          <div><a href={survey} target="_blank" rel="noreferrer">Consultancy survey median</a><strong>{format(7500, 'EUR')}</strong></div>
-          <div className="proposal-fee-track" aria-hidden="true"><span style={{width: '100%'}} /></div>
-        </div>
-        <div className="proposal-fee-row team-fee">
-          <div><span>InsightMatches team support</span><strong>{price(3750)}</strong></div>
-          <div className="proposal-fee-track" aria-hidden="true"><span style={{width: teamSupport / median * 100 + '%'}} /></div>
-        </div>
-        <div className="proposal-fee-axis" aria-hidden="true"><span>{format(0)}</span><span>{format(7500, 'EUR')}</span></div>
-      </section>
-      <div className="annual-cost-cards">
-        <article><h2>InsightMatches AI Copilot</h2><p><strong>{price(2600)}</strong> per year</p></article>
-        <article><h2><a href={salary} target="_blank" rel="noreferrer">Research Grant Application Manager ↗</a></h2><p><strong>{salaryRange}</strong> annual base salary</p></article>
+      <div className="cost-chart-sections">
+        <section aria-label="Per-proposal cost comparison">
+          <h2>Cost per proposal <small>{currency}</small></h2>
+          <BenchmarkRow label="Consultancy survey median" value={format(7500, 'EUR')}
+            upper={median} maximum={median / .95} />
+          <BenchmarkRow label="InsightMatches team support" value={price(3750)}
+            upper={teamSupport} maximum={median / .95} ours />
+        </section>
+        <section aria-label="Annual cost comparison">
+          <h2>Annual cost comparison <small>{currency}</small></h2>
+          <BenchmarkRow label="Full time Research Grant Application Manager" value={salaryLabel}
+            lower={salaryRange[0]} upper={salaryRange[1]} maximum={salaryRange[1] / .95} />
+          <BenchmarkRow label="InsightMatches AI Copilot" value={price(2600)}
+            upper={copilot} maximum={salaryRange[1] / .95} ours />
+        </section>
       </div>
       <footer className="pricing-comparison-footer">
-        <p>Sources: EC consultancy survey (€7,500 median) and LSE salary benchmark (£43,277–£51,714). Fixed ECB exchange rates, 14 Oct 2026. Employer costs, taxes and success fees excluded.</p>
+        <p>Per-proposal and annual costs use separate scales, each starting at zero.</p>
+        <p>Sources: EC consultancy survey (€7,500 median) and LSE base salary (£43,277 to £51,714). Fixed ECB exchange rates, 14 Oct 2026. Employer costs, taxes and success fees excluded.</p>
       </footer>
     </section>
   );
