@@ -296,20 +296,24 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
   .organisation-logo-grid figure { height: clamp(42px, 11vh, 96px); }
 }
 
-.support-comparison { display: grid; gap: clamp(16px, 2.4vh, 26px); }
+.support-comparison { display: grid; gap: clamp(24px, 5vh, 58px); }
 .comparison-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.comparison-basis { display: block; font-size: clamp(11px, 1vw, 16px); color: #64717c; margin-top: 5px; }
-.comparison-measure h3 { font-size: clamp(16px, 1.6vw, 26px); font-weight: 500; margin: 0; line-height: 1.2; color: #53616d; }
-.comparison-value { font-size: clamp(21px, 2.3vw, 38px); letter-spacing: -.03em; font-weight: 600; white-space: nowrap; color: #283743; }
-.comparison-track { position: relative; height: clamp(7px, 1.1vh, 12px); margin-top: 12px; background: #edf0f2; }
-.comparison-track > span { position: absolute; top: 0; bottom: 0; background: #a0abb4; }
-.comparison-interval { border-left: 2px solid #65727d; border-right: 2px solid #65727d; }
-.comparison-offers { position: relative; border-top: 1px solid #cdd5dc; border-bottom: 1px solid #cdd5dc; padding: clamp(14px, 2vh, 24px) 0; }
-.comparison-offers h2 { font-size: clamp(20px, 2vw, 32px); color: #13202d; margin: 0 0 20px; }
-.comparison-offers .comparison-measure + .comparison-measure { margin-top: clamp(16px, 2.2vh, 26px); }
-.comparison-measure-ours h3 { font-weight: 600; color: #13202d; }
-.comparison-measure-ours .comparison-track > span { background: #537c94; }
-.comparison-measure-ours .comparison-interval { border-color: #3f6277; }
+.comparison-basis { display: block; font-size: clamp(12px, 1.1vw, 18px); color: #64717c; margin-top: 6px; }
+.comparison-measure h3 { font-size: clamp(18px, 1.8vw, 30px); font-weight: 550; margin: 0; line-height: 1.2; color: #283743; }
+.comparison-value { font-size: clamp(24px, 2.8vw, 46px); letter-spacing: -.03em; font-weight: 650; white-space: nowrap; color: #283743; }
+.comparison-track { position: relative; height: clamp(14px, 2.5vh, 28px); margin-top: 16px; background: #f0f2f4; border-radius: 3px; overflow: hidden; }
+.comparison-track > span { position: absolute; top: 0; bottom: 0; background: #d9959d; }
+.comparison-interval { border-left: 3px solid #b76b79; border-right: 3px solid #b76b79; }
+.comparison-hiring .comparison-track { background: #f4ebef; }
+.comparison-hiring .comparison-track > span { background: #8b3154; }
+.comparison-hiring .comparison-interval { border-color: #6f2341; }
+.comparison-ours h3 { font-weight: 700; color: #0284c7; }
+.comparison-ours .comparison-value { color: #0284c7; }
+.comparison-ours .comparison-track { background: #e8f4fb; }
+.comparison-ours .comparison-track > span { background: #079fe3; }
+.comparison-ours .comparison-interval { border-color: #0284c7; }
+.comparison-copilot { display: flex; gap: 9px; align-items: baseline; font-size: clamp(13px, 1.2vw, 20px); color: #53677b; margin: 12px 0 0; }
+.comparison-copilot strong { color: #13202d; font-weight: 600; }
 .benchmark-slide .pricing-comparison-footer p:first-child { font-size: clamp(10px, 1vw, 16px); }
 .benchmark-slide .pricing-comparison-footer p { font-size: clamp(10px, .95vw, 15px); }
 

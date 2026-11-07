@@ -370,5 +370,7 @@ export const korean = {...citKorean,
   "Per proposal": "제안서당",
   "Annual base salary": "연간 기본급",
   "Annual subscription": "연간 구독료",
-  "· Per-proposal and annual costs use separate scales, each starting at zero.": "· 제안서당 비용과 연간 비용은 각각 0에서 시작하는 별도 척도를 사용합니다."
+  "· Per-proposal and annual costs use separate scales, each starting at zero.": "· 제안서당 비용과 연간 비용은 각각 0에서 시작하는 별도 척도를 사용합니다.",
+  "Consultancy median": "컨설팅 업체 중앙값",
+  "Team support · per proposal": "전문팀 지원 · 제안서당"
 };
