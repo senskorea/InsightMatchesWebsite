@@ -296,19 +296,25 @@ main:has(.preparation-overview) .persistent-particles{opacity:0}
   .organisation-logo-grid figure { height: clamp(42px, 11vh, 96px); }
 }
 
-.cost-chart-sections { display: grid; gap: clamp(18px, 3vh, 38px); }
-.cost-chart-sections > section + section { border-top: 1px solid #dbe6ed; padding-top: clamp(15px, 2.5vh, 28px); }
-.cost-chart-sections h2 { font-size: clamp(17px, 1.6vw, 28px); margin: 0 0 12px; }
-.cost-chart-sections h2 small { color: #64717c; margin-left: 8px; font-weight: 500; }
-.cost-chart-row + .cost-chart-row { margin-top: clamp(10px, 2vh, 24px); }
-.cost-chart-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; font-size: clamp(13px, 1.45vw, 24px); color: #13202d; }
-.cost-chart-heading strong { font-size: clamp(16px, 1.9vw, 32px); white-space: nowrap; }
-.cost-chart-ours strong { color: #0873a5; }
-.cost-chart-track { position: relative; height: clamp(10px, 2vh, 23px); margin-top: 7px; background: #edf2f6; }
-.cost-chart-track > span { position: absolute; top: 0; bottom: 0; background: #64788a; }
-.cost-chart-interval { border-left: 3px solid #334b60; border-right: 3px solid #334b60; }
-.cost-chart-ours .cost-chart-track > span { background: #0284c7; }
-.cost-chart-ours .cost-chart-interval { border-color: #0873a5; }
+.support-comparison { position: relative; isolation: isolate; padding: 22px 0; }
+.support-comparison::before { content: ''; position: absolute; inset: 0 0 0 calc(50% + 12px); background: #eef7fc; border-top: 4px solid #0284c7; z-index: -1; }
+.comparison-column-headings, .comparison-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.comparison-column-headings h2 { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; font-size: clamp(18px, 2vw, 32px); margin: 0; padding: 0 26px 22px; color: #53677b; }
+.comparison-column-headings h2:last-child { color: #0873a5; }
+.comparison-column-headings h2 > span:last-child:not(.comparison-brand-dot) { flex-basis: 100%; font-size: clamp(12px, 1.25vw, 20px); font-weight: 400; color: #53677b; }
+.comparison-brand-dot { width: 13px; height: 13px; border-radius: 50%; background: #0284c7; }
+.comparison-measure { padding: 18px 26px 22px; border-top: 1px solid #dbe6ed; }
+.comparison-basis { display: block; font-size: clamp(11px, 1vw, 16px); letter-spacing: .04em; color: #64717c; margin-bottom: 8px; }
+.comparison-measure h3 { font-size: clamp(14px, 1.35vw, 22px); font-weight: 500; margin: 0 0 9px; min-height: 2.4em; line-height: 1.2; color: #53677b; }
+.comparison-value { display: block; font-size: clamp(19px, 2.4vw, 39px); letter-spacing: -.03em; font-weight: 650; white-space: nowrap; color: #334b60; }
+.comparison-measure-ours h3 { color: #13202d; font-weight: 650; }
+.comparison-measure-ours .comparison-value { color: #0873a5; }
+.comparison-track { position: relative; height: clamp(10px, 1.8vh, 20px); margin-top: 14px; background: #e1e8ed; }
+.comparison-track > span { position: absolute; top: 0; bottom: 0; background: #8798a7; }
+.comparison-interval { border-left: 3px solid #53677b; border-right: 3px solid #53677b; }
+.comparison-measure-ours .comparison-track { background: #d6eaf5; }
+.comparison-measure-ours .comparison-track > span { background: #0284c7; }
+.comparison-measure-ours .comparison-interval { border-color: #0873a5; }
 .benchmark-slide .pricing-comparison-footer p:first-child { font-size: clamp(10px, 1vw, 16px); }
 .benchmark-slide .pricing-comparison-footer p { font-size: clamp(10px, .95vw, 15px); }
 
