@@ -1,5 +1,7 @@
 import React,{useState,useEffect,useRef} from 'react';
 import {createRoot} from 'react-dom/client';
+import {LanguageProvider} from './language-context.jsx';
+import ConsortiumBenefits from './consortium-benefits.jsx';
 import {CurrencyProvider} from './currency-context.jsx';
 import {motion,AnimatePresence,useReducedMotion} from 'framer-motion';
 import './swiss.css';
@@ -33,7 +35,7 @@ const originalScenes=[
  ['More time for research.','','Conditional scenario: 30% × '+assistedTotal+'/'+preparationTotal+' ≈ 9.5%. Assumes the same proportional reduction in preparation time; not a measured researcher-wide outcome.'],
  ['Your idea.\nA workable draft.','Find funding. Develop the idea. Build the team. Structure the project. Prepare and review the draft.','Product journey concept. Scientific judgment and final review remain with the team.']
 ];
-const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,43,30,36,37,38,39,50,51,52];
+const sceneMap=[-1,-7,-4,-6,-2,-5,40,41,42,44,1,-8,2,-3,20,21,22,23,24,10,31,34,35,33,43,30,36,45,37,38,39,50,51,52];
 const extras={
  '-8':['Research happens\nin many places.','We work with universities, research institutes, private companies and deep tech startups.','Different organisations. Shared research ambitions.'],
  '-1':['InsightMatches','An agentic AI platform for research funding and collaboration.','Researcher edition · interactive presentation'],
@@ -89,7 +91,8 @@ function Diagram({step:sceneIndex,reduced,onPrepDetail}){
    return()=>clearInterval(id);
  },[step,reduced,settled]);
  let annotations;
- if(step===-5||(step>=40&&step<=42))annotations=<div className="funding-scene"><EUFunding/><ExpansionJourney count={step===-5?0:step-39}/></div>;
+ if(step===44)annotations=<ConsortiumBenefits/>;
+ else if(step===-5||(step>=40&&step<=42))annotations=<div className="funding-scene"><EUFunding/><ExpansionJourney count={step===-5?0:step-39}/></div>;
  else if(step>=30)annotations=<ClosingJourney kind={step}/>;
  else if(step>=19)annotations=<ProductJourney stage={step-20}/>;
  else if(step<0)annotations=<ExtraScene kind={step}/>;
@@ -153,4 +156,4 @@ function App(){
  if(sceneMap[step]>=50){const [file,title]=indiaAnnex[sceneMap[step]-50];return <main data-slide-index={step} data-slide-count={scenes.length} className={'annex-image-slide'+(sceneMap[step]===50?' has-funding-estimate':'')} aria-label={title} tabIndex="0"><img src={'/deck-assets/'+file} alt={title}/>{sceneMap[step]===50&&<aside className="india-funding-estimate"><strong>Indian government co-funding: approximately 1.5%, assuming 300–350 total topics.</strong><span>Working estimate for Horizon Europe 2026–27: 5 identified co-funded topics ÷ an assumed 300–350 total topics. Topic count, not budget share or participation eligibility.</span></aside>}<span className="sr-only">Use arrow keys to navigate. Home returns to the beginning.</span></main>}
  return <main data-slide-index={step} data-slide-count={scenes.length} className={sceneMap[step]===-2?'collage-scene':''} aria-label="InsightMatches researcher presentation" tabIndex="0"><div className="content"><div className="copy" aria-live="polite"><motion.div key={step} initial={{opacity:0,y:reduced?0:18}} animate={{opacity:1,y:0}} transition={{duration:reduced?0:.45}}><>{sceneMap[step]===10?<PreparationShare/>:<h1>{sceneMap[step]===2?(prepDetail?'≈151,000 people.\nOne full year.':'30% of time on\ngrant preparation.'):scenes[step][0]}</h1>}</><p>{sceneMap[step]===2?(prepDetail?'At a 30% preparation share, Korea’s research effort would equal 151,000 people working full time for a year.':'Research time is precious.'):scenes[step][1]}</p>{sceneMap[step]===-2&&<Collaborators/>}</motion.div></div><div className="diagram"><Diagram step={step} reduced={reduced} onPrepDetail={setPrepDetail}/></div></div><p className="evidence">{scenes[step][2]}</p><span className="sr-only">Use arrow keys or scroll to change scenes. Home returns to the beginning. End opens the final scene.</span></main>
 }
-createRoot(document.getElementById('root')).render(new URLSearchParams(window.location.search).get('canvas')==='1'?<CurrencyProvider><App/></CurrencyProvider>:<PresentationFrame/>);
+createRoot(document.getElementById('root')).render(<LanguageProvider>{new URLSearchParams(window.location.search).get('canvas')==='1'?<CurrencyProvider><App/></CurrencyProvider>:<PresentationFrame/>}</LanguageProvider>);

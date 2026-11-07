@@ -1,6 +1,19 @@
 import React,{useState,useEffect,useRef} from 'react';
+import {useLanguage} from './language-context.jsx';
 import {validCurrency,rates} from './currency.mjs';
 export default function PresentationFrame(){
+ const {language, changeLanguage} = useLanguage();
+ const initialUrl = useRef(null);
+ if (!initialUrl.current) {
+   const source = new URL(window.location.href);
+   source.searchParams.set('canvas', '1');
+   initialUrl.current = source.href;
+ }
+ const updateLanguage = value => {
+   changeLanguage(value);
+   const target = frame.current?.contentWindow;
+   if (target) target.dispatchEvent(new target.CustomEvent('deck-language', {detail: value}));
+ };
  const [fixed,setFixed]=useState(true),[size,setSize]=useState({width:window.innerWidth,height:window.innerHeight});
  const frame=useRef(null);
  const [fullscreen,setFullscreen]=useState(Boolean(document.fullscreenElement));
@@ -12,11 +25,10 @@ export default function PresentationFrame(){
  const updateCurrency=value=>{setCurrency(value);const target=frame.current?.contentWindow;if(target)target.dispatchEvent(new target.CustomEvent('deck-currency',{detail:value}));};
  useEffect(()=>{const resize=()=>setSize({width:window.innerWidth,height:window.innerHeight});window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize)},[]);
  const scale=Math.min(size.width/1920,size.height/1080);
- const url=new URL(window.location.href);url.searchParams.set('canvas','1');
  const navigate=key=>{const target=frame.current?.contentWindow;if(!target)return;target.document.querySelector('main')?.dispatchEvent(new target.KeyboardEvent('keydown',{key,bubbles:true}));target.focus()};
  return <div className={'presentation-shell'+(fullscreen?' is-fullscreen':'')}>
-  <nav className="deck-controls" aria-label="Presentation controls"><button onClick={()=>navigate('ArrowLeft')} aria-label="Previous slide">←</button><button onClick={()=>navigate('Home')}>Start</button><button onClick={()=>navigate('ArrowRight')} aria-label="Next slide">→</button><select className="currency-control" aria-label="Currency" value={currency} onChange={e=>updateCurrency(e.target.value)}>{Object.keys(rates).map(code=><option key={code}>{code}</option>)}</select></nav>
-  <iframe ref={frame} title="InsightMatches presentation" src={url.href} onLoad={()=>{updateCurrency(currency);frame.current?.contentWindow?.focus()}} style={fixed?{width:1920,height:1080,transform:'translate(-50%,-50%) scale('+scale+')'}:{width:'100%',height:'100%',transform:'translate(-50%,-50%)'}}/>
+  <nav className="deck-controls" aria-label="Presentation controls"><button onClick={()=>navigate('ArrowLeft')} aria-label="Previous slide">←</button><button onClick={()=>navigate('Home')}>Start</button><button onClick={()=>navigate('ArrowRight')} aria-label="Next slide">→</button><select className="currency-control" aria-label="Currency" value={currency} onChange={e=>updateCurrency(e.target.value)}>{Object.keys(rates).map(code=><option key={code}>{code}</option>)}</select><button data-language-name lang={language==='ko'?'en':'ko'} onClick={()=>updateLanguage(language==='ko'?'en':'ko')} aria-label={language==='ko'?'영어로 전환':'Switch to Korean'}>{language==='ko'?'English':'한국어'}</button></nav>
+  <iframe ref={frame} title="InsightMatches presentation" src={initialUrl.current} onLoad={()=>{updateCurrency(currency);updateLanguage(language);frame.current?.contentWindow?.focus()}} style={fixed?{width:1920,height:1080,transform:'translate(-50%,-50%) scale('+scale+')'}:{width:'100%',height:'100%',transform:'translate(-50%,-50%)'}}/>
   <div className="display-controls"><details className="deck-settings"><summary>⚙ Settings</summary><div className="deck-settings-panel"><a href={'/deck/downloads/insightmatches-deck-'+currency+'.pdf'} download>Download PDF ({currency}) ↓</a><small>Complete deck · offline backup</small></div></details><button className="presentation-mode" aria-label="Toggle fixed 16 by 9 slide size" aria-pressed={fixed} onClick={()=>{setFixed(v=>!v);frame.current?.contentWindow?.focus()}}>{fixed?'16:9':'Fit window'} <span>⇄</span></button><button className="presentation-mode" aria-label={fullscreen?'Exit fullscreen':'Enter fullscreen'} aria-pressed={fullscreen} onClick={toggleFullscreen}>{fullscreen?'Exit fullscreen':'Fullscreen'} <span aria-hidden="true">⛶</span></button></div>
   {fullscreenError&&<p className="fullscreen-error" role="status">{fullscreenError}</p>}
  </div>;
