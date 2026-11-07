@@ -8,6 +8,12 @@ const profiles=[
  ['Climate, Energy & Mobility','Matti Douy','Hydrogen mobility','25 515 460 325'],
  ['Food, Bioeconomy, Natural Resources, Agriculture & Environment','Daniel Enebeli','Circular economy','850 515 440 325']
 ];
+// Indicative 2021–27 allocations for the six fields, Article 12(2)(b)(i–vi).
+const budgets = [6893, 1386, 1303, 13462, 13462, 8952];
+const totalBudget = budgets.reduce((total, amount) => total + amount, 0);
+const budgetShare = index => (budgets[index] / totalBudget * 100).toFixed(1) + '%';
+const budgetSource = 'https://eur-lex.europa.eu/eli/reg/2021/695/2025-12-24/eng/pdf';
+
 export default function ClusterProfiles(){
  const reduced=useReducedMotion();
  const [active,setActive]=useState(4);
@@ -24,9 +30,9 @@ export default function ClusterProfiles(){
  {portrait?<img className="researcher-portrait" src={'/deck-assets/'+portrait} alt={'Portrait artwork of '+name}/>:crop?<svg viewBox={crop} role="img" aria-label={name+' original project portrait'}><image href="/deck-assets/entrepreneurs-original.png" width="1672" height="941"/></svg>:<div className="mock-portrait" aria-label="Portrait placeholder"><span aria-hidden="true">◯</span><small>PORTRAIT TO FOLLOW</small></div>}
  <figcaption><small>{portrait?'Research profile':crop?'Original project profile':'Mock profile · replace before publishing'}</small><strong>{name}</strong>{affiliation&&<span className="researcher-affiliation">{affiliation}</span>}<p>{topic}</p></figcaption>
  </figure></div>
- <div className="cluster-wheel"><motion.div layoutId="research-funding-wheel" transition={{duration:reduced?0:1.35,ease:[.22,1,.36,1]}}><svg viewBox="0 0 600 600" aria-label="Six equal research areas of Horizon Europe Pillar II">
- {profiles.map(([label],i)=>{const a=(i*60-90)*Math.PI/180,b=((i+1)*60-90)*Math.PI/180;const d='M300 300 L'+(300+245*Math.cos(a))+' '+(300+245*Math.sin(a))+' A245 245 0 0 1 '+(300+245*Math.cos(b))+' '+(300+245*Math.sin(b))+' Z';return <path key={label} d={d} fill={active===i?'#079fe3':['#d8e2e9','#c1d2de','#a6bfce','#8cabbf','#7297af','#567e97'][i]} stroke="white" strokeWidth="5" role="button" tabIndex="0" aria-label={label} aria-pressed={active===i} onMouseEnter={()=>selectCluster(i)} onFocus={()=>selectCluster(i)} onClick={()=>selectCluster(i)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();selectCluster(i)}}}/>})}
- <circle cx="300" cy="300" r="112" fill="white"/><text x="300" y="291" textAnchor="middle" className="svg-label">HORIZON EUROPE</text><text x="300" y="323" textAnchor="middle" className="svg-small">PILLAR II · SIX CLUSTERS</text>
- </svg></motion.div><h2>{cluster}</h2><p>{playing?'Auto-rotation on · hover to explore.':'Hover or click to explore · press Play to resume.'} Equal segments show research areas, not budget shares.</p></div>
+ <div className="cluster-wheel"><motion.div layoutId="research-funding-wheel" transition={{duration:reduced?0:1.35,ease:[.22,1,.36,1]}}><svg viewBox="0 0 600 600" aria-label="Research fields">
+ {profiles.map(([label],i)=>{const a=(i*60-90)*Math.PI/180,b=((i+1)*60-90)*Math.PI/180;const d='M300 300 L'+(300+245*Math.cos(a))+' '+(300+245*Math.sin(a))+' A245 245 0 0 1 '+(300+245*Math.cos(b))+' '+(300+245*Math.sin(b))+' Z';return <path key={label} d={d} fill={active===i?'#079fe3':['#d8e2e9','#c1d2de','#a6bfce','#8cabbf','#7297af','#567e97'][i]} stroke="white" strokeWidth="5" role="button" tabIndex="0" aria-label={label+', '+budgetShare(i)+' share of the displayed fields’ budget'} aria-pressed={active===i} onMouseEnter={()=>selectCluster(i)} onFocus={()=>selectCluster(i)} onClick={()=>selectCluster(i)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();selectCluster(i)}}}/>})}
+ <circle cx="300" cy="300" r="112" fill="white"/><text x="300" y="292" textAnchor="middle" className="svg-label">{budgetShare(active)}</text><text x="300" y="320" textAnchor="middle" className="svg-small">SHARE OF BUDGET</text>
+ </svg></motion.div><h2>{cluster}</h2><p>{playing?'Auto-rotation on · hover to explore.':'Hover or click to explore · press Play to resume.'} <a href={budgetSource} target="_blank" rel="noreferrer">2021–27 allocation across the fields shown</a>.</p></div>
  </section>;
 }

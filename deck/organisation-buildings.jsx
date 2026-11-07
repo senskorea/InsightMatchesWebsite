@@ -20,14 +20,19 @@ export default function OrganisationBuildings(){return <div className="organisat
  </svg></div>}
 
 
+const collaborationLogos = organisationLogos.filter(([name]) =>
+  name !== 'KAIST' && name !== 'European Chamber of Commerce in Korea'
+);
+
 export function OrganisationLogoSlide() {
   return (
     <section className="closing-slide pricing-slide organisation-logo-slide">
       <header><h1>Organisations we’ve worked with</h1></header>
       <div className="organisation-logo-grid">
-        {organisationLogos.map(([name, file, dark]) => (
+        {collaborationLogos.map(([name, file, dark]) => (
           <figure key={name} className={dark ? 'dark-logo' : undefined}>
-            <img src={'/deck-assets/' + file} alt={name} />
+            <img src={'/deck-assets/' + file} alt={name === 'DEEDU' ? '' : name} />
+            {name === 'DEEDU' && <figcaption>DEEDU</figcaption>}
           </figure>
         ))}
       </div>
