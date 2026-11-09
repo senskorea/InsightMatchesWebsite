@@ -41,6 +41,9 @@ jobs:
 
       - name: Build
         run: npm run build -- --config vite.deploy.config.ts
+
+      - name: Add SPA route fallback
+        run: cp dist/index.html dist/404.html
         
       - name: Generate offline deck PDFs
         env:
