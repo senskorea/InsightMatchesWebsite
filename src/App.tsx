@@ -12,7 +12,6 @@ import Platform from "./pages/Platform";
 import PaulCard from "./pages/PaulCard";
 import LifeSciences from "./pages/LifeSciences";
 import Referral from "./pages/Referral";
-import TrialRequest from "./pages/TrialRequest";
 import Dissemination from "./pages/Dissemination";
 import Resources from "./pages/Resources";
 import ResourcesInsights from "./pages/ResourcesInsights";
@@ -29,7 +28,6 @@ import HorizonEurope from "./pages/HorizonEurope";
 import GuideHorizonEuropeKorea from "./pages/GuideHorizonEuropeKorea";
 import AIToolsEUKoreaConsortium from "./pages/AIToolsEUKoreaConsortium";
 import EUKoreaDigitalPartnership from "./pages/EUKoreaDigitalPartnership";
-import NextRise from "./pages/NextRise";
 import RequestDemo from "./pages/RequestDemo";
 import PhiHubPressRelease from "./pages/PhiHubPressRelease";
 import LeadershipTeamPressRelease from "./pages/LeadershipTeamPressRelease";
@@ -222,7 +220,7 @@ const AppContent = () => {
             <Route path="/card" element={<PaulCard />} />
             <Route path="/lifesciences" element={<LifeSciences />} />
             <Route path="/referral" element={<Referral />} />
-            <Route path="/request-trial" element={<TrialRequest />} />
+            <Route path="/request-trial" element={<RequestDemo />} />
             <Route path="/platform" element={<Platform />} />
             <Route path="/dissemination" element={<Dissemination />} />
             <Route path="/resources" element={<Resources />} />
@@ -277,7 +275,7 @@ const AppContent = () => {
             <Route path="/eu-pic" element={<EUPIC />} />
             <Route path="/rndday" element={<RnDDay />} />
             <Route path="/request-demo" element={<RequestDemo />} />
-            <Route path="/nextrise" element={<NextRise />} />
+            <Route path="/nextrise" element={<RequestDemo />} />
             <Route path="/NEXTRISE" element={<Navigate to="/nextrise" replace />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/ko/careers" element={<Careers />} />
