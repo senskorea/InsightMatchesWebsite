@@ -15,6 +15,8 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ORIGINS = {'https://insightmatches.com', 'https://www.insightmatches.com'}
+SOURCES = {'trial', 'demo', 'nextrise'}
+EMAIL_RE = re.compile(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~\-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 CONSENT = 'Keep me updated about InsightMatches events, research funding opportunities, and platform news.'
 COMMUNITY = 3
 DB = os.environ.get('DEMO_DB', '/data/demo.sqlite3')
@@ -23,6 +25,7 @@ TOKEN = ''
 DEMO_LIST = 0
 ACK_TEMPLATE = 0
 NOTIFY_TEMPLATE = 0
+NOTIFY_EMAILS = []
 WINDOWS = {}
 LOCK = threading.Lock()
 
@@ -38,21 +41,37 @@ def initialize():
         db.execute('CREATE TABLE IF NOT EXISTS requests (id TEXT PRIMARY KEY, payload TEXT NOT NULL, steps TEXT NOT NULL DEFAULT "[]", attempts INTEGER NOT NULL DEFAULT 0, retry_at REAL NOT NULL DEFAULT 0, done INTEGER NOT NULL DEFAULT 0)')
 
 
+def parse_notification_emails(raw):
+    emails = list(dict.fromkeys(part.strip().lower() for part in raw.split(',') if part.strip()))
+    if not emails or any(not EMAIL_RE.fullmatch(email) for email in emails):
+        raise ValueError('Invalid NOTIFY_EMAILS configuration')
+    return emails
+
+
 def validate(raw):
     if not isinstance(raw, dict):
         raise ValueError('Invalid request')
     if raw.get('website'):
         return None
     out = {}
-    for key, limit in [('name', 200), ('email', 200), ('organization', 200), ('message', 3000)]:
+    for key, limit in [('name', 200), ('email', 200), ('organization', 200), ('country', 120), ('message', 3000)]:
         value = raw.get(key)
         if not isinstance(value, str) or not value.strip() or len(value) > limit:
             raise ValueError('Invalid ' + key)
         out[key] = value.strip()
     out['email'] = out['email'].lower()
-    if not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~\-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", out['email']):
+    if not EMAIL_RE.fullmatch(out['email']):
         raise ValueError('Invalid email')
     out['request_id'] = str(uuid.UUID(raw.get('request_id', '')))
+    source = raw.get('source')
+    if source not in SOURCES:
+        raise ValueError('Invalid source')
+    out['source'] = source
+    for key, limit in [('role', 160), ('programme_interest', 200)]:
+        value = raw.get(key, '')
+        if not isinstance(value, str) or len(value) > limit:
+            raise ValueError('Invalid ' + key)
+        out[key] = value.strip()
     if type(raw.get('newsletter_consent')) is not bool:
         raise ValueError('Invalid consent')
     out['newsletter_consent'] = raw['newsletter_consent']
@@ -65,7 +84,7 @@ def enqueue(data):
         previous = db.execute('SELECT payload FROM requests WHERE id=?', (data['request_id'],)).fetchone()
         if previous:
             old = json.loads(previous['payload'])
-            if any(old[k] != data[k] for k in ['name', 'email', 'organization', 'message', 'newsletter_consent']):
+            if any(old[k] != data[k] for k in ['source', 'name', 'email', 'organization', 'country', 'role', 'programme_interest', 'message', 'newsletter_consent']):
                 raise ValueError('Request ID already used')
             return
         db.execute('INSERT INTO requests(id,payload) VALUES (?,?)', (data['request_id'], json.dumps(data)))
@@ -86,6 +105,12 @@ def find_subscriber(email):
 
 def process(row):
     data = json.loads(row['payload'])
+    # Requests queued by the original demo-only service must remain processable
+    # when the unified worker is deployed.
+    data.setdefault('source', 'demo')
+    data.setdefault('country', '')
+    data.setdefault('role', '')
+    data.setdefault('programme_interest', '')
     steps = set(json.loads(row['steps']))
     def step(name, action):
         if name in steps:
@@ -98,7 +123,7 @@ def process(row):
     if not subscriber:
         try:
             api('POST', '/api/subscribers', {'email': data['email'], 'name': data['name'], 'status': 'enabled', 'lists': [DEMO_LIST],
-                'preconfirm_subscriptions': True, 'attribs': {'source': 'insightmatches_demo'}})
+                'preconfirm_subscriptions': True, 'attribs': {'source': 'insightmatches_request'}})
         except HTTPError as err:
             if err.code != 409:
                 raise
@@ -109,9 +134,10 @@ def process(row):
     # Never overwrite their verified profile, global status, or unrelated attributes.
     # Requests keyed by UUID preserve repeated enquiries and make retries idempotent.
     step('record', lambda: api('PATCH', f'/api/subscribers/{sid}', {'attribs': {
-        'demo_' + data['request_id'].replace('-', ''): {
-            'name': data['name'], 'organization': data['organization'], 'message': data['message'],
-            'received_at': data['received_at'], 'source': 'insightmatches_request_demo',
+        'request_' + data['request_id'].replace('-', ''): {
+            'name': data['name'], 'organization': data['organization'], 'country': data['country'],
+            'role': data['role'], 'programme_interest': data['programme_interest'], 'message': data['message'],
+            'received_at': data['received_at'], 'source': data['source'],
             'newsletter_consent': data['newsletter_consent'],
             'consent_text': CONSENT if data['newsletter_consent'] else None,
             'consent_version': 'demo-2026-10-29',
@@ -120,8 +146,8 @@ def process(row):
     # Respect prior unsubscribes: do not reactivate an existing list membership.
     if DEMO_LIST not in lists:
         step('demo_list', lambda: api('PUT', '/api/subscribers/lists', {'ids': [sid], 'action': 'add', 'target_list_ids': [DEMO_LIST], 'status': 'confirmed'}))
-    step('notify', lambda: api('POST', '/api/tx', {'subscriber_emails': ['info@insightmatches.com'], 'subscriber_mode': 'external',
-        'template_id': NOTIFY_TEMPLATE, 'subject': 'New InsightMatches demo enquiry', 'data': data}))
+    step('notify', lambda: api('POST', '/api/tx', {'subscriber_emails': NOTIFY_EMAILS, 'subscriber_mode': 'external',
+        'template_id': NOTIFY_TEMPLATE, 'subject': 'New InsightMatches access request', 'data': data}))
     enabled = subscriber.get('status') == 'enabled'
     if data['newsletter_consent'] and enabled:
         if COMMUNITY not in lists:
@@ -216,6 +242,7 @@ if __name__ == '__main__':
     DEMO_LIST = int(os.environ['DEMO_LIST_ID'])
     ACK_TEMPLATE = int(os.environ['DEMO_ACK_TEMPLATE_ID'])
     NOTIFY_TEMPLATE = int(os.environ['DEMO_NOTIFY_TEMPLATE_ID'])
+    NOTIFY_EMAILS = parse_notification_emails(os.environ['NOTIFY_EMAILS'])
     if ':' not in TOKEN or not all([DEMO_LIST, ACK_TEMPLATE, NOTIFY_TEMPLATE]) or DEMO_LIST == COMMUNITY:
         raise RuntimeError('Missing dedicated demo configuration')
     initialize()

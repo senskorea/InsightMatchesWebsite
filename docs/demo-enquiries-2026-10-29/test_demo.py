@@ -12,11 +12,12 @@ demo = importlib.util.module_from_spec(spec); spec.loader.exec_module(demo)
 class DemoTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
-        demo.DB = str(Path(self.tmp.name)/'queue.sqlite3'); demo.DEMO_LIST=4;demo.ACK_TEMPLATE=6;demo.NOTIFY_TEMPLATE=7;demo.initialize()
+        demo.DB = str(Path(self.tmp.name)/'queue.sqlite3'); demo.DEMO_LIST=4;demo.ACK_TEMPLATE=6;demo.NOTIFY_TEMPLATE=7
+        demo.NOTIFY_EMAILS=['info@insightmatches.com','serena@digijeunes.com','mark@digijeunes.com','junior@digijeunes.com'];demo.initialize()
         self.calls=[];self.sub=None
         self.original_api=demo.api;demo.api=self.api;self.addCleanup(setattr,demo,'api',self.original_api)
     def data(self, consent=False):
-        return demo.validate({'name':'Test User','email':'test@example.com','organization':'Test Lab','message':'Help find partners','request_id':str(uuid.uuid4()),'newsletter_consent':consent})
+        return demo.validate({'source':'trial','name':'Test User','email':'test@example.com','organization':'Test Lab','country':'France','role':'Researcher','programme_interest':'Horizon Europe','message':'Help find partners','request_id':str(uuid.uuid4()),'newsletter_consent':consent})
     def api(self,method,path,payload=None):
         self.calls.append((method,path,copy.deepcopy(payload)))
         if method=='GET':return {'results':[copy.deepcopy(self.sub)] if self.sub else []}
@@ -53,9 +54,31 @@ class DemoTests(unittest.TestCase):
         with demo.connection() as db:self.assertEqual(db.execute('SELECT count(*) FROM requests').fetchone()[0],1)
     def test_repeat_enquiries_retained(self):
         self.run_request(self.data());self.run_request(self.data())
-        self.assertEqual(len([k for k in self.sub['attribs'] if k.startswith('demo_')]),2)
+        self.assertEqual(len([k for k in self.sub['attribs'] if k.startswith('request_')]),2)
+    def test_route_source_is_retained_in_record_and_notification(self):
+        data=self.data();data['source']='nextrise';self.run_request(data)
+        record=next(v for k,v in self.sub['attribs'].items() if k.startswith('request_'))
+        self.assertEqual(record['source'],'nextrise')
+        notification=next(payload for method,path,payload in self.calls if method=='POST' and path=='/api/tx' and payload.get('subscriber_mode')=='external')
+        self.assertEqual(notification['data']['source'],'nextrise')
+        self.assertEqual(notification['subscriber_emails'],demo.NOTIFY_EMAILS)
+    def test_notification_email_configuration_is_validated_and_deduplicated(self):
+        parsed=demo.parse_notification_emails('INFO@insightmatches.com, serena@digijeunes.com, info@insightmatches.com')
+        self.assertEqual(parsed,['info@insightmatches.com','serena@digijeunes.com'])
+        with self.assertRaises(ValueError):demo.parse_notification_emails('')
+        with self.assertRaises(ValueError):demo.parse_notification_emails('not-an-email')
+    def test_legacy_queued_demo_request_remains_processable(self):
+        data=self.data()
+        for key in ['source','country','role','programme_interest']:
+            data.pop(key)
+        self.run_request(data)
+        record=next(v for k,v in self.sub['attribs'].items() if k.startswith('request_'))
+        self.assertEqual(record['source'],'demo')
+        self.assertEqual(record['country'],'')
     def test_invalid_request_and_honeypot(self):
         with self.assertRaises(ValueError):demo.validate({'name':'X'})
+        invalid={'source':'campaign','name':'Test','email':'test@example.com','organization':'Lab','country':'France','message':'Help','request_id':str(uuid.uuid4()),'newsletter_consent':False}
+        with self.assertRaises(ValueError):demo.validate(invalid)
         self.assertIsNone(demo.validate({'website':'bot'}))
 
 if __name__=='__main__':unittest.main()
