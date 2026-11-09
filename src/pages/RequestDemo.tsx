@@ -67,8 +67,8 @@ export default function RequestDemo() {
         {newsletter && <p className="mt-4 text-sm leading-relaxed text-slate-600">If you’re new to our mailing list, look out for a separate email asking you to confirm your subscription. Your request is already saved.</p>}
         <a href={BOOKING} className="mt-7 inline-flex items-center gap-2 rounded-lg bg-sky-500 px-6 py-3 font-semibold text-white hover:bg-sky-600">Book a conversation <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
       </div> : <>
-        <h1 className="mt-8 text-4xl font-semibold tracking-tight">Tell us what you’re working on.</h1>
-        <p className="mt-4 text-lg leading-relaxed text-slate-600">Share the essentials and we’ll help you explore suitable funding opportunities, potential partners and the right next step.</p>
+        <h1 className="mt-8 text-4xl font-semibold tracking-tight">Change how research proposals come together.</h1>
+        <p className="mt-4 text-lg leading-relaxed text-slate-600">Join InsightMatches to discover funding, build stronger consortia and develop proposals in one connected platform. Tell us about your organisation to get started.</p>
         <form onSubmit={submit} className="mt-8 space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" aria-busy={busy}>
           <div><label htmlFor="demo-name" className="font-medium">Full name</label><input id="demo-name" name="name" autoComplete="name" required maxLength={200} className={input} /></div>
           <div><label htmlFor="demo-email" className="font-medium">Work email</label><input id="demo-email" name="email" type="email" autoComplete="email" required maxLength={200} className={input} /></div>
