@@ -16,6 +16,7 @@ from urllib.request import Request, urlopen
 
 ORIGINS = {'https://insightmatches.com', 'https://www.insightmatches.com'}
 SOURCES = {'trial', 'demo', 'nextrise'}
+EMAIL_RE = re.compile(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~\-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 CONSENT = 'Keep me updated about InsightMatches events, research funding opportunities, and platform news.'
 COMMUNITY = 3
 DB = os.environ.get('DEMO_DB', '/data/demo.sqlite3')
@@ -24,6 +25,7 @@ TOKEN = ''
 DEMO_LIST = 0
 ACK_TEMPLATE = 0
 NOTIFY_TEMPLATE = 0
+NOTIFY_EMAILS = []
 WINDOWS = {}
 LOCK = threading.Lock()
 
@@ -39,6 +41,13 @@ def initialize():
         db.execute('CREATE TABLE IF NOT EXISTS requests (id TEXT PRIMARY KEY, payload TEXT NOT NULL, steps TEXT NOT NULL DEFAULT "[]", attempts INTEGER NOT NULL DEFAULT 0, retry_at REAL NOT NULL DEFAULT 0, done INTEGER NOT NULL DEFAULT 0)')
 
 
+def parse_notification_emails(raw):
+    emails = list(dict.fromkeys(part.strip().lower() for part in raw.split(',') if part.strip()))
+    if not emails or any(not EMAIL_RE.fullmatch(email) for email in emails):
+        raise ValueError('Invalid NOTIFY_EMAILS configuration')
+    return emails
+
+
 def validate(raw):
     if not isinstance(raw, dict):
         raise ValueError('Invalid request')
@@ -51,7 +60,7 @@ def validate(raw):
             raise ValueError('Invalid ' + key)
         out[key] = value.strip()
     out['email'] = out['email'].lower()
-    if not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~\-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", out['email']):
+    if not EMAIL_RE.fullmatch(out['email']):
         raise ValueError('Invalid email')
     out['request_id'] = str(uuid.UUID(raw.get('request_id', '')))
     source = raw.get('source')
@@ -137,7 +146,7 @@ def process(row):
     # Respect prior unsubscribes: do not reactivate an existing list membership.
     if DEMO_LIST not in lists:
         step('demo_list', lambda: api('PUT', '/api/subscribers/lists', {'ids': [sid], 'action': 'add', 'target_list_ids': [DEMO_LIST], 'status': 'confirmed'}))
-    step('notify', lambda: api('POST', '/api/tx', {'subscriber_emails': ['info@insightmatches.com'], 'subscriber_mode': 'external',
+    step('notify', lambda: api('POST', '/api/tx', {'subscriber_emails': NOTIFY_EMAILS, 'subscriber_mode': 'external',
         'template_id': NOTIFY_TEMPLATE, 'subject': 'New InsightMatches access request', 'data': data}))
     enabled = subscriber.get('status') == 'enabled'
     if data['newsletter_consent'] and enabled:
@@ -233,6 +242,7 @@ if __name__ == '__main__':
     DEMO_LIST = int(os.environ['DEMO_LIST_ID'])
     ACK_TEMPLATE = int(os.environ['DEMO_ACK_TEMPLATE_ID'])
     NOTIFY_TEMPLATE = int(os.environ['DEMO_NOTIFY_TEMPLATE_ID'])
+    NOTIFY_EMAILS = parse_notification_emails(os.environ['NOTIFY_EMAILS'])
     if ':' not in TOKEN or not all([DEMO_LIST, ACK_TEMPLATE, NOTIFY_TEMPLATE]) or DEMO_LIST == COMMUNITY:
         raise RuntimeError('Missing dedicated demo configuration')
     initialize()
