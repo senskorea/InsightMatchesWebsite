@@ -18,6 +18,7 @@ services:
       DEMO_LIST_ID: ${DEMO_LIST_ID:?Set the private Demo enquiries list ID}
       DEMO_ACK_TEMPLATE_ID: ${DEMO_ACK_TEMPLATE_ID:?Set acknowledgement template ID}
       DEMO_NOTIFY_TEMPLATE_ID: ${DEMO_NOTIFY_TEMPLATE_ID:?Set notification template ID}
+      NOTIFY_EMAILS: ${NOTIFY_EMAILS:?Set comma-separated internal notification recipients}
     volumes:
       - ./demo_server.py:/app/demo_server.py:ro
       - ../secrets/demo_api:/run/secrets/demo_api:ro

@@ -12,7 +12,8 @@ demo = importlib.util.module_from_spec(spec); spec.loader.exec_module(demo)
 class DemoTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
-        demo.DB = str(Path(self.tmp.name)/'queue.sqlite3'); demo.DEMO_LIST=4;demo.ACK_TEMPLATE=6;demo.NOTIFY_TEMPLATE=7;demo.initialize()
+        demo.DB = str(Path(self.tmp.name)/'queue.sqlite3'); demo.DEMO_LIST=4;demo.ACK_TEMPLATE=6;demo.NOTIFY_TEMPLATE=7
+        demo.NOTIFY_EMAILS=['info@insightmatches.com','serena@digijeunes.com','mark@digijeunes.com','junior@digijeunes.com'];demo.initialize()
         self.calls=[];self.sub=None
         self.original_api=demo.api;demo.api=self.api;self.addCleanup(setattr,demo,'api',self.original_api)
     def data(self, consent=False):
@@ -60,6 +61,12 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(record['source'],'nextrise')
         notification=next(payload for method,path,payload in self.calls if method=='POST' and path=='/api/tx' and payload.get('subscriber_mode')=='external')
         self.assertEqual(notification['data']['source'],'nextrise')
+        self.assertEqual(notification['subscriber_emails'],demo.NOTIFY_EMAILS)
+    def test_notification_email_configuration_is_validated_and_deduplicated(self):
+        parsed=demo.parse_notification_emails('INFO@insightmatches.com, serena@digijeunes.com, info@insightmatches.com')
+        self.assertEqual(parsed,['info@insightmatches.com','serena@digijeunes.com'])
+        with self.assertRaises(ValueError):demo.parse_notification_emails('')
+        with self.assertRaises(ValueError):demo.parse_notification_emails('not-an-email')
     def test_legacy_queued_demo_request_remains_processable(self):
         data=self.data()
         for key in ['source','country','role','programme_interest']:
