@@ -83,6 +83,9 @@ export const Footer: React.FC = () => {
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} InsightMatches. {t('allRightsReserved')}
           </p>
+          <a href="/legal/platform-terms/" className="text-muted-foreground hover:text-primary text-sm underline underline-offset-4">
+            Platform Terms / <span lang="ko">이용약관</span>
+          </a>
           <Link
             to="/request-demo"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white bg-foreground dark:bg-white dark:text-slate-900 hover:opacity-90 transition-opacity"
