@@ -13,6 +13,7 @@ import {
   Sparkles,
   QrCode,
   X,
+  Beer,
 } from "lucide-react";
 import QRCode from "qrcode";
 import paulPhoto from "@/assets/paul-photo.jpg";
@@ -118,6 +119,29 @@ const PaulCard = () => {
                 </span>
                 <span className="block font-bold text-sm sm:text-base leading-snug truncate">
                   Book a Meeting
+                </span>
+              </span>
+            </span>
+            <ExternalLink className="w-4 h-4 text-white/80 group-hover:translate-x-0.5 transition-transform shrink-0" />
+          </a>
+
+          {/* Casual Action: Let's grab a beer */}
+          <a
+            href="https://calendar.app.google/z5N8jZUAk5e6YCM37"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 active:scale-[0.99] text-white shadow-sm transition-all group"
+          >
+            <span className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <Beer className="w-5 h-5 text-white" />
+              </span>
+              <span className="text-left min-w-0">
+                <span className="block text-[11px] uppercase tracking-wider text-amber-100 font-bold leading-tight">
+                  Friday · Broughton Club
+                </span>
+                <span className="block font-bold text-sm sm:text-base leading-snug truncate">
+                  Let's grab a beer
                 </span>
               </span>
             </span>
