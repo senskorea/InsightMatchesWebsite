@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react";
 import {
   Linkedin,
-  Instagram,
   Mail,
-  Phone,
   Globe,
   Calendar,
   Download,
   MapPin,
   ChevronDown,
-  ExternalLink,
   Sparkles,
   QrCode,
   X,
-  Beer,
 } from "lucide-react";
 import QRCode from "qrcode";
 import paulPhoto from "@/assets/paul-photo.jpg";
@@ -25,7 +21,6 @@ N:Conversy;Paul;;;
 FN:Paul Conversy
 ORG:InsightMatches
 TITLE:Founder
-TEL;TYPE=CELL,VOICE:+821081137787
 EMAIL;TYPE=INTERNET:info@insightmatches.com
 URL:https://insightmatches.com
 ADR;TYPE=WORK:;;;Paris / Seoul / Busan;;;
@@ -38,6 +33,12 @@ const RememberIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
     <text x="12" y="17" fontSize="15" fontWeight="bold" fontFamily="Georgia, serif" textAnchor="middle" fill="#FFFFFF">
       R
     </text>
+  </svg>
+);
+
+const WhatsAppIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.46-8.406" />
   </svg>
 );
 
@@ -100,229 +101,213 @@ const PaulCard = () => {
           </div>
         </div>
 
-        {/* Action Buttons Section */}
-        <div className="mt-6 flex flex-col gap-2.5">
-          {/* Top Priority Action: Book a Meeting */}
+        {/* Action Buttons Section — Chunky 2-Column Kids-Phone Style */}
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-3.5">
+          {/* Row 1: Book a Meeting & Grab a Beer */}
           <a
             href="https://calendar.app.google/ukQe5T1754RKVPedA"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-gradient-to-br from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white shadow-md shadow-sky-500/20 active:scale-[0.95] transition-all min-h-[124px] border border-sky-400/30 group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+            <div className="flex items-center justify-between w-full">
+              <span className="w-11 h-11 rounded-2xl bg-white/20 shadow-inner flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                 <Calendar className="w-5 h-5 text-white" />
               </span>
-              <span className="text-left min-w-0">
-                <span className="block text-[11px] uppercase tracking-wider text-sky-100 font-bold leading-tight">
-                  Priority
-                </span>
-                <span className="block font-bold text-sm sm:text-base leading-snug truncate">
-                  Book a Meeting
-                </span>
+              <span className="text-[10px] font-black uppercase tracking-wider text-sky-950 bg-sky-200/90 px-2 py-0.5 rounded-full shadow-sm">
+                Priority
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-white/80 group-hover:translate-x-0.5 transition-transform shrink-0" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-black text-sm sm:text-base leading-tight text-white">
+                Book a Meeting
+              </span>
+              <span className="block text-xs font-medium text-sky-100/90 mt-0.5 truncate">
+                1:1 Calendar
+              </span>
+            </div>
           </a>
 
-          {/* Casual Action: Let's grab a beer */}
           <a
             href="https://calendar.app.google/z5N8jZUAk5e6YCM37"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 active:scale-[0.99] text-white shadow-sm transition-all group"
+            className="relative flex flex-col justify-between p-4 rounded-3xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-600 text-white shadow-md shadow-amber-500/25 active:scale-[0.95] transition-all min-h-[124px] overflow-hidden border border-amber-300/40 group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-                <Beer className="w-5 h-5 text-white" />
-              </span>
-              <span className="text-left min-w-0">
-                <span className="block text-[11px] uppercase tracking-wider text-amber-100 font-bold leading-tight">
-                  Friday · Broughton Club
-                </span>
-                <span className="block font-bold text-sm sm:text-base leading-snug truncate">
-                  Let's grab a beer
+            <div className="absolute -top-6 -right-6 w-20 h-20 bg-white/20 rounded-full blur-xl animate-pulse pointer-events-none" />
+
+            <div className="flex items-center justify-between w-full relative z-10">
+              <span className="relative flex items-center justify-center w-11 h-11 rounded-2xl bg-white/25 shadow-inner">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-2xl bg-amber-300 opacity-60 pointer-events-none" />
+                <span className="relative text-2xl animate-bounce select-none" style={{ animationDuration: '2s' }}>
+                  🍺
                 </span>
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-white/80 group-hover:translate-x-0.5 transition-transform shrink-0" />
+              <span className="text-[10px] font-black uppercase tracking-wider text-amber-950 bg-amber-200/95 px-2 py-0.5 rounded-full shadow-sm animate-pulse">
+                Friday
+              </span>
+            </div>
+
+            <div className="mt-3 text-left relative z-10">
+              <span className="block font-black text-sm sm:text-base leading-tight text-white drop-shadow-sm">
+                Let's grab a beer
+              </span>
+              <span className="block text-xs font-medium text-amber-100/95 mt-0.5 truncate">
+                Broughton Club
+              </span>
+            </div>
           </a>
 
-          {/* 1. LinkedIn */}
+          {/* Row 2: LinkedIn & WhatsApp */}
           <a
             href="https://linkedin.com/in/paulconversy"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center shrink-0">
-                <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+            <div className="w-11 h-11 rounded-2xl bg-[#0A66C2]/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                LinkedIn
               </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  LinkedIn
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  linkedin.com/in/paulconversy
-                </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                Connect
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+            </div>
           </a>
 
-          {/* 2. Instagram */}
           <a
-            href="https://instagram.com/paul_converce"
+            href="https://wa.me/821081137787"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center shrink-0">
-                <Instagram className="w-5 h-5 text-pink-600" />
+            <div className="w-11 h-11 rounded-2xl bg-[#25D366]/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <WhatsAppIcon className="w-6 h-6 text-[#25D366]" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                WhatsApp
               </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  Instagram
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  instagram.com/paul_converce
-                </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                Chat Direct
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+            </div>
           </a>
 
-          {/* 3. Remember (리멤버) */}
+          {/* Row 3: Remember & Email */}
           <a
             href="https://link.rmbr.in/3pohsay"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-neutral-900/10 flex items-center justify-center shrink-0">
-                <RememberIcon className="w-6 h-6" />
+            <div className="w-11 h-11 rounded-2xl bg-neutral-900/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <RememberIcon className="w-6 h-6 text-neutral-900" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                Remember
               </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  Remember (리멤버)
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  Digital Business Card Exchange
-                </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                리멤버 명함
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+            </div>
           </a>
 
-          {/* 4. Email */}
           <a
             href="mailto:info@insightmatches.com"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0">
-                <Mail className="w-5 h-5 text-amber-600" />
+            <div className="w-11 h-11 rounded-2xl bg-amber-500/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Mail className="w-5 h-5 text-amber-600" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                Email
               </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  Email
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  info@insightmatches.com
-                </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                info@insightmatches
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+            </div>
           </a>
 
-          {/* 5. Phone */}
-          <a
-            href="tel:+821081137787"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
-          >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
-                <Phone className="w-5 h-5 text-emerald-600" />
-              </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  Phone
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  +82 10 8113 7787
-                </span>
-              </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
-          </a>
-
-          {/* 6. Websites: InsightMatches */}
+          {/* Row 4: InsightMatches & SENS AI */}
           <a
             href="https://insightmatches.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0">
-                <Globe className="w-5 h-5 text-indigo-600" />
+            <div className="w-11 h-11 rounded-2xl bg-indigo-500/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Globe className="w-5 h-5 text-indigo-600" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                InsightMatches
               </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  InsightMatches
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  insightmatches.com · EU Grant Platform
-                </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                EU Grant Platform
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+            </div>
           </a>
 
-          {/* 6b. Websites: SENS AI */}
           <a
             href="https://insightmatches.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-between px-4 py-3 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] group"
           >
-            <span className="flex items-center gap-3 min-w-0">
-              <span className="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0">
-                <Sparkles className="w-5 h-5 text-purple-600" />
+            <div className="w-11 h-11 rounded-2xl bg-purple-500/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Sparkles className="w-5 h-5 text-purple-600" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                SENS AI
               </span>
-              <span className="text-left min-w-0">
-                <span className="block font-bold text-sm text-neutral-900 leading-snug">
-                  SENS AI
-                </span>
-                <span className="block text-xs text-neutral-500 truncate">
-                  AI Matching Engine for Events
-                </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                Event Engine
               </span>
-            </span>
-            <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700 transition-colors shrink-0" />
+            </div>
           </a>
 
-          {/* 7. Save Contact to Phone */}
+          {/* Row 5: Save Contact & Show QR Code */}
           <button
             type="button"
             onClick={saveContact}
-            className="w-full mt-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-neutral-900 hover:bg-black active:scale-[0.99] text-white font-semibold text-sm shadow-sm transition-all"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-neutral-900 hover:bg-black text-white shadow-sm active:scale-[0.95] transition-all min-h-[124px] text-left group border-2 border-neutral-900"
           >
-            <Download className="w-4 h-4" />
-            <span>Save Contact to Phone (.vcf)</span>
+            <div className="w-11 h-11 rounded-2xl bg-white/15 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Download className="w-5 h-5 text-white" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-white leading-tight">
+                Save Contact
+              </span>
+              <span className="block text-xs text-neutral-400 mt-0.5 truncate">
+                .vcf to Phone
+              </span>
+            </div>
           </button>
 
-          {/* 8. Show QR Code (Last Action Option) */}
           <button
             type="button"
             onClick={() => setShowQR(true)}
-            className="w-full mt-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-white hover:bg-neutral-100/80 border border-neutral-200/90 active:scale-[0.99] text-neutral-900 font-semibold text-sm shadow-sm transition-all group"
+            className="flex flex-col justify-between p-4 rounded-3xl bg-white hover:bg-neutral-50/90 border-2 border-neutral-200/80 shadow-sm active:scale-[0.95] transition-all min-h-[124px] text-left group"
           >
-            <QrCode className="w-4 h-4 text-neutral-700 group-hover:text-black transition-colors" />
-            <span>Show QR Code</span>
+            <div className="w-11 h-11 rounded-2xl bg-neutral-100 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <QrCode className="w-5 h-5 text-neutral-800 group-hover:text-black transition-colors" />
+            </div>
+            <div className="mt-3 text-left">
+              <span className="block font-bold text-sm text-neutral-900 leading-tight">
+                Show QR Code
+              </span>
+              <span className="block text-xs text-neutral-500 mt-0.5 truncate">
+                Scan to Share
+              </span>
+            </div>
           </button>
         </div>
 
