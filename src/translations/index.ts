@@ -505,7 +505,7 @@ export const translations = {
     pricingFreeTierDesc: "스타트업 또는 연구자 프로필을 등록하고, 적합한 펀딩을 발굴하며, 파트너를 찾아 직접 컨소시엄을 구성하고 프로젝트 초대를 받으세요.",
     pricingFreeTierPrice: "무료",
     pricingFreeTierSubtitle: "글로벌 연구 네트워크 참여. 직접 파트너를 찾고 컨소시엄을 구축하세요.",
-    pricingFreeTierFeature1: "유럽 Horizon Europe 및 양자 R&D 매칭 과제 탐색",
+    pricingFreeTierFeature1: "호라이즌 유럽 및 양자 R&D 매칭 과제 탐색",
     pricingFreeTierFeature2: "스타트업 및 연구 기관 공식 프로필 생성",
     pricingFreeTierFeature3: "글로벌 컨소시엄 잠재 파트너 직접 검색",
     pricingFreeTierFeature4: "자체적인 독립 컨소시엄 구성 및 빌딩",
@@ -763,10 +763,10 @@ export const translations = {
     ctaSeeHowItWorks: "어떻게 작동하는지 보기",
     ctaLearnMore: "자세히 보기",
     pricingFreeTierNote: "무료: 모든 요청을 직접 검토하고 24에서 48시간 내에 답변드립니다.",
-    formReassurance: "신용카드 불필요. 원하지 않으면 영업 통화 없음. 24–48시간 내에 직접 답변드립니다.",
+    formReassurance: "신용카드 불필요. 원하지 않으면 영업 통화 없음. 24에서 48시간 내에 직접 답변드립니다.",
 
     // Referral Program
-    referralTitle: "추천 프로그램 – 10% 제공, 10% 적립 | InsightMatches",
+    referralTitle: "추천 프로그램: 10% 제공, 10% 적립 | InsightMatches",
     referralDescription: "딥테크 연구자 및 중소기업을 InsightMatches에 추천하세요. 추천받은 사람은 10% 할인을 받고, 귀하는 연간 구독료의 10%를 커미션으로 받습니다.",
     partnerProgram: "파트너 및 추천 프로그램",
     referHeroTitle1: "InsightMatches 추천하기.",
@@ -1154,7 +1154,7 @@ export const translations = {
     ctaSeeHowItWorks: "Voir comment ça marche",
     ctaLearnMore: "En savoir plus",
     pricingFreeTierNote: "Gratuit : nous examinons chaque demande personnellement et répondons sous 24 à 48h.",
-    formReassurance: "Pas de carte bancaire. Pas d'appel commercial sauf si vous le demandez. Nous répondons personnellement sous 24–48h.",
+    formReassurance: "Pas de carte bancaire. Pas d'appel commercial sauf si vous le demandez. Nous répondons personnellement sous 24 à 48h.",
 
     // Referral Program
     referralTitle: "Programme de Parrainage : Offrez 10%, Recevez 10% | InsightMatches",
